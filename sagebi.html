@@ -1,288 +1,339 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="LEVHEC ADVISORY vous accompagne dans l'exploitation de SAGE BI Reporting pour libérer vos données et renforcer vos décisions.">
 <meta name="robots" content="index,follow">
+
 <title>SAGE BI Reporting | LEVHEC ADVISORY</title>
 
 <style>
+
 :root{
-  --text:#222;
-  --muted:#5b5b5b;
-  --gold:#b08d57;
-  --gold-dark:#8f6f3f;
-  --white:#ffffff;
-  --border:#e8dfd2;
-  --shadow:0 18px 45px rgba(0,0,0,0.08);
-  --radius:22px;
+--text:#222;
+--muted:#5b5b5b;
+--gold:#b08d57;
+--gold-dark:#8f6f3f;
+--white:#ffffff;
+--border:#e8dfd2;
+--shadow:0 18px 45px rgba(0,0,0,0.08);
+--radius:22px;
 }
 
 *{
-  box-sizing:border-box;
+box-sizing:border-box;
 }
 
 body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  background:linear-gradient(180deg,#f4f1ea 0%,#fbfaf7 100%);
-  color:var(--text);
-  line-height:1.6;
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:linear-gradient(180deg,#f4f1ea 0%,#fbfaf7 100%);
+color:var(--text);
+line-height:1.6;
 }
 
 .wrapper{
-  max-width:1120px;
-  margin:auto;
-  padding:32px 20px 60px;
+max-width:1120px;
+margin:auto;
+padding:32px 20px 60px;
+position:relative;
 }
+
+/* HERO */
 
 .hero{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:28px;
-  box-shadow:var(--shadow);
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:0.95fr 1.05fr;
-  min-height:640px;
+background:white;
+border:1px solid var(--border);
+border-radius:28px;
+box-shadow:var(--shadow);
+overflow:hidden;
+display:grid;
+grid-template-columns:0.95fr 1.05fr;
+min-height:640px;
+position:relative;
 }
 
+/* PANTHERE CENTRALE */
+
+.panthere{
+
+position:absolute;
+
+top:50%;
+left:52%;
+
+transform:translate(-50%,-50%);
+
+width:420px;
+
+opacity:0.22;
+
+pointer-events:none;
+
+z-index:3;
+
+}
+
+/* TEXTE */
+
 .hero-content{
-  padding:64px 56px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+padding:64px 56px;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
 .eyebrow{
-  background:#f7f0e4;
-  color:var(--gold-dark);
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:22px;
-  display:inline-block;
+background:#f7f0e4;
+color:var(--gold-dark);
+padding:8px 14px;
+border-radius:999px;
+font-size:13px;
+font-weight:700;
+margin-bottom:22px;
+display:inline-block;
 }
 
 h1{
-  margin:0 0 18px;
-  font-size:clamp(2.1rem,4vw,4rem);
-  line-height:1.08;
+margin:0 0 18px;
+font-size:clamp(2.1rem,4vw,4rem);
+line-height:1.08;
 }
 
 .intro{
-  font-size:1.08rem;
-  color:var(--muted);
-  margin-bottom:28px;
+font-size:1.08rem;
+color:var(--muted);
+margin-bottom:28px;
 }
 
 .questions{
-  list-style:none;
-  padding:0;
-  margin:0 0 28px;
-  display:grid;
-  gap:12px;
+list-style:none;
+padding:0;
+margin:0 0 28px;
+display:grid;
+gap:12px;
 }
 
 .questions li{
-  background:#fbf8f2;
-  border:1px solid #eee3d3;
-  padding:14px 16px;
-  border-radius:14px;
-  font-weight:600;
+background:#fbf8f2;
+border:1px solid #eee3d3;
+padding:14px 16px;
+border-radius:14px;
+font-weight:600;
 }
 
+/* BOUTONS */
+
 .cta-row{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
+display:flex;
+gap:14px;
+flex-wrap:wrap;
 }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 22px;
-  min-height:52px;
-  border-radius:999px;
-  font-weight:700;
-  text-decoration:none;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:0 22px;
+min-height:52px;
+border-radius:999px;
+font-weight:700;
+text-decoration:none;
 }
 
 .btn-primary{
-  background:var(--gold);
-  color:white;
+background:var(--gold);
+color:white;
 }
 
 .btn-secondary{
-  border:1px solid var(--border);
-  background:white;
-  color:var(--text);
+border:1px solid var(--border);
+background:white;
+color:var(--text);
 }
+
+/* BLOC NOIR */
 
 .hero-side{
-  background:linear-gradient(160deg,#2e2a24 0%,#191714 100%);
-  color:white;
-  padding:56px 40px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
+background:linear-gradient(160deg,#2e2a24 0%,#191714 100%);
+color:white;
+padding:56px 40px;
+display:flex;
+align-items:center;
 }
 
-.hero-side::before{
-  content:"";
-  position:absolute;
-  right:-10px;
-  bottom:-10px;
-  width:520px;
-  height:520px;
-  background-image:url("https://ads.levhec.com/Panthere_detouree.png");
-  background-repeat:no-repeat;
-  background-size:contain;
-  background-position:center;
-  opacity:0.18;
-  pointer-events:none;
-  z-index:1;
-}
+/* CARTE */
 
 .card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:22px;
-  padding:28px 24px;
-  backdrop-filter:blur(6px);
-  position:relative;
-  z-index:2;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.15);
+border-radius:22px;
+padding:28px 24px;
+backdrop-filter:blur(6px);
 }
 
 .card h2{
-  margin:0 0 18px;
+margin:0 0 18px;
 }
 
 .benefits{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:14px;
+list-style:none;
+padding:0;
+margin:0;
+display:grid;
+gap:14px;
 }
 
 .benefits li{
-  display:grid;
-  grid-template-columns:24px 1fr;
-  gap:12px;
+display:grid;
+grid-template-columns:24px 1fr;
+gap:12px;
 }
 
 .benefits li::before{
-  content:"→";
-  color:#e3bf89;
-  font-weight:700;
+content:"→";
+color:#e3bf89;
+font-weight:700;
 }
 
 .closing{
-  margin-top:22px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.2);
-  font-weight:600;
+margin-top:22px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.2);
+font-weight:600;
 }
 
+/* BOUTONS BAS */
+
 .bottom-nav{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  margin-top:40px;
+display:flex;
+justify-content:center;
+gap:18px;
+margin-top:40px;
 }
 
 .nav-btn{
-  padding:0 26px;
-  min-height:54px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:999px;
-  font-weight:700;
-  text-decoration:none;
-  color:#2b2b2b;
-  background:linear-gradient(
-    180deg,
-    #f4e6c8 0%,
-    #d4b06a 45%,
-    #b88a3c 52%,
-    #f2e0b4 100%
-  );
-  border:1px solid rgba(143,111,63,.55);
+padding:0 26px;
+min-height:54px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:999px;
+font-weight:700;
+text-decoration:none;
+color:#2b2b2b;
+
+background:linear-gradient(
+180deg,
+#f4e6c8 0%,
+#d4b06a 45%,
+#b88a3c 52%,
+#f2e0b4 100%
+);
+
+border:1px solid rgba(143,111,63,.55);
 }
+
+/* RESPONSIVE */
 
 @media(max-width:900px){
-  .hero{
-    grid-template-columns:1fr;
-  }
 
-  .hero-content,
-  .hero-side{
-    padding:36px 24px;
-  }
+.hero{
+grid-template-columns:1fr;
 }
+
+.panthere{
+display:none;
+}
+
+.hero-content,
+.hero-side{
+padding:36px 24px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
+
 <main class="wrapper">
+
 <section class="hero">
 
+<img class="panthere"
+src="https://ads.levhec.com/Panthere_detouree.png">
+
 <div class="hero-content">
-  <span class="eyebrow">LEVHEC ADVISORY • SAGE BI Reporting</span>
 
-  <h1>
-    Vous êtes client SAGE ?<br>
-    Libérez enfin la valeur de vos données.
-  </h1>
+<span class="eyebrow">
+LEVHEC ADVISORY • SAGE BI Reporting
+</span>
 
-  <p class="intro">
-    SAGE BI Reporting est un outil puissant. Encore faut-il en exploiter tout le potentiel pour transformer vos données en informations utiles et actionnables.
-  </p>
+<h1>
+Vous êtes client SAGE ?<br>
+Libérez enfin la valeur de vos données.
+</h1>
 
-  <ul class="questions">
-    <li>Souhaitez-vous libérer vos données ?</li>
-    <li>Connaissez-vous SAGE BI Reporting ?</li>
-    <li>En exploitez-vous toute sa puissance ?</li>
-  </ul>
+<p class="intro">
+SAGE BI Reporting est un outil puissant. Encore faut-il en exploiter tout le potentiel pour transformer vos données en informations utiles et actionnables.
+</p>
 
-  <div class="cta-row">
-    <a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary">Demander un échange</a>
-    <a href="#solutions" class="btn btn-secondary">Découvrir l’offre</a>
-  </div>
+<ul class="questions">
+<li>Souhaitez-vous libérer vos données ?</li>
+<li>Connaissez-vous SAGE BI Reporting ?</li>
+<li>En exploitez-vous toute sa puissance ?</li>
+</ul>
+
+<div class="cta-row">
+<a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary">Demander un échange</a>
+<a href="#solutions" class="btn btn-secondary">Découvrir l’offre</a>
+</div>
+
 </div>
 
 <aside class="hero-side" id="solutions">
-  <div class="card">
-    <h2>Avec SAGE BI Reporting, nous vous aidons à :</h2>
 
-    <ul class="benefits">
-      <li>Interroger vos données en temps réel</li>
-      <li>Créer des reportings multi-logiciels</li>
-      <li>Enrichir et structurer vos données</li>
-      <li>Faciliter l’élaboration budgétaire</li>
-      <li>Mettre en place vos indicateurs clés</li>
-      <li>Donner de l’autonomie à vos équipes</li>
-    </ul>
+<div class="card">
 
-    <p class="closing">
-      Reprenez la maîtrise de vos données et transformez-les en avantage compétitif.
-    </p>
-  </div>
+<h2>
+Avec SAGE BI Reporting, nous vous aidons à :
+</h2>
+
+<ul class="benefits">
+<li>Interroger vos données en temps réel</li>
+<li>Créer des reportings multi-logiciels</li>
+<li>Enrichir et structurer vos données</li>
+<li>Faciliter l’élaboration budgétaire</li>
+<li>Mettre en place vos indicateurs clés</li>
+<li>Donner de l’autonomie à vos équipes</li>
+</ul>
+
+<p class="closing">
+Reprenez la maîtrise de vos données et transformez-les en avantage compétitif.
+</p>
+
+</div>
+
 </aside>
 
 </section>
 
 <div class="bottom-nav">
-  <a class="nav-btn" href="/">Voir toutes les offres</a>
-  <a class="nav-btn" href="https://www.levhec-advisory.com/contact/">Contact</a>
+
+<a class="nav-btn" href="/">Voir toutes les offres</a>
+
+<a class="nav-btn" href="https://www.levhec-advisory.com/contact/">
+Contact
+</a>
+
 </div>
 
 </main>
+
 </body>
 </html>
