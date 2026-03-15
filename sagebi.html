@@ -6,6 +6,7 @@
   <meta name="description" content="LEVHEC ADVISORY vous accompagne dans l'exploitation de SAGE BI Reporting pour libérer vos données et renforcer vos décisions." />
   <meta name="robots" content="index,follow" />
   <title>SAGE BI Reporting | LEVHEC ADVISORY</title>
+
   <style>
     :root {
       --bg: #f6f4ef;
@@ -21,6 +22,10 @@
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -223,11 +228,61 @@
       font-weight: 600;
     }
 
+    .bottom-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 34px auto 10px;
+      padding: 0 20px 40px;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      min-height: 54px;
+      padding: 0 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #2b2b2b;
+      background: linear-gradient(180deg, #f4e6c8 0%, #d4b06a 45%, #b88a3c 52%, #f2e0b4 100%);
+      border: 1px solid rgba(143, 111, 63, 0.55);
+      box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.7),
+        inset 0 -2px 4px rgba(120, 85, 35, 0.35),
+        0 8px 18px rgba(0, 0, 0, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      text-align: center;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.72),
+        inset 0 -2px 4px rgba(120, 85, 35, 0.35),
+        0 12px 24px rgba(0, 0, 0, 0.16);
+    }
+
     .footer-note {
       text-align: center;
       color: var(--muted);
       font-size: 0.95rem;
-      padding-top: 24px;
+      margin-top: 8px;
+    }
+
+    .footer-note a {
+      color: var(--gold-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-note a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 900px) {
@@ -243,7 +298,7 @@
 
     @media (max-width: 560px) {
       .wrapper {
-        padding: 16px 14px 40px;
+        padding: 16px 14px 30px;
       }
 
       h1 {
@@ -254,31 +309,27 @@
         font-size: 1rem;
       }
 
-      .btn {
+      .btn,
+      .nav-btn {
         width: 100%;
+      }
+
+      .bottom-nav {
+        gap: 12px;
+        padding: 0 14px 32px;
       }
     }
   </style>
 </head>
-<div class="bottom-nav">
 
-<a class="nav-btn" href="/">
-Toutes les offres LEVHEC
-</a>
-
-<a class="nav-btn" href="https://www.levhec-advisory.com/contact/" target="_blank">
-Contact
-</a>
-
-</div>
 <body>
-  
-</header>
   <main class="wrapper">
     <section class="hero">
       <div class="hero-content">
         <span class="eyebrow">LEVHEC ADVISORY • SAGE BI Reporting</span>
+
         <h1>Vous êtes client SAGE&nbsp;?<br />Libérez enfin la valeur de vos données.</h1>
+
         <p class="intro">
           SAGE BI Reporting est un outil puissant. Encore faut-il en exploiter tout le potentiel pour transformer vos données en informations utiles, lisibles et réellement actionnables.
         </p>
@@ -290,14 +341,19 @@ Contact
         </ul>
 
         <div class="cta-row">
-          <a href="#contact" class="btn btn-primary">Demander un échange</a>
-          <a href="#solutions" class="btn btn-secondary">Découvrir l’offre</a>
+          <a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary" target="_blank" rel="noopener">
+            Demander un échange
+          </a>
+          <a href="#solutions" class="btn btn-secondary">
+            Découvrir l’offre
+          </a>
         </div>
       </div>
 
       <aside class="hero-side" id="solutions">
         <div class="card">
           <h2>Avec SAGE BI Reporting, nous vous aidons à&nbsp;:</h2>
+
           <ul class="benefits">
             <li>Interroger vos données en temps réel</li>
             <li>Créer des reportings multi-logiciels</li>
@@ -313,20 +369,22 @@ Contact
         </div>
       </aside>
     </section>
-    
-  <header class="top">
-<a href="/" class="home">Toutes les offres LEVHEC ADVISORY</a>
-</header>
 
-<main>
+    <div class="bottom-nav">
+      <a class="nav-btn" href="/">
+        Voir toutes les offres
+      </a>
 
-<p class="footer-note" id="contact">
-<a href="https://www.levhec-advisory.com/contact/" target="_blank">
-Contact LEVHEC Advisory
-</a>
-</p>
+      <a class="nav-btn" href="https://www.levhec-advisory.com/contact/" target="_blank" rel="noopener">
+        Contact
+      </a>
+    </div>
 
-</main>
-  
+    <p class="footer-note">
+      <a href="https://www.levhec-advisory.com/contact/" target="_blank" rel="noopener">
+        Contact LEVHEC Advisory
+      </a>
+    </p>
+  </main>
 </body>
 </html>
