@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LEVHEC ADVISORY intervient dans les situations complexes et les transforme en avantage stratégique : contentieux, tensions managériales, désorganisation comptable, production des documents de gestion et pilotage de transition." />
+  <meta name="robots" content="index,follow" />
+  <title>Situations complexes | LEVHEC ADVISORY</title>
+
+  <style>
+    :root{
+      --bg:#f6f3ee;
+      --text:#1f1f1f;
+      --muted:#5f5a52;
+      --gold:#b08d57;
+      --gold-dark:#8c6e43;
+      --black:#161616;
+      --white:#ffffff;
+      --border:#e5dccf;
+      --shadow:0 18px 45px rgba(0,0,0,.10);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(176,141,87,.12), transparent 28%),
+        linear-gradient(180deg, #faf8f4 0%, #f6f3ee 100%);
+      line-height:1.6;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(246,243,238,.88);
+      border-bottom:1px solid rgba(0,0,0,.05);
+    }
+
+    .topbar-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      padding:14px 0;
+    }
+
+    .brand{
+      font-size:.95rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      color:var(--black);
+      text-transform:uppercase;
+    }
+
+    .nav{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav a{
+      font-size:.92rem;
+      color:var(--muted);
+      padding:8px 12px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+
+    .nav a:hover{
+      background:rgba(176,141,87,.10);
+      color:var(--black);
+    }
+
+    .hero{
+      padding:64px 0 34px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .hero-left{
+      background:var(--black);
+      color:var(--white);
+      border-radius:var(--radius);
+      padding:48px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-left::after{
+      content:"";
+      position:absolute;
+      inset:auto -80px -80px auto;
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(176,141,87,.22) 0%, rgba(176,141,87,0) 70%);
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:16px;
+      padding:7px 12px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      color:#e6d7be;
+      font-size:.78rem;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-size:clamp(2rem, 4vw, 3.6rem);
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
+
+    .hero-left p{
+      margin:0 0 14px;
+      font-size:1.03rem;
+      color:rgba(255,255,255,.88);
+      max-width:60ch;
+    }
+
+    .accent{
+      color:#e6d7be;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:999px;
+      font-weight:600;
+      transition:.25s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:linear-gradient(180deg, #c39b60 0%, #9b7847 100%);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(176,141,87,.28);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.03);
+    }
+
+    .btn-secondary{
+      border-color:rgba(255,255,255,.18);
+      color:#fff;
+      background:rgba(255,255,255,.04);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .hero-right{
+      display:grid;
+      gap:18px;
+    }
+
+    .stat-card,
+    .quote-card{
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .stat-card h2,
+    .quote-card h2,
+    .section-head h2{
+      margin:0 0 10px;
+      font-size:1.35rem;
+      line-height:1.2;
+    }
+
+    .stat-list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .stat{
+      padding:14px 16px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1rem;
+      color:var(--black);
+      margin-bottom:4px;
+    }
+
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .quote-card{
+      background:linear-gradient(180deg, #fff 0%, #fbf8f2 100%);
+    }
+
+    .quote{
+      margin:0;
+      font-size:1.05rem;
+      color:var(--black);
+    }
+
+    .quote strong{
+      color:var(--gold-dark);
+    }
+
+    section{
+      padding:24px 0;
+    }
+
+    .section-head{
+      margin-bottom:22px;
+      max-width:800px;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:1.15rem;
+      line-height:1.25;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.97rem;
+    }
+
+    .tag{
+      display:inline-block;
+      margin-bottom:12px;
+      font-size:.76rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--gold-dark);
+      font-weight:700;
+    }
+
+    .dark-band{
+      margin:40px 0 20px;
+      padding:40px;
+      background:linear-gradient(135deg, #141414 0%, #1f1f1f 100%);
+      color:#fff;
+      border-radius:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .dark-band h2{
+      margin:0 0 14px;
+      font-size:clamp(1.6rem, 3vw, 2.4rem);
+      line-height:1.15;
+    }
+
+    .dark-band p{
+      margin:0;
+      color:rgba(255,255,255,.82);
+      max-width:850px;
+    }
+
+    .cases{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
+      margin-top:22px;
+    }
+
+    .case{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .case h3{
+      margin:0 0 8px;
+      font-size:1.1rem;
+    }
+
+    .case p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .method{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .step{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px 18px;
+      text-align:left;
+      box-shadow:var(--shadow);
+    }
+
+    .step-number{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(176,141,87,.14);
+      color:var(--gold-dark);
+      font-weight:700;
+      margin-bottom:12px;
+    }
+
+    .step h4{
+      margin:0 0 8px;
+      font-size:1rem;
+    }
+
+    .step p{
+      margin:0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .closing{
+      margin:36px 0 0;
+      padding:36px;
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(176,141,87,.10) 0%, rgba(176,141,87,.04) 100%);
+      border:1px solid rgba(176,141,87,.18);
+    }
+
+    .closing h2{
+      margin:0 0 12px;
+      font-size:1.8rem;
+      line-height:1.15;
+    }
+
+    .closing p{
+      margin:0;
+      color:var(--muted);
+      max-width:840px;
+    }
+
+    .footer-actions{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+      padding:42px 0 70px;
+    }
+
+    .btn-metal{
+      min-width:240px;
+      padding:15px 26px;
+      border-radius:999px;
+      border:1px solid #bda57c;
+      background:linear-gradient(180deg, #d5bc8f 0%, #b08d57 45%, #8b6a3d 100%);
+      color:#fff;
+      font-weight:700;
+      letter-spacing:.01em;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.35),
+        0 10px 24px rgba(176,141,87,.28);
+      text-align:center;
+    }
+
+    .btn-metal:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.03);
+    }
+
+    footer{
+      padding:0 0 40px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    @media (max-width: 1020px){
+      .hero-grid,
+      .grid-3,
+      .cases,
+      .method{
+        grid-template-columns:1fr;
+      }
+
+      .hero-left{
+        padding:34px 28px;
+      }
+
+      .dark-band{
+        padding:30px 22px;
+      }
+    }
+
+    @media (max-width: 720px){
+      .topbar-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav{
+        justify-content:flex-start;
+      }
+
+      .hero{
+        padding-top:34px;
+      }
+
+      .footer-actions{
+        padding-bottom:50px;
+      }
+
+      .btn-metal{
+        width:100%;
+        min-width:0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="brand">LEVHEC ADVISORY</a>
+      <nav class="nav">
+        <a href="#enjeux">Enjeux</a>
+        <a href="#cas">Cas traités</a>
+        <a href="#methode">Méthode</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-grid">
+
+        <div class="hero-left">
+          <span class="eyebrow">Management de transition • Conseil opérationnel</span>
+          <h1>
+            Nous intervenons dans les <span class="accent">situations complexes</span><br>
+            et les transformons en avantage stratégique.
+          </h1>
+          <p>
+            Lorsque l’organisation se tend, que les responsabilités se brouillent
+            ou que les fonctions support ne produisent plus la visibilité attendue,
+            l’entreprise a besoin de reprendre la main rapidement.
+          </p>
+          <p>
+            LEVHEC ADVISORY sécurise les sujets sensibles, remet les fonctions clés
+            sous contrôle et redonne à la direction une capacité claire d’action,
+            d’arbitrage et de décision.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cas" class="btn btn-primary">Voir les cas d’intervention</a>
+            <a href="https://www.levhec-advisory.com/contact/" class="btn btn-secondary">Prendre contact</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="stat-card">
+            <h2>Quand faire appel à nous ?</h2>
+            <div class="stat-list">
+              <div class="stat">
+                <strong>Contentieux ou contrôle sensible</strong>
+                <span>Fiscal, social, juridique ou contractuel.</span>
+              </div>
+              <div class="stat">
+                <strong>Tensions managériales</strong>
+                <span>Perte de repères, conflits, responsabilités floues, équipes fragilisées.</span>
+              </div>
+              <div class="stat">
+                <strong>Désorganisation comptable</strong>
+                <span>Retards, fiabilité affaiblie, clôtures difficiles, circuits non sécurisés.</span>
+              </div>
+              <div class="stat">
+                <strong>Documents de gestion insuffisants</strong>
+                <span>Reporting, budgets, tableaux de bord et indicateurs absents ou peu exploitables.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quote-card">
+            <h2>Notre approche</h2>
+            <p class="quote">
+              Reprendre la maîtrise, <strong>clarifier le cadre</strong>, sécuriser les flux,
+              remettre les équipes en capacité d’agir et transformer une situation subie
+              en levier de structuration durable.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="enjeux">
+      <div class="section-head">
+        <h2>Des situations complexes, mais jamais sans issue</h2>
+        <p>
+          Une situation devient complexe lorsqu’elle mêle simultanément urgence opérationnelle,
+          risque juridique ou financier, fragilité humaine et manque de lisibilité dans les données
+          ou dans l’organisation.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">Sécuriser</span>
+          <h3>Réduire le risque immédiat</h3>
+          <p>
+            Nous intervenons pour stopper les dérives, fiabiliser les flux,
+            rétablir les priorités et remettre les sujets sensibles sous pilotage.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Structurer</span>
+          <h3>Rendre l’organisation lisible</h3>
+          <p>
+            Nous clarifions les rôles, les process, les circuits de décision
+            et les responsabilités afin d’éliminer les zones grises.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Transformer</span>
+          <h3>Créer un avantage durable</h3>
+          <p>
+            Au-delà du traitement de crise, nous faisons émerger une organisation
+            plus robuste, plus autonome et mieux outillée pour la suite.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="dark-band">
+        <h2>La complexité devient stratégique lorsqu’elle est comprise, cadrée et traitée avec méthode.</h2>
+        <p>
+          Une entreprise qui traverse un contentieux, une désorganisation administrative,
+          un défaut de production des documents de gestion ou une tension managériale ne doit pas
+          seulement “tenir”. Elle doit retrouver un langage clair, des processus fiables
+          et une gouvernance capable de décider.
+        </p>
+      </div>
+    </section>
+
+    <section id="cas">
+      <div class="section-head">
+        <h2>Exemples de cas d’intervention</h2>
+        <p>
+          Voici une page orientée “situations complexes”, avec des exemples concrets
+          de problématiques que nous pouvons prendre en charge.
+        </p>
+      </div>
+
+      <div class="cases">
+        <article class="case">
+          <h3>Contentieux fiscal et contrôle sensible</h3>
+          <p>
+            Préparation des éléments, reprise du dossier, coordination des interlocuteurs,
+            sécurisation documentaire, remise à plat des flux et accompagnement de la direction
+            pour restaurer une position claire face à l’administration ou aux conseils.
+          </p>
+        </article>
+
+        <article class="case">
+          <h3>Autres contentieux juridiques ou sociaux</h3>
+          <p>
+            Gestion de litiges contractuels, dossiers prud’homaux, tensions sociales,
+            sujets IRP, conformité sociale et articulation entre direction, avocats
+            et fonctions internes pour éviter la dispersion.
+          </p>
+        </article>
+
+        <article class="case">
+          <h3>Problèmes managériaux</h3>
+          <p>
+            Encadrement fragilisé, conflits de périmètre, perte d’autorité, équipes
+            démobilisées ou mal coordonnées : nous rétablissons un cadre d’action,
+            des responsabilités assumées et une ligne de management compréhensible.
+          </p>
+        </article>
+
+        <article class="case">
+          <h3>Organisation comptable dégradée</h3>
+          <p>
+            Comptabilité désorganisée, clôtures tardives, balance peu fiable,
+            comptabilité externalisée mal reprise, facturation non maîtrisée,
+            intercos insuffisamment suivies : nous remettons l’architecture comptable en ordre.
+          </p>
+        </article>
+
+        <article class="case">
+          <h3>Production des documents de gestion insuffisante</h3>
+          <p>
+            Budgets absents, reportings peu lisibles, tableaux de bord incomplets,
+            indicateurs non fiabilisés, rentabilité mal suivie : nous reconstruisons
+            les outils qui redonnent une lecture claire à l’activité.
+          </p>
+        </article>
+
+        <article class="case">
+          <h3>Transition, restructuration ou fermeture de site</h3>
+          <p>
+            En contexte de réorganisation lourde, nous sécurisons les fonctions support,
+            la gouvernance opérationnelle, les sujets RH, les flux financiers et la continuité
+            de pilotage pour conduire le changement sans désordre subi.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Ce que notre intervention apporte concrètement</h2>
+        <p>
+          Dans les situations complexes, l’enjeu n’est pas seulement de produire une analyse.
+          Il s’agit de remettre l’entreprise en capacité de fonctionner proprement.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">Direction</span>
+          <h3>Une lecture claire pour décider</h3>
+          <p>
+            La direction retrouve des informations exploitables, des arbitrages mieux préparés
+            et une hiérarchie des urgences plus lisible.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Équipes</span>
+          <h3>Un cadre plus stable</h3>
+          <p>
+            Les équipes savent qui décide, selon quel périmètre, avec quels process
+            et dans quel calendrier d’exécution.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Entreprise</span>
+          <h3>Une structure plus robuste</h3>
+          <p>
+            Les risques sont mieux contenus, les flux mieux documentés,
+            et la fonction administrative, financière, sociale ou juridique retrouve sa cohérence.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="methode">
+      <div class="section-head">
+        <h2>Notre méthode d’intervention</h2>
+        <p>
+          Nous adaptons le niveau d’implication à la situation :
+          audit, accompagnement, mode projet ou management de transition.
+        </p>
+      </div>
+
+      <div class="method">
+        <article class="step">
+          <div class="step-number">1</div>
+          <h4>Clarifier</h4>
+          <p>Identifier le métier exercé, le périmètre confié, le mode d’intervention et les priorités réelles.</p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">2</div>
+          <h4>Sécuriser</h4>
+          <p>Stabiliser les urgences : flux, documents, équipes, interlocuteurs, calendrier et zones de risque.</p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">3</div>
+          <h4>Structurer</h4>
+          <p>Mettre en place des process lisibles, une production fiable et une gouvernance opérationnelle claire.</p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">4</div>
+          <h4>Transmettre</h4>
+          <p>Rendre l’organisation autonome, durablement plus solide et mieux préparée aux décisions futures.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="closing">
+        <h2>Transformer la complexité en avantage stratégique</h2>
+        <p>
+          Notre valeur ajoutée ne consiste pas seulement à intervenir dans des contextes difficiles.
+          Elle consiste à en faire un moment utile pour l’entreprise : un moment où l’on clarifie,
+          où l’on réorganise, où l’on fiabilise, et où l’on remet la structure en capacité d’agir
+          avec davantage de maîtrise, de lisibilité et de solidité.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer-actions" id="contact">
+      <a class="btn-metal" href="/">Voir toutes les offres</a>
+      <a class="btn-metal" href="https://www.levhec-advisory.com/contact/">Contacter LEVHEC ADVISORY</a>
+    </div>
+
+    <footer>
+      LEVHEC ADVISORY — Situations complexes, transition, structuration, gouvernance.
+    </footer>
+
+  </main>
+</body>
+</html>
