@@ -1,381 +1,281 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="LEVHEC ADVISORY vous accompagne dans l'exploitation de SAGE BI Reporting pour libérer vos données et renforcer vos décisions.">
 <meta name="robots" content="index,follow">
-
 <title>SAGE BI Reporting | LEVHEC ADVISORY</title>
 
 <style>
-
 :root{
---text:#222;
---muted:#5b5b5b;
---gold:#b08d57;
---gold-dark:#8f6f3f;
---white:#ffffff;
---border:#e8dfd2;
---shadow:0 18px 45px rgba(0,0,0,0.08);
---radius:22px;
+  --text:#222;
+  --muted:#5b5b5b;
+  --gold:#b08d57;
+  --gold-dark:#8f6f3f;
+  --white:#ffffff;
+  --border:#e8dfd2;
+  --shadow:0 18px 45px rgba(0,0,0,0.08);
+  --radius:22px;
 }
 
-*{
-box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
-html{
-scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
-
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-color:var(--text);
-line-height:1.6;
-
-background:linear-gradient(180deg,#f4f1ea 0%,#fbfaf7 100%);
-
-position:relative;
-overflow-x:hidden;
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);
+  line-height:1.6;
+  background:linear-gradient(180deg,#f4f1ea 0%,#fbfaf7 100%);
+  overflow-x:hidden;
 }
-
-/* FILIGRANE PANTHERE */
-
-body::after{
-
-content:"";
-
-position:fixed;
-
-right:-120px;
-top:50%;
-transform:translateY(-50%);
-
-width:900px;
-height:900px;
-
-background-image:url("Panthere_detouree.png");
-background-repeat:no-repeat;
-background-size:contain;
-
-opacity:0.05;
-
-pointer-events:none;
-
-z-index:0;
-
-}
-
-/* CONTENU */
 
 .wrapper{
-max-width:1120px;
-margin:auto;
-padding:32px 20px 60px;
-position:relative;
-z-index:2;
+  max-width:1120px;
+  margin:auto;
+  padding:32px 20px 60px;
+  position:relative;
 }
 
 .hero{
+  position:relative;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:calc(var(--radius) + 6px);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1.15fr 0.85fr;
+  min-height:640px;
+}
 
-background:var(--white);
-border:1px solid var(--border);
-border-radius:calc(var(--radius) + 6px);
-box-shadow:var(--shadow);
-
-overflow:hidden;
-
-display:grid;
-grid-template-columns:1.15fr 0.85fr;
-
-min-height:640px;
+/* PANTHERE VISIBLE DANS LE BLOC PRINCIPAL */
+.hero::after{
+  content:"";
+  position:absolute;
+  right:220px;
+  top:50%;
+  transform:translateY(-50%);
+  width:420px;
+  height:420px;
+  background:url("Panthere_detouree.png") no-repeat center;
+  background-size:contain;
+  opacity:0.16;
+  pointer-events:none;
+  z-index:1;
 }
 
 .hero-content{
-padding:64px 56px;
-display:flex;
-flex-direction:column;
-justify-content:center;
+  position:relative;
+  z-index:2;
+  padding:64px 56px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:transparent;
 }
 
 .eyebrow{
-
-display:inline-flex;
-align-items:center;
-
-padding:8px 14px;
-
-border-radius:999px;
-
-background:#f7f0e4;
-
-color:var(--gold-dark);
-
-font-size:13px;
-font-weight:700;
-
-letter-spacing:.04em;
-text-transform:uppercase;
-
-margin-bottom:22px;
+  display:inline-flex;
+  align-items:center;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#f7f0e4;
+  color:var(--gold-dark);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  margin-bottom:22px;
 }
 
 h1{
-
-margin:0 0 18px;
-
-font-size:clamp(2.1rem,4vw,4rem);
-
-line-height:1.08;
-
-letter-spacing:-.03em;
+  margin:0 0 18px;
+  font-size:clamp(2.1rem,4vw,4rem);
+  line-height:1.08;
+  letter-spacing:-.03em;
 }
 
 .intro{
-font-size:1.08rem;
-color:var(--muted);
-margin-bottom:28px;
+  font-size:1.08rem;
+  color:var(--muted);
+  margin-bottom:28px;
 }
 
 .questions{
-
-display:grid;
-gap:12px;
-
-margin:0 0 28px;
-padding:0;
-
-list-style:none;
+  display:grid;
+  gap:12px;
+  margin:0 0 28px;
+  padding:0;
+  list-style:none;
 }
 
 .questions li{
-
-background:#fbf8f2;
-
-border:1px solid #eee3d3;
-
-border-radius:14px;
-
-padding:14px 16px;
-
-font-weight:600;
+  background:#fbf8f2;
+  border:1px solid #eee3d3;
+  border-radius:14px;
+  padding:14px 16px;
+  font-weight:600;
 }
 
 .cta-row{
-
-display:flex;
-gap:14px;
-flex-wrap:wrap;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
 }
 
 .btn{
-
-display:inline-flex;
-
-align-items:center;
-justify-content:center;
-
-min-height:52px;
-
-padding:0 22px;
-
-border-radius:999px;
-
-text-decoration:none;
-
-font-weight:700;
-
-transition:.2s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:0 22px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.2s;
 }
 
 .btn-primary{
-
-background:var(--gold);
-color:white;
-
-box-shadow:0 10px 22px rgba(176,141,87,0.28);
+  background:var(--gold);
+  color:white;
+  box-shadow:0 10px 22px rgba(176,141,87,0.28);
 }
 
 .btn-primary:hover{
-
-background:var(--gold-dark);
-transform:translateY(-1px);
+  background:var(--gold-dark);
+  transform:translateY(-1px);
 }
 
 .btn-secondary{
-
-border:1px solid var(--border);
-background:white;
-color:var(--text);
+  border:1px solid var(--border);
+  background:white;
+  color:var(--text);
 }
 
 .hero-side{
-background:
-linear-gradient(160deg,#2e2a24 0%,#191714 100%),
-url("Panthere_detouree.png");
-
-background-repeat:no-repeat;
-background-position:center;
-background-size:420px;
-
-color:white;
-
-padding:56px 40px;
-
-display:flex;
-align-items:center;
-
-position:relative;
+  position:relative;
+  z-index:2;
+  background:linear-gradient(160deg,#2e2a24 0%,#191714 100%);
+  color:white;
+  padding:56px 40px;
+  display:flex;
+  align-items:center;
 }
 
 .card{
-
-background:rgba(255,255,255,.06);
-
-border:1px solid rgba(255,255,255,.14);
-
-border-radius:22px;
-
-padding:28px 24px;
-
-backdrop-filter:blur(6px);
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;
+  padding:28px 24px;
+  backdrop-filter:blur(6px);
 }
 
 .card h2{
-margin:0 0 18px;
-font-size:1.35rem;
+  margin:0 0 18px;
+  font-size:1.35rem;
 }
 
 .benefits{
-
-margin:0;
-padding:0;
-list-style:none;
-
-display:grid;
-gap:14px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:14px;
 }
 
 .benefits li{
-
-display:grid;
-
-grid-template-columns:24px 1fr;
-
-gap:12px;
+  display:grid;
+  grid-template-columns:24px 1fr;
+  gap:12px;
 }
 
 .benefits li::before{
-
-content:"→";
-
-color:#e3bf89;
-
-font-weight:700;
+  content:"→";
+  color:#e3bf89;
+  font-weight:700;
 }
 
 .closing{
-
-margin-top:22px;
-
-padding-top:20px;
-
-border-top:1px solid rgba(255,255,255,.16);
-
-font-weight:600;
+  margin-top:22px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.16);
+  font-weight:600;
 }
 
-/* BOUTONS BAS */
-
 .bottom-nav{
-
-display:flex;
-
-justify-content:center;
-
-gap:18px;
-
-margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:40px;
 }
 
 .nav-btn{
-
-display:inline-flex;
-
-align-items:center;
-justify-content:center;
-
-min-width:220px;
-min-height:54px;
-
-padding:0 26px;
-
-border-radius:999px;
-
-font-weight:700;
-
-text-decoration:none;
-
-color:#2b2b2b;
-
-background:linear-gradient(
-180deg,
-#f4e6c8 0%,
-#d4b06a 45%,
-#b88a3c 52%,
-#f2e0b4 100%
-);
-
-border:1px solid rgba(143,111,63,.55);
-
-box-shadow:
-inset 0 2px 2px rgba(255,255,255,.7),
-inset 0 -2px 4px rgba(120,85,35,.35),
-0 8px 18px rgba(0,0,0,.12);
-
-transition:.2s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:220px;
+  min-height:54px;
+  padding:0 26px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  color:#2b2b2b;
+  background:linear-gradient(180deg,#f4e6c8 0%,#d4b06a 45%,#b88a3c 52%,#f2e0b4 100%);
+  border:1px solid rgba(143,111,63,.55);
+  box-shadow:
+    inset 0 2px 2px rgba(255,255,255,.7),
+    inset 0 -2px 4px rgba(120,85,35,.35),
+    0 8px 18px rgba(0,0,0,.12);
+  transition:.2s;
 }
 
 .nav-btn:hover{
-
-transform:translateY(-2px);
-
-box-shadow:
-inset 0 2px 2px rgba(255,255,255,.72),
-inset 0 -2px 4px rgba(120,85,35,.35),
-0 12px 24px rgba(0,0,0,.16);
+  transform:translateY(-2px);
+  box-shadow:
+    inset 0 2px 2px rgba(255,255,255,.72),
+    inset 0 -2px 4px rgba(120,85,35,.35),
+    0 12px 24px rgba(0,0,0,.16);
 }
 
 @media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+  }
 
-.hero{
-grid-template-columns:1fr;
-}
+  .hero::after{
+    right:20px;
+    width:280px;
+    height:280px;
+    opacity:0.12;
+  }
 
-.hero-content,
-.hero-side{
-padding:36px 24px;
-}
-
+  .hero-content,
+  .hero-side{
+    padding:36px 24px;
+  }
 }
 
 @media(max-width:560px){
+  h1{
+    font-size:2rem;
+  }
 
-h1{
-font-size:2rem;
+  .nav-btn,
+  .btn{
+    width:100%;
+  }
+
+  .bottom-nav{
+    flex-direction:column;
+  }
+
+  .hero::after{
+    display:none;
+  }
 }
-
-.nav-btn,
-.btn{
-width:100%;
-}
-
-}
-
 </style>
 </head>
 
@@ -386,75 +286,53 @@ width:100%;
 <section class="hero">
 
 <div class="hero-content">
+  <span class="eyebrow">LEVHEC ADVISORY • SAGE BI Reporting</span>
 
-<span class="eyebrow">LEVHEC ADVISORY • SAGE BI Reporting</span>
+  <h1>
+    Vous êtes client SAGE ?<br>
+    Libérez enfin la valeur de vos données.
+  </h1>
 
-<h1>
-Vous êtes client SAGE ?<br>
-Libérez enfin la valeur de vos données.
-</h1>
+  <p class="intro">
+    SAGE BI Reporting est un outil puissant. Encore faut-il en exploiter tout le potentiel pour transformer vos données en informations utiles, lisibles et réellement actionnables.
+  </p>
 
-<p class="intro">
-SAGE BI Reporting est un outil puissant. Encore faut-il en exploiter tout le potentiel pour transformer vos données en informations utiles, lisibles et réellement actionnables.
-</p>
+  <ul class="questions">
+    <li>Souhaitez-vous libérer vos données ?</li>
+    <li>Connaissez-vous SAGE BI Reporting ?</li>
+    <li>En exploitez-vous toute sa puissance ?</li>
+  </ul>
 
-<ul class="questions">
-<li>Souhaitez-vous libérer vos données ?</li>
-<li>Connaissez-vous SAGE BI Reporting ?</li>
-<li>En exploitez-vous toute sa puissance ?</li>
-</ul>
-
-<div class="cta-row">
-
-<a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary" target="_blank">
-Demander un échange
-</a>
-
-<a href="#solutions" class="btn btn-secondary">
-Découvrir l’offre
-</a>
-
-</div>
-
+  <div class="cta-row">
+    <a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary" target="_blank">Demander un échange</a>
+    <a href="#solutions" class="btn btn-secondary">Découvrir l’offre</a>
+  </div>
 </div>
 
 <aside class="hero-side" id="solutions">
+  <div class="card">
+    <h2>Avec SAGE BI Reporting, nous vous aidons à :</h2>
 
-<div class="card">
+    <ul class="benefits">
+      <li>Interroger vos données en temps réel</li>
+      <li>Créer des reportings multi-logiciels</li>
+      <li>Enrichir et structurer vos données</li>
+      <li>Faciliter l’élaboration et les restitutions budgétaires</li>
+      <li>Mettre en place vos indicateurs clés</li>
+      <li>Donner de l’autonomie à vos équipes</li>
+    </ul>
 
-<h2>Avec SAGE BI Reporting, nous vous aidons à :</h2>
-
-<ul class="benefits">
-
-<li>Interroger vos données en temps réel</li>
-<li>Créer des reportings multi-logiciels</li>
-<li>Enrichir et structurer vos données</li>
-<li>Faciliter l’élaboration et les restitutions budgétaires</li>
-<li>Mettre en place vos indicateurs clés</li>
-<li>Donner de l’autonomie à vos équipes</li>
-
-</ul>
-
-<p class="closing">
-Reprenez la maîtrise de vos données et transformez-les en avantage compétitif.
-</p>
-
-</div>
-
+    <p class="closing">
+      Reprenez la maîtrise de vos données et transformez-les en avantage compétitif.
+    </p>
+  </div>
 </aside>
 
 </section>
 
 <div class="bottom-nav">
-
-<a class="nav-btn" href="/">
-Voir toutes les offres
-</a>
-
-<a class="nav-btn" href="https://www.levhec-advisory.com/contact/" target="_blank">
-Contact
-</a>
-
+  <a class="nav-btn" href="/">Voir toutes les offres</a>
+  <a class="nav-btn" href="https://www.levhec-advisory.com/contact/" target="_blank">Contact</a>
 </div>
 
 </main>
