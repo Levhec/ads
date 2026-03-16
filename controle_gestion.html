@@ -484,6 +484,44 @@ footer{
   background:#927f08;
 }
 
+/* BOUTONS FLOTTANTS */
+
+.floating-actions{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:9998;
+}
+
+.floating-btn{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:25px;
+  color:white;
+  background:linear-gradient(180deg, var(--gold), var(--gold-dark));
+  box-shadow:0 12px 26px rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.14);
+  transition:transform .2s ease, filter .2s ease;
+  cursor:pointer;
+}
+
+.floating-btn:hover{
+  transform:translateY(-2px) scale(1.03);
+  filter:brightness(1.04);
+}
+
+.floating-btn:focus{
+  outline:none;
+}
+
 @media (max-width: 980px){
   .hero{
     min-height:auto;
@@ -520,6 +558,18 @@ footer{
 
   .modal-box{
     padding:24px 18px;
+  }
+
+  .floating-actions{
+    right:14px;
+    bottom:14px;
+    gap:10px;
+  }
+
+  .floating-btn{
+    width:54px;
+    height:54px;
+    font-size:23px;
   }
 }
 </style>
@@ -711,7 +761,8 @@ footer{
       </p>
       <div class="cta-row" style="justify-content:center;">
         <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
-        <a href="https://www.levhec-advisory.com/" class="btn btn-secondary">Retour au site</a>
+        <a href="/" class="btn btn-secondary">Voir toutes les offres</a>
+        <a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank" rel="noopener">Consulter le site LEVHEC ADVISORY</a>
       </div>
     </div>
   </div>
@@ -720,6 +771,11 @@ footer{
 <footer>
   LEVHEC ADVISORY — Management de transition • Cabinet de conseil opérationnel
 </footer>
+
+<div class="floating-actions" aria-label="Actions rapides">
+  <button type="button" class="floating-btn" onclick="openContactModal()" aria-label="Ouvrir le formulaire de contact" title="Être recontacté">✉</button>
+  <a href="tel:+33184200660" class="floating-btn" aria-label="Appeler le 01 84 20 06 60" title="01 84 20 06 60">☎</a>
+</div>
 
 <div id="contactModal" class="modal" aria-hidden="true">
   <div class="modal-box">
