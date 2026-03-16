@@ -20,7 +20,7 @@ body{
 
 .container{
     text-align:center;
-    max-width:500px;
+    max-width:900px;
     padding:40px;
 }
 
@@ -34,10 +34,22 @@ p{
     color:#cfcfcf;
 }
 
-.buttons{
+.columns{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.column{
     display:flex;
     flex-direction:column;
     gap:15px;
+}
+
+.column-title{
+    font-size:14px;
+    color:#b39b0a;
+    margin-bottom:10px;
 }
 
 .button{
@@ -52,6 +64,10 @@ p{
 
 .button:hover{
     background:#d4b915;
+}
+
+.bottom{
+    margin-top:40px;
 }
 
 .footer{
@@ -71,7 +87,15 @@ p{
 
 <p>Réorganisez la Gestion de votre Entreprise</p>
 
-<div class="buttons">
+<div class="columns">
+
+<!-- COLONNE 1 -->
+<div class="column">
+
+<div class="column-title">
+Le contrôle de gestion<br>
+et la gouvernance des données
+</div>
 
 <a class="button" href="gouvernance_donnees.html">
 Gouvernance des données
@@ -89,11 +113,20 @@ Contrôle de Gestion
 Contrôle de Gestion Flash
 </a>
 
+</div>
+
+<!-- COLONNE 2 -->
+<div class="column">
+
+<div class="column-title">
+Le management de transition<br>
+et gestion de projets
+</div>
 
 <a class="button" href="management_transition.html">
 Management de transition
 </a>
-    
+
 <a class="button" href="situations_complexes.html">
 Situations complexes
 </a>
@@ -106,9 +139,20 @@ DAF en Transition
 DRH en Transition
 </a>
 
+</div>
+
+</div>
+
+<div class="bottom">
+
 <a class="button" href="https://www.levhec-advisory.com" target="_blank">
-Découvrir le Site LEVHEC-ADVISORY.com
+Découvrir le site LEVHEC-ADVISORY.com
 </a>
+
+</div>
+
+<div class="footer">
+LEVHEC Advisory
 </div>
 
 </div>
