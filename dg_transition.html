@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Direction générale de transition : reprise de direction d’entreprise, de filiale ou de site industriel dans les moments décisifs." />
+  <meta name="robots" content="index,follow" />
+  <title>Direction Générale de Transition | LEVHEC ADVISORY</title>
+
+  <style>
+    :root{
+      --bg:#f4f1ea;
+      --text:#1f1f1f;
+      --muted:#5f5a52;
+      --gold:#b08d57;
+      --gold-dark:#8f6f3f;
+      --card:#ffffff;
+      --border:#e6dccd;
+      --shadow:0 18px 45px rgba(0,0,0,.08);
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#f8f5ef 0%, #f1ece3 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit;text-decoration:none;}
+
+    .wrap{
+      width:min(1120px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .top{
+      padding:24px 0 0;
+    }
+
+    .home{
+      display:inline-block;
+      color:var(--gold-dark);
+      font-weight:600;
+      letter-spacing:.02em;
+    }
+
+    .hero{
+      padding:28px 0 26px;
+    }
+
+    .hero-card{
+      background:linear-gradient(135deg, rgba(176,141,87,.12), rgba(255,255,255,.9));
+      border:1px solid var(--border);
+      border-radius:26px;
+      padding:56px 42px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:auto -60px -60px auto;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(176,141,87,.22) 0%, rgba(176,141,87,0) 70%);
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(176,141,87,.14);
+      color:var(--gold-dark);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(32px, 5vw, 58px);
+      line-height:1.08;
+      letter-spacing:-.03em;
+      max-width:900px;
+    }
+
+    .intro{
+      margin:22px 0 0;
+      max-width:840px;
+      font-size:20px;
+      color:var(--muted);
+    }
+
+    .signature{
+      margin-top:24px;
+      font-size:16px;
+      color:var(--gold-dark);
+      font-weight:700;
+    }
+
+    main{
+      padding:10px 0 60px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:22px;
+    }
+
+    .card{
+      grid-column:span 12;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:30px 28px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h2{
+      margin:0 0 14px;
+      font-size:28px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .card + .card p{
+      margin-top:0;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    ul{
+      margin:0;
+      padding-left:20px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    li + li{margin-top:10px;}
+
+    .quote{
+      background:#252525;
+      color:#f2ede3;
+      border:none;
+    }
+
+    .quote h2,
+    .quote p{
+      color:#f2ede3;
+    }
+
+    .quote strong{
+      color:#d9bf88;
+    }
+
+    .cta{
+      text-align:center;
+      padding:38px 24px;
+    }
+
+    .cta p{
+      max-width:760px;
+      margin:0 auto 24px;
+    }
+
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .button{
+      display:inline-block;
+      min-width:220px;
+      padding:15px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:all .2s ease;
+      border:1px solid var(--gold);
+    }
+
+    .button.primary{
+      background:linear-gradient(180deg, var(--gold), var(--gold-dark));
+      color:#fff;
+      box-shadow:0 10px 24px rgba(176,141,87,.28);
+    }
+
+    .button.secondary{
+      background:#fff;
+      color:var(--gold-dark);
+    }
+
+    .button:hover{
+      transform:translateY(-2px);
+    }
+
+    .footer-note{
+      text-align:center;
+      color:#7a7368;
+      font-size:14px;
+      margin:26px 0 8px;
+    }
+
+    @media (max-width: 860px){
+      .hero-card{padding:40px 24px;}
+      .split{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a href="/" class="home">← Toutes les offres LEVHEC ADVISORY</a>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Direction Générale de Transition</span>
+        <h1>Prendre la direction dans les moments décisifs</h1>
+        <p class="intro">
+          Lorsqu’une entreprise, une filiale ou un site industriel traverse une phase sensible,
+          la direction ne peut rester vacante ni hésitante. Une prise de commandement claire et immédiate
+          devient alors indispensable pour sécuriser l’organisation, restaurer la capacité d’action et conduire le changement.
+        </p>
+        <div class="signature">LEVHEC ADVISORY • Faire de la complexité un avantage stratégique</div>
+      </div>
+    </section>
+
+    <main>
+      <div class="grid">
+        <section class="card">
+          <h2>Quand une direction de transition devient nécessaire</h2>
+          <div class="split">
+            <p>
+              Certaines situations exigent une direction opérationnelle immédiate : départ imprévu d’un dirigeant,
+              restructuration, tensions sociales, fermeture ou redimensionnement d’un site, préparation d’une cession,
+              rétablissement de la gouvernance ou besoin de remettre une organisation en mouvement.
+            </p>
+            <ul>
+              <li>Entreprise ou filiale en phase de transformation</li>
+              <li>Site industriel à reprendre ou à réorganiser</li>
+              <li>Crise managériale, sociale ou organisationnelle</li>
+              <li>Environnement sensible nécessitant des décisions rapides</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Reprendre la direction et sécuriser l’organisation</h2>
+          <div class="split">
+            <p>
+              La mission consiste à reprendre la conduite opérationnelle de l’entreprise tout en assurant la cohérence
+              des fonctions clés. Il s’agit de redonner de la lisibilité aux décisions, de clarifier les responsabilités,
+              de remettre l’organisation sous contrôle et de restaurer un fonctionnement solide.
+            </p>
+            <ul>
+              <li>Coordination des fonctions finance, RH, juridique et opérationnelles</li>
+              <li>Encadrement des équipes et rétablissement des circuits de décision</li>
+              <li>Relations avec actionnaires, investisseurs, conseils et partenaires</li>
+              <li>Sécurisation des choix stratégiques et de leur exécution</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card quote">
+          <h2>Une direction de transition n’assure pas seulement la continuité.</h2>
+          <p>
+            Elle intervient lorsque l’entreprise a besoin de <strong>reprendre la main</strong>,
+            de restaurer son autorité de pilotage et de traverser une phase exigeante avec méthode,
+            discernement et capacité de décision.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Une intervention opérationnelle, structurante et immédiatement engagée</h2>
+          <div class="split">
+            <ul>
+              <li>Immersion rapide dans l’organisation</li>
+              <li>Analyse des processus, responsabilités et points de blocage</li>
+              <li>Clarification du cadre d’action et des priorités</li>
+              <li>Accompagnement des équipes dans la mise en œuvre</li>
+            </ul>
+            <p>
+              La direction générale de transition doit conjuguer présence, autorité et pragmatisme.
+              Elle agit au contact du réel, au plus près des équipes et des enjeux, pour stabiliser l’existant,
+              arbitrer quand il le faut et préparer la suite dans de bonnes conditions.
+            </p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Des contextes souvent complexes</h2>
+          <div class="split">
+            <p>
+              Les missions de direction générale de transition s’inscrivent fréquemment dans des environnements tendus :
+              restructuration d’activité, fermeture de site, réorganisation administrative et financière, encadrement de plans sociaux,
+              pilotage d’une filiale ou d’un site industriel, gestion de contentieux ou de situations à forte exposition.
+            </p>
+            <p>
+              Dans ces moments, l’expérience, la maîtrise des environnements imparfaits et la capacité à agir dans l’interdépendance
+              deviennent déterminantes pour rétablir une dynamique crédible et durable.
+            </p>
+          </div>
+        </section>
+
+        <section class="card cta">
+          <h2>Stabiliser l’entreprise. Restaurer le cap. Préparer la suite.</h2>
+          <p>
+            La mission vise à rétablir un fonctionnement clair, sécuriser les décisions essentielles
+            et transmettre une organisation plus lisible, plus solide et prête à poursuivre son développement.
+          </p>
+          <div class="buttons">
+            <a href="/" class="button secondary">Voir toutes les offres</a>
+            <a href="https://www.levhec-advisory.com/contact/" class="button primary">Contacter LEVHEC ADVISORY</a>
+          </div>
+        </section>
+      </div>
+
+      <p class="footer-note">LEVHEC ADVISORY — Management de Transition & Conseil Opérationnel</p>
+    </main>
+  </div>
+</body>
+</html>
