@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DRH en transition spécialisée PSE : pilotage des plans sociaux, dialogue social, relations CSE, DREETS, coordination juridique et accompagnement des salariés." />
+  <meta name="robots" content="index,follow" />
+  <title>DRH en transition | Spécialiste PSE | LEVHEC ADVISORY</title>
+
+  <style>
+    :root{
+      --bg:#f5f1ea;
+      --text:#222;
+      --muted:#5f5a52;
+      --gold:#b08d57;
+      --gold-dark:#8f6f3f;
+      --dark:#1f1f1f;
+      --white:#ffffff;
+      --border:#ded6ca;
+      --shadow:0 18px 45px rgba(0,0,0,.10);
+      --radius:18px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#f7f3ed 0%, #efe7db 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .wrap{
+      width:min(1100px,92%);
+      margin:0 auto;
+    }
+
+    .hero{
+      padding:70px 0 40px;
+    }
+
+    .hero-card{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:28px;
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-left{
+      padding:48px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:16px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#f3eadb;
+      color:var(--gold-dark);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-size:clamp(32px,5vw,56px);
+      line-height:1.05;
+      letter-spacing:-0.03em;
+    }
+
+    .lead{
+      font-size:18px;
+      color:var(--muted);
+      max-width:700px;
+      margin-bottom:28px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+      color:var(--white);
+      box-shadow:0 10px 20px rgba(176,141,87,.25);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.03);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--border);
+      color:var(--text);
+      background:var(--white);
+    }
+
+    .btn-secondary:hover{
+      background:#faf8f4;
+    }
+
+    .hero-right{
+      background:linear-gradient(160deg,#2a2a2a 0%, #111 100%);
+      color:var(--white);
+      padding:42px 34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .hero-right h2{
+      margin:0 0 18px;
+      font-size:24px;
+      line-height:1.2;
+    }
+
+    .hero-right ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .hero-right li{
+      padding:12px 0;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      color:#ece7dd;
+    }
+
+    section{
+      padding:26px 0;
+    }
+
+    .section-title{
+      margin:0 0 18px;
+      font-size:30px;
+      line-height:1.15;
+      letter-spacing:-0.02em;
+    }
+
+    .intro{
+      color:var(--muted);
+      font-size:18px;
+      max-width:900px;
+      margin-bottom:24px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:26px;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+    }
+
+    .card h3{
+      margin:0 0 12px;
+      font-size:20px;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .highlight{
+      background:linear-gradient(180deg,#1f1f1f 0%, #111 100%);
+      color:var(--white);
+      border-radius:20px;
+      padding:36px;
+      box-shadow:var(--shadow);
+    }
+
+    .highlight p{
+      margin:0;
+      font-size:19px;
+      color:#e9e2d7;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .step{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+    }
+
+    .step .num{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      background:#f2e7d3;
+      color:var(--gold-dark);
+      font-weight:700;
+      margin-bottom:14px;
+    }
+
+    .step h4{
+      margin:0 0 10px;
+      font-size:18px;
+    }
+
+    .step p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .cta{
+      text-align:center;
+      padding:20px 0 70px;
+    }
+
+    .cta-box{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:38px 24px;
+      box-shadow:var(--shadow);
+    }
+
+    .cta-box p{
+      max-width:760px;
+      margin:0 auto 22px;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .footer-note{
+      text-align:center;
+      color:#7b746a;
+      font-size:14px;
+      padding:0 0 40px;
+    }
+
+    @media (max-width: 980px){
+      .hero-card,
+      .grid,
+      .steps{
+        grid-template-columns:1fr;
+      }
+
+      .hero-left,
+      .hero-right{
+        padding:30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-left">
+          <span class="eyebrow">DRH en transition • spécialité PSE</span>
+          <h1>Piloter un plan social exige bien plus qu’une compétence RH générale.</h1>
+          <p class="lead">
+            Un PSE mobilise un savoir-faire rare : maîtrise de la procédure, dialogue social,
+            coordination juridique, relations avec le CSE et la DREETS, sécurisation du calendrier
+            et accompagnement humain des salariés jusqu’à leur départ.
+          </p>
+          <p class="lead">
+            En période sensible, la DRH en transition devient le point d’équilibre entre la direction,
+            les avocats, les représentants du personnel et les équipes concernées.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary">Contacter LEVHEC ADVISORY</a>
+            <a href="/" class="btn btn-secondary">Voir toutes les offres</a>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <h2>Une intervention décisive sur les sujets les plus sensibles</h2>
+          <ul>
+            <li>Préparation et déploiement du PSE</li>
+            <li>Encadrement des affaires sociales</li>
+            <li>Relations avec le CSE et les représentants du personnel</li>
+            <li>Interface avec la DREETS</li>
+            <li>Courroie de transmission entre direction, avocats et salariés</li>
+            <li>Accompagnement des licenciements et sécurisation de la procédure</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Pourquoi un PSE demande une expérience réelle</h2>
+      <p class="intro">
+        L’application d’un plan de sauvegarde de l’emploi ne s’improvise pas. Elle impose une lecture
+        précise des enjeux sociaux, juridiques, budgétaires et organisationnels. Chaque étape compte :
+        la qualité du dialogue, la rigueur documentaire, le bon rythme de la procédure, la cohérence
+        du discours tenu aux parties prenantes et la capacité à garder une ligne claire dans un contexte
+        souvent chargé en tension.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Maîtrise de la procédure</h3>
+          <p>
+            Un PSE suppose de structurer les travaux, d’anticiper les points de vigilance et de sécuriser
+            chaque phase pour éviter les erreurs de méthode ou de calendrier.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Gestion du dialogue social</h3>
+          <p>
+            La relation avec le CSE exige de la méthode, de l’écoute, de la fermeté et une capacité à
+            conduire des échanges sensibles sans perdre la cohérence d’ensemble.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Dimension humaine</h3>
+          <p>
+            Au-delà de la procédure, un plan social engage des parcours de vie. L’accompagnement des salariés
+            doit être traité avec clarté, respect et professionnalisme.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="highlight">
+        <p>
+          Une DRH en transition spécialisée PSE doit savoir tenir la procédure, encadrer les affaires sociales,
+          faire circuler l’information entre les bons interlocuteurs et maintenir une exécution solide dans un
+          moment où l’entreprise est particulièrement exposée.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Notre valeur ajoutée dans un PSE</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Encadrement des affaires sociales</h3>
+          <p>
+            Nous assurons le pilotage du dossier social dans sa globalité, en veillant à la cohérence des actes,
+            des échanges et des décisions prises tout au long du processus.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Représentation et coordination</h3>
+          <p>
+            Nous intervenons au contact du CSE, de la DREETS et des conseils juridiques pour faire avancer le
+            dossier avec discipline, lisibilité et maîtrise des enjeux.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Interface entre les parties</h3>
+          <p>
+            La direction, les avocats et les salariés n’ont ni le même rôle ni le même langage. Nous faisons le
+            lien entre ces univers pour fluidifier l’exécution et éviter les ruptures d’information.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Une intervention structurée</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h4>Prise en main rapide</h4>
+          <p>
+            Analyse du contexte, du risque social, des contraintes juridiques et du calendrier.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <h4>Organisation du dossier</h4>
+          <p>
+            Structuration des échanges, des responsabilités, des documents et du pilotage opérationnel.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <h4>Conduite de la procédure</h4>
+          <p>
+            Animation du dialogue social, coordination des interlocuteurs et suivi rigoureux des étapes.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="num">4</div>
+          <h4>Accompagnement humain</h4>
+          <p>
+            Suivi des salariés concernés, sécurisation des départs et maintien d’un cadre de confiance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-box">
+        <h2 class="section-title">Un PSE se conduit avec méthode, expérience et sang-froid</h2>
+        <p>
+          Quand l’entreprise traverse une phase sociale sensible, elle a besoin d’un pilotage expérimenté,
+          capable de sécuriser la procédure, d’encadrer les affaires sociales et de porter une exécution claire
+          jusqu’à son aboutissement.
+        </p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary">Parler de votre situation</a>
+          <a href="/" class="btn btn-secondary">Retour aux offres</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      LEVHEC ADVISORY • DRH en transition • PSE • Affaires sociales • Dialogue social
+    </div>
+
+  </main>
+
+</body>
+</html>
