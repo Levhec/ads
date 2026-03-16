@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Direction administrative et financière en management de transition : reprise en main rapide du service comptable et financier, réorganisation, fiabilisation, rentabilité, financement et transmission." />
+  <meta name="robots" content="index,follow" />
+  <title>Direction Administrative et Financière de Transition | LEVHEC ADVISORY</title>
+
+  <style>
+    :root{
+      --bg:#f6f3ee;
+      --text:#1f1f1f;
+      --muted:#5f5a52;
+      --gold:#b08d57;
+      --gold-dark:#8b6d42;
+      --white:#ffffff;
+      --line:#e7dfd4;
+      --shadow:0 18px 45px rgba(0,0,0,.10);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(176,141,87,.10), transparent 30%),
+        linear-gradient(180deg, #faf8f4 0%, #f3eee7 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .wrap{
+      width:min(1100px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:48px 0;
+    }
+
+    .card{
+      width:100%;
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+    }
+
+    .left{
+      padding:56px 52px;
+    }
+
+    .right{
+      background:
+        linear-gradient(180deg, rgba(20,20,20,.88), rgba(36,36,36,.94)),
+        linear-gradient(135deg, #2b2b2b 0%, #191919 100%);
+      color:#f4efe7;
+      padding:56px 40px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(176,141,87,.12);
+      color:var(--gold-dark);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-size:clamp(34px, 5vw, 58px);
+      line-height:1.05;
+      letter-spacing:-0.03em;
+    }
+
+    .intro{
+      font-size:19px;
+      color:var(--muted);
+      margin:0 0 26px;
+      max-width:720px;
+    }
+
+    .lead{
+      font-size:18px;
+      margin:0 0 28px;
+    }
+
+    .points{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin:30px 0 34px;
+    }
+
+    .point{
+      background:#fbf9f6;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px 16px 15px;
+      font-size:15px;
+    }
+
+    .point strong{
+      display:block;
+      margin-bottom:5px;
+      color:#222;
+      font-size:15px;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:600;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(180deg, var(--gold), var(--gold-dark));
+      color:white;
+      box-shadow:0 12px 24px rgba(176,141,87,.25);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.03);
+    }
+
+    .btn-secondary{
+      border:1px solid #d6ccbf;
+      color:var(--text);
+      background:white;
+    }
+
+    .btn-secondary:hover{
+      background:#faf7f2;
+    }
+
+    .side-title{
+      margin:0 0 18px;
+      font-size:28px;
+      line-height:1.15;
+      color:#fff;
+    }
+
+    .side-text{
+      margin:0 0 22px;
+      color:#ddd6cb;
+      font-size:16px;
+    }
+
+    .checklist{
+      display:grid;
+      gap:12px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .checklist li{
+      position:relative;
+      padding-left:20px;
+      color:#efe8dc;
+      font-size:15px;
+    }
+
+    .checklist li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold);
+      font-size:20px;
+      line-height:1;
+    }
+
+    .signature{
+      margin-top:28px;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.12);
+      color:#cfc6b8;
+      font-size:14px;
+    }
+
+    @media (max-width: 900px){
+      .card{
+        grid-template-columns:1fr;
+      }
+
+      .left,.right{
+        padding:38px 26px;
+      }
+
+      .points{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        min-height:auto;
+        padding:22px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="wrap">
+      <div class="card">
+        <div class="left">
+          <span class="badge">Management de transition</span>
+          <h1>Direction administrative et financière à prise en main immédiate</h1>
+          <p class="intro">
+            Reprendre un service comptable et financier à la volée, le réorganiser rapidement
+            et le remettre en ordre de marche au service de l’entreprise.
+          </p>
+
+          <p class="lead">
+            LEVHEC ADVISORY intervient pour sécuriser la fonction administrative et financière,
+            fluidifier les process de travail, fiabiliser la production des états financiers
+            et contribuer directement à la création de valeur.
+          </p>
+
+          <div class="points">
+            <div class="point">
+              <strong>Reprise en main rapide</strong>
+              Stabilisation du service comptable et financier dès l’arrivée en mission.
+            </div>
+            <div class="point">
+              <strong>Réorganisation des process</strong>
+              Simplification des circuits internes et amélioration de la qualité d’exécution.
+            </div>
+            <div class="point">
+              <strong>Performance & rentabilité</strong>
+              Analyse des leviers d’optimisation, meilleure lecture des marges et du cash.
+            </div>
+            <div class="point">
+              <strong>Risques maîtrisés</strong>
+              Anticipation des conflits, contentieux et fragilités administratives ou financières.
+            </div>
+            <div class="point">
+              <strong>Financement de l’entreprise</strong>
+              Appui sur les besoins de trésorerie, les financements et la relation partenaires.
+            </div>
+            <div class="point">
+              <strong>Transmission durable</strong>
+              Formation d’un successeur et remise d’un service structuré, autonome et prêt à l’emploi.
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary">Être rappelé</a>
+            <a href="https://www.levhec-advisory.com/" class="btn btn-secondary">Découvrir LEVHEC ADVISORY</a>
+          </div>
+        </div>
+
+        <div class="right">
+          <h2 class="side-title">Un DAF de transition pour remettre l’entreprise en mouvement</h2>
+          <p class="side-text">
+            Au-delà de la continuité, l’intervention vise à restaurer l’efficacité,
+            produire une information financière fiable et préparer un fonctionnement durable.
+          </p>
+
+          <ul class="checklist">
+            <li>Prendre en main l’équipe sans délai</li>
+            <li>Réorganiser les méthodes et les responsabilités</li>
+            <li>Fiabiliser comptes, reporting et calendrier financier</li>
+            <li>Améliorer la rentabilité et soutenir le financement</li>
+            <li>Limiter les risques opérationnels, sociaux, fiscaux et contentieux</li>
+            <li>Former les équipes et transmettre un cadre clair</li>
+          </ul>
+
+          <div class="signature">
+            <strong>LEVHEC ADVISORY</strong><br>
+            Direction administrative et financière en management de transition
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
