@@ -7,93 +7,160 @@
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-background:#2B2B2B;
-color:#ECE8DF;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:#2B2B2B;
+    color:#ECE8DF;
+    min-height:100vh;
 }
 
 .container{
-text-align:center;
-max-width:1050px;
-padding:60px 40px;
+    text-align:center;
+    max-width:1100px;
+    margin:0 auto;
+    padding:48px 20px 36px;
 }
 
 h1{
-margin-bottom:10px;
-font-weight:500;
-letter-spacing:1px;
+    margin:0 0 10px;
+    font-weight:500;
+    letter-spacing:1px;
+    font-size:32px;
 }
 
 p{
-margin-bottom:50px;
-color:#cfcfcf;
-font-size:18px;
+    margin:0 0 40px;
+    color:#cfcfcf;
+    font-size:18px;
+    line-height:1.5;
 }
 
 .columns{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:45px;
-margin-bottom:20px;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    align-items:start;
 }
 
 .column{
-display:flex;
-flex-direction:column;
-gap:15px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 }
 
 .column-title{
-font-size:14px;
-color:#b39b0a;
-margin-bottom:12px;
-letter-spacing:0.5px;
+    font-size:15px;
+    color:#b39b0a;
+    margin-bottom:8px;
+    line-height:1.4;
+    min-height:48px;
 }
 
 .button{
-text-decoration:none;
-padding:16px;
-border-radius:8px;
-font-size:16px;
-color:white;
-
-background:linear-gradient(145deg,#b39b0a,#8f7c06);
-
-box-shadow:
-0 3px 6px rgba(0,0,0,0.35),
-inset 0 1px 0 rgba(255,255,255,0.25);
-
-transition:all .25s ease;
+    display:block;
+    text-decoration:none;
+    padding:16px 14px;
+    border-radius:10px;
+    font-size:16px;
+    color:white;
+    line-height:1.35;
+    background:linear-gradient(145deg,#b39b0a,#8f7c06);
+    box-shadow:
+        0 3px 6px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.22);
+    transition:all .25s ease;
 }
 
 .button:hover{
-background:linear-gradient(145deg,#d4b915,#a8930c);
-transform:translateY(-2px);
-box-shadow:
-0 8px 18px rgba(0,0,0,0.45),
-inset 0 1px 0 rgba(255,255,255,0.35);
+    background:linear-gradient(145deg,#d4b915,#a8930c);
+    transform:translateY(-2px);
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.35);
 }
 
 .bottom{
-margin-top:55px;
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
 }
 
 .bottom .button{
-font-size:17px;
-padding:18px 28px;
+    padding:18px 26px;
+    font-size:17px;
+    max-width:100%;
 }
 
 .footer{
-margin-top:35px;
-font-size:12px;
-color:#888;
-line-height:1.6;
+    margin-top:28px;
+    font-size:12px;
+    color:#888;
+    line-height:1.7;
+}
+
+/* Tablette */
+@media (max-width: 980px){
+    .columns{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px){
+    .container{
+        padding:32px 16px 28px;
+    }
+
+    h1{
+        font-size:26px;
+        line-height:1.2;
+    }
+
+    p{
+        font-size:16px;
+        margin-bottom:28px;
+    }
+
+    .columns{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+    .column{
+        gap:12px;
+    }
+
+    .column-title{
+        min-height:auto;
+        font-size:15px;
+        margin-bottom:6px;
+    }
+
+    .button{
+        font-size:15px;
+        padding:15px 12px;
+        border-radius:9px;
+    }
+
+    .bottom{
+        margin-top:28px;
+    }
+
+    .bottom .button{
+        width:100%;
+        font-size:16px;
+        padding:16px 14px;
+    }
+
+    .footer{
+        margin-top:22px;
+        font-size:11px;
+    }
 }
 
 </style>
@@ -103,101 +170,89 @@ line-height:1.6;
 
 <div class="container">
 
-<h1>LEVHEC ADVISORY</h1>
+    <h1>LEVHEC ADVISORY</h1>
 
-<p>Arrêtez de Reporter, Réorganisez la Gestion de votre Entreprise</p>
+    <p>Arrêtez de Reporter, Réorganisez la Gestion de votre Entreprise</p>
 
-<div class="columns">
+    <div class="columns">
 
-<div class="column">
+        <div class="column">
+            <div class="column-title">
+                Le contrôle de gestion<br>
+                et la gouvernance des données
+            </div>
 
-<div class="column-title">
-Le contrôle de gestion<br>
-et la gouvernance des données
-</div>
+            <a class="button" href="gouvernance_donnees.html">
+                Gouvernance des données
+            </a>
 
-<a class="button" href="gouvernance_donnees.html">
-Gouvernance des données
-</a>
+            <a class="button" href="sagebi.html">
+                SAGE BI Reporting
+            </a>
 
-<a class="button" href="sagebi.html">
-SAGE BI Reporting
-</a>
+            <a class="button" href="controle_gestion.html">
+                Contrôle de Gestion
+            </a>
 
-<a class="button" href="controle_gestion.html">
-Contrôle de Gestion
-</a>
+            <a class="button" href="ctrl_gestion.html">
+                Contrôle de Gestion Flash
+            </a>
+        </div>
 
-<a class="button" href="ctrl_gestion.html">
-Contrôle de Gestion Flash
-</a>
+        <div class="column">
+            <div class="column-title">
+                Le management de transition<br>
+                et la gestion de projet
+            </div>
 
-</div>
+            <a class="button" href="management_transition.html">
+                Management de transition
+            </a>
 
+            <a class="button" href="situations_complexes.html">
+                Gestion des Situations complexes
+            </a>
 
-<div class="column">
+            <a class="button" href="daf_transition.html">
+                DAF en Transition
+            </a>
 
-<div class="column-title">
-Le management de transition<br>
-et la gestion de projet
-</div>
+            <a class="button" href="drh_transition.html">
+                DRH en Transition
+            </a>
+        </div>
 
-<a class="button" href="management_transition.html">
-Management de transition
-</a>
+        <div class="column">
+            <div class="column-title">
+                La Gouvernance<br>
+                et la direction d'entreprise
+            </div>
 
-<a class="button" href="situations_complexes.html">
-Gestion des Situations complexes
-</a>
+            <a class="button" href="dg_transition.html">
+                Direction Générale
+            </a>
 
-<a class="button" href="daf_transition.html">
-DAF en Transition
-</a>
+            <a class="button" href="dg_transition_short.html">
+                Direction Générale (VS)
+            </a>
 
-<a class="button" href="drh_transition.html">
-DRH en Transition
-</a>
+            <a class="button" href="secretaire_general.html">
+                Secrétariat Général
+            </a>
+        </div>
 
-</div>
+    </div>
 
+    <div class="bottom">
+        <a class="button" href="https://www.levhec-advisory.com" target="_blank">
+            Découvrir le site LEVHEC-ADVISORY.com
+        </a>
+    </div>
 
-<div class="column">
-
-<div class="column-title">
-La Gouvernance<br>
-et la direction d'entreprise
-</div>
-
-<a class="button" href="dg_transition.html">
-Direction Générale
-</a>
-
-<a class="button" href="dg_transition_short.html">
-Direction Générale (VS)
-</a>
-
-<a class="button" href="secretaire_general.html">
-Secrétariat Général
-</a>
-
-</div>
-
-</div>
-
-
-<div class="bottom">
-
-<a class="button" href="https://www.levhec-advisory.com" target="_blank">
-Découvrir le site LEVHEC-ADVISORY.com
-</a>
-
-</div>
-
-
-<div class="footer">
-<div>LEVHEC Advisory, le Cabinet de Management de Transition et de Conseil Opérationnel</div>
-<div>DATA • FINANCE • MANAGEMENT • STRATEGIE</div>
-</div>
+    <div class="footer">
+        <div>LEVHEC Advisory, le Cabinet de Management de Transition et de Conseil Opérationnel</div>
+        <div>DATA • FINANCE • MANAGEMENT • STRATEGIE</div>
+    </div>
 
 </div>
 
