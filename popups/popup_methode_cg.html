@@ -216,9 +216,12 @@ body{
   </div>
 
   <div class="popup-footer">
-    <a href="popup-contact.html" class="cta-btn" target="_top">Etre contacté</a>
-    <div class="note">Réponse rapide et échange sans engagement.</div>
-  </div>
+  <a href="#" class="cta-btn"
+     onclick="parent.closePopup(); parent.openPopup('popup-contact.html'); return false;">
+     Etre contacté
+  </a>
+  <div class="note">Réponse rapide et échange sans engagement.</div>
+</div>
 </div>
 
 </body>
