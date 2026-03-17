@@ -40,16 +40,35 @@ body{
   line-height:1.6;
 }
 
+img{
+  max-width:100%;
+  display:block;
+}
+
 .wrap{
   width:min(1120px, calc(100% - 40px));
   margin:0 auto;
 }
 
+.top-logo{
+  padding:24px 0 0;
+}
+
+.top-logo a{
+  display:inline-block;
+  text-decoration:none;
+}
+
+.top-logo img{
+  width:min(560px, 100%);
+  height:auto;
+}
+
 .hero{
-  min-height:100vh;
+  min-height:calc(100vh - 120px);
   display:flex;
   align-items:center;
-  padding:70px 0 50px;
+  padding:40px 0 50px;
   position:relative;
   overflow:hidden;
 }
@@ -218,6 +237,13 @@ h1 strong{
   color:var(--text);
 }
 
+.hero-card-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:22px;
+}
+
 section{
   padding:82px 0;
 }
@@ -253,6 +279,8 @@ section{
   border-radius:22px;
   padding:26px;
   box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
 }
 
 .card h3{
@@ -265,6 +293,13 @@ section{
   margin:0;
   color:var(--muted);
   font-size:16px;
+}
+
+.card-actions{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:24px;
 }
 
 .method{
@@ -356,6 +391,13 @@ section{
   font-size:18px;
 }
 
+.method-inline-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:28px;
+}
+
 .final-cta{
   text-align:center;
   padding-bottom:95px;
@@ -384,15 +426,15 @@ footer{
   font-size:14px;
 }
 
-/* POPUP FORMULAIRE */
+/* POPUPS */
 
 .modal{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.65);
+  background:rgba(0,0,0,.72);
   z-index:9999;
-  padding:20px;
+  padding:18px;
   align-items:center;
   justify-content:center;
 }
@@ -403,7 +445,10 @@ footer{
 
 .modal-box{
   position:relative;
-  width:min(560px, 100%);
+  width:min(720px, 100%);
+  max-height:min(88vh, 920px);
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
   background:#1f1f1f;
   border:1px solid rgba(255,255,255,.10);
   border-radius:18px;
@@ -435,6 +480,7 @@ footer{
   font-size:28px;
   line-height:1;
   cursor:pointer;
+  z-index:3;
 }
 
 .modal-close:hover{
@@ -484,6 +530,18 @@ footer{
   background:#927f08;
 }
 
+.method-modal-steps{
+  display:grid;
+  gap:14px;
+  margin-top:18px;
+}
+
+.method-modal-footer{
+  display:flex;
+  justify-content:center;
+  margin-top:24px;
+}
+
 /* BOUTONS FLOTTANTS */
 
 .floating-actions{
@@ -518,20 +576,20 @@ footer{
   filter:brightness(1.04);
 }
 
-.floating-btn:focus{
-  outline:none;
-}
-
 @media (max-width: 980px){
   .hero{
     min-height:auto;
-    padding-top:50px;
+    padding-top:20px;
   }
 
   .hero-grid,
   .method,
   .cards{
     grid-template-columns:1fr;
+  }
+
+  .top-logo{
+    padding-top:18px;
   }
 }
 
@@ -544,7 +602,9 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .cta-row{
+  .cta-row,
+  .hero-card-actions,
+  .method-inline-actions{
     flex-direction:column;
   }
 
@@ -556,8 +616,42 @@ footer{
     padding:64px 0;
   }
 
+  .modal{
+    padding:10px;
+    align-items:flex-start;
+  }
+
   .modal-box{
-    padding:24px 18px;
+    width:100%;
+    max-height:calc(100vh - 20px);
+    margin:0 auto;
+    padding:22px 16px 18px;
+    border-radius:16px;
+  }
+
+  .modal-box h2{
+    font-size:24px;
+    padding-right:28px;
+  }
+
+  .modal-box p{
+    font-size:14px;
+  }
+
+  .form-row input,
+  .form-row textarea{
+    padding:11px;
+    font-size:16px;
+  }
+
+  .form-row textarea{
+    min-height:110px;
+  }
+
+  .form-submit{
+    position:sticky;
+    bottom:0;
+    margin-top:12px;
   }
 
   .floating-actions{
@@ -576,11 +670,19 @@ footer{
 </head>
 <body>
 
+<div class="top-logo">
+  <div class="wrap">
+    <a href="/" aria-label="Voir toutes les offres LEVHEC ADVISORY">
+      <img src="Levhec - horiz transp.png" alt="LEVHEC ADVISORY">
+    </a>
+  </div>
+</div>
+
 <header class="hero">
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="brand">LEVHEC ADVISORY • Contrôle de gestion</span>
+        <span class="brand">Contrôle de gestion</span>
         <h1>
           Le contrôle de gestion<br>
           <strong>qui donne du sens à vos données</strong>
@@ -600,7 +702,7 @@ footer{
 
         <div class="cta-row">
           <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
-          <a href="#methode" class="btn btn-secondary">Découvrir notre méthode</a>
+          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
         </div>
       </div>
 
@@ -617,6 +719,11 @@ footer{
           <li>Une meilleure circulation de l’information</li>
           <li>Une autonomie renforcée des équipes</li>
         </ul>
+
+        <div class="hero-card-actions">
+          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
+          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+        </div>
       </aside>
     </div>
   </div>
@@ -642,6 +749,10 @@ footer{
           les ruptures de flux et les faiblesses d’organisation afin de faire émerger
           des solutions réalistes et directement activables.
         </p>
+        <div class="card-actions">
+          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
+          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+        </div>
       </div>
 
       <div class="card">
@@ -651,6 +762,10 @@ footer{
           tableaux de bord, indicateurs clés, reporting de gestion, suivis budgétaires
           et dispositifs de restitution utiles à la décision.
         </p>
+        <div class="card-actions">
+          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
+          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+        </div>
       </div>
 
       <div class="card">
@@ -660,6 +775,10 @@ footer{
           les méthodes, formaliser les pratiques et rendre les équipes capables de faire vivre
           durablement le dispositif au sein de l’entreprise.
         </p>
+        <div class="card-actions">
+          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
+          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+        </div>
       </div>
     </div>
   </div>
@@ -687,6 +806,11 @@ footer{
         <span class="pill">S’investir dans l’organisation</span>
         <span class="pill">Résoudre les enjeux opérationnels</span>
         <span class="pill">Transmettre un dispositif autonome</span>
+
+        <div class="method-inline-actions">
+          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
+          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+        </div>
       </div>
 
       <div class="steps">
@@ -745,6 +869,11 @@ footer{
       il éclaire l’activité, soutient les décisions, améliore les processus internes
       et laisse dans l’entreprise des méthodes durables, comprises et appropriées.
     </div>
+
+    <div class="method-inline-actions">
+      <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
+      <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+    </div>
   </div>
 </section>
 
@@ -773,9 +902,11 @@ footer{
 </footer>
 
 <div class="floating-actions" aria-label="Actions rapides">
-  <button type="button" class="floating-btn" onclick="openContactModal()" aria-label="Ouvrir le formulaire de contact" title="Être recontacté">✉</button>
+  <button type="button" class="floating-btn" onclick="openContactModal()" aria-label="Ouvrir le formulaire de contact" title="Être contacté">✉</button>
   <a href="tel:+33184200660" class="floating-btn" aria-label="Appeler le 01 84 20 06 60" title="01 84 20 06 60">☎</a>
 </div>
+
+<!-- POPUP CONTACT -->
 
 <div id="contactModal" class="modal" aria-hidden="true">
   <div class="modal-box">
@@ -820,17 +951,110 @@ footer{
   </div>
 </div>
 
+<!-- POPUP METHODE -->
+
+<div id="methodModal" class="modal" aria-hidden="true">
+  <div class="modal-box">
+    <button type="button" class="modal-close" aria-label="Fermer" onclick="closeMethodModal()">×</button>
+
+    <h2>Découvrir la méthode</h2>
+    <p>Notre approche en 6 phases pour structurer un contrôle de gestion utile, clair et transmissible.</p>
+
+    <div class="method-modal-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h4>Analyse des circuits existants</h4>
+          <p>Comprendre les flux, les pratiques, les interlocuteurs, les points de blocage et les besoins réels.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h4>Cartographie et récupération des données sources</h4>
+          <p>Identifier les données utiles, leurs origines, leur qualité et leurs modalités de collecte.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h4>Centralisation et intégration des données</h4>
+          <p>Structurer l’information pour disposer d’une base plus cohérente et exploitable.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h4>Organisation de la production de l’information</h4>
+          <p>Clarifier qui produit quoi, quand, à partir de quelles données et selon quelles règles.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <h4>Conception d’outils de gestion adaptés</h4>
+          <p>Créer des tableaux de bord, suivis de gestion et supports d’analyse utiles aux décisions.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">6</div>
+        <div>
+          <h4>Formation des équipes et transfert d’autonomie</h4>
+          <p>Rendre le dispositif durable en transmettant les pratiques et en consolidant les compétences internes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-modal-footer">
+      <button type="button" class="btn btn-primary" onclick="switchMethodToContact()">Être contacté</button>
+    </div>
+  </div>
+</div>
+
 <script>
 document.getElementById("page_url").value = window.location.href;
 
+function lockBody(){
+  document.body.style.overflow = "hidden";
+}
+
+function unlockBody(){
+  const contactOpen = document.getElementById("contactModal").classList.contains("open");
+  const methodOpen = document.getElementById("methodModal").classList.contains("open");
+
+  if(!contactOpen && !methodOpen){
+    document.body.style.overflow = "";
+  }
+}
+
 function openContactModal(){
   document.getElementById("contactModal").classList.add("open");
-  document.body.style.overflow = "hidden";
+  lockBody();
 }
 
 function closeContactModal(){
   document.getElementById("contactModal").classList.remove("open");
-  document.body.style.overflow = "";
+  unlockBody();
+}
+
+function openMethodModal(){
+  document.getElementById("methodModal").classList.add("open");
+  lockBody();
+}
+
+function closeMethodModal(){
+  document.getElementById("methodModal").classList.remove("open");
+  unlockBody();
+}
+
+function switchMethodToContact(){
+  closeMethodModal();
+  openContactModal();
 }
 
 document.getElementById("contactModal").addEventListener("click", function(e){
@@ -839,9 +1063,16 @@ document.getElementById("contactModal").addEventListener("click", function(e){
   }
 });
 
+document.getElementById("methodModal").addEventListener("click", function(e){
+  if(e.target === this){
+    closeMethodModal();
+  }
+});
+
 document.addEventListener("keydown", function(e){
   if(e.key === "Escape"){
     closeContactModal();
+    closeMethodModal();
   }
 });
 </script>
