@@ -763,6 +763,7 @@ footer{
 <div id="popup-box"></div>
 
 <script src="assets/js/popup-loader.js"></script>
+  
 <script>
 document.addEventListener("click", function(e){
   const trigger = e.target.closest('[data-popup="popups/popup-contact.html"]');
@@ -776,6 +777,17 @@ document.addEventListener("click", function(e){
   }, 250);
 });
 </script>
+<script>
+function openPopup(page){
+  document.getElementById("popupOverlay").style.display = "flex";
+  document.getElementById("popupFrame").src = "popups/" + page;
+}
 
+function closePopup(){
+  document.getElementById("popupOverlay").style.display = "none";
+  document.getElementById("popupFrame").src = "";
+}
+</script>
+  
 </body>
 </html>
