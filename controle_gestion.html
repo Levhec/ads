@@ -6,6 +6,7 @@
 <meta name="description" content="LEVHEC ADVISORY accompagne les entreprises dans la structuration de leur contrôle de gestion, la création de tableaux de bord et l’optimisation des processus internes." />
 <meta name="robots" content="index,follow" />
 <title>Contrôle de gestion | LEVHEC ADVISORY</title>
+<link rel="stylesheet" href="assets/css/popup.css" />
 
 <style>
 :root{
@@ -426,122 +427,6 @@ footer{
   font-size:14px;
 }
 
-/* POPUPS */
-
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.72);
-  z-index:9999;
-  padding:18px;
-  align-items:center;
-  justify-content:center;
-}
-
-.modal.open{
-  display:flex;
-}
-
-.modal-box{
-  position:relative;
-  width:min(720px, 100%);
-  max-height:min(88vh, 920px);
-  overflow:auto;
-  -webkit-overflow-scrolling:touch;
-  background:#1f1f1f;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:18px;
-  padding:30px;
-  box-shadow:0 30px 60px rgba(0,0,0,.45);
-}
-
-.modal-box h2{
-  margin:0 0 8px;
-  text-align:center;
-  color:var(--text);
-  font-weight:500;
-}
-
-.modal-box p{
-  margin:0 0 22px;
-  text-align:center;
-  color:var(--muted);
-  font-size:15px;
-}
-
-.modal-close{
-  position:absolute;
-  top:10px;
-  right:12px;
-  background:none;
-  border:none;
-  color:#cfc8bb;
-  font-size:28px;
-  line-height:1;
-  cursor:pointer;
-  z-index:3;
-}
-
-.modal-close:hover{
-  color:white;
-}
-
-.form-row{
-  margin-bottom:14px;
-}
-
-.form-row label{
-  display:block;
-  margin-bottom:6px;
-  font-size:14px;
-  color:var(--text);
-}
-
-.form-row input,
-.form-row textarea{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #444;
-  background:#2B2B2B;
-  color:white;
-  font:inherit;
-}
-
-.form-row textarea{
-  resize:vertical;
-  min-height:120px;
-}
-
-.form-submit{
-  margin-top:8px;
-  width:100%;
-  padding:15px;
-  background:#b39b0a;
-  border:none;
-  border-radius:8px;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
-}
-
-.form-submit:hover{
-  background:#927f08;
-}
-
-.method-modal-steps{
-  display:grid;
-  gap:14px;
-  margin-top:18px;
-}
-
-.method-modal-footer{
-  display:flex;
-  justify-content:center;
-  margin-top:24px;
-}
-
 /* BOUTONS FLOTTANTS */
 
 .floating-actions{
@@ -616,44 +501,6 @@ footer{
     padding:64px 0;
   }
 
-  .modal{
-    padding:10px;
-    align-items:flex-start;
-  }
-
-  .modal-box{
-    width:100%;
-    max-height:calc(100vh - 20px);
-    margin:0 auto;
-    padding:22px 16px 18px;
-    border-radius:16px;
-  }
-
-  .modal-box h2{
-    font-size:24px;
-    padding-right:28px;
-  }
-
-  .modal-box p{
-    font-size:14px;
-  }
-
-  .form-row input,
-  .form-row textarea{
-    padding:11px;
-    font-size:16px;
-  }
-
-  .form-row textarea{
-    min-height:110px;
-  }
-
-  .form-submit{
-    position:sticky;
-    bottom:0;
-    margin-top:12px;
-  }
-
   .floating-actions{
     right:14px;
     bottom:14px;
@@ -673,7 +520,7 @@ footer{
 <div class="top-logo">
   <div class="wrap">
     <a href="/" aria-label="Voir toutes les offres LEVHEC ADVISORY">
-      <img src="Levhec - horiz transp.png" alt="LEVHEC ADVISORY">
+      <img src="assets/img/Levhec - horiz transp.png" alt="LEVHEC ADVISORY">
     </a>
   </div>
 </div>
@@ -701,8 +548,8 @@ footer{
         </ul>
 
         <div class="cta-row">
-          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
-          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+          <button type="button" class="btn btn-secondary" data-popup="popups/popup-methode.html">Découvrir la méthode</button>
         </div>
       </div>
 
@@ -721,8 +568,8 @@ footer{
         </ul>
 
         <div class="hero-card-actions">
-          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
-          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+          <button type="button" class="btn btn-secondary" data-popup="popups/popup-methode.html">Découvrir la méthode</button>
         </div>
       </aside>
     </div>
@@ -750,8 +597,8 @@ footer{
           des solutions réalistes et directement activables.
         </p>
         <div class="card-actions">
-          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
-          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+          <button type="button" class="btn btn-secondary" data-popup="popups/popup-methode.html">Découvrir la méthode</button>
         </div>
       </div>
 
@@ -763,8 +610,8 @@ footer{
           et dispositifs de restitution utiles à la décision.
         </p>
         <div class="card-actions">
-          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
-          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+          <button type="button" class="btn btn-secondary" data-popup="popups/popup-methode.html">Découvrir la méthode</button>
         </div>
       </div>
 
@@ -776,8 +623,8 @@ footer{
           durablement le dispositif au sein de l’entreprise.
         </p>
         <div class="card-actions">
-          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
-          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+          <button type="button" class="btn btn-secondary" data-popup="popups/popup-methode.html">Découvrir la méthode</button>
         </div>
       </div>
     </div>
@@ -808,8 +655,8 @@ footer{
         <span class="pill">Transmettre un dispositif autonome</span>
 
         <div class="method-inline-actions">
-          <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
-          <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+          <button type="button" class="btn btn-secondary" data-popup="popups/popup-methode.html">Découvrir la méthode</button>
         </div>
       </div>
 
@@ -871,8 +718,8 @@ footer{
     </div>
 
     <div class="method-inline-actions">
-      <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
-      <button type="button" class="btn btn-secondary" onclick="openMethodModal()">Découvrir la méthode</button>
+      <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+      <button type="button" class="btn btn-secondary" data-popup="popups/popup-methode.html">Découvrir la méthode</button>
     </div>
   </div>
 </section>
@@ -889,7 +736,7 @@ footer{
         un contrôle de gestion utile, lisible et transmissible.
       </p>
       <div class="cta-row" style="justify-content:center;">
-        <button type="button" class="btn btn-primary" onclick="openContactModal()">Être contacté</button>
+        <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
         <a href="/" class="btn btn-secondary">Voir toutes les offres</a>
         <a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank" rel="noopener">Consulter le site LEVHEC ADVISORY</a>
       </div>
@@ -902,178 +749,25 @@ footer{
 </footer>
 
 <div class="floating-actions" aria-label="Actions rapides">
-  <button type="button" class="floating-btn" onclick="openContactModal()" aria-label="Ouvrir le formulaire de contact" title="Être contacté">✉</button>
+  <button type="button" class="floating-btn" data-popup="popups/popup-contact.html" aria-label="Ouvrir le formulaire de contact" title="Être contacté">✉</button>
   <a href="tel:+33184200660" class="floating-btn" aria-label="Appeler le 01 84 20 06 60" title="01 84 20 06 60">☎</a>
 </div>
 
-<!-- POPUP CONTACT -->
+<div id="popup-overlay"></div>
+<div id="popup-box"></div>
 
-<div id="contactModal" class="modal" aria-hidden="true">
-  <div class="modal-box">
-    <button type="button" class="modal-close" aria-label="Fermer" onclick="closeContactModal()">×</button>
-
-    <h2>Être recontacté</h2>
-    <p>Laissez-nous vos coordonnées. Nous reviendrons vers vous rapidement.</p>
-
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
-      <input type="hidden" name="subject" value="Demande contrôle de gestion LEVHEC">
-      <input type="hidden" name="offre" value="Contrôle de gestion">
-      <input type="hidden" name="page_url" id="page_url">
-
-      <div class="form-row">
-        <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" required>
-      </div>
-
-      <div class="form-row">
-        <label for="entreprise">Entreprise</label>
-        <input type="text" id="entreprise" name="entreprise">
-      </div>
-
-      <div class="form-row">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-
-      <div class="form-row">
-        <label for="telephone">Téléphone</label>
-        <input type="text" id="telephone" name="telephone">
-      </div>
-
-      <div class="form-row">
-        <label for="message">Votre besoin</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-
-      <button type="submit" class="form-submit">Envoyer la demande</button>
-    </form>
-  </div>
-</div>
-
-<!-- POPUP METHODE -->
-
-<div id="methodModal" class="modal" aria-hidden="true">
-  <div class="modal-box">
-    <button type="button" class="modal-close" aria-label="Fermer" onclick="closeMethodModal()">×</button>
-
-    <h2>Découvrir la méthode</h2>
-    <p>Notre approche en 6 phases pour structurer un contrôle de gestion utile, clair et transmissible.</p>
-
-    <div class="method-modal-steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <h4>Analyse des circuits existants</h4>
-          <p>Comprendre les flux, les pratiques, les interlocuteurs, les points de blocage et les besoins réels.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <h4>Cartographie et récupération des données sources</h4>
-          <p>Identifier les données utiles, leurs origines, leur qualité et leurs modalités de collecte.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <h4>Centralisation et intégration des données</h4>
-          <p>Structurer l’information pour disposer d’une base plus cohérente et exploitable.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-num">4</div>
-        <div>
-          <h4>Organisation de la production de l’information</h4>
-          <p>Clarifier qui produit quoi, quand, à partir de quelles données et selon quelles règles.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-num">5</div>
-        <div>
-          <h4>Conception d’outils de gestion adaptés</h4>
-          <p>Créer des tableaux de bord, suivis de gestion et supports d’analyse utiles aux décisions.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-num">6</div>
-        <div>
-          <h4>Formation des équipes et transfert d’autonomie</h4>
-          <p>Rendre le dispositif durable en transmettant les pratiques et en consolidant les compétences internes.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="method-modal-footer">
-      <button type="button" class="btn btn-primary" onclick="switchMethodToContact()">Être contacté</button>
-    </div>
-  </div>
-</div>
-
+<script src="assets/js/popup-loader.js"></script>
 <script>
-document.getElementById("page_url").value = window.location.href;
+document.addEventListener("click", function(e){
+  const trigger = e.target.closest('[data-popup="popups/popup-contact.html"]');
+  if (!trigger) return;
 
-function lockBody(){
-  document.body.style.overflow = "hidden";
-}
-
-function unlockBody(){
-  const contactOpen = document.getElementById("contactModal").classList.contains("open");
-  const methodOpen = document.getElementById("methodModal").classList.contains("open");
-
-  if(!contactOpen && !methodOpen){
-    document.body.style.overflow = "";
-  }
-}
-
-function openContactModal(){
-  document.getElementById("contactModal").classList.add("open");
-  lockBody();
-}
-
-function closeContactModal(){
-  document.getElementById("contactModal").classList.remove("open");
-  unlockBody();
-}
-
-function openMethodModal(){
-  document.getElementById("methodModal").classList.add("open");
-  lockBody();
-}
-
-function closeMethodModal(){
-  document.getElementById("methodModal").classList.remove("open");
-  unlockBody();
-}
-
-function switchMethodToContact(){
-  closeMethodModal();
-  openContactModal();
-}
-
-document.getElementById("contactModal").addEventListener("click", function(e){
-  if(e.target === this){
-    closeContactModal();
-  }
-});
-
-document.getElementById("methodModal").addEventListener("click", function(e){
-  if(e.target === this){
-    closeMethodModal();
-  }
-});
-
-document.addEventListener("keydown", function(e){
-  if(e.key === "Escape"){
-    closeContactModal();
-    closeMethodModal();
-  }
+  setTimeout(function(){
+    const pageUrlInput = document.getElementById("page_url");
+    if (pageUrlInput) {
+      pageUrlInput.value = window.location.href;
+    }
+  }, 250);
 });
 </script>
 
