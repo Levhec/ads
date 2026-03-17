@@ -296,11 +296,11 @@ section{
   font-size:16px;
 }
 
-.card-actions{
+.section-actions{
   display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-top:24px;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:28px;
 }
 
 .method{
@@ -401,7 +401,7 @@ section{
 
 .final-cta{
   text-align:center;
-  padding-bottom:95px;
+  padding-bottom:40px;
 }
 
 .final-box{
@@ -417,6 +417,11 @@ section{
   margin:0 auto 26px;
   color:var(--muted);
   font-size:18px;
+}
+
+.site-link-outside{
+  text-align:center;
+  padding:0 0 95px;
 }
 
 footer{
@@ -489,7 +494,8 @@ footer{
 
   .cta-row,
   .hero-card-actions,
-  .method-inline-actions{
+  .method-inline-actions,
+  .section-actions{
     flex-direction:column;
   }
 
@@ -549,7 +555,7 @@ footer{
 
         <div class="cta-row">
           <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
-          <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrir la méthode</button>
+          <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
         </div>
       </div>
 
@@ -569,7 +575,7 @@ footer{
 
         <div class="hero-card-actions">
           <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
-          <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrir la méthode</button>
+          <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
         </div>
       </aside>
     </div>
@@ -588,6 +594,11 @@ footer{
       ou encore la mise en place d’indicateurs réellement exploitables par les dirigeants et les équipes.
     </p>
 
+    <div class="section-actions">
+      <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+      <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
+    </div>
+
     <div class="cards">
       <div class="card">
         <h3>Mode audit</h3>
@@ -596,10 +607,6 @@ footer{
           les ruptures de flux et les faiblesses d’organisation afin de faire émerger
           des solutions réalistes et directement activables.
         </p>
-        <div class="card-actions">
-          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
-          <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrir la méthode</button>
-        </div>
       </div>
 
       <div class="card">
@@ -609,10 +616,6 @@ footer{
           tableaux de bord, indicateurs clés, reporting de gestion, suivis budgétaires
           et dispositifs de restitution utiles à la décision.
         </p>
-        <div class="card-actions">
-          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
-          <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrir la méthode</button>
-        </div>
       </div>
 
       <div class="card">
@@ -622,10 +625,6 @@ footer{
           les méthodes, formaliser les pratiques et rendre les équipes capables de faire vivre
           durablement le dispositif au sein de l’entreprise.
         </p>
-        <div class="card-actions">
-          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
-          <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrir la méthode</button>
-        </div>
       </div>
     </div>
   </div>
@@ -656,7 +655,7 @@ footer{
 
         <div class="method-inline-actions">
           <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
-          <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrir la méthode</button>
+          <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
         </div>
       </div>
 
@@ -719,7 +718,7 @@ footer{
 
     <div class="method-inline-actions">
       <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
-      <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrir la méthode</button>
+      <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
     </div>
   </div>
 </section>
@@ -737,18 +736,25 @@ footer{
       </p>
       <div class="cta-row" style="justify-content:center;">
         <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+        <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
         <a href="/" class="btn btn-secondary">Voir toutes les offres</a>
-        <a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank" rel="noopener">Consulter le site LEVHEC ADVISORY</a>
       </div>
     </div>
   </div>
 </section>
+
+<div class="site-link-outside">
+  <div class="wrap">
+    <a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank" rel="noopener">Vers le Site LEVHEC ADVISORY</a>
+  </div>
+</div>
 
 <footer>
   LEVHEC ADVISORY — Management de transition • Cabinet de conseil opérationnel
 </footer>
 
 <div class="floating-actions" aria-label="Actions rapides">
+  <a href="#methode" class="floating-btn" aria-label="Découvrir l’offre" title="Découvrez l’offre">★</a>
   <button type="button" class="floating-btn" data-popup="popups/popup-contact.html" aria-label="Ouvrir le formulaire de contact" title="Être contacté">✉</button>
   <a href="tel:+33184200660" class="floating-btn" aria-label="Appeler le 01 84 20 06 60" title="01 84 20 06 60">☎</a>
 </div>
