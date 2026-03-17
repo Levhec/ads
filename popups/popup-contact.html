@@ -1,1 +1,28 @@
-<div>Popup contact</div>
+<div class="popup-content">
+  <h2>Être recontacté</h2>
+  <p>Laissez-nous vos coordonnées. Nous reviendrons vers vous rapidement.</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
+    <input type="hidden" name="subject" value="Demande contrôle de gestion LEVHEC">
+    <input type="hidden" name="offre" value="Contrôle de gestion">
+    <input type="hidden" name="page_url" id="page_url">
+
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" name="nom" autocomplete="name" required>
+
+    <label for="entreprise">Entreprise</label>
+    <input type="text" id="entreprise" name="entreprise" autocomplete="organization">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required>
+
+    <label for="telephone">Téléphone</label>
+    <input type="tel" id="telephone" name="telephone" autocomplete="tel" inputmode="tel">
+
+    <label for="message">Votre besoin</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Envoyer la demande</button>
+  </form>
+</div>
