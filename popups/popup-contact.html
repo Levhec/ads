@@ -3,163 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Contact | LEVHEC ADVISORY</title>
+<title>Être contacté | LEVHEC ADVISORY</title>
 
 <style>
-
-body{
+html, body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  padding:0;
   background:transparent;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 }
 
-/* OVERLAY */
-.popup-overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* CONTENU */
 .popup-content{
   position:relative;
   background:#2b2b2b;
   color:#ece8df;
-  padding:30px;
-  border-radius:16px;
-  width:90%;
-  max-width:520px;
-  box-shadow:0 20px 50px rgba(0,0,0,.4);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  padding:28px 22px 22px 22px;
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
 }
 
-/* CROIX UNIQUE */
 .popup-close{
   position:absolute;
   top:12px;
   right:12px;
-  width:36px;
-  height:36px;
+  width:34px;
+  height:34px;
   border:none;
   border-radius:50%;
-  background:rgba(255,255,255,0.1);
+  background:rgba(255,255,255,.08);
   color:#ece8df;
   font-size:20px;
+  line-height:1;
   cursor:pointer;
 }
 
 .popup-close:hover{
-  background:rgba(255,255,255,0.2);
+  background:rgba(255,255,255,.16);
 }
 
-/* TITRE */
-.popup-content h2{
-  margin-top:0;
-  font-size:26px;
+h2{
+  margin:0 42px 10px 0;
+  font-size:28px;
+  line-height:1.2;
+  font-weight:600;
 }
 
-/* TEXTE */
-.popup-content p{
+p{
+  margin:0 0 18px 0;
   color:#cfc8bb;
-  margin-bottom:20px;
+  font-size:15px;
+  line-height:1.5;
 }
 
-/* FORMULAIRE */
 label{
   display:block;
-  margin-top:15px;
+  margin:14px 0 6px;
   font-size:14px;
+  color:#ece8df;
 }
 
-input, textarea{
+input,
+textarea{
   width:100%;
-  padding:12px;
-  margin-top:5px;
-  border-radius:8px;
-  border:none;
+  box-sizing:border-box;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.10);
   background:#3a3a3a;
   color:#ece8df;
   font-size:14px;
 }
 
-input:focus, textarea:focus{
-  outline:1px solid #c9a15d;
+input:focus,
+textarea:focus{
+  outline:none;
+  border-color:#c9a15d;
+  box-shadow:0 0 0 2px rgba(201,161,93,.18);
 }
 
-/* BOUTON */
-button[type="submit"]{
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.submit-btn{
   width:100%;
-  margin-top:20px;
+  margin-top:18px;
   padding:14px;
   border:none;
   border-radius:10px;
   background:#c9a15d;
   color:#2b2b2b;
   font-size:16px;
+  font-weight:600;
   cursor:pointer;
-  transition:all .2s ease;
 }
 
-button[type="submit"]:hover{
+.submit-btn:hover{
   background:#a88345;
 }
 
-/* MOBILE FIX */
 @media (max-width:600px){
   .popup-content{
-    padding:20px;
+    padding:22px 16px 18px 16px;
+    border-radius:14px;
+  }
+
+  h2{
+    font-size:24px;
+    margin-right:40px;
+  }
+
+  .popup-close{
+    top:10px;
+    right:10px;
   }
 }
-
 </style>
 </head>
-
 <body>
 
-<div class="popup-overlay">
-  <div class="popup-content">
+<div class="popup-content">
+  <button class="popup-close" type="button" onclick="window.parent.closeIframePopup()">×</button>
 
-    <!-- SEULE CROIX -->
-    <button class="popup-close" onclick="window.parent.closeIframePopup()">✕</button>
+  <h2>Être contacté</h2>
+  <p>Laissez-nous vos coordonnées. Nous reviendrons vers vous rapidement.</p>
 
-    <h2>Être contacté</h2>
-    <p>Laissez-nous vos coordonnées. Nous reviendrons vers vous rapidement.</p>
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
+    <input type="hidden" name="subject" value="Demande LEVHEC Advisory">
+    <input type="hidden" name="page_url" id="page_url">
 
-    <form action="https://api.web3forms.com/submit" method="POST">
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" name="nom" required>
 
-      <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
-      <input type="hidden" name="subject" value="Demande LEVHEC Advisory">
-      <input type="hidden" name="page_url" id="page_url">
+    <label for="entreprise">Entreprise</label>
+    <input type="text" id="entreprise" name="entreprise">
 
-      <label>Nom</label>
-      <input type="text" name="nom" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
 
-      <label>Entreprise</label>
-      <input type="text" name="entreprise">
+    <label for="telephone">Téléphone</label>
+    <input type="tel" id="telephone" name="telephone">
 
-      <label>Email</label>
-      <input type="email" name="email" required>
+    <label for="message">Message</label>
+    <textarea id="message" name="message"></textarea>
 
-      <label>Téléphone</label>
-      <input type="tel" name="telephone">
-
-      <label>Message</label>
-      <textarea name="message" rows="4"></textarea>
-
-      <button type="submit">Envoyer</button>
-
-    </form>
-
-  </div>
+    <button class="submit-btn" type="submit">Envoyer</button>
+  </form>
 </div>
 
 <script>
-document.getElementById("page_url").value = document.referrer;
+document.getElementById("page_url").value = document.referrer || "";
 </script>
 
 </body>
