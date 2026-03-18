@@ -554,7 +554,7 @@ footer{
         </ul>
 
         <div class="cta-row">
-          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+          <a href="/contact/?offre=controle_gestion" class="btn btn-primary">Être contacté</a>
           <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
         </div>
       </div>
@@ -574,7 +574,7 @@ footer{
         </ul>
 
         <div class="hero-card-actions">
-          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+          <a href="/contact/?offre=controle_gestion" class="btn btn-primary">Être contacté</a>
           <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
         </div>
       </aside>
@@ -624,7 +624,7 @@ footer{
     </div>
 
     <div class="section-actions">
-      <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+      <a href="/contact/?offre=controle_gestion" class="btn btn-primary">Être contacté</a>
       <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
     </div>
   </div>
@@ -654,7 +654,7 @@ footer{
         <span class="pill">Transmettre un dispositif autonome</span>
 
         <div class="method-inline-actions">
-          <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+          <a href="/contact/?offre=controle_gestion" class="btn btn-primary">Être contacté</a>
           <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
         </div>
       </div>
@@ -717,7 +717,7 @@ footer{
     </div>
 
     <div class="method-inline-actions">
-      <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+      <a href="/contact/?offre=controle_gestion" class="btn btn-primary">Être contacté</a>
       <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
     </div>
   </div>
@@ -735,7 +735,7 @@ footer{
         un contrôle de gestion utile, lisible et transmissible.
       </p>
       <div class="cta-row" style="justify-content:center;">
-        <button type="button" class="btn btn-primary" data-popup="popups/popup-contact.html">Être contacté</button>
+        <a href="/contact/?offre=controle_gestion" class="btn btn-primary">Être contacté</a>
         <button type="button" class="btn btn-secondary" data-popup="popups/popup_methode_cg.html">Découvrez l’offre</button>
         <a href="/" class="btn btn-secondary">Voir toutes les offres</a>
       </div>
@@ -755,7 +755,7 @@ footer{
 
 <div class="floating-actions" aria-label="Actions rapides">
   <button type="button" class="floating-btn" data-popup="popups/popup_methode_cg.html" aria-label="Découvrir l’offre" title="Découvrez l’offre">★</button>
-  <button type="button" class="floating-btn" data-popup="popups/popup-contact.html" aria-label="Ouvrir le formulaire de contact" title="Être contacté">✉</button>
+  <a href="/contact/?offre=controle_gestion" class="floating-btn" aria-label="Ouvrir la page de contact" title="Être contacté">✉</a>
   <a href="tel:+33184200660" class="floating-btn" aria-label="Appeler le 01 84 20 06 60" title="01 84 20 06 60">☎</a>
 </div>
 
@@ -763,45 +763,6 @@ footer{
 <div id="popup-box"></div>
 
 <script src="assets/js/popup-loader.js"></script>
-
-<script>
-document.addEventListener("click", function(e){
-  const trigger = e.target.closest('[data-popup="popups/popup-contact.html"]');
-  if (!trigger) return;
-
-  setTimeout(function(){
-    const pageUrlInput = document.getElementById("page_url");
-    if (pageUrlInput) {
-      pageUrlInput.value = window.location.href;
-    }
-  }, 250);
-});
-
-function openPopup(page){
-  const overlay = document.getElementById("popup-overlay");
-  const box = document.getElementById("popup-box");
-
-  if (!overlay || !box) return;
-
-  overlay.style.display = "flex";
-
-  fetch("popups/" + page)
-    .then(function(res){ return res.text(); })
-    .then(function(html){
-      box.innerHTML = html;
-    });
-}
-
-function closePopup(){
-  const overlay = document.getElementById("popup-overlay");
-  const box = document.getElementById("popup-box");
-
-  if (!overlay || !box) return;
-
-  overlay.style.display = "none";
-  box.innerHTML = "";
-}
-</script>
 
 </body>
 </html>
