@@ -6,15 +6,23 @@
   <title>Être contacté | LEVHEC ADVISORY</title>
 
   <style>
-    body{
+    *{
+      box-sizing:border-box;
+    }
+
+    html, body{
       margin:0;
+      padding:0;
+    }
+
+    body{
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
       background:#2b2b2b;
       color:#ece8df;
+      min-height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
-      min-height:100vh;
       padding:20px;
     }
 
@@ -22,22 +30,25 @@
       width:100%;
       max-width:420px;
       background:#1f1f1f;
-      padding:28px 22px;
+      padding:28px 22px 22px;
       border-radius:16px;
       box-shadow:0 20px 50px rgba(0,0,0,0.4);
     }
 
     h1{
-      margin:0 0 10px;
-      font-size:24px;
+      margin:0;
       text-align:center;
+      line-height:1.25;
+      font-size:26px;
+      font-weight:600;
     }
 
-    p{
-      margin:0 0 20px;
+    .subtitle{
+      margin:10px 0 20px;
       text-align:center;
       color:#cfc8bb;
       font-size:14px;
+      line-height:1.5;
     }
 
     form{
@@ -46,14 +57,23 @@
       gap:12px;
     }
 
-    input, textarea{
+    input,
+    textarea{
       width:100%;
       padding:14px;
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,0.1);
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.12);
       background:#2b2b2b;
       color:#ece8df;
       font-size:16px;
+      font-family:inherit;
+      appearance:none;
+      -webkit-appearance:none;
+    }
+
+    input::placeholder,
+    textarea::placeholder{
+      color:#bfb7aa;
     }
 
     textarea{
@@ -61,12 +81,15 @@
       resize:vertical;
     }
 
-    input:focus, textarea:focus{
+    input:focus,
+    textarea:focus{
       outline:none;
       border-color:#c9a15d;
+      box-shadow:0 0 0 3px rgba(201,161,93,0.12);
     }
 
-    button, .btn{
+    button,
+    .btn{
       display:block;
       width:100%;
       margin-top:10px;
@@ -74,11 +97,18 @@
       border:none;
       border-radius:10px;
       background:#c9a15d;
-      color:#fff;
+      color:#ffffff;
       font-size:15px;
+      font-weight:600;
       text-align:center;
       text-decoration:none;
       cursor:pointer;
+      transition:all 0.2s ease;
+    }
+
+    button:hover,
+    .btn:hover{
+      filter:brightness(1.05);
     }
 
     .btn-secondary{
@@ -94,20 +124,54 @@
       color:#cfc8bb;
       text-decoration:none;
     }
+
+    .success-actions{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    @media (max-width: 480px){
+      body{
+        align-items:flex-start;
+        padding:14px;
+      }
+
+      .container{
+        max-width:100%;
+        padding:24px 16px 18px;
+        border-radius:14px;
+        margin:0;
+      }
+
+      h1{
+        font-size:23px;
+      }
+
+      .subtitle{
+        font-size:14px;
+      }
+
+      input,
+      textarea,
+      button,
+      .btn{
+        font-size:16px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <div class="container" id="contact-box">
-    <h1>Être contacté</h1>
-     <h1>par un consultant LEVHEC ADVISORY</h1>
-    <p>Nous revenons vers vous rapidement.</p>
+    <h1>Être contacté par un consultant LEVHEC ADVISORY</h1>
+    <p class="subtitle">Nous revenons vers vous rapidement.</p>
 
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
 
-      <!-- CONTEXTE -->
       <input type="hidden" name="subject" value="Demande de contact LEVHEC">
       <input type="hidden" name="offre" id="offre">
       <input type="hidden" name="source_page" id="source_page">
@@ -115,52 +179,61 @@
 
       <input type="hidden" name="redirect" value="https://ads.levhec.com/contact/?success=1">
 
-      <!-- FORM -->
-      <input type="text" name="nom" placeholder="Nom" required>
-      <input type="text" name="entreprise" placeholder="Entreprise">
-      <input type="email" name="email" placeholder="E-mail" required>
-      <input type="tel" name="telephone" placeholder="Téléphone">
+      <input type="text" name="nom" placeholder="Nom" autocomplete="name" required>
+      <input type="text" name="entreprise" placeholder="Entreprise" autocomplete="organization">
+      <input type="email" name="email" placeholder="E-mail" autocomplete="email" required>
+      <input type="tel" name="telephone" placeholder="Téléphone" autocomplete="tel">
       <textarea name="message" placeholder="Votre besoin"></textarea>
 
       <button type="submit">Envoyer</button>
     </form>
 
-    <a class="back" href="javascript:history.back()">← Retour</a>
+    <a class="back" id="back-link" href="https://ads.levhec.com">← Retour</a>
   </div>
 
   <script>
-    // récupération des paramètres
     const params = new URLSearchParams(window.location.search);
+    const offreField = document.getElementById('offre');
+    const sourcePageField = document.getElementById('source_page');
+    const currentPageField = document.getElementById('current_page');
+    const backLink = document.getElementById('back-link');
+    const contactBox = document.getElementById('contact-box');
 
-    // offre
     const offreParam = params.get('offre');
     if (offreParam) {
-      document.getElementById('offre').value = offreParam;
+      offreField.value = offreParam;
     }
 
-    // source (page précédente)
-    document.getElementById('source_page').value = document.referrer || "direct";
+    const referrer = document.referrer || "";
+    sourcePageField.value = referrer || "direct";
+    currentPageField.value = window.location.href;
 
-    // page actuelle
-    document.getElementById('current_page').value = window.location.href;
+    if (referrer) {
+      backLink.href = referrer;
+    } else {
+      backLink.href = "https://ads.levhec.com";
+    }
 
-    // message de confirmation
     if (params.get('success') === '1') {
-      document.getElementById('contact-box').innerHTML = `
+      const returnUrl = referrer || "https://ads.levhec.com";
+
+      contactBox.innerHTML = `
         <h1>Merci</h1>
-        <p>Votre demande a bien été envoyée.</p>
+        <p class="subtitle">Votre demande a bien été envoyée.</p>
 
-        <a class="btn btn-secondary" href="javascript:history.back()">
-          Retour à l’offre
-        </a>
+        <div class="success-actions">
+          <a class="btn btn-secondary" href="${returnUrl}">
+            Retour à l’offre
+          </a>
 
-        <a class="btn" href="https://ads.levhec.com">
-          Consulter les autres offres
-        </a>
+          <a class="btn" href="https://ads.levhec.com">
+            Consulter les autres offres
+          </a>
 
-        <a class="btn" href="https://www.levhec-advisory.com" target="_blank">
-          Découvrir le site LEVHEC Advisory
-        </a>
+          <a class="btn" href="https://www.levhec-advisory.com" target="_blank" rel="noopener noreferrer">
+            Découvrir le site LEVHEC Advisory
+          </a>
+        </div>
       `;
     }
   </script>
