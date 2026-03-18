@@ -8,36 +8,33 @@
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:transparent;
 }
 
-/* CONTENEUR GLOBAL */
-.popup-wrapper{
-  position:relative;
-  max-width:500px;
-  margin:40px auto;
-}
-
-/* BLOC POPUP */
 .popup-content{
   background:#2b2b2b;
   color:#ece8df;
   padding:25px;
   border-radius:12px;
+  max-width:500px;
+  margin:auto;
+  box-sizing:border-box;
 }
 
-/* TITRE */
 .popup-content h2{
-  margin-top:0;
+  margin:0 0 10px 0;
   text-align:center;
+  font-size:28px;
+  line-height:1.2;
 }
 
-/* TEXTE */
 .popup-content p{
+  margin:0 0 20px 0;
   text-align:center;
   color:#cfc8bb;
+  line-height:1.5;
 }
 
-/* FORM */
 .popup-content label{
   display:block;
   margin-top:15px;
@@ -51,13 +48,14 @@ body{
   margin-top:5px;
   border:none;
   border-radius:6px;
+  box-sizing:border-box;
 }
 
 .popup-content textarea{
   min-height:100px;
+  resize:vertical;
 }
 
-/* BOUTON */
 .popup-content button[type="submit"]{
   margin-top:20px;
   width:100%;
@@ -70,72 +68,57 @@ body{
   cursor:pointer;
 }
 
-/* CROIX PREMIUM (hors bloc) */
-.popup-close{
-  position:absolute;
-  top:-12px;
-  right:-12px;
-  width:36px;
-  height:36px;
-  border:none;
-  border-radius:50%;
-  background:#2b2b2b;
-  color:#fff;
-  font-size:20px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 8px 20px rgba(0,0,0,.4);
-  border:1px solid rgba(255,255,255,.1);
+.popup-content button[type="submit"]:hover{
+  background:#d4ad6b;
 }
 
-.popup-close:hover{
-  transform:scale(1.05);
-  background:#3a3a3a;
+@media (max-width: 600px){
+  .popup-content{
+    padding:20px;
+    border-radius:10px;
+  }
+
+  .popup-content h2{
+    font-size:24px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="popup-wrapper">
+<div class="popup-content">
+  <h2>Être contacté</h2>
+  <p>Laissez-nous vos coordonnées. Nous reviendrons vers vous rapidement.</p>
 
-  <!-- CROIX -->
-  <button class="popup-close" onclick="parent.closePopup()">×</button>
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
+    <input type="hidden" name="subject" value="Demande contrôle de gestion LEVHEC">
+    <input type="hidden" name="offre" value="Contrôle de gestion">
+    <input type="hidden" name="page_url" id="page_url">
 
-  <!-- POPUP -->
-  <div class="popup-content">
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" name="nom" autocomplete="name" required>
 
-    <h2>Être contacté</h2>
-    <p>Laissez-nous vos coordonnées. Nous reviendrons vers vous rapidement.</p>
+    <label for="entreprise">Entreprise</label>
+    <input type="text" id="entreprise" name="entreprise" autocomplete="organization">
 
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
-      <input type="hidden" name="subject" value="Demande contrôle de gestion LEVHEC">
-      <input type="hidden" name="offre" value="Contrôle de gestion">
-      <input type="hidden" name="page_url" id="page_url">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" autocomplete="email" required>
 
-      <label for="nom">Nom</label>
-      <input type="text" id="nom" name="nom" autocomplete="name" required>
+    <label for="telephone">Téléphone</label>
+    <input type="tel" id="telephone" name="telephone" autocomplete="tel">
 
-      <label for="entreprise">Entreprise</label>
-      <input type="text" id="entreprise" name="entreprise" autocomplete="organization">
+    <label for="message">Votre besoin</label>
+    <textarea id="message" name="message" required></textarea>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" autocomplete="email" required>
-
-      <label for="telephone">Téléphone</label>
-      <input type="tel" id="telephone" name="telephone" autocomplete="tel">
-
-      <label for="message">Votre besoin</label>
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="submit">Envoyer la demande</button>
-    </form>
-
-  </div>
+    <button type="submit">Envoyer la demande</button>
+  </form>
 </div>
+
+<script>
+document.getElementById("page_url").value = document.referrer || window.location.href;
+</script>
 
 </body>
 </html>
