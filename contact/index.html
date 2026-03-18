@@ -38,7 +38,6 @@
       text-align:center;
       color:#cfc8bb;
       font-size:14px;
-      line-height:1.5;
     }
 
     form{
@@ -47,8 +46,7 @@
       gap:12px;
     }
 
-    input,
-    textarea{
+    input, textarea{
       width:100%;
       padding:14px;
       border-radius:8px;
@@ -56,7 +54,6 @@
       background:#2b2b2b;
       color:#ece8df;
       font-size:16px;
-      box-sizing:border-box;
     }
 
     textarea{
@@ -64,32 +61,29 @@
       resize:vertical;
     }
 
-    input:focus,
-    textarea:focus{
+    input:focus, textarea:focus{
       outline:none;
       border-color:#c9a15d;
     }
 
-    button,
-    .site-link{
+    button, .btn{
       display:block;
       width:100%;
       margin-top:10px;
-      padding:16px;
+      padding:14px;
       border:none;
       border-radius:10px;
       background:#c9a15d;
       color:#fff;
-      font-size:16px;
+      font-size:15px;
       text-align:center;
       text-decoration:none;
       cursor:pointer;
-      box-sizing:border-box;
     }
 
-    button:hover,
-    .site-link:hover{
-      background:#a88345;
+    .btn-secondary{
+      background:#343434;
+      border:1px solid rgba(255,255,255,0.1);
     }
 
     .back{
@@ -99,10 +93,6 @@
       font-size:13px;
       color:#cfc8bb;
       text-decoration:none;
-    }
-
-    .back:hover{
-      text-decoration:underline;
     }
   </style>
 </head>
@@ -115,15 +105,20 @@
 
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
+
+      <!-- CONTEXTE -->
       <input type="hidden" name="subject" value="Demande de contact LEVHEC">
-      <input type="hidden" name="page_url" id="page_url">
       <input type="hidden" name="offre" id="offre">
+      <input type="hidden" name="source_page" id="source_page">
+      <input type="hidden" name="current_page" id="current_page">
+
       <input type="hidden" name="redirect" value="https://ads.levhec.com/contact/?success=1">
 
-      <input type="text" name="nom" placeholder="Nom" autocomplete="name" required>
-      <input type="text" name="entreprise" placeholder="Entreprise" autocomplete="organization">
-      <input type="email" name="email" placeholder="E-mail" autocomplete="email" required>
-      <input type="tel" name="telephone" placeholder="Téléphone" autocomplete="tel">
+      <!-- FORM -->
+      <input type="text" name="nom" placeholder="Nom" required>
+      <input type="text" name="entreprise" placeholder="Entreprise">
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="tel" name="telephone" placeholder="Téléphone">
       <textarea name="message" placeholder="Votre besoin"></textarea>
 
       <button type="submit">Envoyer</button>
@@ -133,22 +128,38 @@
   </div>
 
   <script>
-    document.getElementById('page_url').value = document.referrer || window.location.href;
-
+    // récupération des paramètres
     const params = new URLSearchParams(window.location.search);
+
+    // offre
     const offreParam = params.get('offre');
     if (offreParam) {
       document.getElementById('offre').value = offreParam;
     }
 
+    // source (page précédente)
+    document.getElementById('source_page').value = document.referrer || "direct";
+
+    // page actuelle
+    document.getElementById('current_page').value = window.location.href;
+
+    // message de confirmation
     if (params.get('success') === '1') {
       document.getElementById('contact-box').innerHTML = `
         <h1>Merci</h1>
-        <p>Votre demande a bien été envoyée.<br>Vous pouvez également visiter notre site.</p>
-        <a class="site-link" href="https://www.levhec-advisory.com" target="_blank" rel="noopener noreferrer">
-          Visiter le site LEVHEC Advisory
+        <p>Votre demande a bien été envoyée.</p>
+
+        <a class="btn btn-secondary" href="javascript:history.back()">
+          Retour à l’offre
         </a>
-        <a class="back" href="/">Retour</a>
+
+        <a class="btn" href="https://ads.levhec.com">
+          Consulter les autres offres
+        </a>
+
+        <a class="btn" href="https://www.levhec-advisory.com" target="_blank">
+          Découvrir le site LEVHEC Advisory
+        </a>
       `;
     }
   </script>
