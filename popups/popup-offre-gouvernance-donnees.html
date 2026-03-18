@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="LEVHEC ADVISORY accompagne les entreprises dans la structuration, la sécurisation et l’exploitation de leurs données." />
-<meta name="robots" content="index,follow" />
-<title>Gouvernance des données | LEVHEC ADVISORY</title>
-<link rel="stylesheet" href="assets/css/popup.css" />
+<meta name="description" content="Offre Gouvernance des données | LEVHEC ADVISORY" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Offre gouvernance des données | LEVHEC ADVISORY</title>
 
 <style>
 :root{
@@ -17,10 +16,312 @@
   --gold:#c9a15d;
   --gold-dark:#a88345;
   --line:rgba(255,255,255,.10);
-  --card:rgba(255,255,255,.04);
   --shadow:0 20px 50px rgba(0,0,0,.35);
 }
 
 *{
   box-sizing:border-box;
 }
+
+html, body{
+  margin:0;
+  padding:0;
+  background:transparent;
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+
+body{
+  min-height:100vh;
+}
+
+.popup-page{
+  width:100%;
+  max-width:860px;
+  margin:0 auto;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.popup-header{
+  padding:34px 26px 22px;
+  background:
+    radial-gradient(circle at top right, rgba(201,161,93,.12), transparent 32%),
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+  border-bottom:1px solid var(--line);
+  text-align:center;
+}
+
+.popup-header h1{
+  margin:0 0 12px;
+  font-size:clamp(28px, 5vw, 42px);
+  line-height:1.15;
+  font-weight:500;
+  letter-spacing:.02em;
+}
+
+.popup-header p{
+  margin:0 auto;
+  max-width:700px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.7;
+}
+
+.popup-body{
+  padding:26px;
+}
+
+.intro-box{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:24px;
+}
+
+.intro-box p{
+  margin:0;
+  color:var(--text);
+  line-height:1.75;
+  font-size:15px;
+}
+
+.section-title{
+  margin:0 0 18px;
+  text-align:center;
+  font-size:14px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+
+.phases{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:16px;
+}
+
+.phase-card{
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:20px;
+  position:relative;
+  overflow:hidden;
+}
+
+.phase-card::before{
+  content:"";
+  position:absolute;
+  top:-40px;
+  right:-40px;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:rgba(201,161,93,.06);
+}
+
+.phase-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.phase-title{
+  margin:0;
+  font-size:20px;
+  color:var(--gold);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+.phase-number{
+  flex:0 0 auto;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:14px;
+  color:#fff;
+  background:linear-gradient(135deg, var(--gold), var(--gold-dark));
+  box-shadow:0 8px 20px rgba(0,0,0,.22);
+}
+
+.phase-card p{
+  margin:0 0 10px;
+  color:var(--text);
+  line-height:1.65;
+  font-size:15px;
+}
+
+.phase-card p:last-child{
+  margin-bottom:0;
+}
+
+.phase-card strong{
+  color:#fff;
+}
+
+.bottom-box{
+  margin-top:24px;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(201,161,93,.06);
+  text-align:center;
+}
+
+.bottom-box p{
+  margin:0;
+  font-size:15px;
+  line-height:1.75;
+  color:var(--text);
+}
+
+.cta-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:26px;
+}
+
+.cta-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:220px;
+  padding:14px 22px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:.02em;
+  transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  box-shadow:0 12px 28px rgba(0,0,0,.25);
+}
+
+.cta-button:hover{
+  transform:translateY(-1px);
+  opacity:.96;
+}
+
+@media (max-width: 720px){
+  .popup-header{
+    padding:28px 18px 18px;
+  }
+
+  .popup-body{
+    padding:18px;
+  }
+
+  .phases{
+    grid-template-columns:1fr;
+  }
+
+  .phase-title{
+    font-size:18px;
+  }
+
+  .intro-box,
+  .phase-card,
+  .bottom-box{
+    padding:18px;
+  }
+
+  .cta-button{
+    width:100%;
+    max-width:100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="popup-page">
+  <div class="popup-header">
+    <h1>Vous missionnez LEVHEC Advisory<br>en gouvernance des données.</h1>
+    <p>
+      Nous vous aidons à reprendre la maîtrise de vos données pour les rendre
+      fiables, accessibles, sécurisées et directement exploitables au service
+      de vos décisions.
+    </p>
+  </div>
+
+  <div class="popup-body">
+    <div class="intro-box">
+      <p>
+        Vous missionnez LEVHEC Advisory en gouvernance des données,
+        et nous structurons un dispositif clair pour passer d’une donnée dispersée
+        à une donnée maîtrisée. L’objectif est simple : centraliser, sécuriser,
+        organiser et exploiter vos données pour en faire un actif stratégique
+        durable de l’entreprise.
+      </p>
+    </div>
+
+    <h2 class="section-title">La méthode LEVHEC en 4 phases</h2>
+
+    <div class="phases">
+      <div class="phase-card">
+        <div class="phase-top">
+          <h3 class="phase-title">Identifier</h3>
+          <div class="phase-number">1</div>
+        </div>
+        <p><strong>Recenser les sources, les formats et les modalités d’accès</strong> aux données existantes.</p>
+        <p>Nous cartographions vos flux, vos outils, vos fichiers et vos usages afin de disposer d’une vision claire de l’existant.</p>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-top">
+          <h3 class="phase-title">Structurer</h3>
+          <div class="phase-number">2</div>
+        </div>
+        <p><strong>Centraliser les données</strong> au sein de bases SQL indépendantes de tout fournisseur.</p>
+        <p>Nous organisons une architecture lisible et durable pour sortir d’une donnée éparpillée ou captive d’un outil.</p>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-top">
+          <h3 class="phase-title">Sécuriser</h3>
+          <div class="phase-number">3</div>
+        </div>
+        <p><strong>Protéger, contrôler et organiser les accès</strong> aux données sensibles et stratégiques.</p>
+        <p>Nous mettons en place les règles, responsabilités et niveaux d’accès adaptés à votre organisation.</p>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-top">
+          <h3 class="phase-title">Exploiter</h3>
+          <div class="phase-number">4</div>
+        </div>
+        <p><strong>Accéder immédiatement à une donnée fiable</strong> et la diffuser en toute autonomie.</p>
+        <p>Nous rendons vos données utiles à l’action, au pilotage et à la prise de décision, sans dépendance inutile.</p>
+      </div>
+    </div>
+
+    <div class="bottom-box">
+      <p>
+        À l’issue de l’intervention, vos données deviennent plus lisibles, plus sûres
+        et plus facilement mobilisables. Vous gagnez en rapidité, en fiabilité de décision
+        et en indépendance dans la gestion de votre information.
+      </p>
+    </div>
+
+    <div class="cta-wrap">
+      <a class="cta-button" href="../contact/index.html">Être contacté</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
