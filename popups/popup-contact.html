@@ -4,170 +4,162 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Contact | LEVHEC ADVISORY</title>
+
 <style>
+
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   background:transparent;
 }
 
-/* POPUP */
-.popup-content{
-  position:relative;
-  background:#2b2b2b;
-  color:#ece8df;
-  padding:60px 25px 25px; /* espace pour la croix */
-  border-radius:14px;
-  max-width:500px;
-  margin:auto;
-  box-shadow:0 20px 60px rgba(0,0,0,.6);
-  border:1px solid rgba(255,255,255,.08);
-}
-
-/* CROIX */
-.popup-close{
-  position:absolute;
-  top:15px;
-  right:15px;
-  width:32px;
-  height:32px;
-  border:none;
-  border-radius:50%;
-  background:rgba(255,255,255,.08);
-  color:#fff;
-  font-size:18px;
-  cursor:pointer;
+/* OVERLAY */
+.popup-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
+/* CONTENU */
+.popup-content{
+  position:relative;
+  background:#2b2b2b;
+  color:#ece8df;
+  padding:30px;
+  border-radius:16px;
+  width:90%;
+  max-width:520px;
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+/* CROIX UNIQUE */
+.popup-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:36px;
+  height:36px;
+  border:none;
+  border-radius:50%;
+  background:rgba(255,255,255,0.1);
+  color:#ece8df;
+  font-size:20px;
+  cursor:pointer;
+}
+
 .popup-close:hover{
-  background:rgba(255,255,255,.18);
+  background:rgba(255,255,255,0.2);
 }
 
 /* TITRE */
 .popup-content h2{
-  margin:0 0 10px 0;
-  text-align:center;
+  margin-top:0;
   font-size:26px;
 }
 
 /* TEXTE */
 .popup-content p{
-  text-align:center;
   color:#cfc8bb;
   margin-bottom:20px;
 }
 
-/* LABEL */
-.popup-content label{
+/* FORMULAIRE */
+label{
   display:block;
-  margin-top:14px;
-  font-size:13px;
-  color:#cfc8bb;
+  margin-top:15px;
+  font-size:14px;
 }
 
-/* INPUTS */
-.popup-content input,
-.popup-content textarea{
+input, textarea{
   width:100%;
   padding:12px;
-  margin-top:6px;
+  margin-top:5px;
   border-radius:8px;
-  border:1px solid rgba(255,255,255,.15);
-  background:#1f1f1f;
+  border:none;
+  background:#3a3a3a;
   color:#ece8df;
   font-size:14px;
-  box-sizing:border-box;
-  transition:all .2s ease;
 }
 
-/* FOCUS */
-.popup-content input:focus,
-.popup-content textarea:focus{
-  outline:none;
-  border:1px solid #c9a15d;
-  background:#262626;
-}
-
-/* TEXTAREA */
-.popup-content textarea{
-  min-height:110px;
-  resize:vertical;
+input:focus, textarea:focus{
+  outline:1px solid #c9a15d;
 }
 
 /* BOUTON */
-.popup-content button[type="submit"]{
-  margin-top:20px;
+button[type="submit"]{
   width:100%;
+  margin-top:20px;
   padding:14px;
-  background:#c9a15d;
   border:none;
   border-radius:10px;
-  color:#1f1f1f;
-  font-weight:600;
-  font-size:15px;
+  background:#c9a15d;
+  color:#2b2b2b;
+  font-size:16px;
   cursor:pointer;
   transition:all .2s ease;
 }
 
-.popup-content button[type="submit"]:hover{
-  background:#d8b26a;
-  transform:translateY(-1px);
+button[type="submit"]:hover{
+  background:#a88345;
 }
 
-/* MOBILE */
+/* MOBILE FIX */
 @media (max-width:600px){
   .popup-content{
-    padding:55px 18px 20px;
-  }
-
-  .popup-content h2{
-    font-size:22px;
+    padding:20px;
   }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="popup-content">
+<div class="popup-overlay">
+  <div class="popup-content">
 
-  <!-- CROIX (nécessaire car popup dans popup) -->
-  <button class="popup-close" onclick="window.parent.closePopup()">×</button>
+    <!-- SEULE CROIX -->
+    <button class="popup-close" onclick="window.parent.closeIframePopup()">✕</button>
 
-  <h2>Être contacté</h2>
-  <p>Laissez-nous vos coordonnées. Nous reviendrons vers vous rapidement.</p>
+    <h2>Être contacté</h2>
+    <p>Laissez-nous vos coordonnées. Nous reviendrons vers vous rapidement.</p>
 
-  <form action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
-    <input type="hidden" name="subject" value="Demande contrôle de gestion LEVHEC">
-    <input type="hidden" name="offre" value="Contrôle de gestion">
-    <input type="hidden" name="page_url" id="page_url">
+    <form action="https://api.web3forms.com/submit" method="POST">
 
-    <label for="nom">Nom</label>
-    <input type="text" id="nom" name="nom" required>
+      <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
+      <input type="hidden" name="subject" value="Demande LEVHEC Advisory">
+      <input type="hidden" name="page_url" id="page_url">
 
-    <label for="entreprise">Entreprise</label>
-    <input type="text" id="entreprise" name="entreprise">
+      <label>Nom</label>
+      <input type="text" name="nom" required>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+      <label>Entreprise</label>
+      <input type="text" name="entreprise">
 
-    <label for="telephone">Téléphone</label>
-    <input type="tel" id="telephone" name="telephone">
+      <label>Email</label>
+      <input type="email" name="email" required>
 
-    <label for="message">Votre besoin</label>
-    <textarea id="message" name="message" required></textarea>
+      <label>Téléphone</label>
+      <input type="tel" name="telephone">
 
-    <button type="submit">Envoyer la demande</button>
-  </form>
+      <label>Message</label>
+      <textarea name="message" rows="4"></textarea>
 
+      <button type="submit">Envoyer</button>
+
+    </form>
+
+  </div>
 </div>
 
 <script>
-document.getElementById("page_url").value = document.referrer || window.location.href;
+document.getElementById("page_url").value = document.referrer;
 </script>
 
 </body>
