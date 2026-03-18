@@ -38,6 +38,7 @@
       text-align:center;
       color:#cfc8bb;
       font-size:14px;
+      line-height:1.5;
     }
 
     form{
@@ -46,14 +47,16 @@
       gap:12px;
     }
 
-    input, textarea{
+    input,
+    textarea{
       width:100%;
       padding:14px;
       border-radius:8px;
       border:1px solid rgba(255,255,255,0.1);
       background:#2b2b2b;
       color:#ece8df;
-      font-size:16px; /* évite zoom iPhone */
+      font-size:16px;
+      box-sizing:border-box;
     }
 
     textarea{
@@ -61,12 +64,16 @@
       resize:vertical;
     }
 
-    input:focus, textarea:focus{
+    input:focus,
+    textarea:focus{
       outline:none;
       border-color:#c9a15d;
     }
 
-    button{
+    button,
+    .site-link{
+      display:block;
+      width:100%;
       margin-top:10px;
       padding:16px;
       border:none;
@@ -74,12 +81,14 @@
       background:#c9a15d;
       color:#fff;
       font-size:16px;
+      text-align:center;
+      text-decoration:none;
       cursor:pointer;
-      position:sticky;
-      bottom:0;
+      box-sizing:border-box;
     }
 
-    button:hover{
+    button:hover,
+    .site-link:hover{
       background:#a88345;
     }
 
@@ -100,7 +109,7 @@
 
 <body>
 
-  <div class="container">
+  <div class="container" id="contact-box">
     <h1>Être contacté</h1>
     <p>Nous revenons vers vous rapidement.</p>
 
@@ -108,9 +117,11 @@
       <input type="hidden" name="access_key" value="b1bae4e8-d6eb-4c38-94a8-09289895db0f">
       <input type="hidden" name="subject" value="Demande de contact LEVHEC">
       <input type="hidden" name="page_url" id="page_url">
+      <input type="hidden" name="offre" id="offre">
+      <input type="hidden" name="redirect" value="https://ads.levhec.com/contact/?success=1">
 
       <input type="text" name="nom" placeholder="Nom" autocomplete="name" required>
-      <input type="text" name="entreprise" placeholder="Entreprise">
+      <input type="text" name="entreprise" placeholder="Entreprise" autocomplete="organization">
       <input type="email" name="email" placeholder="E-mail" autocomplete="email" required>
       <input type="tel" name="telephone" placeholder="Téléphone" autocomplete="tel">
       <textarea name="message" placeholder="Votre besoin"></textarea>
@@ -122,7 +133,24 @@
   </div>
 
   <script>
-    document.getElementById('page_url').value = window.location.href;
+    document.getElementById('page_url').value = document.referrer || window.location.href;
+
+    const params = new URLSearchParams(window.location.search);
+    const offreParam = params.get('offre');
+    if (offreParam) {
+      document.getElementById('offre').value = offreParam;
+    }
+
+    if (params.get('success') === '1') {
+      document.getElementById('contact-box').innerHTML = `
+        <h1>Merci</h1>
+        <p>Votre demande a bien été envoyée.<br>Vous pouvez également visiter notre site.</p>
+        <a class="site-link" href="https://www.levhec-advisory.com" target="_blank" rel="noopener noreferrer">
+          Visiter le site LEVHEC Advisory
+        </a>
+        <a class="back" href="/">Retour</a>
+      `;
+    }
   </script>
 
 </body>
