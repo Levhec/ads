@@ -6,9 +6,7 @@
   <title>Être contacté | LEVHEC ADVISORY</title>
 
   <style>
-    *{
-      box-sizing:border-box;
-    }
+    *{ box-sizing:border-box; }
 
     html, body{
       margin:0;
@@ -57,8 +55,7 @@
       gap:12px;
     }
 
-    input,
-    textarea{
+    input, textarea{
       width:100%;
       padding:14px;
       border-radius:10px;
@@ -88,8 +85,7 @@
       box-shadow:0 0 0 3px rgba(201,161,93,0.12);
     }
 
-    button,
-    .btn{
+    button, .btn{
       display:block;
       width:100%;
       margin-top:10px;
@@ -103,12 +99,6 @@
       text-align:center;
       text-decoration:none;
       cursor:pointer;
-      transition:all 0.2s ease;
-    }
-
-    button:hover,
-    .btn:hover{
-      filter:brightness(1.05);
     }
 
     .btn-secondary{
@@ -132,7 +122,7 @@
       margin-top:22px;
     }
 
-    @media (max-width: 480px){
+    @media (max-width:480px){
       body{
         align-items:flex-start;
         padding:14px;
@@ -141,23 +131,6 @@
       .container{
         max-width:100%;
         padding:24px 16px 18px;
-        border-radius:14px;
-        margin:0;
-      }
-
-      h1{
-        font-size:23px;
-      }
-
-      .subtitle{
-        font-size:14px;
-      }
-
-      input,
-      textarea,
-      button,
-      .btn{
-        font-size:16px;
       }
     }
   </style>
@@ -181,6 +154,10 @@
 
       <input type="text" name="nom" placeholder="Nom" autocomplete="name" required>
       <input type="text" name="entreprise" placeholder="Entreprise" autocomplete="organization">
+
+      <!-- NOUVEAU CHAMP -->
+      <input type="text" name="activite" placeholder="Activité de l’entreprise">
+
       <input type="email" name="email" placeholder="E-mail" autocomplete="email" required>
       <input type="tel" name="telephone" placeholder="Téléphone" autocomplete="tel">
       <textarea name="message" placeholder="Votre besoin"></textarea>
@@ -193,6 +170,7 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
+
     const offreField = document.getElementById('offre');
     const sourcePageField = document.getElementById('source_page');
     const currentPageField = document.getElementById('current_page');
@@ -200,19 +178,13 @@
     const contactBox = document.getElementById('contact-box');
 
     const offreParam = params.get('offre');
-    if (offreParam) {
-      offreField.value = offreParam;
-    }
+    if (offreParam) offreField.value = offreParam;
 
     const referrer = document.referrer || "";
     sourcePageField.value = referrer || "direct";
     currentPageField.value = window.location.href;
 
-    if (referrer) {
-      backLink.href = referrer;
-    } else {
-      backLink.href = "https://ads.levhec.com";
-    }
+    backLink.href = referrer || "https://ads.levhec.com";
 
     if (params.get('success') === '1') {
       const returnUrl = referrer || "https://ads.levhec.com";
