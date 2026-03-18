@@ -103,8 +103,8 @@
       min-height: 48px;
     }
 
-    .btn:hover { 
-      transform: translateY(-1px); 
+    .btn:hover {
+      transform: translateY(-1px);
     }
 
     .btn-primary {
@@ -230,7 +230,13 @@
       padding: 0 0 70px;
     }
 
-    /* BOUTONS FLOTTANTS */
+    .final-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
 
     .floating-actions{
       position:fixed;
@@ -272,7 +278,8 @@
     @media (max-width: 640px){
       .actions,
       .section-actions,
-      .bottom-actions{
+      .bottom-actions,
+      .final-actions{
         flex-direction:column;
       }
 
@@ -306,7 +313,7 @@
       </p>
       <div class="actions">
         <a class="btn btn-primary" href="contact/index.html">Être contacté</a>
-        <button class="btn btn-secondary" type="button" data-popup="popups/popup_offre_gouvernance_donnees.html">Découvrir l’offre</button>
+        <button class="btn btn-secondary" type="button" data-popup="popups/popup-offre-gouvernance-donnees.html">Découvrir l’offre</button>
       </div>
     </div>
   </header>
@@ -331,7 +338,7 @@
       <div class="wrap">
         <div class="section-actions">
           <a class="btn btn-primary" href="contact/index.html">Être contacté</a>
-          <button class="btn btn-secondary" type="button" data-popup="popups/popup_offre_gouvernance_donnees.html">Découvrir l’offre</button>
+          <button class="btn btn-secondary" type="button" data-popup="popups/popup-offre-gouvernance-donnees.html">Découvrir l’offre</button>
         </div>
       </div>
     </section>
@@ -364,7 +371,7 @@
       <div class="wrap">
         <div class="section-actions">
           <a class="btn btn-primary" href="contact/index.html">Être contacté</a>
-          <button class="btn btn-secondary" type="button" data-popup="popups/popup_offre_gouvernance_donnees.html">Découvrir l’offre</button>
+          <button class="btn btn-secondary" type="button" data-popup="popups/popup-offre-gouvernance-donnees.html">Découvrir l’offre</button>
         </div>
       </div>
     </section>
@@ -381,7 +388,7 @@
 
           <div class="bottom-actions">
             <a class="btn btn-primary" href="contact/index.html">Être contacté</a>
-            <button class="btn btn-secondary" type="button" data-popup="popups/popup_offre_gouvernance_donnees.html">Découvrir l’offre</button>
+            <button class="btn btn-secondary" type="button" data-popup="popups/popup-offre-gouvernance-donnees.html">Découvrir l’offre</button>
           </div>
         </div>
       </div>
@@ -390,7 +397,10 @@
 
   <div class="site-link-outside">
     <div class="wrap">
-      <a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank" rel="noopener">Vers le Site LEVHEC ADVISORY</a>
+      <div class="final-actions">
+        <a href="/" class="btn btn-secondary">Voir toutes les offres</a>
+        <a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank" rel="noopener">Vers le Site LEVHEC ADVISORY</a>
+      </div>
     </div>
   </div>
 
@@ -402,7 +412,7 @@
   </footer>
 
   <div class="floating-actions" aria-label="Actions rapides">
-    <button type="button" class="floating-btn" data-popup="popups/popup_offre_gouvernance_donnees.html" aria-label="Découvrir l’offre" title="Découvrir l’offre">★</button>
+    <button type="button" class="floating-btn" data-popup="popups/popup-offre-gouvernance-donnees.html" aria-label="Découvrir l’offre" title="Découvrir l’offre">★</button>
     <a href="contact/index.html" class="floating-btn" aria-label="Ouvrir la page de contact" title="Être contacté">✉</a>
     <a href="tel:+33184200660" class="floating-btn" aria-label="Appeler le 01 84 20 06 60" title="01 84 20 06 60">☎</a>
   </div>
