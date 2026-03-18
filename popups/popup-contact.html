@@ -11,75 +11,121 @@ body{
   background:transparent;
 }
 
+/* POPUP */
 .popup-content{
+  position:relative;
   background:#2b2b2b;
   color:#ece8df;
-  padding:25px;
-  border-radius:12px;
+  padding:30px 25px 25px;
+  border-radius:14px;
   max-width:500px;
   margin:auto;
-  box-sizing:border-box;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  border:1px solid rgba(255,255,255,.08);
 }
 
+/* CROIX */
+.popup-close{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:34px;
+  height:34px;
+  border:none;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+}
+
+.popup-close:hover{
+  background:rgba(255,255,255,.18);
+}
+
+/* TITRE */
 .popup-content h2{
   margin:0 0 10px 0;
   text-align:center;
-  font-size:28px;
-  line-height:1.2;
+  font-size:26px;
 }
 
+/* TEXTE */
 .popup-content p{
-  margin:0 0 20px 0;
   text-align:center;
   color:#cfc8bb;
-  line-height:1.5;
+  margin-bottom:20px;
 }
 
+/* LABEL */
 .popup-content label{
   display:block;
-  margin-top:15px;
-  font-size:14px;
+  margin-top:14px;
+  font-size:13px;
+  color:#cfc8bb;
 }
 
+/* INPUTS */
 .popup-content input,
 .popup-content textarea{
   width:100%;
-  padding:10px;
-  margin-top:5px;
-  border:none;
-  border-radius:6px;
+  padding:12px;
+  margin-top:6px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,.15);
+  background:#1f1f1f;
+  color:#ece8df;
+  font-size:14px;
   box-sizing:border-box;
+  transition:all .2s ease;
 }
 
+/* FOCUS */
+.popup-content input:focus,
+.popup-content textarea:focus{
+  outline:none;
+  border:1px solid #c9a15d;
+  background:#262626;
+}
+
+/* TEXTAREA */
 .popup-content textarea{
-  min-height:100px;
+  min-height:110px;
   resize:vertical;
 }
 
+/* BOUTON */
 .popup-content button[type="submit"]{
   margin-top:20px;
   width:100%;
-  padding:12px;
+  padding:14px;
   background:#c9a15d;
   border:none;
-  border-radius:8px;
+  border-radius:10px;
   color:#1f1f1f;
   font-weight:600;
+  font-size:15px;
   cursor:pointer;
+  transition:all .2s ease;
 }
 
 .popup-content button[type="submit"]:hover{
-  background:#d4ad6b;
+  background:#d8b26a;
+  transform:translateY(-1px);
 }
 
-@media (max-width: 600px){
+/* MOBILE */
+@media (max-width:600px){
   .popup-content{
-    padding:20px;
-    border-radius:10px;
+    padding:25px 18px;
   }
 
   .popup-content h2{
-    font-size:24px;
+    font-size:22px;
   }
 }
 </style>
@@ -88,6 +134,10 @@ body{
 <body>
 
 <div class="popup-content">
+
+  <!-- CROIX (indispensable ici car popup dans popup) -->
+  <button class="popup-close" onclick="window.parent.closePopup()">×</button>
+
   <h2>Être contacté</h2>
   <p>Laissez-nous vos coordonnées. Nous reviendrons vers vous rapidement.</p>
 
@@ -98,22 +148,23 @@ body{
     <input type="hidden" name="page_url" id="page_url">
 
     <label for="nom">Nom</label>
-    <input type="text" id="nom" name="nom" autocomplete="name" required>
+    <input type="text" id="nom" name="nom" required>
 
     <label for="entreprise">Entreprise</label>
-    <input type="text" id="entreprise" name="entreprise" autocomplete="organization">
+    <input type="text" id="entreprise" name="entreprise">
 
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" autocomplete="email" required>
+    <input type="email" id="email" name="email" required>
 
     <label for="telephone">Téléphone</label>
-    <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+    <input type="tel" id="telephone" name="telephone">
 
     <label for="message">Votre besoin</label>
     <textarea id="message" name="message" required></textarea>
 
     <button type="submit">Envoyer la demande</button>
   </form>
+
 </div>
 
 <script>
