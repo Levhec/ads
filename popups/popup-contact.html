@@ -16,7 +16,7 @@ body{
   position:relative;
   background:#2b2b2b;
   color:#ece8df;
-  padding:30px 25px 25px;
+  padding:60px 25px 25px; /* espace pour la croix */
   border-radius:14px;
   max-width:500px;
   margin:auto;
@@ -27,20 +27,19 @@ body{
 /* CROIX */
 .popup-close{
   position:absolute;
-  top:10px;
-  right:10px;
-  width:34px;
-  height:34px;
+  top:15px;
+  right:15px;
+  width:32px;
+  height:32px;
   border:none;
   border-radius:50%;
   background:rgba(255,255,255,.08);
   color:#fff;
-  font-size:20px;
+  font-size:18px;
   cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:10;
 }
 
 .popup-close:hover{
@@ -121,7 +120,7 @@ body{
 /* MOBILE */
 @media (max-width:600px){
   .popup-content{
-    padding:25px 18px;
+    padding:55px 18px 20px;
   }
 
   .popup-content h2{
@@ -135,7 +134,7 @@ body{
 
 <div class="popup-content">
 
-  <!-- CROIX (indispensable ici car popup dans popup) -->
+  <!-- CROIX (nécessaire car popup dans popup) -->
   <button class="popup-close" onclick="window.parent.closePopup()">×</button>
 
   <h2>Être contacté</h2>
