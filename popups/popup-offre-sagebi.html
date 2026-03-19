@@ -9,14 +9,16 @@
 
 <style>
 :root{
-  --bg:#2b2b2b;
-  --bg-soft:#343434;
-  --text:#ece8df;
-  --muted:#cfc8bb;
-  --gold:#c9a15d;
-  --gold-dark:#a88345;
-  --line:rgba(255,255,255,.10);
-  --shadow:0 20px 50px rgba(0,0,0,.35);
+  --sage-green:#00c300;
+  --sage-green-dark:#009e00;
+  --sage-green-soft:#12d412;
+  --bg:#0b2a0b;
+  --bg-soft:#103610;
+  --card:#ffffff;
+  --text:#133013;
+  --text-soft:#3e5a3e;
+  --line:rgba(0,195,0,.18);
+  --shadow:0 20px 50px rgba(0,0,0,.22);
 }
 
 *{
@@ -34,43 +36,65 @@ html, body{
 .popup-page{
   width:100%;
   max-width:100%;
-  background:var(--bg);
+  background:var(--card);
   border:1px solid var(--line);
   border-radius:18px;
   box-shadow:var(--shadow);
   overflow:hidden;
 }
 
-/* ✅ HEADER CENTRÉ */
 .popup-header{
-  padding:26px 26px 12px;
-  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+  padding:28px 26px 18px;
   text-align:center;
+  background:linear-gradient(180deg, #eaffea 0%, #ffffff 100%);
+  border-bottom:1px solid var(--line);
+}
+
+.popup-logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 0 18px;
+}
+
+.popup-logo img{
+  display:block;
+  max-width:260px;
+  width:100%;
+  height:auto;
+}
+
+/* si tu veux utiliser uniquement le logo Sage simple */
+.popup-logo.sage-only img{
+  max-width:180px;
 }
 
 .popup-header h1{
   margin:0;
   font-size:30px;
   line-height:1.2;
+  color:var(--text);
+  text-align:center;
 }
 
 .popup-header h1 span{
   display:block;
-  margin-top:6px;
-  color:var(--gold);
+  margin-top:8px;
+  color:var(--sage-green-dark);
   font-weight:700;
   letter-spacing:0.02em;
 }
 
 .popup-body{
-  padding:0 26px 24px;
+  padding:24px 26px 24px;
 }
 
 .intro{
   margin:0 0 22px;
   font-size:16px;
   line-height:1.65;
-  color:var(--muted);
+  color:var(--text-soft);
+  text-align:center;
 }
 
 .offer-list{
@@ -85,11 +109,15 @@ html, body{
   color:var(--text);
 }
 
+.offer-list strong{
+  color:var(--sage-green-dark);
+}
+
 .conclusion{
   margin:26px 0 0;
-  padding:18px 18px;
-  background:rgba(255,255,255,.03);
-  border:1px solid var(--line);
+  padding:18px;
+  background:#efffee;
+  border:1px solid rgba(0,195,0,.20);
   border-radius:14px;
 }
 
@@ -97,18 +125,19 @@ html, body{
   margin:0;
   font-size:15px;
   line-height:1.7;
-  color:var(--muted);
+  color:var(--text-soft);
+  text-align:center;
 }
 
 .conclusion strong{
-  color:var(--text);
+  color:var(--sage-green-dark);
 }
 
 .popup-footer{
   padding:18px 26px 26px;
   text-align:center;
   border-top:1px solid var(--line);
-  background:rgba(255,255,255,.02);
+  background:linear-gradient(180deg, #ffffff 0%, #f5fff5 100%);
 }
 
 .cta-btn{
@@ -116,8 +145,8 @@ html, body{
   min-width:220px;
   text-align:center;
   text-decoration:none;
-  background:var(--gold);
-  color:#1f1f1f;
+  background:var(--sage-green);
+  color:#ffffff;
   padding:15px 24px;
   border-radius:10px;
   font-size:16px;
@@ -126,15 +155,15 @@ html, body{
 }
 
 .cta-btn:hover{
-  background:var(--gold-dark);
+  background:var(--sage-green-dark);
   transform:translateY(-1px);
 }
 
 .note{
   margin-top:12px;
   font-size:13px;
-  color:var(--muted);
-  opacity:.9;
+  color:var(--text-soft);
+  opacity:.95;
 }
 
 @media (max-width: 768px){
@@ -143,7 +172,15 @@ html, body{
   }
 
   .popup-header{
-    padding:22px 18px 10px;
+    padding:22px 18px 14px;
+  }
+
+  .popup-logo{
+    margin-bottom:14px;
+  }
+
+  .popup-logo img{
+    max-width:220px;
   }
 
   .popup-header h1{
@@ -152,7 +189,7 @@ html, body{
   }
 
   .popup-body{
-    padding:0 18px 20px;
+    padding:20px 18px 20px;
   }
 
   .intro{
@@ -189,9 +226,24 @@ html, body{
 
 <div class="popup-page">
   <div class="popup-header">
+
+    <!-- Logo principal SAGE BI Reporting -->
+    <div class="popup-logo">
+      <img src="../img/sage-bi-reporting-100.png" alt="Sage BI Reporting">
+    </div>
+
+    <!--
+    Si tu préfères utiliser uniquement le logo Sage simple,
+    remplace le bloc ci-dessus par celui-ci :
+
+    <div class="popup-logo sage-only">
+      <img src="../img/Sage-logo.png" alt="Sage">
+    </div>
+    -->
+
     <h1>
       Vous missionnez LEVHEC Advisory.<br>
-      <span>Voici ce que vous obtenez.</span>
+      <span>Voici ce que vous obtenez avec SAGE BI Reporting.</span>
     </h1>
   </div>
 
