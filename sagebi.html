@@ -9,6 +9,8 @@
 
 <title>SAGE BI Reporting | LEVHEC ADVISORY</title>
 
+<link rel="stylesheet" href="assets/css/popup.css" />
+
 <style>
 
 :root{
@@ -22,9 +24,7 @@
 --radius:22px;
 }
 
-*{
-box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
 margin:0;
@@ -55,25 +55,17 @@ min-height:640px;
 position:relative;
 }
 
-/* PANTHERE CENTRALE */
+/* IMAGE */
 
 .panthere{
-
 position:absolute;
-
 top:50%;
 left:46%;
-
 transform:translate(-50%,-50%);
-
 width:420px;
-
 opacity:0.22;
-
 pointer-events:none;
-
 z-index:3;
-
 }
 
 /* TEXTE */
@@ -174,9 +166,7 @@ padding:28px 24px;
 backdrop-filter:blur(6px);
 }
 
-.card h2{
-margin:0 0 18px;
-}
+.card h2{ margin:0 0 18px; }
 
 .benefits{
 list-style:none;
@@ -205,54 +195,49 @@ border-top:1px solid rgba(255,255,255,.2);
 font-weight:600;
 }
 
-/* BOUTONS BAS */
+/* BAS PAGE */
 
-.bottom-nav{
+.final-actions{
 display:flex;
 justify-content:center;
-gap:18px;
+gap:14px;
+flex-wrap:wrap;
 margin-top:40px;
 }
 
-.nav-btn{
-padding:0 26px;
-min-height:54px;
-display:inline-flex;
+/* FLOATING */
+
+.floating-actions{
+position:fixed;
+right:20px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:9998;
+}
+
+.floating-btn{
+width:58px;
+height:58px;
+border-radius:50%;
+display:flex;
 align-items:center;
 justify-content:center;
-border-radius:999px;
-font-weight:700;
 text-decoration:none;
-color:#2b2b2b;
-
-background:linear-gradient(
-180deg,
-#f4e6c8 0%,
-#d4b06a 45%,
-#b88a3c 52%,
-#f2e0b4 100%
-);
-
-border:1px solid rgba(143,111,63,.55);
+font-size:25px;
+color:white;
+background:linear-gradient(180deg, var(--gold), #b89253);
+box-shadow:0 12px 26px rgba(0,0,0,.35);
+border:1px solid rgba(255,255,255,.14);
 }
 
 /* RESPONSIVE */
 
 @media(max-width:900px){
-
-.hero{
-grid-template-columns:1fr;
-}
-
-.panthere{
-display:none;
-}
-
-.hero-content,
-.hero-side{
-padding:36px 24px;
-}
-
+.hero{ grid-template-columns:1fr; }
+.panthere{ display:none; }
+.hero-content,.hero-side{ padding:36px 24px; }
 }
 
 </style>
@@ -266,7 +251,7 @@ padding:36px 24px;
 <section class="hero">
 
 <img class="panthere"
-src="https://ads.levhec.com/Panthere_detouree.png">
+src="assets/img/Panthere_detouree.png">
 
 <div class="hero-content">
 
@@ -290,13 +275,13 @@ SAGE BI Reporting est un outil puissant. Encore faut-il en exploiter tout le pot
 </ul>
 
 <div class="cta-row">
-<a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary">Demander un échange</a>
-<a href="#solutions" class="btn btn-secondary">Découvrir l’offre</a>
+<a href="contact/index.html" class="btn btn-primary">Être contacté</a>
+<button class="btn btn-secondary" type="button" data-popup="popups/popup-offre-sagebi.html">Découvrir l’offre</button>
 </div>
 
 </div>
 
-<aside class="hero-side" id="solutions">
+<aside class="hero-side">
 
 <div class="card">
 
@@ -323,17 +308,27 @@ Reprenez la maîtrise de vos données et transformez-les en avantage compétitif
 
 </section>
 
-<div class="bottom-nav">
-
-<a class="nav-btn" href="/">Voir toutes les offres</a>
-
-<a class="nav-btn" href="https://www.levhec-advisory.com/contact/">
-Contact
-</a>
-
+<div class="final-actions">
+<a href="/" class="btn btn-secondary">Voir toutes les offres</a>
+<a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank">Vers le site LEVHEC ADVISORY</a>
 </div>
 
 </main>
+
+<!-- FLOATING BUTTONS -->
+
+<div class="floating-actions">
+<button class="floating-btn" data-popup="popups/popup-offre-sagebi.html">★</button>
+<a href="contact/index.html" class="floating-btn">✉</a>
+<a href="tel:+33184200660" class="floating-btn">☎</a>
+</div>
+
+<!-- POPUP -->
+
+<div id="popup-overlay"></div>
+<div id="popup-box"></div>
+
+<script src="assets/js/popup-loader.js"></script>
 
 </body>
 </html>
