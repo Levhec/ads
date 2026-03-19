@@ -73,14 +73,10 @@ body{
   z-index:2;
 }
 
-/* LOGO LEVHEC PLUS GRAND */
-
 .logo-levhec{
   width:280px;
   margin:0 auto 18px;
 }
-
-/* BADGE */
 
 .brand-badge{
   background:var(--sage-soft);
@@ -92,14 +88,10 @@ body{
   color:var(--sage-deep);
 }
 
-/* LOGO SAGE */
-
 .sage-logo{
   width:180px;
   margin:0 auto 24px;
 }
-
-/* TITRE */
 
 h1{
   text-align:center;
@@ -107,8 +99,6 @@ h1{
   line-height:1.05;
   margin-bottom:18px;
 }
-
-/* TEXTE */
 
 .intro{
   text-align:center;
@@ -171,19 +161,53 @@ h1{
   background:rgba(255,255,255,.10);
   border:1px solid rgba(255,255,255,.18);
   border-radius:22px;
-  padding:30px 26px;
+  padding:34px 28px;
+  backdrop-filter:blur(6px);
+  text-align:center;
+}
+
+.card h2{
+  margin-bottom:16px;
+}
+
+.card-intro{
+  margin-bottom:20px;
 }
 
 .benefits{
   list-style:none;
   padding:0;
+  margin:0;
+  display:grid;
+  gap:12px;
+  text-align:left;
 }
 
 .benefits li{
-  margin-bottom:12px;
+  display:grid;
+  grid-template-columns:22px 1fr;
+  gap:10px;
 }
 
-/* LOGO SAGE BAS DROITE */
+.benefits li::before{
+  content:"✓";
+  font-weight:900;
+}
+
+.closing{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:700;
+}
+
+.mini-proof{
+  margin-top:14px;
+  font-size:.95rem;
+  opacity:.95;
+}
+
+/* LOGO BAS DROITE */
 
 .sage-corner{
   position:absolute;
@@ -201,8 +225,6 @@ h1{
   flex-wrap:wrap;
   margin-top:40px;
 }
-
-/* FOOTER */
 
 .site-footer{
   text-align:center;
@@ -273,9 +295,7 @@ SAGE BI Reporting est puissant. Mais sans structuration, sans logique de restitu
 
 <div class="card">
 
-<h2>
-Ce que vous obtenez concrètement
-</h2>
+<h2>Ce que vous obtenez concrètement</h2>
 
 <p class="card-intro">
 Nous vous aidons à transformer SAGE BI Reporting en véritable outil de pilotage opérationnel.
