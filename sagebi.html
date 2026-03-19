@@ -26,36 +26,21 @@
   --radius:22px;
 }
 
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{ box-sizing:border-box; }
 
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   background:linear-gradient(180deg,#f3fff5 0%,#ffffff 100%);
   color:var(--text);
-  line-height:1.6;
 }
 
-img{
-  max-width:100%;
-  display:block;
-}
+img{ display:block; max-width:100%; }
 
-.sage-logo{
-  width:180px;
-  margin:0 auto 24px;
-}
 .wrapper{
   max-width:1120px;
   margin:auto;
   padding:26px 20px 34px;
-  position:relative;
 }
 
 /* HERO */
@@ -65,14 +50,13 @@ img{
   border:1px solid var(--border);
   border-radius:28px;
   box-shadow:var(--shadow);
-  overflow:hidden;
   display:grid;
   grid-template-columns:1fr 1fr;
-  min-height:660px;
   position:relative;
+  overflow:hidden;
 }
 
-/* PANTHÈRE */
+/* PANTHERE */
 
 .panthere{
   position:absolute;
@@ -81,264 +65,146 @@ img{
   transform:translate(-50%,-50%);
   width:430px;
   opacity:0.15;
-  pointer-events:none;
-  z-index:3;
+  z-index:1;
 }
 
-/* COLONNE GAUCHE */
+/* LEFT */
 
 .hero-content{
-  padding:54px 56px 62px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  padding:54px 56px;
   position:relative;
-  z-index:4;
+  z-index:2;
+  text-align:center;
 }
+
+/* LOGO LEVHEC (sorti du carré) */
+
+.logo-levhec{
+  width:220px;
+  margin:0 auto 20px;
+}
+
+/* BADGE */
 
 .brand-badge{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
   background:var(--sage-soft);
-  border:1px solid #d8efde;
-  border-radius:24px;
-  padding:18px 20px 16px;
-  margin:0 auto 24px;
-  max-width:360px;
-}
-
-.brand-badge img{
-  width:210px;
-  max-width:100%;
-  height:auto;
-  margin:0 auto 8px;
-}
-
-.brand-badge span{
-  font-size:13px;
+  border-radius:20px;
+  padding:12px;
+  display:inline-block;
+  margin-bottom:20px;
   font-weight:800;
-  letter-spacing:.4px;
   color:var(--sage-deep);
-  text-transform:uppercase;
 }
+
+/* LOGO SAGE BI */
 
 .sage-logo{
   width:180px;
-  margin:0 0 24px;
+  margin:0 auto 24px;
 }
+
+/* TITRE */
 
 h1{
-  margin:0 0 18px;
-  font-size:clamp(2.2rem,4vw,4.05rem);
+  text-align:center;
+  font-size:clamp(2.2rem,4vw,4rem);
   line-height:1.05;
-  letter-spacing:-0.02em;
+  margin-bottom:18px;
 }
 
+/* TEXTE */
+
 .intro{
-  font-size:1.08rem;
+  text-align:center;
   color:var(--muted);
-  margin:0 0 26px;
-  max-width:560px;
+  margin-bottom:26px;
 }
 
 .questions{
   list-style:none;
   padding:0;
-  margin:0 0 30px;
   display:grid;
   gap:12px;
+  margin-bottom:30px;
 }
 
 .questions li{
   background:#f7fff9;
   border:1px solid #dff2e4;
-  padding:14px 16px;
-  border-radius:14px;
+  padding:14px;
+  border-radius:12px;
   font-weight:700;
-  color:#1f1f1f;
-  box-shadow:0 6px 18px rgba(0,0,0,0.03);
 }
+
+/* BOUTONS */
 
 .cta-row{
   display:flex;
-  gap:14px;
+  justify-content:center;
+  gap:12px;
   flex-wrap:wrap;
 }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 24px;
-  min-height:54px;
+  padding:14px 24px;
   border-radius:999px;
   font-weight:800;
   text-decoration:none;
-  transition:all .2s ease;
-  cursor:pointer;
-  border:none;
-  font-size:15px;
-}
-
-.btn:hover{
-  transform:translateY(-1px);
 }
 
 .btn-primary{
-  background:linear-gradient(180deg,var(--sage),var(--sage-dark));
+  background:var(--sage);
   color:white;
-  box-shadow:0 14px 28px rgba(0,181,51,0.28);
-}
-
-.btn-primary:hover{
-  background:linear-gradient(180deg,var(--sage-dark),var(--sage-deep));
 }
 
 .btn-secondary{
   border:1px solid var(--border);
-  background:white;
   color:var(--text);
 }
 
-.btn-secondary:hover{
-  border-color:#cfe6d5;
-  background:#fcfffd;
-}
-
-/* COLONNE DROITE */
+/* RIGHT */
 
 .hero-side{
-  background:linear-gradient(160deg,var(--sage-dark) 0%,var(--sage-deep) 100%);
+  background:linear-gradient(160deg,var(--sage-dark),var(--sage-deep));
   color:white;
   padding:56px 40px;
-  display:flex;
-  align-items:center;
   position:relative;
-  z-index:2;
 }
 
 .card{
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:22px;
-  padding:30px 26px;
-  backdrop-filter:blur(6px);
-  box-shadow:0 18px 36px rgba(0,0,0,0.10);
-}
-
-.card h2{
-  margin:0 0 18px;
-  font-size:1.65rem;
-  line-height:1.2;
-}
-
-.card-intro{
-  margin:0 0 20px;
-  color:rgba(255,255,255,.92);
-  font-size:1rem;
+  background:rgba(255,255,255,.1);
+  border-radius:20px;
+  padding:28px;
 }
 
 .benefits{
   list-style:none;
   padding:0;
-  margin:0;
-  display:grid;
-  gap:14px;
 }
 
 .benefits li{
-  display:grid;
-  grid-template-columns:24px 1fr;
-  gap:12px;
-  align-items:start;
-  font-weight:600;
+  margin-bottom:12px;
 }
 
-.benefits li::before{
-  content:"✓";
-  color:white;
-  font-weight:900;
+/* LOGO SAGE BAS DROITE */
+
+.sage-corner{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  width:90px;
+  opacity:0.9;
 }
 
-.closing{
-  margin-top:24px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.25);
-  font-weight:700;
-  color:white;
-}
-
-.mini-proof{
-  margin-top:18px;
-  font-size:.95rem;
-  color:rgba(255,255,255,.92);
-}
-
-/* BAS PAGE */
-
-.final-actions{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:40px;
-}
+/* FOOTER */
 
 .site-footer{
   text-align:center;
   margin-top:30px;
-  padding:20px 10px 6px;
-  color:#3f3f3f;
 }
 
-.site-footer .line-1{
-  font-weight:800;
-  font-size:16px;
-  color:var(--sage-deep);
-  margin-bottom:6px;
-}
-
-.site-footer .line-2{
-  font-weight:600;
-  font-size:14px;
-  color:#4f4f4f;
-  margin-bottom:6px;
-}
-
-.site-footer .line-3{
-  font-size:14px;
-  color:#666;
-  font-style:italic;
-}
-
-/* FLOATING */
-
-.floating-actions{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  z-index:9998;
-}
-
-.floating-btn{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  font-size:25px;
-  color:white;
-  background:linear-gradient(180deg,var(--sage),var(--sage-dark));
-  box-shadow:0 12px 26px rgba(0,0,0,.25);
-  border:1px solid rgba(255,255,255,.14);
+.site-footer div{
+  margin:5px 0;
 }
 
 /* RESPONSIVE */
@@ -346,85 +212,14 @@ h1{
 @media(max-width:900px){
   .hero{
     grid-template-columns:1fr;
-    min-height:auto;
   }
 
-  .panthere{
-    width:290px;
-    left:50%;
-    top:36%;
-    opacity:0.11;
-  }
-
-  .hero-content,
-  .hero-side{
-    padding:36px 24px;
-  }
-
-  .brand-badge{
-    max-width:100%;
-  }
-
-  .brand-badge img{
-    width:180px;
-  }
-
-  .sage-logo{
-    width:150px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  .cta-row,
-  .final-actions{
-    flex-direction:column;
-  }
-
-  .btn{
-    width:100%;
+  .sage-corner{
+    position:static;
+    margin:20px auto 0;
   }
 }
 
-@media(max-width:640px){
-  .wrapper{
-    padding:18px 14px 30px;
-  }
-
-  h1{
-    font-size:2rem;
-  }
-
-  .intro{
-    font-size:1rem;
-  }
-
-  .questions li{
-    font-size:.96rem;
-  }
-
-  .floating-actions{
-    right:14px;
-    bottom:14px;
-  }
-
-  .floating-btn{
-    width:54px;
-    height:54px;
-    font-size:22px;
-  }
-
-  .brand-badge{
-    padding:16px 14px 14px;
-  }
-
-  .brand-badge img{
-    width:165px;
-  }
-
-  .brand-badge span{
-    font-size:12px;
-  }
-}
 </style>
 
 </head>
@@ -433,94 +228,76 @@ h1{
 
 <main class="wrapper">
 
-  <section class="hero">
+<section class="hero">
 
-    <img class="panthere" src="assets/img/Panthere_detouree.png" alt="">
+<img class="panthere" src="assets/img/Panthere_detouree.png">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-      <div class="brand-badge">
-        <img src="assets/img/Levhec - horiz transp.png" alt="LEVHEC Advisory">
-        <span>Expertise Sage BI Reporting</span>
-      </div>
+<img class="logo-levhec" src="assets/img/Levhec - horiz transp.png">
 
-      <img class="sage-logo" src="assets/img/sage-bi-reporting-100.png" alt="Sage BI Reporting">
+<div class="brand-badge">
+Expertise Sage BI Reporting
+</div>
 
-      <h1>
-        Transformez vos données SAGE<br>
-        en décisions plus rapides.
-      </h1>
+<img class="sage-logo" src="assets/img/sage-bi-reporting-100.png">
 
-      <p class="intro">
-        SAGE BI Reporting est puissant. Mais sans structuration, sans logique de restitution et sans maîtrise métier, son potentiel reste sous-exploité. LEVHEC ADVISORY vous aide à passer d’un outil disponible à un reporting réellement utile.
-      </p>
+<h1>
+Transformez vos données SAGE<br>
+en décisions plus rapides.
+</h1>
 
-      <ul class="questions">
-        <li>Vos données sont-elles vraiment exploitables pour piloter l’activité ?</li>
-        <li>Disposez-vous de reportings fiables, lisibles et rapidement mobilisables ?</li>
-        <li>Exploitez-vous réellement toute la puissance de SAGE BI Reporting ?</li>
-      </ul>
+<p class="intro">
+SAGE BI Reporting est puissant mais sous-exploité sans structuration. Nous le transformons en outil de pilotage concret.
+</p>
 
-      <div class="cta-row">
-        <a href="contact/index.html" class="btn btn-primary">Être contacté rapidement</a>
-        <button class="btn btn-secondary" type="button" data-popup="popups/popup-offre-sagebi.html">Découvrir l’offre</button>
-      </div>
+<ul class="questions">
+<li>Données réellement exploitables ?</li>
+<li>Reportings fiables et rapides ?</li>
+<li>Plein potentiel utilisé ?</li>
+</ul>
 
-    </div>
+<div class="cta-row">
+<a href="contact/index.html" class="btn btn-primary">Être contacté</a>
+<button class="btn btn-secondary" data-popup="popups/popup-offre-sagebi.html">Découvrir l’offre</button>
+</div>
 
-    <aside class="hero-side">
+</div>
 
-      <div class="card">
+<aside class="hero-side">
 
-        <h2>
-          Ce que vous obtenez concrètement
-        </h2>
+<div class="card">
 
-        <p class="card-intro">
-          Nous vous aidons à transformer SAGE BI Reporting en véritable outil de pilotage opérationnel.
-        </p>
+<h2>Ce que vous obtenez</h2>
 
-        <ul class="benefits">
-          <li>Interroger vos données en temps réel</li>
-          <li>Créer des reportings multi-logiciels cohérents</li>
-          <li>Structurer et enrichir vos sources de données</li>
-          <li>Faciliter l’élaboration budgétaire et les prévisions</li>
-          <li>Mettre en place vos indicateurs clés de pilotage</li>
-          <li>Donner de l’autonomie à vos équipes</li>
-        </ul>
+<ul class="benefits">
+<li>Analyse temps réel</li>
+<li>Reporting multi-sources</li>
+<li>Données structurées</li>
+<li>Budgets & prévisions</li>
+<li>KPI fiables</li>
+<li>Autonomie équipes</li>
+</ul>
 
-        <p class="closing">
-          Vous gagnez en lisibilité, en réactivité et en maîtrise décisionnelle.
-        </p>
+<p class="mini-proof">
+Une intervention orientée résultats, usage concret et appropriation rapide.
+</p>
 
-        <p class="mini-proof">
-          Une intervention orientée résultats, usage concret et appropriation rapide.
-        </p>
+</div>
 
-      </div>
+<img class="sage-corner" src="assets/img/Sage-logo.png">
 
-    </aside>
+</aside>
 
-  </section>
+</section>
 
-  <div class="final-actions">
-    <a href="/" class="btn btn-secondary">Voir toutes les offres</a>
-    <a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank">Vers le site LEVHEC ADVISORY</a>
-  </div>
-
-  <footer class="site-footer">
-    <div class="line-1">Levhec Advisory est revendeur agréé SAGE</div>
-    <div class="line-2">Management de transition • Cabinet de conseil opérationnel</div>
-    <div class="line-3">Gouverner la donnée, c’est révéler sa valeur.</div>
-  </footer>
+<footer class="site-footer">
+<div><strong>Levhec Advisory est revendeur agréé SAGE</strong></div>
+<div>Management de transition • Cabinet de conseil opérationnel</div>
+<div><em>Gouverner la donnée, c’est révéler sa valeur.</em></div>
+</footer>
 
 </main>
-
-<div class="floating-actions">
-  <button class="floating-btn" type="button" data-popup="popups/popup-offre-sagebi.html" aria-label="Découvrir l’offre">★</button>
-  <a href="contact/index.html" class="floating-btn" aria-label="Être contacté">✉</a>
-  <a href="tel:+33184200660" class="floating-btn" aria-label="Téléphoner">☎</a>
-</div>
 
 <div id="popup-overlay"></div>
 <div id="popup-box"></div>
