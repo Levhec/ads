@@ -1,3 +1,7 @@
+/* ============================= */
+/* ===== STRUCTURE POPUP ====== */
+/* ============================= */
+
 #popup-overlay{
   position:fixed;
   inset:0;
@@ -18,12 +22,16 @@
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
   border-radius:16px;
-  padding:52px 22px 22px; /* espace en haut pour la croix */
+  padding:52px 22px 22px;
   box-shadow:0 20px 60px rgba(0,0,0,0.5);
   display:none;
   z-index:1000;
   box-sizing:border-box;
 }
+
+/* ============================= */
+/* ========= CROIX ============ */
+/* ============================= */
 
 .popup-close{
   position:absolute;
@@ -47,6 +55,10 @@
 .popup-close:hover{
   color:#ffffff;
 }
+
+/* ============================= */
+/* ===== FORMULAIRE CONTACT ==== */
+/* ============================= */
 
 .popup-content h2{
   margin:0 0 8px;
@@ -109,7 +121,126 @@
   background:#927f08;
 }
 
+/* ============================= */
+/* ===== CONTENU OFFRES ======== */
+/* ============================= */
+
+.popup-page{
+  width:100%;
+  max-width:100%;
+  background:#2b2b2b;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.popup-header{
+  padding:26px 26px 12px;
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+}
+
+.popup-header h1{
+  margin:0;
+  font-size:30px;
+  line-height:1.2;
+  text-align:center;
+}
+
+.popup-header h1 span{
+  display:block;
+  margin-top:6px;
+  color:#c9a15d;
+  font-weight:700;
+  letter-spacing:0.02em;
+}
+
+.popup-body{
+  padding:0 26px 24px;
+}
+
+.intro{
+  margin:0 0 22px;
+  font-size:16px;
+  line-height:1.65;
+  color:#cfc8bb;
+  text-align:center;
+}
+
+.offer-list{
+  margin:0;
+  padding-left:20px;
+}
+
+.offer-list li{
+  margin:0 0 12px;
+  font-size:15px;
+  line-height:1.6;
+  color:#ECE8DF;
+}
+
+.conclusion{
+  margin:26px 0 0;
+  padding:18px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:14px;
+}
+
+.conclusion p{
+  margin:0;
+  font-size:15px;
+  line-height:1.7;
+  color:#cfc8bb;
+  text-align:center;
+}
+
+.conclusion strong{
+  color:#ECE8DF;
+}
+
+/* ============================= */
+/* ========= FOOTER ============ */
+/* ============================= */
+
+.popup-footer{
+  padding:18px 26px 26px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.02);
+}
+
+.cta-btn{
+  display:inline-block;
+  min-width:220px;
+  text-align:center;
+  text-decoration:none;
+  background:#c9a15d;
+  color:#1f1f1f;
+  padding:15px 24px;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:700;
+  transition:all .2s ease;
+}
+
+.cta-btn:hover{
+  background:#a88345;
+  transform:translateY(-1px);
+}
+
+.note{
+  margin-top:12px;
+  font-size:13px;
+  color:#cfc8bb;
+  opacity:.9;
+}
+
+/* ============================= */
+/* ========= MOBILE ============ */
+/* ============================= */
+
 @media (max-width: 640px){
+
   #popup-box{
     top:10px;
     left:10px;
@@ -120,7 +251,7 @@
     max-height:none;
     height:auto;
     border-radius:14px;
-    padding:48px 14px 18px; /* espace en haut pour la croix */
+    padding:48px 14px 18px;
   }
 
   .popup-close{
@@ -142,22 +273,48 @@
 
   .popup-content label{
     margin-top:12px;
-    font-size:14px;
   }
 
   .popup-content input,
   .popup-content textarea{
-    padding:12px;
     font-size:16px;
-  }
-
-  .popup-content textarea{
-    min-height:110px;
   }
 
   .popup-content button[type="submit"]{
     position:sticky;
     bottom:0;
-    margin-top:16px;
+  }
+
+  .popup-header h1{
+    font-size:24px;
+  }
+
+  .popup-body{
+    padding:0 18px 20px;
+  }
+
+  .intro{
+    font-size:15px;
+  }
+
+  .offer-list li{
+    font-size:14px;
+  }
+
+  .conclusion{
+    padding:16px;
+  }
+
+  .conclusion p{
+    font-size:14px;
+  }
+
+  .popup-footer{
+    padding:16px 18px 20px;
+  }
+
+  .cta-btn{
+    width:100%;
+    min-width:0;
   }
 }
