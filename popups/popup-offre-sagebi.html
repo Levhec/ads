@@ -41,9 +41,17 @@ html, body{
   overflow:hidden;
 }
 
+/* ✅ HEADER CENTRÉ */
 .popup-header{
   padding:26px 26px 12px;
   background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+  text-align:center;
+}
+
+.popup-header h1{
+  margin:0;
+  font-size:30px;
+  line-height:1.2;
 }
 
 .popup-header h1 span{
@@ -181,11 +189,12 @@ html, body{
 
 <div class="popup-page">
   <div class="popup-header">
-  <h1>
-  Vous missionnez LEVHEC Advisory.<br>
-  <span>Voici ce que vous obtenez.</span>
-  </h1>
-  
+    <h1>
+      Vous missionnez LEVHEC Advisory.<br>
+      <span>Voici ce que vous obtenez.</span>
+    </h1>
+  </div>
+
   <div class="popup-body">
     <p class="intro">
       Nous déployons SAGE BI Reporting pour que vos données cessent d’être dormantes et deviennent enfin un véritable outil de pilotage.
