@@ -23,7 +23,6 @@
   --white:#ffffff;
   --border:#dbe9de;
   --shadow:0 18px 45px rgba(0,0,0,0.08);
-  --radius:22px;
 }
 
 *{ box-sizing:border-box; }
@@ -35,8 +34,6 @@ body{
   color:var(--text);
 }
 
-img{ display:block; max-width:100%; }
-
 .wrapper{
   max-width:1120px;
   margin:auto;
@@ -46,7 +43,7 @@ img{ display:block; max-width:100%; }
 /* HERO */
 
 .hero{
-  background:var(--white);
+  background:white;
   border:1px solid var(--border);
   border-radius:28px;
   box-shadow:var(--shadow);
@@ -65,38 +62,37 @@ img{ display:block; max-width:100%; }
   transform:translate(-50%,-50%);
   width:430px;
   opacity:0.15;
-  z-index:1;
 }
 
 /* LEFT */
 
 .hero-content{
   padding:54px 56px;
+  text-align:center;
   position:relative;
   z-index:2;
-  text-align:center;
 }
 
-/* LOGO LEVHEC (sorti du carré) */
+/* LOGO LEVHEC PLUS GRAND */
 
 .logo-levhec{
-  width:220px;
-  margin:0 auto 20px;
+  width:280px;
+  margin:0 auto 18px;
 }
 
 /* BADGE */
 
 .brand-badge{
   background:var(--sage-soft);
-  border-radius:20px;
-  padding:12px;
+  padding:10px 16px;
+  border-radius:999px;
   display:inline-block;
   margin-bottom:20px;
   font-weight:800;
   color:var(--sage-deep);
 }
 
-/* LOGO SAGE BI */
+/* LOGO SAGE */
 
 .sage-logo{
   width:180px;
@@ -172,9 +168,10 @@ h1{
 }
 
 .card{
-  background:rgba(255,255,255,.1);
-  border-radius:20px;
-  padding:28px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:22px;
+  padding:30px 26px;
 }
 
 .benefits{
@@ -193,7 +190,16 @@ h1{
   bottom:20px;
   right:20px;
   width:90px;
-  opacity:0.9;
+}
+
+/* BAS PAGE */
+
+.final-actions{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:40px;
 }
 
 /* FOOTER */
@@ -219,7 +225,6 @@ h1{
     margin:20px auto 0;
   }
 }
-
 </style>
 
 </head>
@@ -248,17 +253,17 @@ en décisions plus rapides.
 </h1>
 
 <p class="intro">
-SAGE BI Reporting est puissant mais sous-exploité sans structuration. Nous le transformons en outil de pilotage concret.
+SAGE BI Reporting est puissant. Mais sans structuration, sans logique de restitution et sans maîtrise métier, son potentiel reste sous-exploité. LEVHEC ADVISORY vous aide à passer d’un outil disponible à un reporting réellement utile.
 </p>
 
 <ul class="questions">
-<li>Données réellement exploitables ?</li>
-<li>Reportings fiables et rapides ?</li>
-<li>Plein potentiel utilisé ?</li>
+<li>Vos données sont-elles vraiment exploitables pour piloter l’activité ?</li>
+<li>Disposez-vous de reportings fiables, lisibles et rapidement mobilisables ?</li>
+<li>Exploitez-vous réellement toute la puissance de SAGE BI Reporting ?</li>
 </ul>
 
 <div class="cta-row">
-<a href="contact/index.html" class="btn btn-primary">Être contacté</a>
+<a href="contact/index.html" class="btn btn-primary">Être contacté rapidement</a>
 <button class="btn btn-secondary" data-popup="popups/popup-offre-sagebi.html">Découvrir l’offre</button>
 </div>
 
@@ -268,16 +273,26 @@ SAGE BI Reporting est puissant mais sous-exploité sans structuration. Nous le t
 
 <div class="card">
 
-<h2>Ce que vous obtenez</h2>
+<h2>
+Ce que vous obtenez concrètement
+</h2>
+
+<p class="card-intro">
+Nous vous aidons à transformer SAGE BI Reporting en véritable outil de pilotage opérationnel.
+</p>
 
 <ul class="benefits">
-<li>Analyse temps réel</li>
-<li>Reporting multi-sources</li>
-<li>Données structurées</li>
-<li>Budgets & prévisions</li>
-<li>KPI fiables</li>
-<li>Autonomie équipes</li>
+<li>Interroger vos données en temps réel</li>
+<li>Créer des reportings multi-logiciels cohérents</li>
+<li>Structurer et enrichir vos sources de données</li>
+<li>Faciliter l’élaboration budgétaire et les prévisions</li>
+<li>Mettre en place vos indicateurs clés de pilotage</li>
+<li>Donner de l’autonomie à vos équipes</li>
 </ul>
+
+<p class="closing">
+Vous gagnez en lisibilité, en réactivité et en maîtrise décisionnelle.
+</p>
 
 <p class="mini-proof">
 Une intervention orientée résultats, usage concret et appropriation rapide.
@@ -290,6 +305,11 @@ Une intervention orientée résultats, usage concret et appropriation rapide.
 </aside>
 
 </section>
+
+<div class="final-actions">
+<a href="/" class="btn btn-secondary">Voir toutes les offres</a>
+<a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank">Vers le site LEVHEC ADVISORY</a>
+</div>
 
 <footer class="site-footer">
 <div><strong>Levhec Advisory est revendeur agréé SAGE</strong></div>
