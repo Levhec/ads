@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Offre Management de transition | LEVHEC ADVISORY" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Offre Management de transition | LEVHEC ADVISORY</title>
+
+  <style>
+    :root{
+      --bg:#2b2b2b;
+      --bg-soft:#343434;
+      --panel:#2f2f2f;
+      --panel-soft:#f4efe3;
+      --text:#ece8df;
+      --muted:#d8d0c2;
+      --dark:#1f1f1f;
+      --gold:#c8ab5b;
+      --gold-dark:#af923f;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+      --radius-xl:26px;
+      --radius-lg:20px;
+      --radius-md:14px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html, body{
+      margin:0;
+      padding:0;
+      background:transparent;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+    }
+
+    body{
+      padding:0;
+    }
+
+    .popup-page{
+      width:100%;
+      max-width:760px;
+      margin:0 auto;
+      background:linear-gradient(180deg, #2e2e2e 0%, #262626 100%);
+      border-radius:var(--radius-xl);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .popup-header{
+      padding:26px 22px 18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+      text-align:center;
+      border-bottom:1px solid var(--line);
+    }
+
+    .logo-wrap{
+      display:flex;
+      justify-content:center;
+      margin-bottom:14px;
+    }
+
+    .logo{
+      max-width:210px;
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .popup-header h1{
+      margin:0;
+      font-size:31px;
+      line-height:1.18;
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .popup-header .slogan{
+      margin:12px auto 0;
+      max-width:540px;
+      font-size:17px;
+      line-height:1.5;
+      color:var(--muted);
+      font-style:italic;
+    }
+
+    .popup-body{
+      padding:22px;
+    }
+
+    .intro-box{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      padding:18px 18px;
+      margin-bottom:18px;
+    }
+
+    .intro{
+      margin:0;
+      font-size:17px;
+      line-height:1.65;
+      color:var(--text);
+      text-align:center;
+    }
+
+    .offer-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .offer-card{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:17px 16px;
+    }
+
+    .offer-icon{
+      flex:0 0 34px;
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      background:var(--gold);
+      color:var(--dark);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:15px;
+      margin-top:2px;
+    }
+
+    .offer-text h2{
+      margin:0 0 6px;
+      font-size:19px;
+      line-height:1.25;
+      color:var(--text);
+      text-align:left;
+    }
+
+    .offer-text p{
+      margin:0;
+      font-size:15.5px;
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    .bottom-box{
+      background:var(--panel-soft);
+      color:var(--dark);
+      border-radius:20px;
+      padding:20px 18px;
+      margin-bottom:18px;
+    }
+
+    .bottom-box p{
+      margin:0;
+      font-size:16px;
+      line-height:1.65;
+      text-align:center;
+      font-weight:600;
+    }
+
+    .button-row{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:4px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:14px 20px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:15px;
+      text-align:center;
+      transition:transform .18s ease, opacity .18s ease, box-shadow .18s ease;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      opacity:.97;
+    }
+
+    .btn-gold{
+      background:var(--gold);
+      color:var(--dark);
+    }
+
+    .btn-light{
+      background:#ffffff;
+      color:var(--dark);
+    }
+
+    .btn-dark{
+      background:#1f1f1f;
+      color:#ffffff;
+    }
+
+    .secondary-links{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+    }
+
+    .secondary-links .button-row{
+      margin-top:0;
+    }
+
+    @media (max-width:640px){
+      .popup-page{
+        border-radius:20px;
+      }
+
+      .popup-header{
+        padding:22px 16px 16px;
+      }
+
+      .logo{
+        max-width:180px;
+      }
+
+      .popup-header h1{
+        font-size:27px;
+      }
+
+      .popup-header .slogan{
+        font-size:16px;
+      }
+
+      .popup-body{
+        padding:16px;
+      }
+
+      .intro{
+        font-size:16px;
+      }
+
+      .offer-card{
+        padding:15px 14px;
+        border-radius:16px;
+      }
+
+      .offer-text h2{
+        font-size:18px;
+      }
+
+      .offer-text p{
+        font-size:15px;
+      }
+
+      .bottom-box{
+        padding:18px 15px;
+        border-radius:16px;
+      }
+
+      .bottom-box p{
+        font-size:15.5px;
+      }
+
+      .button-row{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup-page">
+    <div class="popup-header">
+      <div class="logo-wrap">
+        <img src="../assets/img/logo-levhec-advisory.png" alt="LEVHEC Advisory" class="logo">
+      </div>
+
+      <div class="tag">Management de transition</div>
+      <h1>Vous confiez une fonction clé à LEVHEC Advisory.<br>Voici ce que vous obtenez.</h1>
+      <p class="slogan">Savoir apparaître juste le temps qu’il faut.</p>
+    </div>
+
+    <div class="popup-body">
+      <div class="intro-box">
+        <p class="intro">
+          Nous intervenons temporairement sur une fonction sensible pour remettre l’entreprise
+          en capacité d’agir, sécuriser les décisions et rétablir un pilotage opérationnel clair.
+        </p>
+      </div>
+
+      <div class="offer-grid">
+        <div class="offer-card">
+          <div class="offer-icon">1</div>
+          <div class="offer-text">
+            <h2>Prise de fonction rapide</h2>
+            <p>
+              Une intervention sur une direction ou une fonction clé avec un cadre clair,
+              une délégation adaptée et une capacité réelle à agir dès le démarrage.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">2</div>
+          <div class="offer-text">
+            <h2>Stabilisation de l’organisation</h2>
+            <p>
+              Reprise des sujets sensibles, sécurisation des priorités et rétablissement
+              de la continuité opérationnelle dans les phases de tension ou de transition.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">3</div>
+          <div class="offer-text">
+            <h2>Remise sous pilotage</h2>
+            <p>
+              Clarification des responsabilités, remise en ordre des circuits de décision
+              et suivi concret de l’exécution pour redonner de la lisibilité à la direction.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">4</div>
+          <div class="offer-text">
+            <h2>Accompagnement des équipes</h2>
+            <p>
+              Présence opérationnelle, coordination des acteurs, accompagnement du changement
+              et réduction des zones d’incertitude pour remettre l’organisation en mouvement.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">5</div>
+          <div class="offer-text">
+            <h2>Intervention sur des fonctions clés</h2>
+            <p>
+              Direction Générale, Direction Administrative et Financière, Direction des Ressources Humaines,
+              Secrétariat Général, contrôle de gestion et gouvernance des données.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-icon">6</div>
+          <div class="offer-text">
+            <h2>Transmission en sortie</h2>
+            <p>
+              Une passation structurée, des points de repère formalisés et une continuité préparée
+              pour que l’organisation reste plus lisible, plus stable et plus robuste après la mission.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-box">
+        <p>
+          Une intervention orientée action, continuité, lisibilité et résultats concrets.
+        </p>
+      </div>
+
+      <div class="button-row">
+        <a class="btn btn-gold" href="https://www.levhec-advisory.com/contact/">Être contacté</a>
+        <a class="btn btn-light" href="javascript:history.back()">Retour sur l’offre</a>
+      </div>
+
+      <div class="secondary-links">
+        <div class="button-row">
+          <a class="btn btn-dark" href="https://ads.levhec.com">Voir toutes les offres</a>
+          <a class="btn btn-light" href="https://www.levhec-advisory.com">Découvrir le site LEVHEC Advisory</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
