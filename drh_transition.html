@@ -25,12 +25,21 @@
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       background:linear-gradient(180deg,#f7f3ed 0%, #efe7db 100%);
       color:var(--text);
       line-height:1.6;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
     }
 
     .wrap{
@@ -91,13 +100,22 @@
       margin-top:28px;
     }
 
+    .hero-actions.center{
+      justify-content:center;
+    }
+
     .btn{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
       padding:14px 22px;
       border-radius:10px;
       text-decoration:none;
       font-weight:600;
       transition:.2s ease;
+      min-height:50px;
+      text-align:center;
     }
 
     .btn-primary{
@@ -124,16 +142,31 @@
     .hero-right{
       background:linear-gradient(160deg,#2a2a2a 0%, #111 100%);
       color:var(--white);
-      padding:42px 34px;
+      padding:34px 34px 42px;
       display:flex;
       flex-direction:column;
       justify-content:center;
+    }
+
+    .hero-logo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin:0 0 26px;
+    }
+
+    .hero-logo img{
+      max-width:260px;
+      width:100%;
+      height:auto;
+      object-fit:contain;
     }
 
     .hero-right h2{
       margin:0 0 18px;
       font-size:24px;
       line-height:1.2;
+      text-align:center;
     }
 
     .hero-right ul{
@@ -202,6 +235,11 @@
       margin:0;
       font-size:19px;
       color:#e9e2d7;
+      text-align:center;
+    }
+
+    .mid-actions{
+      padding-top:20px;
     }
 
     .steps{
@@ -242,7 +280,7 @@
 
     .cta{
       text-align:center;
-      padding:20px 0 70px;
+      padding:20px 0 40px;
     }
 
     .cta-box{
@@ -260,11 +298,57 @@
       font-size:18px;
     }
 
+    .site-links{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:8px 0 24px;
+    }
+
     .footer-note{
       text-align:center;
       color:#7b746a;
       font-size:14px;
-      padding:0 0 40px;
+      padding:0 0 10px;
+    }
+
+    .footer-extra{
+      text-align:center;
+      color:#6f685f;
+      font-size:15px;
+      line-height:1.8;
+      padding:0 0 90px;
+    }
+
+    .floating-actions{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      z-index:999;
+    }
+
+    .floating-btn{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:var(--white);
+      background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+      box-shadow:0 12px 24px rgba(0,0,0,.22);
+      font-size:22px;
+      transition:.2s ease;
+    }
+
+    .floating-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
     }
 
     @media (max-width: 980px){
@@ -277,6 +361,73 @@
       .hero-left,
       .hero-right{
         padding:30px;
+      }
+
+      .hero-logo{
+        margin-bottom:22px;
+      }
+
+      .hero-logo img{
+        max-width:220px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .wrap{
+        width:min(94%, 1100px);
+      }
+
+      .hero{
+        padding:32px 0 24px;
+      }
+
+      .hero-left,
+      .hero-right,
+      .card,
+      .step,
+      .cta-box,
+      .highlight{
+        padding:22px;
+      }
+
+      h1{
+        font-size:clamp(28px,9vw,40px);
+      }
+
+      .section-title{
+        font-size:26px;
+      }
+
+      .lead,
+      .intro,
+      .cta-box p,
+      .highlight p{
+        font-size:16px;
+      }
+
+      .hero-actions,
+      .site-links{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .floating-actions{
+        right:12px;
+        bottom:12px;
+        gap:10px;
+      }
+
+      .floating-btn{
+        width:50px;
+        height:50px;
+        font-size:20px;
+      }
+
+      .footer-extra{
+        padding:0 0 96px;
       }
     }
   </style>
@@ -301,12 +452,15 @@
           </p>
 
           <div class="hero-actions">
-            <a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary">Contacter LEVHEC ADVISORY</a>
-            <a href="/" class="btn btn-secondary">Voir toutes les offres</a>
+            <a href="/popups/popup-contact.html" class="btn btn-primary">Être contacté</a>
+            <a href="/popups/popup-offre-drh.html" class="btn btn-secondary">Voir l’offre</a>
           </div>
         </div>
 
         <aside class="hero-right">
+          <div class="hero-logo">
+            <img src="/assets/img/Levhec - horiz transp.png" alt="Levhec Advisory">
+          </div>
           <h2>Une intervention décisive sur les sujets les plus sensibles</h2>
           <ul>
             <li>Préparation et déploiement du PSE</li>
@@ -364,6 +518,13 @@
           faire circuler l’information entre les bons interlocuteurs et maintenir une exécution solide dans un
           moment où l’entreprise est particulièrement exposée.
         </p>
+      </div>
+
+      <div class="mid-actions">
+        <div class="hero-actions center">
+          <a href="/popups/popup-contact.html" class="btn btn-primary">Être contacté</a>
+          <a href="/popups/popup-offre-drh.html" class="btn btn-secondary">Voir l’offre</a>
+        </div>
       </div>
     </section>
 
@@ -443,18 +604,39 @@
           capable de sécuriser la procédure, d’encadrer les affaires sociales et de porter une exécution claire
           jusqu’à son aboutissement.
         </p>
-        <div class="hero-actions" style="justify-content:center;">
-          <a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary">Parler de votre situation</a>
-          <a href="/" class="btn btn-secondary">Retour aux offres</a>
+        <div class="hero-actions center">
+          <a href="/popups/popup-contact.html" class="btn btn-primary">Parlez de votre situation</a>
+          <a href="/popups/popup-offre-drh.html" class="btn btn-secondary">Voir l’offre</a>
         </div>
       </div>
     </section>
+
+    <div class="site-links">
+      <a href="/" class="btn btn-secondary">Voir toutes les offres</a>
+      <a href="https://www.levhec-advisory.com" class="btn btn-secondary">Vers le site levhec-advisory.com</a>
+    </div>
+
+    <div class="footer-note">
+      LEVHEC ADVISORY — Management de transition • Cabinet de conseil opérationnel S'inscire dans la durée en apparaissant juste le temps qu'il faut
+    </div>
 
     <div class="footer-note">
       LEVHEC ADVISORY • DRH en transition • PSE • Affaires sociales • Dialogue social
     </div>
 
+    <div class="footer-extra">
+      Cabinet de Management de Transition et de conseil opérationnel<br>
+      Pour Assurer une Continuité sans Faille<br>
+      S'inscrire dans la durée en apparaissant juste le temps qu'il faut
+    </div>
+
   </main>
+
+  <div class="floating-actions">
+    <a href="/popups/popup-offre-drh.html" class="floating-btn" aria-label="Voir l’offre" title="Voir l’offre">★</a>
+    <a href="/popups/popup-contact.html" class="floating-btn" aria-label="Être contacté" title="Être contacté">✉</a>
+    <a href="tel:0184200660" class="floating-btn" aria-label="Appeler le 01 84 20 06 60" title="Appeler">☎</a>
+  </div>
 
 </body>
 </html>
