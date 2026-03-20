@@ -1,207 +1,358 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="noindex,nofollow" />
-<title>Offre DRH en transition | LEVHEC ADVISORY</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="description" content="Offre DRH en transition | LEVHEC ADVISORY" />
+  <title>Offre DRH en transition | LEVHEC ADVISORY</title>
 
-<style>
-:root{
-  --bg:#1f1f1f;
-  --bg-soft:#2b2b2b;
-  --text:#ece8df;
-  --muted:#cfc8bb;
-  --gold:#c9a15d;
-  --gold-dark:#a88345;
-  --line:rgba(255,255,255,.08);
-}
+  <style>
+    :root{
+      --bg:#f4efe7;
+      --card:#232323;
+      --card-soft:#2f2f2f;
+      --text:#ece8df;
+      --muted:#cfc8bb;
+      --gold:#c9a15d;
+      --gold-dark:#a88345;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 24px 60px rgba(0,0,0,.22);
+      --radius:20px;
+    }
 
-*{box-sizing:border-box;}
+    *{
+      box-sizing:border-box;
+    }
 
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    html, body{
+      margin:0;
+      padding:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#f7f2eb 0%, #efe6d9 100%);
+      color:#222;
+    }
 
-/* CONTENEUR */
-.popup{
-  max-width:680px;
-  margin:auto;
-  padding:20px 18px 80px;
-  position:relative;
-}
+    body{
+      padding:24px 14px 36px;
+    }
 
-/* CROIX */
-.close{
-  position:fixed;
-  top:14px;
-  right:16px;
-  font-size:26px;
-  color:#fff;
-  text-decoration:none;
-  z-index:10;
-}
+    .popup-shell{
+      max-width:760px;
+      margin:0 auto;
+    }
 
-/* RETOUR */
-.back{
-  display:inline-block;
-  margin-bottom:18px;
-  color:var(--muted);
-  text-decoration:none;
-  font-size:14px;
-}
+    .popup-card{
+      position:relative;
+      background:linear-gradient(180deg,var(--card) 0%, #1b1b1b 100%);
+      color:var(--text);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
 
-/* TITRE */
-h1{
-  font-size:28px;
-  line-height:1.2;
-  margin:10px 0 20px;
-}
+    .popup-top{
+      padding:22px 22px 10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
 
-/* INTRO */
-.intro{
-  color:var(--muted);
-  margin-bottom:28px;
-  font-size:16px;
-}
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+      font-weight:500;
+    }
 
-/* BLOCS */
-.block{
-  padding:16px 0;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  gap:12px;
-}
+    .back-link:hover{
+      color:var(--text);
+    }
 
-.icon{
-  color:var(--gold);
-  font-size:18px;
-  margin-top:3px;
-}
+    .close-btn{
+      flex:0 0 auto;
+      width:38px;
+      height:38px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      text-decoration:none;
+      font-size:22px;
+      line-height:1;
+      border:1px solid rgba(255,255,255,.08);
+    }
 
-.block strong{
-  display:block;
-  font-size:16px;
-}
+    .close-btn:hover{
+      background:rgba(255,255,255,.10);
+    }
 
-.block span{
-  font-size:14px;
-  color:var(--muted);
-}
+    .popup-header{
+      padding:6px 22px 10px;
+      text-align:center;
+    }
 
-/* CTA */
-.cta{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:linear-gradient(180deg, rgba(31,31,31,0) 0%, rgba(31,31,31,1) 60%);
-  padding:20px 16px;
-}
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(201,161,93,.14);
+      color:#e1bf86;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
 
-.cta-inner{
-  max-width:680px;
-  margin:auto;
-  text-align:center;
-}
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(28px,4vw,40px);
+      line-height:1.15;
+      letter-spacing:-0.02em;
+    }
 
-.btn{
-  display:block;
-  width:100%;
-  padding:16px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:16px;
-  background:linear-gradient(180deg,var(--gold),var(--gold-dark));
-  color:#fff;
-  box-shadow:0 10px 25px rgba(201,161,93,.25);
-}
+    .intro{
+      max-width:640px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.65;
+    }
 
-/* MOBILE */
-@media (max-width:600px){
-  h1{font-size:24px;}
-}
-</style>
+    .popup-body{
+      padding:26px 22px 10px;
+    }
+
+    .offer-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .offer-item{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px 16px;
+    }
+
+    .offer-icon{
+      flex:0 0 30px;
+      width:30px;
+      height:30px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(201,161,93,.18);
+      color:#e1bf86;
+      font-size:15px;
+      font-weight:700;
+      margin-top:2px;
+    }
+
+    .offer-item strong{
+      display:block;
+      margin:0 0 6px;
+      font-size:16px;
+      line-height:1.35;
+      color:var(--text);
+    }
+
+    .offer-item span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .bottom-message{
+      margin:22px 0 0;
+      padding:20px 18px;
+      border-radius:16px;
+      background:linear-gradient(180deg, rgba(201,161,93,.10), rgba(201,161,93,.04));
+      border:1px solid rgba(201,161,93,.18);
+      text-align:center;
+      color:#e6dccd;
+      font-size:16px;
+      line-height:1.65;
+    }
+
+    .popup-footer{
+      padding:24px 22px 26px;
+      text-align:center;
+    }
+
+    .cta-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:240px;
+      padding:15px 24px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:16px;
+      color:#fff;
+      background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+      box-shadow:0 12px 26px rgba(201,161,93,.24);
+    }
+
+    .cta-btn:hover{
+      filter:brightness(1.04);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width: 720px){
+      body{
+        padding:12px 10px 24px;
+      }
+
+      .popup-top,
+      .popup-header,
+      .popup-body,
+      .popup-footer{
+        padding-left:16px;
+        padding-right:16px;
+      }
+
+      .offer-list{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:30px;
+      }
+
+      .intro{
+        font-size:16px;
+      }
+
+      .cta-btn{
+        width:100%;
+        min-width:0;
+      }
+    }
+
+    @media (max-width: 420px){
+      .popup-top{
+        padding-top:14px;
+        padding-bottom:8px;
+      }
+
+      .close-btn{
+        width:36px;
+        height:36px;
+        font-size:20px;
+      }
+
+      .back-link{
+        font-size:13px;
+      }
+
+      h1{
+        font-size:26px;
+      }
+
+      .offer-item{
+        padding:16px 14px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<a href="javascript:history.back()" class="close">✕</a>
+  <div class="popup-shell">
+    <div class="popup-card">
 
-<div class="popup">
+      <div class="popup-top">
+        <a href="javascript:history.back()" class="back-link">← Retour</a>
+        <a href="javascript:history.back()" class="close-btn" aria-label="Fermer">×</a>
+      </div>
 
-  <a href="javascript:history.back()" class="back">← Retour</a>
+      <div class="popup-header">
+        <span class="eyebrow">DRH en transition • PSE</span>
+        <h1>Vous missionnez LEVHEC Advisory pour une mission de DRH en transition. Voici ce que vous obtenez.</h1>
+        <p class="intro">
+          Une intervention immédiatement opérationnelle pour reprendre la main sur une situation sociale sensible,
+          sécuriser la procédure et maintenir une exécution claire jusqu’au bout.
+        </p>
+      </div>
 
-  <h1>
-    Vous missionnez LEVHEC Advisory<br>
-    pour une DRH de transition.<br>
-    Voici ce que vous obtenez.
-  </h1>
+      <div class="popup-body">
+        <div class="offer-list">
 
-  <p class="intro">
-    Une intervention immédiatement opérationnelle pour sécuriser votre situation sociale,
-    reprendre la maîtrise du dossier et avancer sans rupture.
-  </p>
+          <div class="offer-item">
+            <div class="offer-icon">✓</div>
+            <div>
+              <strong>Une prise en main immédiate de la situation</strong>
+              <span>Nous entrons rapidement dans le dossier pour comprendre les enjeux, les risques, les urgences et le calendrier réel.</span>
+            </div>
+          </div>
 
-  <div class="block">
-    <div class="icon">✓</div>
-    <div>
-      <strong>Prise en main immédiate du dossier</strong>
-      <span>Compréhension rapide des enjeux, des risques et du calendrier</span>
+          <div class="offer-item">
+            <div class="offer-icon">✓</div>
+            <div>
+              <strong>Une procédure PSE tenue avec rigueur</strong>
+              <span>Chaque étape est cadrée, suivie et sécurisée pour éviter les erreurs de méthode, les flottements et les retards.</span>
+            </div>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-icon">✓</div>
+            <div>
+              <strong>Un dialogue social mieux maîtrisé</strong>
+              <span>Les échanges avec le CSE et les représentants du personnel sont organisés avec méthode, clarté et tenue.</span>
+            </div>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-icon">✓</div>
+            <div>
+              <strong>Une coordination fluide entre tous les acteurs</strong>
+              <span>Direction, avocats, DREETS, managers et salariés avancent avec un point de passage clair et opérationnel.</span>
+            </div>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-icon">✓</div>
+            <div>
+              <strong>Une exécution sans perte de contrôle</strong>
+              <span>Le dossier avance, les responsabilités sont tenues, les informations circulent et le rythme reste piloté.</span>
+            </div>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-icon">✓</div>
+            <div>
+              <strong>Un accompagnement humain à la hauteur de l’enjeu</strong>
+              <span>Les salariés concernés sont suivis avec sérieux, respect et professionnalisme dans un contexte souvent très tendu.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bottom-message">
+          Dans un PSE, vous n’avez pas besoin d’une présence RH théorique. Vous avez besoin d’une intervention capable de tenir la procédure, les échanges et l’exécution.
+        </div>
+      </div>
+
+      <div class="popup-footer">
+        <a href="/popups/popup-contact.html" class="cta-btn">Être contacté</a>
+      </div>
+
     </div>
   </div>
-
-  <div class="block">
-    <div class="icon">✓</div>
-    <div>
-      <strong>Sécurisation complète du PSE</strong>
-      <span>Procédure maîtrisée, documentation solide, zéro approximation</span>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="icon">✓</div>
-    <div>
-      <strong>Pilotage du dialogue social</strong>
-      <span>Relation CSE structurée, échanges cadrés, tensions maîtrisées</span>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="icon">✓</div>
-    <div>
-      <strong>Coordination direction / avocats / DREETS</strong>
-      <span>Un interlocuteur unique pour fluidifier et accélérer</span>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="icon">✓</div>
-    <div>
-      <strong>Exécution sans perte de contrôle</strong>
-      <span>Suivi rigoureux, décisions claires, rythme tenu</span>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="icon">✓</div>
-    <div>
-      <strong>Accompagnement humain des salariés</strong>
-      <span>Clarté, respect et professionnalisme jusqu’à la sortie</span>
-    </div>
-  </div>
-
-</div>
-
-<div class="cta">
-  <div class="cta-inner">
-    <a href="/popups/popup-contact.html" class="btn">Être contacté</a>
-  </div>
-</div>
 
 </body>
 </html>
