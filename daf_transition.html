@@ -18,9 +18,16 @@
       --line:#e7dfd4;
       --shadow:0 18px 45px rgba(0,0,0,.10);
       --radius:20px;
+      --dark:#202020;
+      --dark-2:#2b2b2b;
+      --cream:#f4efe7;
     }
 
     *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -41,7 +48,7 @@
       min-height:100vh;
       display:flex;
       align-items:center;
-      padding:48px 0;
+      padding:38px 0 24px;
     }
 
     .card{
@@ -64,11 +71,26 @@
         linear-gradient(180deg, rgba(20,20,20,.88), rgba(36,36,36,.94)),
         linear-gradient(135deg, #2b2b2b 0%, #191919 100%);
       color:#f4efe7;
-      padding:56px 40px;
+      padding:34px 40px 56px;
       display:flex;
       flex-direction:column;
       justify-content:center;
       position:relative;
+    }
+
+    .right-top{
+      display:flex;
+      justify-content:flex-end;
+      align-items:flex-start;
+      margin-bottom:26px;
+    }
+
+    .right-logo{
+      max-width:220px;
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
     }
 
     .badge{
@@ -133,12 +155,15 @@
     }
 
     .btn{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       text-decoration:none;
       padding:14px 22px;
       border-radius:12px;
       font-weight:600;
       transition:.2s ease;
+      text-align:center;
     }
 
     .btn-primary{
@@ -160,6 +185,10 @@
 
     .btn-secondary:hover{
       background:#faf7f2;
+    }
+
+    .footer-btn{
+      min-width:220px;
     }
 
     .side-title{
@@ -208,13 +237,82 @@
       font-size:14px;
     }
 
+    .page-footer{
+      padding:6px 0 110px;
+    }
+
+    .footer-inner{
+      width:min(1100px, calc(100% - 32px));
+      margin:0 auto;
+      text-align:center;
+    }
+
+    .footer-actions{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .footer-note{
+      font-size:15px;
+      color:#4d473f;
+      max-width:900px;
+      margin:0 auto;
+      line-height:1.7;
+    }
+
+    .floating-actions{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:999;
+    }
+
+    .float-btn{
+      width:54px;
+      height:54px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      font-size:22px;
+      background:linear-gradient(180deg, var(--gold), var(--gold-dark));
+      color:#fff;
+      box-shadow:0 12px 24px rgba(0,0,0,.18);
+      transition:.2s ease;
+    }
+
+    .float-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.04);
+    }
+
     @media (max-width: 900px){
       .card{
         grid-template-columns:1fr;
       }
 
       .left,.right{
-        padding:38px 26px;
+        padding:34px 24px;
+      }
+
+      .right{
+        padding-top:24px;
+      }
+
+      .right-top{
+        justify-content:center;
+        margin-bottom:22px;
+      }
+
+      .right-logo{
+        max-width:190px;
       }
 
       .points{
@@ -223,7 +321,68 @@
 
       .hero{
         min-height:auto;
-        padding:22px 0;
+        padding:18px 0 16px;
+      }
+
+      .footer-note{
+        font-size:14px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .wrap,
+      .footer-inner{
+        width:min(100% - 20px, 1100px);
+      }
+
+      .left,.right{
+        padding:28px 18px;
+      }
+
+      h1{
+        font-size:clamp(30px, 10vw, 42px);
+      }
+
+      .intro{
+        font-size:17px;
+      }
+
+      .lead{
+        font-size:16px;
+      }
+
+      .side-title{
+        font-size:24px;
+      }
+
+      .cta-row,
+      .footer-actions{
+        flex-direction:column;
+      }
+
+      .cta-row .btn,
+      .footer-actions .btn{
+        width:100%;
+      }
+
+      .footer-btn{
+        min-width:0;
+      }
+
+      .floating-actions{
+        right:12px;
+        bottom:12px;
+        gap:8px;
+      }
+
+      .float-btn{
+        width:50px;
+        height:50px;
+        font-size:20px;
+      }
+
+      .page-footer{
+        padding-bottom:96px;
       }
     }
   </style>
@@ -274,12 +433,16 @@
           </div>
 
           <div class="cta-row">
-            <a href="https://www.levhec-advisory.com/contact/" class="btn btn-primary">Être rappelé</a>
-            <a href="https://www.levhec-advisory.com/" class="btn btn-secondary">Découvrir LEVHEC ADVISORY</a>
+            <a href="/popups/popup-contact.html" class="btn btn-primary">Être contacté</a>
+            <a href="/popups/popup-offre-daf.html" class="btn btn-secondary">Voir l'offre</a>
           </div>
         </div>
 
         <div class="right">
+          <div class="right-top">
+            <img src="/assets/img/Levhec - horiz transp.png" alt="LEVHEC ADVISORY" class="right-logo">
+          </div>
+
           <h2 class="side-title">Un DAF de transition pour remettre l’entreprise en mouvement</h2>
           <p class="side-text">
             Au-delà de la continuité, l’intervention vise à restaurer l’efficacité,
@@ -297,11 +460,32 @@
 
           <div class="signature">
             <strong>LEVHEC ADVISORY</strong><br>
-            Direction administrative et financière en management de transition
+            Une Direction Administrative et Financière en Management de Transition :<br>
+            Pour Assurer une Continuité sans Faille.
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-actions">
+        <a href="https://ads.levhec.com" class="btn btn-secondary footer-btn">Voir toutes les offres</a>
+        <a href="https://www.levhec-advisory.com" class="btn btn-primary footer-btn">Vers le site levhec-advisory.com</a>
+      </div>
+
+      <p class="footer-note">
+        LEVHEC ADVISORY — Management de transition • Cabinet de conseil opérationnel<br>
+        S'inscire dans la durée en apparaissant juste le temps qu'il faut
+      </p>
+    </div>
+  </footer>
+
+  <div class="floating-actions" aria-label="Actions rapides">
+    <a href="/popups/popup-offre-daf.html" class="float-btn" aria-label="Voir l'offre DAF" title="Voir l'offre DAF">★</a>
+    <a href="/popups/popup-contact.html" class="float-btn" aria-label="Être contacté" title="Être contacté">✉</a>
+    <a href="tel:0184200660" class="float-btn" aria-label="Appeler le 01 84 20 06 60" title="Appeler le 01 84 20 06 60">☎</a>
+  </div>
 </body>
 </html>
