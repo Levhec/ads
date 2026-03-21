@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LEVHEC ADVISORY intervient dans les situations complexes et les transforme en avantage stratégique : contentieux, tensions managériales, désorganisation comptable, production des documents de gestion et pilotage de transition." />
+  <meta name="description" content="LEVHEC ADVISORY intervient dans les situations complexes et les transforme en avantage stratégique : tensions managériales, désorganisation des fonctions support, production des documents de gestion, coordination de crise et management de transition." />
   <meta name="robots" content="index,follow" />
   <title>Situations complexes | LEVHEC ADVISORY</title>
 
   <style>
     :root{
-      --bg:#f6f3ee;
-      --text:#1f1f1f;
+      --bg:#f7f4ee;
+      --bg-soft:#f2ede4;
+      --text:#1d1d1d;
       --muted:#5f5a52;
       --gold:#b08d57;
-      --gold-dark:#8c6e43;
-      --black:#161616;
+      --gold-dark:#8b6a3d;
+      --black:#232323;
+      --black-2:#2b2b2b;
       --white:#ffffff;
-      --border:#e5dccf;
+      --border:#e6dccf;
+      --line:rgba(255,255,255,.08);
       --shadow:0 18px 45px rgba(0,0,0,.10);
+      --shadow-dark:0 20px 55px rgba(0,0,0,.26);
       --radius:22px;
+      --radius-sm:16px;
       --max:1180px;
     }
 
@@ -31,14 +36,19 @@
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top right, rgba(176,141,87,.12), transparent 28%),
-        linear-gradient(180deg, #faf8f4 0%, #f6f3ee 100%);
+        radial-gradient(circle at top right, rgba(176,141,87,.10), transparent 28%),
+        linear-gradient(180deg, #faf8f4 0%, #f7f4ee 100%);
       line-height:1.6;
     }
 
     a{
       color:inherit;
       text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
     }
 
     .container{
@@ -49,10 +59,10 @@
     .topbar{
       position:sticky;
       top:0;
-      z-index:50;
+      z-index:100;
       backdrop-filter:blur(10px);
-      background:rgba(246,243,238,.88);
-      border-bottom:1px solid rgba(0,0,0,.05);
+      background:rgba(247,244,238,.92);
+      border-bottom:1px solid rgba(0,0,0,.06);
     }
 
     .topbar-inner{
@@ -64,11 +74,15 @@
     }
 
     .brand{
-      font-size:.95rem;
-      font-weight:700;
-      letter-spacing:.12em;
-      color:var(--black);
-      text-transform:uppercase;
+      display:flex;
+      align-items:center;
+      min-height:42px;
+    }
+
+    .brand img{
+      height:42px;
+      width:auto;
+      object-fit:contain;
     }
 
     .nav{
@@ -84,6 +98,7 @@
       padding:8px 12px;
       border-radius:999px;
       transition:.25s ease;
+      font-weight:500;
     }
 
     .nav a:hover{
@@ -92,44 +107,48 @@
     }
 
     .hero{
-      padding:64px 0 34px;
+      padding:58px 0 30px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.12fr .88fr;
       gap:28px;
       align-items:stretch;
     }
 
     .hero-left{
-      background:var(--black);
+      background:linear-gradient(135deg, #212121 0%, #2d2d2d 100%);
       color:var(--white);
       border-radius:var(--radius);
       padding:48px;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-dark);
       position:relative;
       overflow:hidden;
     }
 
-    .hero-left::after{
+    .hero-left::before{
       content:"";
       position:absolute;
-      inset:auto -80px -80px auto;
-      width:260px;
-      height:260px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(176,141,87,.22) 0%, rgba(176,141,87,0) 70%);
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(176,141,87,.18), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
       pointer-events:none;
+    }
+
+    .hero-left > *{
+      position:relative;
+      z-index:1;
     }
 
     .eyebrow{
       display:inline-block;
       margin-bottom:16px;
       padding:7px 12px;
-      border:1px solid rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.16);
       border-radius:999px;
-      color:#e6d7be;
+      color:#e8d8bb;
       font-size:.78rem;
       letter-spacing:.10em;
       text-transform:uppercase;
@@ -137,7 +156,7 @@
 
     h1{
       margin:0 0 18px;
-      font-size:clamp(2rem, 4vw, 3.6rem);
+      font-size:clamp(2rem, 4vw, 3.4rem);
       line-height:1.08;
       letter-spacing:-.03em;
     }
@@ -146,11 +165,11 @@
       margin:0 0 14px;
       font-size:1.03rem;
       color:rgba(255,255,255,.88);
-      max-width:60ch;
+      max-width:62ch;
     }
 
     .accent{
-      color:#e6d7be;
+      color:#e4cfad;
     }
 
     .hero-actions{
@@ -167,9 +186,12 @@
       min-height:48px;
       padding:0 20px;
       border-radius:999px;
-      font-weight:600;
+      font-weight:700;
       transition:.25s ease;
       border:1px solid transparent;
+      text-align:center;
+      cursor:pointer;
+      font-size:.96rem;
     }
 
     .btn-primary{
@@ -184,13 +206,24 @@
     }
 
     .btn-secondary{
-      border-color:rgba(255,255,255,.18);
+      border-color:rgba(255,255,255,.16);
       color:#fff;
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.05);
     }
 
     .btn-secondary:hover{
       background:rgba(255,255,255,.08);
+    }
+
+    .btn-light{
+      background:#fff;
+      color:var(--black);
+      border-color:var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .btn-light:hover{
+      transform:translateY(-1px);
     }
 
     .hero-right{
@@ -200,7 +233,7 @@
 
     .stat-card,
     .quote-card{
-      background:rgba(255,255,255,.72);
+      background:rgba(255,255,255,.90);
       border:1px solid var(--border);
       border-radius:var(--radius);
       padding:28px;
@@ -213,6 +246,7 @@
       margin:0 0 10px;
       font-size:1.35rem;
       line-height:1.2;
+      color:var(--black);
     }
 
     .stat-list{
@@ -222,7 +256,7 @@
     }
 
     .stat{
-      padding:14px 16px;
+      padding:15px 16px;
       background:#fff;
       border:1px solid var(--border);
       border-radius:16px;
@@ -261,7 +295,7 @@
 
     .section-head{
       margin-bottom:22px;
-      max-width:800px;
+      max-width:860px;
     }
 
     .section-head p{
@@ -288,6 +322,7 @@
       margin:0 0 10px;
       font-size:1.15rem;
       line-height:1.25;
+      color:var(--black);
     }
 
     .card p{
@@ -303,28 +338,46 @@
       letter-spacing:.08em;
       text-transform:uppercase;
       color:var(--gold-dark);
-      font-weight:700;
+      font-weight:800;
     }
 
     .dark-band{
       margin:40px 0 20px;
       padding:40px;
-      background:linear-gradient(135deg, #141414 0%, #1f1f1f 100%);
+      background:linear-gradient(135deg, #1f1f1f 0%, #303030 100%);
       color:#fff;
       border-radius:30px;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-dark);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .dark-band::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      bottom:-80px;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(176,141,87,.18) 0%, rgba(176,141,87,0) 72%);
+      pointer-events:none;
     }
 
     .dark-band h2{
       margin:0 0 14px;
       font-size:clamp(1.6rem, 3vw, 2.4rem);
       line-height:1.15;
+      position:relative;
+      z-index:1;
     }
 
     .dark-band p{
       margin:0;
-      color:rgba(255,255,255,.82);
-      max-width:850px;
+      color:rgba(255,255,255,.84);
+      max-width:900px;
+      position:relative;
+      z-index:1;
     }
 
     .cases{
@@ -340,11 +393,15 @@
       border-radius:20px;
       padding:24px;
       box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
 
     .case h3{
-      margin:0 0 8px;
+      margin:0;
       font-size:1.1rem;
+      color:var(--black);
     }
 
     .case p{
@@ -377,13 +434,14 @@
       justify-content:center;
       background:rgba(176,141,87,.14);
       color:var(--gold-dark);
-      font-weight:700;
+      font-weight:800;
       margin-bottom:12px;
     }
 
     .step h4{
       margin:0 0 8px;
       font-size:1rem;
+      color:var(--black);
     }
 
     .step p{
@@ -392,24 +450,44 @@
       font-size:.95rem;
     }
 
+    .section-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:center;
+      margin-top:26px;
+    }
+
     .closing{
       margin:36px 0 0;
       padding:36px;
       border-radius:28px;
-      background:linear-gradient(180deg, rgba(176,141,87,.10) 0%, rgba(176,141,87,.04) 100%);
-      border:1px solid rgba(176,141,87,.18);
+      background:linear-gradient(180deg, rgba(176,141,87,.12) 0%, rgba(176,141,87,.05) 100%);
+      border:1px solid rgba(176,141,87,.20);
+      box-shadow:var(--shadow);
     }
 
     .closing h2{
       margin:0 0 12px;
       font-size:1.8rem;
       line-height:1.15;
+      color:var(--black);
     }
 
     .closing p{
       margin:0;
       color:var(--muted);
-      max-width:840px;
+      max-width:900px;
+    }
+
+    .legal-note{
+      margin-top:18px;
+      padding:16px 18px;
+      border-radius:16px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(176,141,87,.18);
+      color:var(--muted);
+      font-size:.95rem;
     }
 
     .footer-actions{
@@ -421,18 +499,19 @@
     }
 
     .btn-metal{
-      min-width:240px;
+      min-width:260px;
       padding:15px 26px;
       border-radius:999px;
       border:1px solid #bda57c;
       background:linear-gradient(180deg, #d5bc8f 0%, #b08d57 45%, #8b6a3d 100%);
       color:#fff;
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.01em;
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,.35),
         0 10px 24px rgba(176,141,87,.28);
       text-align:center;
+      transition:.25s ease;
     }
 
     .btn-metal:hover{
@@ -445,6 +524,63 @@
       text-align:center;
       color:var(--muted);
       font-size:.92rem;
+    }
+
+    .floating-actions{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:120;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .floating-btn{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-height:50px;
+      padding:0 16px;
+      border-radius:999px;
+      background:rgba(35,35,35,.96);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 14px 30px rgba(0,0,0,.22);
+      font-weight:700;
+      font-size:.94rem;
+      transition:.25s ease;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .floating-btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .floating-btn.offer{
+      background:linear-gradient(135deg, #2b2b2b 0%, #3a3226 100%);
+    }
+
+    .floating-btn.contact{
+      background:linear-gradient(180deg, #c39b60 0%, #9b7847 100%);
+      color:#fff;
+    }
+
+    .floating-btn.phone{
+      background:linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+    }
+
+    .floating-icon{
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,.10);
+      font-size:.95rem;
+      flex:0 0 28px;
     }
 
     @media (max-width: 1020px){
@@ -470,21 +606,83 @@
         align-items:flex-start;
       }
 
+      .brand img{
+        height:38px;
+      }
+
       .nav{
         justify-content:flex-start;
+        gap:8px;
+      }
+
+      .nav a{
+        padding:7px 10px;
+        font-size:.88rem;
       }
 
       .hero{
-        padding-top:34px;
+        padding-top:30px;
+      }
+
+      .hero-left,
+      .stat-card,
+      .quote-card,
+      .card,
+      .case,
+      .step,
+      .closing{
+        border-radius:18px;
+      }
+
+      .hero-left{
+        padding:28px 22px;
+      }
+
+      h1{
+        font-size:2rem;
+      }
+
+      .hero-left p,
+      .section-head p,
+      .card p,
+      .case p,
+      .step p,
+      .closing p{
+        font-size:.97rem;
+      }
+
+      .btn,
+      .btn-light,
+      .btn-metal{
+        width:100%;
+      }
+
+      .hero-actions,
+      .section-cta,
+      .footer-actions{
+        flex-direction:column;
       }
 
       .footer-actions{
-        padding-bottom:50px;
+        padding-bottom:100px;
       }
 
       .btn-metal{
-        width:100%;
         min-width:0;
+      }
+
+      .floating-actions{
+        right:10px;
+        left:10px;
+        bottom:10px;
+        gap:8px;
+      }
+
+      .floating-btn{
+        width:100%;
+        justify-content:center;
+        min-height:48px;
+        padding:0 14px;
       }
     }
   </style>
@@ -493,7 +691,10 @@
 
   <header class="topbar">
     <div class="container topbar-inner">
-      <a href="/" class="brand">LEVHEC ADVISORY</a>
+      <a href="/" class="brand" aria-label="LEVHEC ADVISORY">
+        <img src="assets/img/Levhec - horiz transp.png" alt="LEVHEC ADVISORY">
+      </a>
+
       <nav class="nav">
         <a href="#enjeux">Enjeux</a>
         <a href="#cas">Cas traités</a>
@@ -510,15 +711,18 @@
 
         <div class="hero-left">
           <span class="eyebrow">Management de transition • Conseil opérationnel</span>
+
           <h1>
             Nous intervenons dans les <span class="accent">situations complexes</span><br>
             et les transformons en avantage stratégique.
           </h1>
+
           <p>
             Lorsque l’organisation se tend, que les responsabilités se brouillent
             ou que les fonctions support ne produisent plus la visibilité attendue,
             l’entreprise a besoin de reprendre la main rapidement.
           </p>
+
           <p>
             LEVHEC ADVISORY sécurise les sujets sensibles, remet les fonctions clés
             sous contrôle et redonne à la direction une capacité claire d’action,
@@ -527,26 +731,30 @@
 
           <div class="hero-actions">
             <a href="#cas" class="btn btn-primary">Voir les cas d’intervention</a>
-            <a href="https://www.levhec-advisory.com/contact/" class="btn btn-secondary">Prendre contact</a>
+            <a href="/popups/popup-offre-situations-complexes.html" class="btn btn-secondary">Voir l’offre</a>
           </div>
         </div>
 
         <div class="hero-right">
           <div class="stat-card">
             <h2>Quand faire appel à nous ?</h2>
+
             <div class="stat-list">
               <div class="stat">
-                <strong>Contentieux ou contrôle sensible</strong>
-                <span>Fiscal, social, juridique ou contractuel.</span>
+                <strong>Contexte de contrôle ou dossier sensible</strong>
+                <span>Fiscal, social, contractuel ou administratif, en lien avec les professionnels habilités.</span>
               </div>
+
               <div class="stat">
                 <strong>Tensions managériales</strong>
                 <span>Perte de repères, conflits, responsabilités floues, équipes fragilisées.</span>
               </div>
+
               <div class="stat">
-                <strong>Désorganisation comptable</strong>
-                <span>Retards, fiabilité affaiblie, clôtures difficiles, circuits non sécurisés.</span>
+                <strong>Fonction comptable désorganisée</strong>
+                <span>Retards, fiabilité affaiblie, clôtures difficiles, circuits mal sécurisés.</span>
               </div>
+
               <div class="stat">
                 <strong>Documents de gestion insuffisants</strong>
                 <span>Reporting, budgets, tableaux de bord et indicateurs absents ou peu exploitables.</span>
@@ -565,6 +773,11 @@
         </div>
 
       </div>
+
+      <div class="section-cta">
+        <a href="/popups/popup-contact.html" class="btn btn-primary popup-link">Être contacté</a>
+        <a href="/popups/popup-offre-situations-complexes.html" class="btn btn-light">Voir l’offre</a>
+      </div>
     </section>
 
     <section id="enjeux">
@@ -572,7 +785,7 @@
         <h2>Des situations complexes, mais jamais sans issue</h2>
         <p>
           Une situation devient complexe lorsqu’elle mêle simultanément urgence opérationnelle,
-          risque juridique ou financier, fragilité humaine et manque de lisibilité dans les données
+          risque financier ou organisationnel, fragilité humaine et manque de lisibilité dans les données
           ou dans l’organisation.
         </p>
       </div>
@@ -583,7 +796,7 @@
           <h3>Réduire le risque immédiat</h3>
           <p>
             Nous intervenons pour stopper les dérives, fiabiliser les flux,
-            rétablir les priorités et remettre les sujets sensibles sous pilotage.
+            rétablir les priorités et remettre les sujets sensibles sous contrôle.
           </p>
         </article>
 
@@ -600,10 +813,15 @@
           <span class="tag">Transformer</span>
           <h3>Créer un avantage durable</h3>
           <p>
-            Au-delà du traitement de crise, nous faisons émerger une organisation
+            Au-delà du traitement de la difficulté, nous faisons émerger une organisation
             plus robuste, plus autonome et mieux outillée pour la suite.
           </p>
         </article>
+      </div>
+
+      <div class="section-cta">
+        <a href="/popups/popup-contact.html" class="btn btn-primary popup-link">Être contacté</a>
+        <a href="/popups/popup-offre-situations-complexes.html" class="btn btn-light">Voir l’offre</a>
       </div>
     </section>
 
@@ -611,11 +829,16 @@
       <div class="dark-band">
         <h2>La complexité devient stratégique lorsqu’elle est comprise, cadrée et traitée avec méthode.</h2>
         <p>
-          Une entreprise qui traverse un contentieux, une désorganisation administrative,
-          un défaut de production des documents de gestion ou une tension managériale ne doit pas
+          Une entreprise qui traverse une désorganisation administrative, un défaut de production
+          des documents de gestion, des tensions managériales ou un dossier sensible ne doit pas
           seulement “tenir”. Elle doit retrouver un langage clair, des processus fiables
           et une gouvernance capable de décider.
         </p>
+      </div>
+
+      <div class="section-cta">
+        <a href="/popups/popup-contact.html" class="btn btn-primary popup-link">Être contacté</a>
+        <a href="/popups/popup-offre-situations-complexes.html" class="btn btn-light">Voir l’offre</a>
       </div>
     </section>
 
@@ -623,27 +846,27 @@
       <div class="section-head">
         <h2>Exemples de cas d’intervention</h2>
         <p>
-          Voici une page orientée “situations complexes”, avec des exemples concrets
-          de problématiques que nous pouvons prendre en charge.
+          Voici quelques exemples de problématiques dans lesquelles nous pouvons intervenir
+          pour remettre l’entreprise en capacité d’agir rapidement.
         </p>
       </div>
 
       <div class="cases">
         <article class="case">
-          <h3>Contentieux fiscal et contrôle sensible</h3>
+          <h3>Contrôle fiscal ou dossier sensible</h3>
           <p>
-            Préparation des éléments, reprise du dossier, coordination des interlocuteurs,
-            sécurisation documentaire, remise à plat des flux et accompagnement de la direction
-            pour restaurer une position claire face à l’administration ou aux conseils.
+            Organisation des éléments utiles, coordination des interlocuteurs,
+            sécurisation documentaire, remise à plat des flux d’information et appui
+            à la direction pour structurer ses échanges avec l’administration et ses conseils.
           </p>
         </article>
 
         <article class="case">
-          <h3>Autres contentieux juridiques ou sociaux</h3>
+          <h3>Environnements juridiques ou sociaux sensibles</h3>
           <p>
-            Gestion de litiges contractuels, dossiers prud’homaux, tensions sociales,
-            sujets IRP, conformité sociale et articulation entre direction, avocats
-            et fonctions internes pour éviter la dispersion.
+            Appui de coordination dans des dossiers contractuels, sociaux ou prud’homaux,
+            en lien avec les professionnels habilités, afin d’éviter la dispersion
+            et de maintenir une ligne claire pour la direction et les équipes.
           </p>
         </article>
 
@@ -657,11 +880,11 @@
         </article>
 
         <article class="case">
-          <h3>Organisation comptable dégradée</h3>
+          <h3>Fonction comptable dégradée</h3>
           <p>
-            Comptabilité désorganisée, clôtures tardives, balance peu fiable,
-            comptabilité externalisée mal reprise, facturation non maîtrisée,
-            intercos insuffisamment suivies : nous remettons l’architecture comptable en ordre.
+            Clôtures tardives, fiabilité affaiblie, facturation mal maîtrisée, interfaces mal définies,
+            circuits peu sécurisés : nous réorganisons les processus, les responsabilités
+            et les flux de la fonction comptable.
           </p>
         </article>
 
@@ -682,6 +905,11 @@
             de pilotage pour conduire le changement sans désordre subi.
           </p>
         </article>
+      </div>
+
+      <div class="section-cta">
+        <a href="/popups/popup-contact.html" class="btn btn-primary popup-link">Être contacté</a>
+        <a href="/popups/popup-offre-situations-complexes.html" class="btn btn-light">Voir l’offre</a>
       </div>
     </section>
 
@@ -718,9 +946,14 @@
           <h3>Une structure plus robuste</h3>
           <p>
             Les risques sont mieux contenus, les flux mieux documentés,
-            et la fonction administrative, financière, sociale ou juridique retrouve sa cohérence.
+            et la structure retrouve sa cohérence opérationnelle.
           </p>
         </article>
+      </div>
+
+      <div class="section-cta">
+        <a href="/popups/popup-contact.html" class="btn btn-primary popup-link">Être contacté</a>
+        <a href="/popups/popup-offre-situations-complexes.html" class="btn btn-light">Voir l’offre</a>
       </div>
     </section>
 
@@ -729,7 +962,7 @@
         <h2>Notre méthode d’intervention</h2>
         <p>
           Nous adaptons le niveau d’implication à la situation :
-          audit, accompagnement, mode projet ou management de transition.
+          audit organisationnel, accompagnement, mode projet ou management de transition.
         </p>
       </div>
 
@@ -737,13 +970,13 @@
         <article class="step">
           <div class="step-number">1</div>
           <h4>Clarifier</h4>
-          <p>Identifier le métier exercé, le périmètre confié, le mode d’intervention et les priorités réelles.</p>
+          <p>Identifier le périmètre confié, le mode d’intervention, les priorités réelles et les interlocuteurs clés.</p>
         </article>
 
         <article class="step">
           <div class="step-number">2</div>
           <h4>Sécuriser</h4>
-          <p>Stabiliser les urgences : flux, documents, équipes, interlocuteurs, calendrier et zones de risque.</p>
+          <p>Stabiliser les urgences : flux, documents, équipes, calendrier et zones de risque.</p>
         </article>
 
         <article class="step">
@@ -758,6 +991,19 @@
           <p>Rendre l’organisation autonome, durablement plus solide et mieux préparée aux décisions futures.</p>
         </article>
       </div>
+
+      <div class="legal-note">
+        LEVHEC ADVISORY intervient en appui opérationnel, comme interface de coordination
+        et support aux équipes salariées, aux côtés de la direction. Lorsque la situation
+        implique des matières relevant d’une profession réglementée, les volets concernés
+        sont traités avec les conseils habituels de l’entreprise ou avec les professionnels
+        habilités désignés par le dirigeant.
+      </div>
+
+      <div class="section-cta">
+        <a href="/popups/popup-contact.html" class="btn btn-primary popup-link">Être contacté</a>
+        <a href="/popups/popup-offre-situations-complexes.html" class="btn btn-light">Voir l’offre</a>
+      </div>
     </section>
 
     <section>
@@ -770,17 +1016,64 @@
           avec davantage de maîtrise, de lisibilité et de solidité.
         </p>
       </div>
+
+      <div class="section-cta">
+        <a href="/popups/popup-contact.html" class="btn btn-primary popup-link">Être contacté</a>
+        <a href="/popups/popup-offre-situations-complexes.html" class="btn btn-light">Voir l’offre</a>
+      </div>
     </section>
 
     <div class="footer-actions" id="contact">
       <a class="btn-metal" href="/">Voir toutes les offres</a>
-      <a class="btn-metal" href="https://www.levhec-advisory.com/contact/">Contacter LEVHEC ADVISORY</a>
+      <a class="btn-metal" href="https://www.levhec-advisory.com" target="_blank" rel="noopener">Vers le site Levhec-advisory.com</a>
     </div>
 
     <footer>
-      LEVHEC ADVISORY — Situations complexes, transition, structuration, gouvernance.
+      LEVHEC ADVISORY — Situations complexes, structuration, coordination, transition.
     </footer>
 
   </main>
+
+  <div class="floating-actions">
+    <a class="floating-btn offer" href="/popups/popup-offre-situations-complexes.html">
+      <span class="floating-icon">★</span>
+      <span>Voir l’offre</span>
+    </a>
+
+    <a class="floating-btn contact popup-link" href="/popups/popup-contact.html">
+      <span class="floating-icon">✉</span>
+      <span>Être contacté</span>
+    </a>
+
+    <a class="floating-btn phone" href="tel:+33184200660">
+      <span class="floating-icon">☎</span>
+      <span>01 84 20 06 60</span>
+    </a>
+  </div>
+
+  <script>
+    function openPopupWindow(url) {
+      const width = Math.min(620, window.innerWidth - 24);
+      const height = Math.min(760, window.innerHeight - 24);
+      const left = Math.max(12, (window.screen.width - width) / 2);
+      const top = Math.max(12, (window.screen.height - height) / 2);
+
+      window.open(
+        url,
+        'levhecPopup',
+        `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+      );
+    }
+
+    document.querySelectorAll('.popup-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth > 768) {
+          e.preventDefault();
+          openPopupWindow(this.getAttribute('href'));
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
