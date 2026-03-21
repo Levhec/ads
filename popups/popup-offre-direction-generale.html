@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Offre Direction Générale de Transition | LEVHEC ADVISORY" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Offre Direction Générale de Transition | LEVHEC ADVISORY</title>
+
+  <style>
+    :root{
+      --bg:#2b2b2b;
+      --bg-soft:#343434;
+      --panel:#2f2f2f;
+      --text:#ece8df;
+      --muted:#cfc8bb;
+      --gold:#c9a15d;
+      --gold-dark:#a88345;
+      --line:rgba(255,255,255,.10);
+      --card:rgba(255,255,255,.04);
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+      --white:#ffffff;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html, body{
+      margin:0;
+      padding:0;
+      background:transparent;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
+    }
+
+    body{
+      min-height:100vh;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .popup-page{
+      width:min(920px, calc(100% - 24px));
+      margin:20px auto;
+      background:linear-gradient(180deg, var(--bg) 0%, #262626 100%);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .popup-close,
+    .popup-back{
+      position:absolute;
+      top:14px;
+      z-index:5;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:42px;
+      min-width:42px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-size:15px;
+      font-weight:700;
+      backdrop-filter:blur(8px);
+      transition:.2s ease;
+    }
+
+    .popup-back{
+      left:14px;
+    }
+
+    .popup-close{
+      right:14px;
+      width:42px;
+      padding:0;
+      font-size:22px;
+      line-height:1;
+    }
+
+    .popup-close:hover,
+    .popup-back:hover{
+      background:rgba(255,255,255,.12);
+      transform:translateY(-1px);
+    }
+
+    .popup-header{
+      padding:78px 28px 18px;
+      text-align:center;
+      background:
+        radial-gradient(circle at top right, rgba(201,161,93,.18), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+    }
+
+    .popup-logo{
+      display:block;
+      width:min(300px, 72vw);
+      margin:0 auto 20px;
+    }
+
+    .popup-kicker{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(201,161,93,.12);
+      border:1px solid rgba(201,161,93,.25);
+      color:#e2c58b;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .popup-header h1{
+      margin:0 auto;
+      max-width:760px;
+      font-size:clamp(28px, 5vw, 42px);
+      line-height:1.15;
+      color:var(--text);
+      font-weight:800;
+      letter-spacing:-.02em;
+      text-align:center;
+    }
+
+    .popup-intro{
+      max-width:760px;
+      margin:16px auto 0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.65;
+      text-align:center;
+    }
+
+    .popup-body{
+      padding:10px 22px 28px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+      margin-top:8px;
+    }
+
+    .offer-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px 18px;
+      min-height:100%;
+    }
+
+    .offer-card .icon{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:14px;
+      background:rgba(201,161,93,.12);
+      border:1px solid rgba(201,161,93,.22);
+      color:#e2c58b;
+      font-size:18px;
+      font-weight:800;
+    }
+
+    .offer-card h2{
+      margin:0 0 10px;
+      font-size:21px;
+      line-height:1.2;
+      color:var(--text);
+      letter-spacing:-.01em;
+    }
+
+    .offer-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+    }
+
+    .highlight{
+      margin:18px 0 0;
+      padding:24px 20px;
+      border-radius:20px;
+      background:linear-gradient(135deg, rgba(201,161,93,.14), rgba(255,255,255,.04));
+      border:1px solid rgba(201,161,93,.18);
+      text-align:center;
+    }
+
+    .highlight h3{
+      margin:0 0 10px;
+      font-size:28px;
+      line-height:1.15;
+      color:var(--text);
+      letter-spacing:-.02em;
+    }
+
+    .highlight p{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.7;
+      max-width:760px;
+      margin-inline:auto;
+    }
+
+    .cta{
+      padding:8px 22px 28px;
+      text-align:center;
+    }
+
+    .cta .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:240px;
+      padding:16px 24px;
+      border-radius:999px;
+      border:1px solid var(--gold);
+      background:linear-gradient(180deg, var(--gold), var(--gold-dark));
+      color:var(--white);
+      font-weight:800;
+      box-shadow:0 12px 28px rgba(201,161,93,.24);
+      transition:.2s ease;
+    }
+
+    .cta .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .bottom-note{
+      padding:0 22px 26px;
+      text-align:center;
+      color:#bfb7aa;
+      font-size:14px;
+    }
+
+    @media (max-width: 760px){
+      .popup-page{
+        width:min(100%, calc(100% - 12px));
+        margin:8px auto;
+        border-radius:18px;
+      }
+
+      .popup-header{
+        padding:84px 18px 16px;
+      }
+
+      .popup-body{
+        padding:8px 14px 22px;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .offer-card{
+        padding:18px 16px;
+        border-radius:16px;
+      }
+
+      .offer-card h2{
+        font-size:20px;
+      }
+
+      .popup-intro{
+        font-size:17px;
+      }
+
+      .highlight{
+        padding:20px 16px;
+        border-radius:16px;
+      }
+
+      .highlight h3{
+        font-size:24px;
+      }
+
+      .cta{
+        padding:6px 14px 24px;
+      }
+
+      .cta .btn{
+        width:100%;
+        min-width:0;
+      }
+
+      .popup-back{
+        left:10px;
+        top:10px;
+        height:40px;
+        min-width:40px;
+        padding:0 12px;
+        font-size:14px;
+      }
+
+      .popup-close{
+        right:10px;
+        top:10px;
+        width:40px;
+        height:40px;
+        min-width:40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup-page">
+
+    <a href="javascript:history.back()" class="popup-back" aria-label="Retour">← Retour</a>
+    <a href="javascript:window.close()" class="popup-close" aria-label="Fermer">×</a>
+
+    <div class="popup-header">
+      <img src="/assets/img/Levhec - horiz transp.png" alt="LEVHEC ADVISORY" class="popup-logo" />
+
+      <div class="popup-kicker">Direction Générale de Transition</div>
+
+      <h1>Vous missionnez LEVHEC Advisory pour une Direction Générale de Transition.<br>Voici ce que vous obtenez.</h1>
+
+      <p class="popup-intro">
+        Une reprise immédiate de la direction, une autorité claire sur le terrain
+        et une capacité d’action rapide pour stabiliser l’entreprise, rétablir les décisions
+        et conduire la suite dans des contextes souvent sensibles.
+      </p>
+    </div>
+
+    <div class="popup-body">
+      <div class="cards">
+
+        <div class="offer-card">
+          <div class="icon">✓</div>
+          <h2>Une prise de commandement immédiate</h2>
+          <p>
+            Vous ne laissez pas un vide s’installer. La mission permet de reprendre la direction,
+            d’incarner l’autorité de décision et de remettre l’entreprise, la filiale ou le site
+            dans une logique d’action lisible et structurée.
+          </p>
+        </div>
+
+        <div class="offer-card">
+          <div class="icon">✓</div>
+          <h2>Un cadre clair pour vos équipes</h2>
+          <p>
+            Les responsabilités sont clarifiées, les circuits de décision sont rétablis,
+            les priorités sont remises au bon niveau et les équipes retrouvent un cap,
+            un rythme et un interlocuteur capable d’arbitrer.
+          </p>
+        </div>
+
+        <div class="offer-card">
+          <div class="icon">✓</div>
+          <h2>Une stabilisation rapide de l’organisation</h2>
+          <p>
+            Les tensions managériales, sociales ou organisationnelles sont traitées avec méthode.
+            L’objectif est de sécuriser le fonctionnement quotidien, rétablir la cohérence entre
+            les fonctions clés et réduire les zones d’incertitude.
+          </p>
+        </div>
+
+        <div class="offer-card">
+          <div class="icon">✓</div>
+          <h2>Une direction capable d’agir en environnement sensible</h2>
+          <p>
+            Restructuration, fermeture de site, réorganisation, crise interne, contentieux,
+            gouvernance fragilisée : l’intervention est pensée pour les situations exigeantes,
+            là où il faut décider juste, vite et avec discernement.
+          </p>
+        </div>
+
+        <div class="offer-card">
+          <div class="icon">✓</div>
+          <h2>Une coordination des fonctions critiques</h2>
+          <p>
+            Finance, RH, juridique, opérations, partenaires externes : la mission remet les
+            fonctions essentielles sous contrôle, sécurise les interactions et redonne de la
+            cohérence à l’exécution opérationnelle.
+          </p>
+        </div>
+
+        <div class="offer-card">
+          <div class="icon">✓</div>
+          <h2>Une entreprise plus solide à la sortie</h2>
+          <p>
+            Vous ne cherchez pas seulement à passer un cap. Vous préparez la suite avec une
+            organisation plus lisible, des décisions sécurisées, des équipes recadrées et une
+            trajectoire plus crédible pour la phase suivante.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="highlight">
+        <h3>Apparaître juste le temps qu’il faut</h3>
+        <p>
+          Une Direction Générale de Transition efficace ne se contente pas d’occuper une fonction.
+          Elle reprend la main, remet l’entreprise en mouvement, traite les sujets sensibles
+          et transmet une structure capable d’avancer avec davantage de solidité, de lisibilité
+          et de maîtrise.
+        </p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="/popups/popup-contact.html" class="btn">Être contacté</a>
+    </div>
+
+    <div class="bottom-note">
+      LEVHEC ADVISORY — Management de Transition & Conseil Opérationnel
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelector('.popup-close').addEventListener('click', function(e){
+      e.preventDefault();
+      if (window.history.length > 1) {
+        history.back();
+      } else {
+        window.close();
+      }
+    });
+  </script>
+
+</body>
+</html>
