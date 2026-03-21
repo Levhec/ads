@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Offre situations complexes | LEVHEC ADVISORY" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Offre situations complexes | LEVHEC ADVISORY</title>
+
+  <style>
+    :root{
+      --bg:#232323;
+      --bg-soft:#2c2c2c;
+      --bg-card:#ffffff;
+      --text:#ece8df;
+      --text-dark:#1f1f1f;
+      --muted:#cfc8bb;
+      --muted-dark:#6a645b;
+      --gold:#b08d57;
+      --gold-dark:#8b6a3d;
+      --gold-soft:#efe3cf;
+      --line:rgba(255,255,255,.10);
+      --line-dark:#e8ddcf;
+      --shadow:0 22px 60px rgba(0,0,0,.30);
+      --radius:24px;
+      --radius-sm:18px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html, body{
+      margin:0;
+      padding:0;
+      background:transparent;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
+    }
+
+    body{
+      background:
+        radial-gradient(circle at top right, rgba(176,141,87,.16), transparent 28%),
+        linear-gradient(180deg, #232323 0%, #2b2b2b 100%);
+      min-height:100vh;
+      padding:20px;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .popup-page{
+      width:min(920px, 100%);
+      margin:0 auto;
+      background:linear-gradient(180deg, #232323 0%, #2d2d2d 100%);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .popup-top{
+      position:relative;
+      padding:28px 28px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:14px;
+    }
+
+    .top-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .back-btn,
+    .close-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      font-size:.95rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:.25s ease;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .back-btn{
+      padding:0 16px;
+      gap:8px;
+    }
+
+    .close-btn{
+      width:42px;
+      min-width:42px;
+      padding:0;
+      font-size:1.1rem;
+      line-height:1;
+    }
+
+    .back-btn:hover,
+    .close-btn:hover{
+      background:rgba(255,255,255,.09);
+      transform:translateY(-1px);
+    }
+
+    .popup-header{
+      padding:10px 28px 26px;
+      text-align:center;
+    }
+
+    .popup-logo{
+      display:flex;
+      justify-content:center;
+      margin:6px 0 22px;
+    }
+
+    .popup-logo img{
+      max-width:min(320px, 78%);
+      height:auto;
+      display:block;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:16px;
+      padding:7px 12px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      color:#e4cfad;
+      font-size:.78rem;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    .popup-header h1{
+      margin:0 auto 14px;
+      max-width:780px;
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1.12;
+      letter-spacing:-.03em;
+      color:#fff;
+    }
+
+    .popup-header p{
+      margin:0 auto;
+      max-width:760px;
+      color:rgba(255,255,255,.84);
+      font-size:1.04rem;
+      line-height:1.7;
+    }
+
+    .highlight{
+      color:#e4cfad;
+    }
+
+    .popup-body{
+      padding:0 28px 30px;
+    }
+
+    .intro-box{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      padding:24px;
+      margin-bottom:24px;
+    }
+
+    .intro-box p{
+      margin:0;
+      color:rgba(255,255,255,.88);
+      font-size:1rem;
+      line-height:1.7;
+      text-align:center;
+    }
+
+    .offer-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
+      margin-bottom:24px;
+    }
+
+    .offer-card{
+      background:#fff;
+      border:1px solid var(--line-dark);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 12px 30px rgba(0,0,0,.10);
+    }
+
+    .icon-badge{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, #e5d1b2 0%, #d0b080 100%);
+      color:#6f5330;
+      font-size:1rem;
+      font-weight:800;
+      margin-bottom:14px;
+    }
+
+    .offer-card h3{
+      margin:0 0 10px;
+      color:var(--text-dark);
+      font-size:1.12rem;
+      line-height:1.25;
+    }
+
+    .offer-card p{
+      margin:0;
+      color:var(--muted-dark);
+      font-size:.97rem;
+      line-height:1.65;
+    }
+
+    .middle-band{
+      margin:4px 0 24px;
+      padding:24px;
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(176,141,87,.14) 0%, rgba(176,141,87,.06) 100%);
+      border:1px solid rgba(176,141,87,.18);
+      text-align:center;
+    }
+
+    .middle-band h2{
+      margin:0 0 10px;
+      font-size:1.45rem;
+      line-height:1.2;
+      color:#fff;
+    }
+
+    .middle-band p{
+      margin:0;
+      color:rgba(255,255,255,.82);
+      max-width:760px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .support-box{
+      background:#fbf8f2;
+      border:1px solid var(--line-dark);
+      border-radius:22px;
+      padding:24px;
+      color:var(--text-dark);
+      margin-bottom:24px;
+    }
+
+    .support-box h2{
+      margin:0 0 12px;
+      font-size:1.35rem;
+      line-height:1.2;
+    }
+
+    .support-box p{
+      margin:0 0 12px;
+      color:var(--muted-dark);
+    }
+
+    .support-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .support-box strong{
+      color:var(--gold-dark);
+    }
+
+    .bottom-cta{
+      display:flex;
+      justify-content:center;
+      margin-top:8px;
+    }
+
+    .cta-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 28px;
+      border-radius:999px;
+      border:1px solid #bda57c;
+      background:linear-gradient(180deg, #d5bc8f 0%, #b08d57 45%, #8b6a3d 100%);
+      color:#fff;
+      font-weight:800;
+      letter-spacing:.01em;
+      text-align:center;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.35),
+        0 10px 24px rgba(176,141,87,.28);
+      transition:.25s ease;
+    }
+
+    .cta-btn:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.03);
+    }
+
+    .footer-note{
+      margin-top:18px;
+      text-align:center;
+      color:rgba(255,255,255,.56);
+      font-size:.9rem;
+    }
+
+    @media (max-width: 760px){
+      body{
+        padding:12px;
+      }
+
+      .popup-page{
+        border-radius:22px;
+      }
+
+      .popup-top{
+        padding:16px 16px 0;
+      }
+
+      .popup-header{
+        padding:8px 16px 20px;
+      }
+
+      .popup-body{
+        padding:0 16px 22px;
+      }
+
+      .offer-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+
+      .popup-header h1{
+        font-size:2rem;
+      }
+
+      .popup-header p,
+      .intro-box p,
+      .offer-card p,
+      .support-box p,
+      .middle-band p{
+        font-size:.96rem;
+      }
+
+      .back-btn{
+        font-size:.9rem;
+        min-height:40px;
+        padding:0 14px;
+      }
+
+      .close-btn{
+        width:40px;
+        min-width:40px;
+        min-height:40px;
+      }
+
+      .cta-btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup-page">
+
+    <div class="popup-top">
+      <div class="top-actions">
+        <button class="back-btn" type="button" onclick="goBack()">← Retour</button>
+      </div>
+
+      <button class="close-btn" type="button" aria-label="Fermer" onclick="closePopup()">✕</button>
+    </div>
+
+    <div class="popup-header">
+      <div class="popup-logo">
+        <img src="/assets/img/Levhec - horiz transp.png" alt="LEVHEC ADVISORY">
+      </div>
+
+      <span class="eyebrow">Offre • Situations complexes</span>
+
+      <h1>
+        Vous missionnez LEVHEC ADVISORY sur une <span class="highlight">situation complexe</span>.<br>
+        Voici ce que vous obtenez.
+      </h1>
+
+      <p>
+        Une intervention structurée, rapide et lisible pour remettre l’entreprise
+        en capacité d’agir, sécuriser les points sensibles et redonner à la direction
+        une trajectoire claire dans les moments où l’organisation se tend.
+      </p>
+    </div>
+
+    <div class="popup-body">
+
+      <div class="intro-box">
+        <p>
+          Nous n’ajoutons pas de complexité à une situation déjà tendue.
+          Nous apportons du cadre, du relais, de la coordination et une capacité
+          opérationnelle immédiate pour aider la direction et les équipes à reprendre la main.
+        </p>
+      </div>
+
+      <div class="offer-grid">
+        <article class="offer-card">
+          <div class="icon-badge">✓</div>
+          <h3>Un diagnostic rapide de la situation réelle</h3>
+          <p>
+            Nous identifions ce qui bloque, ce qui expose, ce qui ralentit la décision
+            et ce qui empêche l’organisation de fonctionner de manière lisible.
+          </p>
+        </article>
+
+        <article class="offer-card">
+          <div class="icon-badge">✓</div>
+          <h3>Une direction mieux appuyée</h3>
+          <p>
+            Le dirigeant retrouve un interlocuteur capable de structurer les priorités,
+            de poser un cadre d’action et de remettre les informations utiles au bon niveau.
+          </p>
+        </article>
+
+        <article class="offer-card">
+          <div class="icon-badge">✓</div>
+          <h3>Des équipes salariées soutenues</h3>
+          <p>
+            Nous intervenons comme support aux équipes et comme interface de coordination,
+            pour clarifier les rôles, réduire les tensions et fluidifier l’exécution.
+          </p>
+        </article>
+
+        <article class="offer-card">
+          <div class="icon-badge">✓</div>
+          <h3>Des flux et documents mieux sécurisés</h3>
+          <p>
+            Circuits d’information, documents utiles, production de gestion,
+            coordination des interlocuteurs et continuité opérationnelle sont remis en ordre.
+          </p>
+        </article>
+
+        <article class="offer-card">
+          <div class="icon-badge">✓</div>
+          <h3>Une organisation plus lisible</h3>
+          <p>
+            Les responsabilités sont clarifiées, les priorités hiérarchisées,
+            les zones grises réduites et la gouvernance redevient compréhensible.
+          </p>
+        </article>
+
+        <article class="offer-card">
+          <div class="icon-badge">✓</div>
+          <h3>Une sortie de crise plus solide</h3>
+          <p>
+            L’objectif n’est pas seulement de tenir. Il est de transformer la difficulté
+            en point d’appui pour reconstruire une organisation plus robuste.
+          </p>
+        </article>
+      </div>
+
+      <div class="middle-band">
+        <h2>Savoir apparaître juste le temps qu’il faut</h2>
+        <p>
+          Dans les périodes sensibles, l’entreprise n’a pas toujours besoin d’un discours de plus.
+          Elle a besoin d’un cadre, d’un relais fiable, d’une coordination nette
+          et d’une capacité d’action immédiatement mobilisable.
+        </p>
+      </div>
+
+      <div class="support-box">
+        <h2>Notre positionnement dans ces contextes</h2>
+        <p>
+          LEVHEC ADVISORY intervient en <strong>appui opérationnel</strong>,
+          comme <strong>interface de coordination</strong> et comme
+          <strong>support aux équipes salariées</strong>, aux côtés de la direction.
+        </p>
+        <p>
+          Lorsque la situation implique des matières relevant d’une profession réglementée,
+          les volets concernés sont traités avec les conseils habituels de l’entreprise
+          ou avec les professionnels habilités désignés par le dirigeant.
+        </p>
+      </div>
+
+      <div class="bottom-cta">
+        <a class="cta-btn" href="/popups/popup-contact.html">Être contacté</a>
+      </div>
+
+      <div class="footer-note">
+        LEVHEC ADVISORY — situations complexes, structuration, coordination, transition.
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else if (window.opener && !window.opener.closed) {
+        window.close();
+      } else {
+        window.location.href = "/";
+      }
+    }
+
+    function closePopup() {
+      if (window.opener && !window.opener.closed) {
+        window.close();
+      } else if (document.referrer) {
+        window.history.back();
+      } else {
+        window.location.href = "/";
+      }
+    }
+  </script>
+
+</body>
+</html>
