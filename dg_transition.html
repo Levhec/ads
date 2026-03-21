@@ -9,17 +9,24 @@
 
   <style>
     :root{
-      --bg:#f4f1ea;
+      --bg:#f5f1ea;
       --text:#1f1f1f;
       --muted:#5f5a52;
+      --dark:#232323;
+      --dark-2:#2d2d2d;
       --gold:#b08d57;
       --gold-dark:#8f6f3f;
-      --card:#ffffff;
+      --white:#ffffff;
       --border:#e6dccd;
       --shadow:0 18px 45px rgba(0,0,0,.08);
+      --shadow-strong:0 18px 38px rgba(0,0,0,.20);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -29,47 +36,59 @@
       line-height:1.6;
     }
 
-    a{color:inherit;text-decoration:none;}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
 
     .wrap{
       width:min(1120px, calc(100% - 32px));
       margin:0 auto;
     }
 
-    .top{
-      padding:24px 0 0;
+    .top-link{
+      padding:18px 0 0;
     }
 
-    .home{
+    .top-link a{
       display:inline-block;
       color:var(--gold-dark);
-      font-weight:600;
-      letter-spacing:.02em;
+      font-weight:700;
+      font-size:15px;
+      letter-spacing:.01em;
     }
 
     .hero{
-      padding:28px 0 26px;
+      padding:20px 0 24px;
     }
 
     .hero-card{
-      background:linear-gradient(135deg, rgba(176,141,87,.12), rgba(255,255,255,.9));
-      border:1px solid var(--border);
-      border-radius:26px;
-      padding:56px 42px;
-      box-shadow:var(--shadow);
+      background:linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
+      color:#f2ede3;
+      border-radius:28px;
+      padding:34px 34px 36px;
+      box-shadow:var(--shadow-strong);
       position:relative;
       overflow:hidden;
+      text-align:center;
     }
 
-    .hero-card::after{
+    .hero-card::before{
       content:"";
       position:absolute;
-      inset:auto -60px -60px auto;
-      width:240px;
-      height:240px;
+      top:-80px;
+      right:-80px;
+      width:220px;
+      height:220px;
       border-radius:50%;
-      background:radial-gradient(circle, rgba(176,141,87,.22) 0%, rgba(176,141,87,0) 70%);
+      background:radial-gradient(circle, rgba(176,141,87,.20) 0%, rgba(176,141,87,0) 72%);
       pointer-events:none;
+    }
+
+    .hero-logo{
+      display:block;
+      width:min(340px, 76vw);
+      margin:0 auto 22px;
     }
 
     .eyebrow{
@@ -78,37 +97,37 @@
       padding:8px 14px;
       border-radius:999px;
       background:rgba(176,141,87,.14);
-      color:var(--gold-dark);
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:.08em;
+      color:#d9bf88;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.09em;
       text-transform:uppercase;
+      border:1px solid rgba(176,141,87,.28);
     }
 
     h1{
       margin:0;
-      font-size:clamp(32px, 5vw, 58px);
+      font-size:clamp(30px, 5vw, 56px);
       line-height:1.08;
       letter-spacing:-.03em;
-      max-width:900px;
     }
 
     .intro{
-      margin:22px 0 0;
-      max-width:840px;
+      max-width:900px;
+      margin:20px auto 0;
       font-size:20px;
-      color:var(--muted);
+      color:#d7d0c4;
     }
 
     .signature{
       margin-top:24px;
       font-size:16px;
-      color:var(--gold-dark);
+      color:#d9bf88;
       font-weight:700;
     }
 
     main{
-      padding:10px 0 60px;
+      padding:4px 0 70px;
     }
 
     .grid{
@@ -119,28 +138,25 @@
 
     .card{
       grid-column:span 12;
-      background:var(--card);
+      background:var(--white);
       border:1px solid var(--border);
-      border-radius:22px;
+      border-radius:24px;
       padding:30px 28px;
       box-shadow:var(--shadow);
     }
 
     .card h2{
-      margin:0 0 14px;
+      margin:0 0 16px;
       font-size:28px;
       line-height:1.15;
       letter-spacing:-.02em;
+      text-align:center;
     }
 
     .card p{
       margin:0;
       color:var(--muted);
       font-size:17px;
-    }
-
-    .card + .card p{
-      margin-top:0;
     }
 
     .split{
@@ -152,15 +168,32 @@
 
     ul{
       margin:0;
-      padding-left:20px;
+      padding-left:0;
+      list-style:none;
+    }
+
+    ul li{
+      position:relative;
+      padding-left:28px;
       color:var(--muted);
       font-size:17px;
     }
 
-    li + li{margin-top:10px;}
+    ul li + li{
+      margin-top:12px;
+    }
+
+    ul li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold-dark);
+      font-weight:800;
+    }
 
     .quote{
-      background:#252525;
+      background:linear-gradient(135deg,#242424 0%, #313131 100%);
       color:#f2ede3;
       border:none;
     }
@@ -168,96 +201,206 @@
     .quote h2,
     .quote p{
       color:#f2ede3;
+      text-align:center;
     }
 
     .quote strong{
       color:#d9bf88;
     }
 
-    .cta{
-      text-align:center;
-      padding:38px 24px;
-    }
-
-    .cta p{
-      max-width:760px;
-      margin:0 auto 24px;
-    }
-
-    .buttons{
+    .card-actions{
       display:flex;
       justify-content:center;
-      gap:14px;
+      gap:12px;
       flex-wrap:wrap;
+      margin-top:24px;
+      padding-top:20px;
+      border-top:1px solid rgba(176,141,87,.18);
     }
 
-    .button{
-      display:inline-block;
-      min-width:220px;
-      padding:15px 22px;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-width:210px;
+      padding:14px 20px;
       border-radius:999px;
       font-weight:700;
-      transition:all .2s ease;
+      transition:.2s ease;
       border:1px solid var(--gold);
+      text-align:center;
     }
 
-    .button.primary{
+    .btn.primary{
       background:linear-gradient(180deg, var(--gold), var(--gold-dark));
       color:#fff;
-      box-shadow:0 10px 24px rgba(176,141,87,.28);
+      box-shadow:0 10px 24px rgba(176,141,87,.25);
     }
 
-    .button.secondary{
+    .btn.secondary{
       background:#fff;
       color:var(--gold-dark);
     }
 
-    .button:hover{
+    .btn.dark{
+      background:var(--dark);
+      color:#fff;
+      border-color:var(--dark);
+    }
+
+    .btn:hover{
       transform:translateY(-2px);
+    }
+
+    .cta{
+      text-align:center;
+      padding:38px 24px;
+      background:linear-gradient(135deg, rgba(176,141,87,.08), rgba(255,255,255,.96));
+    }
+
+    .cta p{
+      max-width:780px;
+      margin:0 auto 24px;
+    }
+
+    .footer-buttons{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:24px;
     }
 
     .footer-note{
       text-align:center;
       color:#7a7368;
       font-size:14px;
-      margin:26px 0 8px;
+      margin:24px 0 0;
+    }
+
+    .floating-buttons{
+      position:fixed;
+      right:16px;
+      bottom:18px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:999;
+    }
+
+    .floating-btn{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, var(--gold), var(--gold-dark));
+      color:#fff;
+      font-size:22px;
+      box-shadow:0 12px 24px rgba(0,0,0,.20);
+      border:1px solid rgba(255,255,255,.22);
+      transition:.2s ease;
+    }
+
+    .floating-btn.phone{
+      background:linear-gradient(180deg, #2b2b2b, #1f1f1f);
+    }
+
+    .floating-btn:hover{
+      transform:translateY(-2px) scale(1.03);
     }
 
     @media (max-width: 860px){
-      .hero-card{padding:40px 24px;}
-      .split{grid-template-columns:1fr;}
+      .hero-card{
+        padding:28px 20px 30px;
+        border-radius:22px;
+      }
+
+      .intro{
+        font-size:18px;
+      }
+
+      .split{
+        grid-template-columns:1fr;
+      }
+
+      .card{
+        padding:24px 18px;
+        border-radius:20px;
+      }
+
+      .card h2{
+        font-size:24px;
+      }
+
+      .btn{
+        width:100%;
+        min-width:0;
+      }
+
+      .card-actions{
+        gap:10px;
+      }
+
+      .footer-buttons{
+        gap:10px;
+      }
+
+      .floating-buttons{
+        right:12px;
+        bottom:12px;
+      }
+
+      .floating-btn{
+        width:50px;
+        height:50px;
+        font-size:20px;
+      }
     }
   </style>
 </head>
 <body>
+
   <div class="wrap">
-    <header class="top">
-      <a href="/" class="home">← Toutes les offres LEVHEC ADVISORY</a>
-    </header>
+    <div class="top-link">
+      <a href="https://ads.levhec.com/">← Toutes les offres LEVHEC ADVISORY</a>
+    </div>
 
     <section class="hero">
       <div class="hero-card">
+        <img src="assets/img/Levhec - horiz transp.png" alt="LEVHEC ADVISORY" class="hero-logo" />
+
         <span class="eyebrow">Direction Générale de Transition</span>
+
         <h1>Prendre la direction dans les moments décisifs</h1>
+
         <p class="intro">
           Lorsqu’une entreprise, une filiale ou un site industriel traverse une phase sensible,
           la direction ne peut rester vacante ni hésitante. Une prise de commandement claire et immédiate
           devient alors indispensable pour sécuriser l’organisation, restaurer la capacité d’action et conduire le changement.
         </p>
-        <div class="signature">LEVHEC ADVISORY • Faire de la complexité un avantage stratégique</div>
+
+        <div class="signature">
+          LEVHEC ADVISORY — Faire de la complexité un avantage stratégique
+        </div>
       </div>
     </section>
 
     <main>
       <div class="grid">
+
         <section class="card">
           <h2>Quand une direction de transition devient nécessaire</h2>
+
           <div class="split">
             <p>
               Certaines situations exigent une direction opérationnelle immédiate : départ imprévu d’un dirigeant,
               restructuration, tensions sociales, fermeture ou redimensionnement d’un site, préparation d’une cession,
               rétablissement de la gouvernance ou besoin de remettre une organisation en mouvement.
             </p>
+
             <ul>
               <li>Entreprise ou filiale en phase de transformation</li>
               <li>Site industriel à reprendre ou à réorganiser</li>
@@ -265,16 +408,23 @@
               <li>Environnement sensible nécessitant des décisions rapides</li>
             </ul>
           </div>
+
+          <div class="card-actions">
+            <a href="/popups/popup-contact.html" class="btn secondary">Être contacté</a>
+            <a href="/popups/popup-offre-direction-generale.html" class="btn primary">Voir l’offre</a>
+          </div>
         </section>
 
         <section class="card">
           <h2>Reprendre la direction et sécuriser l’organisation</h2>
+
           <div class="split">
             <p>
               La mission consiste à reprendre la conduite opérationnelle de l’entreprise tout en assurant la cohérence
               des fonctions clés. Il s’agit de redonner de la lisibilité aux décisions, de clarifier les responsabilités,
               de remettre l’organisation sous contrôle et de restaurer un fonctionnement solide.
             </p>
+
             <ul>
               <li>Coordination des fonctions finance, RH, juridique et opérationnelles</li>
               <li>Encadrement des équipes et rétablissement des circuits de décision</li>
@@ -282,19 +432,30 @@
               <li>Sécurisation des choix stratégiques et de leur exécution</li>
             </ul>
           </div>
+
+          <div class="card-actions">
+            <a href="/popups/popup-contact.html" class="btn secondary">Être contacté</a>
+            <a href="/popups/popup-offre-direction-generale.html" class="btn primary">Voir l’offre</a>
+          </div>
         </section>
 
         <section class="card quote">
           <h2>Une direction de transition n’assure pas seulement la continuité.</h2>
           <p>
             Elle intervient lorsque l’entreprise a besoin de <strong>reprendre la main</strong>,
-            de restaurer son autorité de pilotage et de traverser une phase exigeante avec méthode,
-            discernement et capacité de décision.
+            de restaurer son autorité de décision et de traverser une phase exigeante avec méthode,
+            discernement et capacité d’exécution.
           </p>
+
+          <div class="card-actions" style="border-top:1px solid rgba(255,255,255,.10);">
+            <a href="/popups/popup-contact.html" class="btn secondary">Être contacté</a>
+            <a href="/popups/popup-offre-direction-generale.html" class="btn primary">Voir l’offre</a>
+          </div>
         </section>
 
         <section class="card">
           <h2>Une intervention opérationnelle, structurante et immédiatement engagée</h2>
+
           <div class="split">
             <ul>
               <li>Immersion rapide dans l’organisation</li>
@@ -302,44 +463,74 @@
               <li>Clarification du cadre d’action et des priorités</li>
               <li>Accompagnement des équipes dans la mise en œuvre</li>
             </ul>
+
             <p>
               La direction générale de transition doit conjuguer présence, autorité et pragmatisme.
               Elle agit au contact du réel, au plus près des équipes et des enjeux, pour stabiliser l’existant,
               arbitrer quand il le faut et préparer la suite dans de bonnes conditions.
             </p>
           </div>
+
+          <div class="card-actions">
+            <a href="/popups/popup-contact.html" class="btn secondary">Être contacté</a>
+            <a href="/popups/popup-offre-direction-generale.html" class="btn primary">Voir l’offre</a>
+          </div>
         </section>
 
         <section class="card">
           <h2>Des contextes souvent complexes</h2>
+
           <div class="split">
             <p>
               Les missions de direction générale de transition s’inscrivent fréquemment dans des environnements tendus :
               restructuration d’activité, fermeture de site, réorganisation administrative et financière, encadrement de plans sociaux,
               pilotage d’une filiale ou d’un site industriel, gestion de contentieux ou de situations à forte exposition.
             </p>
+
             <p>
               Dans ces moments, l’expérience, la maîtrise des environnements imparfaits et la capacité à agir dans l’interdépendance
               deviennent déterminantes pour rétablir une dynamique crédible et durable.
             </p>
           </div>
+
+          <div class="card-actions">
+            <a href="/popups/popup-contact.html" class="btn secondary">Être contacté</a>
+            <a href="/popups/popup-offre-direction-generale.html" class="btn primary">Voir l’offre</a>
+          </div>
         </section>
 
         <section class="card cta">
           <h2>Stabiliser l’entreprise. Restaurer le cap. Préparer la suite.</h2>
+
           <p>
             La mission vise à rétablir un fonctionnement clair, sécuriser les décisions essentielles
             et transmettre une organisation plus lisible, plus solide et prête à poursuivre son développement.
           </p>
-          <div class="buttons">
-            <a href="/" class="button secondary">Voir toutes les offres</a>
-            <a href="https://www.levhec-advisory.com/contact/" class="button primary">Contacter LEVHEC ADVISORY</a>
+
+          <div class="footer-buttons">
+            <a href="/popups/popup-contact.html" class="btn primary">Être contacté</a>
+            <a href="/popups/popup-offre-direction-generale.html" class="btn secondary">Voir l’offre</a>
           </div>
         </section>
+
       </div>
 
-      <p class="footer-note">LEVHEC ADVISORY — Management de Transition & Conseil Opérationnel</p>
+      <div class="footer-buttons" style="margin-top:28px;">
+        <a href="https://ads.levhec.com/" class="btn secondary">Voir toutes les offres</a>
+        <a href="https://www.levhec-advisory.com/" class="btn dark">Vers le site LEVHEC ADVISORY</a>
+      </div>
+
+      <p class="footer-note">
+        LEVHEC ADVISORY — Management de Transition & Conseil Opérationnel
+      </p>
     </main>
   </div>
+
+  <div class="floating-buttons">
+    <a href="/popups/popup-offre-direction-generale.html" class="floating-btn" aria-label="Voir l’offre" title="Voir l’offre">★</a>
+    <a href="/popups/popup-contact.html" class="floating-btn" aria-label="Être contacté" title="Être contacté">✉</a>
+    <a href="tel:0184200660" class="floating-btn phone" aria-label="Téléphoner" title="Appeler le 01 84 20 06 60">☎</a>
+  </div>
+
 </body>
 </html>
