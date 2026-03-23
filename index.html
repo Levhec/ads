@@ -163,6 +163,19 @@ p{
     font-size:12px;
     color:#888;
     line-height:1.7;
+
+    .sub-button.pdf{
+    margin-left:18px;
+    font-size:13px;
+    padding:10px 11px;
+    border-radius:7px;
+    background:linear-gradient(145deg,#3f3f3f,#303030);
+}
+
+.sub-button.pdf::before{
+    content:"↳ ";
+    color:#b39b0a;
+}
 }
 
 /* Tablette */
@@ -268,14 +281,14 @@ p{
     <a class="sub-button" href="daf_transition.html">
         DAF en Transition
     </a>
-    <a class="sub-button" href="/docs/offres/offre-DAF.pdf" target="_blank">
+    <a class="sub-button pdf" href="/docs/offres/offre-DAF.pdf" target="_blank">
         Fiche DAF
     </a>
 
     <a class="sub-button" href="drh_transition.html">
         DRH en Transition
     </a>
-    <a class="sub-button" href="/docs/offres/offre-RH.pdf" target="_blank">
+    <a class="sub-button pdf" href="/docs/offres/offre-RH.pdf" target="_blank">
         Fiche DRH
     </a>
 
@@ -286,7 +299,7 @@ p{
     <a class="sub-button" href="secretaire_general.html">
         Secrétariat Général
     </a>
-    <a class="sub-button" href="/docs/offres/offre-Secretaire-General.pdf" target="_blank">
+    <a class="sub-button pdf" href="/docs/offres/offre-Secretaire-General.pdf" target="_blank">
         Fiche Secrétariat Général
     </a>
 </div>
