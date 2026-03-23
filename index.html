@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEVHEC Advisory</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:#2B2B2B;
+    color:#ECE8DF;
+    min-height:100vh;
+}
+
+.container{
+    text-align:center;
+    max-width:1200px;
+    margin:0 auto;
+    padding:48px 20px 36px;
+}
+
+h1{
+    margin:0 0 10px;
+    font-weight:500;
+    letter-spacing:1px;
+    font-size:32px;
+}
+
+p{
+    margin:0 0 40px;
+    color:#cfcfcf;
+    font-size:18px;
+    line-height:1.5;
+}
+
+.columns{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    align-items:start;
+}
+
+.column{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:20px 18px 18px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.18);
+}
+
+.column-title{
+    font-size:17px;
+    color:#b39b0a;
+    margin-bottom:10px;
+    line-height:1.4;
+    font-weight:600;
+    min-height:50px;
+}
+
+.column-subtitle{
+    font-size:13px;
+    color:#bfb8aa;
+    line-height:1.5;
+    margin:-4px 0 8px;
+    min-height:38px;
+}
+
+.button{
+    display:block;
+    text-decoration:none;
+    padding:16px 14px;
+    border-radius:10px;
+    font-size:16px;
+    color:white;
+    line-height:1.35;
+    background:linear-gradient(145deg,#b39b0a,#8f7c06);
+    box-shadow:
+        0 3px 6px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.22);
+    transition:all .25s ease;
+}
+
+.button:hover{
+    background:linear-gradient(145deg,#d4b915,#a8930c);
+    transform:translateY(-2px);
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+.button.secondary{
+    background:linear-gradient(145deg,#4a4a4a,#363636);
+    color:#ECE8DF;
+}
+
+.button.secondary:hover{
+    background:linear-gradient(145deg,#5b5b5b,#434343);
+}
+
+.sub-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin:-4px 0 2px 22px;
+}
+
+.sub-button{
+    display:block;
+    text-decoration:none;
+    padding:13px 12px;
+    border-radius:9px;
+    font-size:14px;
+    color:#ECE8DF;
+    line-height:1.3;
+    background:linear-gradient(145deg,#4a4a4a,#363636);
+    box-shadow:
+        0 3px 6px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.10);
+    transition:all .25s ease;
+}
+
+.sub-button:hover{
+    background:linear-gradient(145deg,#5b5b5b,#434343);
+    transform:translateY(-2px);
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.16);
+}
+
+.section-label{
+    margin:8px 0 0;
+    font-size:13px;
+    color:#b39b0a;
+    font-weight:600;
+    letter-spacing:.3px;
+}
+
+.bottom{
+    margin-top:34px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.bottom .button{
+    padding:18px 26px;
+    font-size:17px;
+    max-width:100%;
+}
+
+.footer{
+    margin-top:28px;
+    font-size:12px;
+    color:#888;
+    line-height:1.7;
+}
+
+/* Tablette */
+@media (max-width: 980px){
+    .columns{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px){
+    .container{
+        padding:32px 16px 28px;
+    }
+
+    h1{
+        font-size:26px;
+        line-height:1.2;
+    }
+
+    p{
+        font-size:16px;
+        margin-bottom:28px;
+    }
+
+    .columns{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .column{
+        gap:12px;
+        padding:18px 14px 16px;
+    }
+
+    .column-title{
+        min-height:auto;
+        font-size:16px;
+        margin-bottom:6px;
+    }
+
+    .column-subtitle{
+        min-height:auto;
+        font-size:13px;
+        margin-bottom:8px;
+    }
+
+    .button{
+        font-size:15px;
+        padding:15px 12px;
+        border-radius:9px;
+    }
+
+    .sub-buttons{
+        margin:0 0 2px 14px;
+        gap:8px;
+    }
+
+    .sub-button{
+        font-size:14px;
+        padding:12px 10px;
+    }
+
+    .bottom{
+        margin-top:28px;
+    }
+
+    .bottom .button{
+        width:100%;
+        font-size:16px;
+        padding:16px 14px;
+    }
+
+    .footer{
+        margin-top:22px;
+        font-size:11px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>LEVHEC ADVISORY</h1>
+
+    <p>Des offres, des situations d’intervention et une méthode claire pour remettre l’entreprise en mouvement.</p>
+
+    <div class="columns">
+
+        <div class="column">
+            <div class="column-title">Offres & expertises</div>
+            <div class="column-subtitle">
+                Fonctions clés, management de transition, structuration opérationnelle et outils d’exploitation.
+            </div>
+
+            <a class="button" href="management_transition.html">
+                Management de transition
+            </a>
+
+            <div class="sub-buttons">
+                <a class="sub-button" href="daf_transition.html">
+                    DAF en Transition
+                </a>
+
+                <a class="sub-button" href="drh_transition.html">
+                    DRH en Transition
+                </a>
+
+                <a class="sub-button" href="dg_transition.html">
+                    Direction Générale
+                </a>
+
+                <a class="sub-button" href="secretaire_general.html">
+                    Secrétariat Général
+                </a>
+            </div>
+
+            <a class="button" href="controle_gestion.html">
+                Contrôle de Gestion
+            </a>
+
+            <div class="sub-buttons">
+                <a class="sub-button" href="/docs/offres/fiche-controle-de-gestion.pdf" target="_blank">
+                    Fiche Contrôle de Gestion
+                </a>
+            </div>
+
+            <a class="button" href="gouvernance_donnees.html">
+                Gouvernance des données
+            </a>
+
+            <a class="button" href="sagebi.html">
+                SAGE BI Reporting
+            </a>
+        </div>
+
+        <div class="column">
+            <div class="column-title">Les situations</div>
+            <div class="column-subtitle">
+                Quelques contextes dans lesquels nous intervenons pour remettre de l’ordre, sécuriser et relancer.
+            </div>
+
+            <a class="button" href="situations_complexes.html">
+                Gestion des situations complexes
+            </a>
+
+            <a class="button secondary" href="/docs/situations/TPE-PME.pdf" target="_blank">
+                Croissance bloquée / dirigeant isolé
+            </a>
+
+            <a class="button secondary" href="/docs/situations/PME-PMI.pdf" target="_blank">
+                Passage à une taille critique
+            </a>
+
+            <a class="button secondary" href="/docs/situations/ETI.pdf" target="_blank">
+                Complexité, risques et gouvernance
+            </a>
+
+            <a class="button secondary" href="/docs/situations/FILIALES-DE-GROUPES.pdf" target="_blank">
+                Filiales de groupes
+            </a>
+
+            <a class="button secondary" href="/docs/situations/FILIALE-DE-GROUPES-ETRANGERS.pdf" target="_blank">
+                Filiales de groupes étrangers
+            </a>
+        </div>
+
+        <div class="column">
+            <div class="column-title">Méthode & documents</div>
+            <div class="column-subtitle">
+                Une approche d’intervention fondée sur l’action, la transmission et l’autonomie.
+            </div>
+
+            <a class="button" href="/docs/methodes/Methodes-Missions.pdf" target="_blank">
+                Voir la méthode d’intervention
+            </a>
+
+            <div class="section-label">Fiches Métiers</div>
+
+            <a class="button secondary" href="/docs/offres/offre-DAF.pdf" target="_blank">
+                Fiche DAF
+            </a>
+
+            <a class="button secondary" href="/docs/offres/offre-RH.pdf" target="_blank">
+                Fiche DRH
+            </a>
+
+            <a class="button secondary" href="/docs/offres/offre-Secretaire-General.pdf" target="_blank">
+                Fiche Secrétariat Général
+            </a>
+
+            <a class="button" href="/contact/">
+                Être contacté
+            </a>
+        </div>
+
+    </div>
+
+    <div class="bottom">
+        <a class="button" href="https://www.levhec-advisory.com" target="_blank">
+            Découvrir le site LEVHEC-ADVISORY.com
+        </a>
+    </div>
+
+    <div class="footer">
+        <div>LEVHEC Advisory, le Cabinet de Management de Transition et de Conseil Opérationnel</div>
+        <div>DATA • FINANCE • MANAGEMENT • STRATÉGIE</div>
+    </div>
+
+</div>
+
+</body>
+</html>
