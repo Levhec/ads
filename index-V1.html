@@ -6,7 +6,6 @@
 <title>LEVHEC Advisory</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
@@ -21,7 +20,7 @@ body{
 
 .container{
     text-align:center;
-    max-width:1100px;
+    max-width:1200px;
     margin:0 auto;
     padding:48px 20px 36px;
 }
@@ -51,14 +50,28 @@ p{
     display:flex;
     flex-direction:column;
     gap:14px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:20px 18px 18px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.18);
 }
 
 .column-title{
-    font-size:15px;
+    font-size:17px;
     color:#b39b0a;
-    margin-bottom:8px;
+    margin-bottom:10px;
     line-height:1.4;
-    min-height:48px;
+    font-weight:600;
+    min-height:50px;
+}
+
+.column-subtitle{
+    font-size:13px;
+    color:#bfb8aa;
+    line-height:1.5;
+    margin:-4px 0 8px;
+    min-height:38px;
 }
 
 .button{
@@ -84,10 +97,25 @@ p{
         inset 0 1px 0 rgba(255,255,255,0.35);
 }
 
+.button.secondary{
+    background:linear-gradient(145deg,#4a4a4a,#363636);
+    color:#ECE8DF;
+}
+
+.button.secondary:hover{
+    background:linear-gradient(145deg,#5b5b5b,#434343);
+}
+
+.section-gap{
+    margin-top:10px;
+}
+
 .bottom{
-    margin-top:40px;
+    margin-top:34px;
     display:flex;
     justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
 }
 
 .bottom .button{
@@ -128,17 +156,24 @@ p{
 
     .columns{
         grid-template-columns:1fr;
-        gap:24px;
+        gap:20px;
     }
 
     .column{
         gap:12px;
+        padding:18px 14px 16px;
     }
 
     .column-title{
         min-height:auto;
-        font-size:15px;
+        font-size:16px;
         margin-bottom:6px;
+    }
+
+    .column-subtitle{
+        min-height:auto;
+        font-size:13px;
+        margin-bottom:8px;
     }
 
     .button{
@@ -162,7 +197,6 @@ p{
         font-size:11px;
     }
 }
-
 </style>
 </head>
 
@@ -172,33 +206,14 @@ p{
 
     <h1>LEVHEC ADVISORY</h1>
 
-    <p>Arrêtez de Reporter, Réorganisez la Gestion de votre Entreprise</p>
+    <p>Des offres, des situations d’intervention et une méthode claire pour remettre l’entreprise en mouvement.</p>
 
     <div class="columns">
 
         <div class="column">
-            <div class="column-title">
-                Le Contrôle de Gestion<br>
-                et la Gouvernance des Données
-            </div>
-
-            <a class="button" href="gouvernance_donnees.html">
-                Gouvernance des données
-            </a>
-
-            <a class="button" href="sagebi.html">
-                SAGE BI Reporting
-            </a>
-
-            <a class="button" href="controle_gestion.html">
-                Contrôle de Gestion
-            </a>
-
-        </div>
-
-        <div class="column">
-            <div class="column-title">
-                Le Management de Transition<br>
+            <div class="column-title">Les offres</div>
+            <div class="column-subtitle">
+                Fonctions clés, management de transition et structuration opérationnelle.
             </div>
 
             <a class="button" href="management_transition.html">
@@ -212,28 +227,87 @@ p{
             <a class="button" href="drh_transition.html">
                 DRH en Transition
             </a>
-        </div>
-
-        <div class="column">
-            <div class="column-title">
-                La Gouvernance,<br>
-                la Direction et la Gestion de l'Entreprise
-            </div>
 
             <a class="button" href="dg_transition.html">
                 Direction Générale
-            </a>
-
-            <a class="button" href="dg_transition_short.html">
-                Direction Générale (VS)
             </a>
 
             <a class="button" href="secretaire_general.html">
                 Secrétariat Général
             </a>
 
+            <a class="button" href="controle_gestion.html">
+                Contrôle de Gestion
+            </a>
+
+            <a class="button" href="gouvernance_donnees.html">
+                Gouvernance des données
+            </a>
+        </div>
+
+        <div class="column">
+            <div class="column-title">Les situations</div>
+            <div class="column-subtitle">
+                Quelques contextes dans lesquels nous intervenons pour remettre de l’ordre, sécuriser et relancer.
+            </div>
+
             <a class="button" href="situations_complexes.html">
-                Gestion des Situations complexes
+                Gestion des situations complexes
+            </a>
+
+            <a class="button secondary" href="/docs/situations/Fiche%20Entreprise_TPE%20PME.pdf" target="_blank">
+                Croissance bloquée / dirigeant isolé
+            </a>
+
+            <a class="button secondary" href="/docs/situations/Fiche%20Entreprise_PME%20PMI.pdf" target="_blank">
+                Passage à une taille critique
+            </a>
+
+            <a class="button secondary" href="/docs/situations/Fiche%20Entreprise_ETI.pdf" target="_blank">
+                Complexité, risques et gouvernance
+            </a>
+
+            <a class="button secondary" href="/docs/situations/Fiche%20Entreprise_FILIALES%20DE%20GROUPES.pdf" target="_blank">
+                Filiales de groupes
+            </a>
+
+            <a class="button secondary" href="/docs/situations/FILIALE%20DE%20GROUPES%20ETRANGERS.pdf" target="_blank">
+                Filiales de groupes étrangers
+            </a>
+        </div>
+
+        <div class="column">
+            <div class="column-title">Méthode & ressources</div>
+            <div class="column-subtitle">
+                Une approche d’intervention fondée sur l’action, la transmission et l’autonomie.
+            </div>
+
+            <a class="button" href="/docs/methodes/Les%20Offres%20de%20Missions%20LCEC.pdf" target="_blank">
+                Voir la méthode d’intervention
+            </a>
+
+            <a class="button" href="sagebi.html">
+                SAGE BI Reporting
+            </a>
+
+            <a class="button secondary" href="/docs/offres/Fiche%20METIER%20LCEC_DAF.pdf" target="_blank">
+                Fiche offre DAF
+            </a>
+
+            <a class="button secondary" href="/docs/offres/Fiche%20METIER%20LCEC_RH.pdf" target="_blank">
+                Fiche offre DRH
+            </a>
+
+            <a class="button secondary" href="/docs/offres/Fiche%20METIER%20LCEC_Secre%CC%81taire%20Ge%CC%81ne%CC%81ral.pdf" target="_blank">
+                Fiche offre Secrétariat Général
+            </a>
+
+            <a class="button secondary" href="/docs/offres/Fiche%20METIER%20LCEC_CONTROLE%20DE%20GESTION.pdf" target="_blank">
+                Fiche offre Contrôle de Gestion
+            </a>
+
+            <a class="button" href="/contact/">
+                Être contacté
             </a>
         </div>
 
@@ -247,7 +321,7 @@ p{
 
     <div class="footer">
         <div>LEVHEC Advisory, le Cabinet de Management de Transition et de Conseil Opérationnel</div>
-        <div>DATA • FINANCE • MANAGEMENT • STRATEGIE</div>
+        <div>DATA • FINANCE • MANAGEMENT • STRATÉGIE</div>
     </div>
 
 </div>
