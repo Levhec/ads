@@ -20,33 +20,59 @@ body{
 
 .container{
     text-align:center;
-    max-width:1200px;
+    max-width:1220px;
     margin:0 auto;
-    padding:48px 20px 36px;
+    padding:46px 20px 38px;
+}
+
+.brand{
+    margin:0 0 8px;
+    font-weight:500;
+    letter-spacing:1px;
+    font-size:20px;
+    color:#d7d1c4;
 }
 
 h1{
-    margin:0 0 10px;
-    font-weight:500;
-    letter-spacing:1px;
-    font-size:32px;
+    margin:0 0 16px;
+    font-weight:600;
+    letter-spacing:.4px;
+    font-size:40px;
+    line-height:1.15;
+    color:#ffffff;
 }
 
-p{
-    margin:0 0 28px;
-    color:#cfcfcf;
-    font-size:18px;
-    line-height:1.5;
+.intro{
+    max-width:900px;
+    margin:0 auto 16px;
+    color:#d4cec2;
+    font-size:19px;
+    line-height:1.6;
 }
 
-.top-action{
+.intro strong{
+    color:#ffffff;
+    font-weight:600;
+}
+
+.subintro{
+    max-width:860px;
+    margin:0 auto 30px;
+    color:#bfb8aa;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.top-actions{
     display:flex;
     justify-content:center;
-    margin:0 0 36px;
+    gap:14px;
+    flex-wrap:wrap;
+    margin:0 0 38px;
 }
 
-.top-action .button{
-    width:100%;
+.top-actions .button{
+    min-width:280px;
     max-width:420px;
 }
 
@@ -64,24 +90,26 @@ p{
     background:rgba(255,255,255,0.03);
     border:1px solid rgba(255,255,255,0.08);
     border-radius:16px;
-    padding:20px 18px 18px;
+    padding:22px 18px 18px;
     box-shadow:0 10px 24px rgba(0,0,0,0.18);
 }
 
 .column-title{
     font-size:17px;
     color:#b39b0a;
-    margin-bottom:10px;
+    margin-bottom:8px;
     line-height:1.3;
-    font-weight:600;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
 }
 
 .column-subtitle{
     font-size:13px;
     color:#bfb8aa;
-    line-height:1.5;
-    margin:-4px 0 8px;
-    min-height:38px;
+    line-height:1.55;
+    margin:-2px 0 10px;
+    min-height:44px;
 }
 
 .button{
@@ -92,6 +120,7 @@ p{
     font-size:16px;
     color:white;
     line-height:1.35;
+    font-weight:500;
     background:linear-gradient(145deg,#b39b0a,#8f7c06);
     box-shadow:
         0 3px 6px rgba(0,0,0,0.35),
@@ -159,8 +188,24 @@ p{
     color:#b39b0a;
 }
 
+.bottom-note{
+    max-width:760px;
+    margin:34px auto 16px;
+    padding:18px 18px;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    background:rgba(255,255,255,0.03);
+    color:#d4cec2;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.bottom-note strong{
+    color:#ffffff;
+}
+
 .bottom{
-    margin-top:34px;
+    margin-top:16px;
     display:flex;
     justify-content:center;
     gap:14px;
@@ -193,18 +238,35 @@ p{
         padding:32px 16px 28px;
     }
 
+    .brand{
+        font-size:17px;
+        margin-bottom:8px;
+    }
+
     h1{
-        font-size:26px;
-        line-height:1.2;
+        font-size:29px;
+        line-height:1.15;
+        margin-bottom:14px;
     }
 
-    p{
-        font-size:16px;
-        margin-bottom:22px;
+    .intro{
+        font-size:17px;
+        margin-bottom:14px;
     }
 
-    .top-action{
+    .subintro{
+        font-size:15px;
+        margin-bottom:24px;
+    }
+
+    .top-actions{
         margin-bottom:28px;
+        gap:10px;
+    }
+
+    .top-actions .button{
+        width:100%;
+        min-width:0;
     }
 
     .columns{
@@ -218,7 +280,7 @@ p{
     }
 
     .column-title{
-        font-size:16px;
+        font-size:15px;
         margin-bottom:6px;
     }
 
@@ -250,8 +312,14 @@ p{
         padding:10px 10px;
     }
 
-    .bottom{
+    .bottom-note{
         margin-top:28px;
+        font-size:15px;
+        padding:16px 14px;
+    }
+
+    .bottom{
+        margin-top:14px;
     }
 
     .bottom .button{
@@ -272,11 +340,27 @@ p{
 
 <div class="container">
 
-    <h1>LEVHEC ADVISORY</h1>
+    <div class="brand">LEVHEC ADVISORY</div>
 
-    <p>FAIRE DE LA COMPLEXITÉ UN AVANTAGE STRATÉGIQUE</p>
+    <h1>FAIRE DE LA COMPLEXITÉ<br>UN AVANTAGE STRATÉGIQUE</h1>
 
-    <div class="top-action">
+    <div class="intro">
+        Lorsque la structure se tend, que les équipes décrochent, que les chiffres deviennent flous
+        ou que les décisions n’aboutissent plus, <strong>il ne s’agit plus d’attendre</strong>.
+        Il faut remettre de l’ordre, rétablir des repères et reprendre la main.
+    </div>
+
+    <div class="subintro">
+        LEVHEC Advisory intervient dans ces moments où l’entreprise a besoin d’un renfort expérimenté,
+        immédiatement opérationnel, capable d’agir dans l’ambiguïté, de structurer l’action
+        et de faire avancer les sujets qui bloquent.
+    </div>
+
+    <div class="top-actions">
+        <a class="button secondary" href="/contact/?offre=accueil">
+            Parlez-nous de votre situation
+        </a>
+
         <a class="button" href="/docs/methodes/Methodes-Missions.pdf" target="_blank">
             Voir la méthode d’intervention
         </a>
@@ -287,7 +371,8 @@ p{
         <div class="column">
             <div class="column-title">Management de Transition</div>
             <div class="column-subtitle">
-                Des fonctions clés exercées en appui direct du dirigeant pour reprendre la main, sécuriser et réorganiser.
+                Des fonctions clés exercées au plus près du dirigeant pour remettre une structure sous contrôle,
+                sécuriser l’exécution et relancer l’action.
             </div>
 
             <a class="button" href="management_transition.html">
@@ -325,7 +410,8 @@ p{
         <div class="column">
             <div class="column-title">Offres & expertises</div>
             <div class="column-subtitle">
-                Structuration opérationnelle, gestion, données et outils d’exploitation au service de la décision.
+                Des interventions ciblées pour clarifier la gestion, fiabiliser les informations utiles
+                et remettre les fonctions sensibles en état de marche.
             </div>
 
             <a class="button" href="situations_complexes.html">
@@ -354,7 +440,8 @@ p{
         <div class="column">
             <div class="column-title">Contextes & Situations</div>
             <div class="column-subtitle">
-                Quelques contextes dans lesquels nous intervenons pour remettre de l’ordre, sécuriser et relancer.
+                Vous reconnaissez l’un de ces contextes ? C’est souvent à ce moment-là qu’une intervention extérieure
+                permet de débloquer, sécuriser et remettre l’entreprise en mouvement.
             </div>
 
             <a class="button secondary" href="/docs/situations/TPE-PME.pdf" target="_blank">
@@ -380,8 +467,13 @@ p{
 
     </div>
 
+    <div class="bottom-note">
+        <strong>Un échange suffit souvent à clarifier une situation qui s’enlise depuis des mois.</strong><br>
+        Quand les repères se brouillent, mieux vaut parler tôt que laisser la confusion s’installer.
+    </div>
+
     <div class="bottom">
-        <a class="button secondary" href="/contact/">
+        <a class="button secondary" href="/contact/?offre=accueil">
             Parlez-nous de votre situation
         </a>
 
