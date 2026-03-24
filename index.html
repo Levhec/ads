@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEVHEC Advisory</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:#2B2B2B;
+    color:#ECE8DF;
+    min-height:100vh;
+}
+
+.container{
+    text-align:center;
+    max-width:1220px;
+    margin:0 auto;
+    padding:46px 20px 38px;
+}
+
+.brand{
+    margin:0 0 8px;
+    font-weight:500;
+    letter-spacing:1px;
+    font-size:20px;
+    color:#d7d1c4;
+}
+
+h1{
+    margin:0 0 16px;
+    font-weight:600;
+    letter-spacing:.4px;
+    font-size:40px;
+    line-height:1.15;
+    color:#ffffff;
+}
+
+.intro{
+    max-width:900px;
+    margin:0 auto 16px;
+    color:#d4cec2;
+    font-size:19px;
+    line-height:1.6;
+}
+
+.intro strong{
+    color:#ffffff;
+    font-weight:600;
+}
+
+.subintro{
+    max-width:860px;
+    margin:0 auto 30px;
+    color:#bfb8aa;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.button{
+    display:inline-block;
+    text-decoration:none;
+    padding:16px 14px;
+    border-radius:10px;
+    font-size:16px;
+    color:white;
+    line-height:1.35;
+    font-weight:500;
+    background:linear-gradient(145deg,#b39b0a,#8f7c06);
+    box-shadow:
+        0 3px 6px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.22);
+    transition:all .25s ease;
+    text-align:center;
+}
+
+.button:hover{
+    background:linear-gradient(145deg,#d4b915,#a8930c);
+    transform:translateY(-2px);
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+.button.secondary{
+    background:linear-gradient(145deg,#4a4a4a,#363636);
+    color:#ECE8DF;
+}
+
+.button.secondary:hover{
+    background:linear-gradient(145deg,#5b5b5b,#434343);
+}
+
+.button.small{
+    padding:10px 12px;
+    font-size:13px;
+    border-radius:8px;
+}
+
+.hero-actions{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin:0 0 34px;
+}
+
+.hero-actions .button{
+    min-width:280px;
+    max-width:420px;
+}
+
+.complex-block{
+    margin:0 auto 26px;
+    max-width:1120px;
+    padding:28px 26px 24px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 12px 28px rgba(0,0,0,0.22);
+    text-align:left;
+}
+
+.complex-label{
+    display:inline-block;
+    margin-bottom:14px;
+    padding:8px 12px;
+    border-radius:999px;
+    background:rgba(179,155,10,0.14);
+    border:1px solid rgba(179,155,10,0.28);
+    color:#d8c25b;
+    font-size:12px;
+    letter-spacing:.5px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.complex-title{
+    margin:0 0 12px;
+    font-size:30px;
+    line-height:1.2;
+    color:#ffffff;
+    font-weight:700;
+}
+
+.complex-text{
+    margin:0;
+    max-width:980px;
+    color:#d4cec2;
+    font-size:17px;
+    line-height:1.7;
+}
+
+.complex-text strong{
+    color:#ffffff;
+    font-weight:600;
+}
+
+.main-cards{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px;
+    align-items:stretch;
+    margin:0 0 14px;
+}
+
+.card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:16px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:24px 22px 22px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.18);
+    text-align:left;
+}
+
+.card-top{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.card-title{
+    font-size:19px;
+    color:#b39b0a;
+    line-height:1.3;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.card-text{
+    color:#d4cec2;
+    font-size:16px;
+    line-height:1.65;
+}
+
+.card-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:6px;
+}
+
+.expand-zone{
+    margin:0 auto 30px;
+    max-width:1160px;
+}
+
+.expand-hint{
+    text-align:center;
+    font-size:14px;
+    color:#bfb8aa;
+    margin:0 0 12px;
+    letter-spacing:.3px;
+}
+
+.expand-buttons{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:16px;
+}
+
+.expand-btn{
+    appearance:none;
+    border:none;
+    cursor:pointer;
+    padding:15px 18px;
+    border-radius:10px;
+    font-size:15px;
+    line-height:1.35;
+    font-weight:600;
+    color:#ECE8DF;
+    background:linear-gradient(145deg,#4a4a4a,#363636);
+    box-shadow:
+        0 3px 6px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.10);
+    transition:all .25s ease;
+}
+
+.expand-btn::after{
+    content:" ↓";
+    font-size:13px;
+    opacity:0.75;
+}
+
+.expand-btn:hover,
+.expand-btn.active{
+    background:linear-gradient(145deg,#b39b0a,#8f7c06);
+    color:#ffffff;
+    transform:translateY(-2px);
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.16);
+}
+
+.expand-panel{
+    display:none;
+    text-align:left;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:26px 22px 22px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.18);
+    opacity:0;
+    transform:translateY(8px);
+}
+
+.expand-panel.active{
+    display:block;
+    opacity:1;
+    transform:translateY(0);
+    animation:panelFade .22s ease;
+}
+
+@keyframes panelFade{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.panel-header{
+    margin-bottom:18px;
+}
+
+.panel-title{
+    margin:0 0 8px;
+    font-size:22px;
+    line-height:1.25;
+    color:#ffffff;
+    font-weight:700;
+}
+
+.panel-intro{
+    margin:0;
+    color:#cfc8bb;
+    font-size:15px;
+    line-height:1.65;
+}
+
+.panel-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+}
+
+.panel-item{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.07);
+    border-radius:14px;
+    padding:16px 15px 14px;
+}
+
+.panel-item h3{
+    margin:0 0 8px;
+    font-size:16px;
+    line-height:1.35;
+    color:#ffffff;
+}
+
+.panel-item p{
+    margin:0 0 12px;
+    font-size:14px;
+    line-height:1.55;
+    color:#cfc8bb;
+}
+
+.panel-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.section{
+    margin-top:6px;
+    padding:28px 24px 24px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.18);
+    text-align:left;
+}
+
+.section-title{
+    margin:0 0 10px;
+    font-size:24px;
+    line-height:1.25;
+    color:#ffffff;
+    font-weight:700;
+    text-align:center;
+}
+
+.section-intro{
+    max-width:930px;
+    margin:0 auto 24px;
+    color:#cfc8bb;
+    font-size:16px;
+    line-height:1.65;
+    text-align:center;
+}
+
+.methods{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+}
+
+.method-box{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.07);
+    border-radius:14px;
+    padding:16px 14px;
+    text-align:center;
+}
+
+.method-box strong{
+    display:block;
+    color:#ffffff;
+    font-size:15px;
+    line-height:1.35;
+    margin-bottom:6px;
+}
+
+.method-box span{
+    color:#cfc8bb;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.bottom-note{
+    max-width:760px;
+    margin:34px auto 16px;
+    padding:18px 18px;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    background:rgba(255,255,255,0.03);
+    color:#d4cec2;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.bottom-note strong{
+    color:#ffffff;
+}
+
+.bottom{
+    margin-top:16px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.bottom .button{
+    padding:18px 26px;
+    font-size:17px;
+    max-width:100%;
+}
+
+.footer{
+    margin-top:28px;
+    font-size:12px;
+    color:#888;
+    line-height:1.7;
+}
+
+@media (max-width: 980px){
+    .main-cards{
+        grid-template-columns:1fr;
+    }
+
+    .panel-grid{
+        grid-template-columns:1fr;
+    }
+
+    .methods{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media (max-width: 640px){
+    .container{
+        padding:32px 16px 28px;
+    }
+
+    .brand{
+        font-size:17px;
+        margin-bottom:8px;
+    }
+
+    h1{
+        font-size:29px;
+        line-height:1.15;
+        margin-bottom:14px;
+    }
+
+    .intro{
+        font-size:17px;
+        margin-bottom:14px;
+    }
+
+    .subintro{
+        font-size:15px;
+        margin-bottom:22px;
+    }
+
+    .complex-block{
+        padding:22px 16px 18px;
+        margin-bottom:20px;
+    }
+
+    .complex-title{
+        font-size:24px;
+    }
+
+    .complex-text{
+        font-size:15px;
+    }
+
+    .hero-actions{
+        margin-bottom:24px;
+        gap:10px;
+    }
+
+    .hero-actions .button{
+        width:100%;
+        min-width:0;
+    }
+
+    .card{
+        padding:18px 14px 16px;
+    }
+
+    .card-title{
+        font-size:16px;
+    }
+
+    .card-text{
+        font-size:15px;
+    }
+
+    .card-actions{
+        flex-direction:column;
+    }
+
+    .card-actions .button{
+        width:100%;
+    }
+
+    .expand-hint{
+        font-size:13px;
+    }
+
+    .expand-buttons{
+        gap:10px;
+    }
+
+    .expand-btn{
+        width:100%;
+        font-size:14px;
+        padding:14px 12px;
+    }
+
+    .expand-panel{
+        padding:20px 14px 16px;
+    }
+
+    .panel-title{
+        font-size:19px;
+    }
+
+    .panel-intro{
+        font-size:14px;
+    }
+
+    .panel-item{
+        padding:14px 12px;
+    }
+
+    .section{
+        padding:22px 14px 18px;
+    }
+
+    .section-title{
+        font-size:21px;
+    }
+
+    .section-intro{
+        font-size:15px;
+        margin-bottom:18px;
+    }
+
+    .methods{
+        grid-template-columns:1fr;
+    }
+
+    .bottom-note{
+        margin-top:28px;
+        font-size:15px;
+        padding:16px 14px;
+    }
+
+    .bottom{
+        margin-top:14px;
+    }
+
+    .bottom .button{
+        width:100%;
+        font-size:16px;
+        padding:16px 14px;
+    }
+
+    .footer{
+        margin-top:22px;
+        font-size:11px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="brand">LEVHEC ADVISORY</div>
+
+    <h1>FAIRE DE LA COMPLEXITÉ<br>UN AVANTAGE STRATÉGIQUE</h1>
+
+    <div class="intro">
+        Lorsque la structure se tend, que les équipes décrochent, que les chiffres deviennent flous
+        ou que les décisions n’aboutissent plus, <strong>il ne s’agit plus d’attendre</strong>.
+        Il faut remettre de l’ordre, rétablir des repères et reprendre la main.
+    </div>
+
+    <div class="subintro">
+        LEVHEC Advisory intervient dans ces moments où l’entreprise a besoin d’un renfort expérimenté,
+        immédiatement opérationnel, capable d’agir dans l’ambiguïté, de structurer l’action
+        et de faire avancer les sujets qui bloquent.
+    </div>
+
+    <div class="complex-block">
+        <div class="complex-label">Situations complexes</div>
+        <h2 class="complex-title">Nous intervenons face à toute situation complexe qui exige une reprise en main.</h2>
+        <p class="complex-text">
+            Désorganisation interne, perte de repères, tensions managériales, informations peu fiables,
+            gouvernance fragilisée, blocages opérationnels, croissance mal absorbée, transition à engager :
+            <strong>la complexité n’est pas un sujet annexe</strong>. C’est souvent le signal qu’une action structurée
+            et expérimentée doit être engagée rapidement.
+        </p>
+    </div>
+
+    <div class="hero-actions">
+        <a class="button secondary" href="/contact/?offre=accueil">
+            Parlez-nous de votre situation
+        </a>
+
+        <a class="button" href="/docs/methodes/Methodes-Missions.pdf" target="_blank">
+            Voir les méthodes d’intervention
+        </a>
+    </div>
+
+    <div class="main-cards">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-title">Management de transition</div>
+                <div class="card-text">
+                    Des fonctions clés exercées au plus près du dirigeant pour reprendre une structure en main,
+                    sécuriser l’exécution, rétablir les équilibres et remettre l’entreprise en mouvement.
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <button class="expand-btn active" type="button" data-target="panel-transition">
+                    Voir les fonctions exercées
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <div class="card-title">Offres & expertises</div>
+                <div class="card-text">
+                    Des interventions ciblées pour clarifier la gestion, fiabiliser les informations utiles,
+                    structurer les processus internes et remettre les fonctions sensibles en état de marche.
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <button class="expand-btn" type="button" data-target="panel-offres">
+                    Voir les offres
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="expand-zone">
+        <div class="expand-hint">
+            Cliquez sur l’un des deux blocs pour afficher le détail ci-dessous
+        </div>
+
+        <div class="expand-buttons">
+            <button class="expand-btn active" type="button" data-target="panel-transition">
+                Management de transition
+            </button>
+            <button class="expand-btn" type="button" data-target="panel-offres">
+                Offres & expertises
+            </button>
+        </div>
+
+        <div class="expand-panel active" id="panel-transition">
+            <div class="panel-header">
+                <h2 class="panel-title">Management de transition</h2>
+                <p class="panel-intro">
+                    Une présence opérationnelle au bon niveau de décision pour stabiliser, réorganiser
+                    et tenir les fonctions clés dans les périodes qui exigent plus qu’un simple conseil.
+                </p>
+            </div>
+
+            <div class="panel-grid">
+                <div class="panel-item">
+                    <h3>DAF en Transition</h3>
+                    <p>Reprise en main des sujets financiers, comptables, de rentabilité, de cash et d’organisation.</p>
+                    <div class="panel-links">
+                        <a class="button small" href="daf_transition.html">Voir l’offre</a>
+                        <a class="button small secondary" href="/docs/offres/offre-DAF.pdf" target="_blank">Fiche PDF</a>
+                    </div>
+                </div>
+
+                <div class="panel-item">
+                    <h3>DRH en Transition</h3>
+                    <p>Encadrement des affaires sociales, réorganisation RH, gestion des tensions et conduite des phases sensibles.</p>
+                    <div class="panel-links">
+                        <a class="button small" href="drh_transition.html">Voir l’offre</a>
+                        <a class="button small secondary" href="/docs/offres/offre-RH.pdf" target="_blank">Fiche PDF</a>
+                    </div>
+                </div>
+
+                <div class="panel-item">
+                    <h3>Secrétariat Général</h3>
+                    <p>Fonction de structuration, d’arbitrage et de sécurisation pour remettre de la cohérence dans les fonctions supports.</p>
+                    <div class="panel-links">
+                        <a class="button small" href="secretaire_general.html">Voir l’offre</a>
+                        <a class="button small secondary" href="/docs/offres/offre-Secretaire-General.pdf" target="_blank">Fiche PDF</a>
+                    </div>
+                </div>
+
+                <div class="panel-item">
+                    <h3>Direction Générale</h3>
+                    <p>Prise de relais ou renfort de direction dans les moments où l’entreprise doit être recadrée et remise en action.</p>
+                    <div class="panel-links">
+                        <a class="button small" href="dg_transition.html">Voir l’offre</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="expand-panel" id="panel-offres">
+            <div class="panel-header">
+                <h2 class="panel-title">Offres & expertises</h2>
+                <p class="panel-intro">
+                    Des interventions ciblées là où la structure a besoin d’être clarifiée, fiabilisée
+                    ou réorganisée pour retrouver de la lisibilité et de l’efficacité.
+                </p>
+            </div>
+
+            <div class="panel-grid">
+                <div class="panel-item">
+                    <h3>Gestion des situations complexes</h3>
+                    <p>Intervention dans les environnements tendus, ambigus ou désorganisés, lorsque la structure doit être reprise en main.</p>
+                    <div class="panel-links">
+                        <a class="button small" href="situations_complexes.html">Voir l’offre</a>
+                    </div>
+                </div>
+
+                <div class="panel-item">
+                    <h3>Contrôle de Gestion</h3>
+                    <p>Structurer les données utiles, fiabiliser les traitements internes et produire des repères décisionnels solides.</p>
+                    <div class="panel-links">
+                        <a class="button small" href="controle_gestion.html">Voir l’offre</a>
+                        <a class="button small secondary" href="/docs/offres/fiche-controle-de-gestion.pdf" target="_blank">Fiche PDF</a>
+                    </div>
+                </div>
+
+                <div class="panel-item">
+                    <h3>Gouvernance des données</h3>
+                    <p>Centraliser, sécuriser et rendre exploitables les données de l’entreprise pour en faire un actif réellement utile.</p>
+                    <div class="panel-links">
+                        <a class="button small" href="gouvernance_donnees.html">Voir l’offre</a>
+                    </div>
+                </div>
+
+                <div class="panel-item">
+                    <h3>SAGE BI Reporting</h3>
+                    <p>Exploiter les données avec davantage de cohérence, d’autonomie et de rapidité dans la restitution des informations.</p>
+                    <div class="panel-links">
+                        <a class="button small" href="sagebi.html">Voir l’offre</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Méthodes d’intervention</h2>
+        <div class="section-intro">
+            S’investir, résoudre, transmettre. Nous adaptons le mode d’action à la réalité de la situation,
+            sans alourdir inutilement l’organisation.
+        </div>
+
+        <div class="methods">
+            <div class="method-box">
+                <strong>Intervention directe</strong>
+                <span>Prendre les sujets en main sans délai inutile.</span>
+            </div>
+            <div class="method-box">
+                <strong>Mode projet</strong>
+                <span>Structurer l’action et faire avancer les chantiers sensibles.</span>
+            </div>
+            <div class="method-box">
+                <strong>Audit ciblé</strong>
+                <span>Clarifier rapidement ce qui bloque et ce qui doit être repris.</span>
+            </div>
+            <div class="method-box">
+                <strong>Transmission</strong>
+                <span>Remettre en ordre et laisser des équipes plus autonomes.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-note">
+        <strong>Un échange suffit souvent à clarifier une situation qui s’enlise depuis des mois.</strong><br>
+        Quand les repères se brouillent, mieux vaut parler tôt que laisser la confusion s’installer.
+    </div>
+
+    <div class="bottom">
+        <a class="button secondary" href="/contact/?offre=accueil">
+            Parlez-nous de votre situation
+        </a>
+
+        <a class="button" href="https://www.levhec-advisory.com" target="_blank">
+            Découvrir le site LEVHEC ADVISORY
+        </a>
+    </div>
+
+    <div class="footer">
+        <div>LEVHEC Advisory, le Cabinet de Management de Transition et de Conseil Opérationnel</div>
+        <div>DATA • FINANCE • MANAGEMENT • STRATÉGIE</div>
+    </div>
+
+</div>
+
+<script>
+const toggleButtons = document.querySelectorAll('.expand-btn');
+const panels = document.querySelectorAll('.expand-panel');
+
+toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+
+        toggleButtons.forEach(btn => {
+            if (btn.getAttribute('data-target')) {
+                btn.classList.remove('active');
+            }
+        });
+
+        panels.forEach(panel => panel.classList.remove('active'));
+
+        document.querySelectorAll('.expand-btn[data-target="' + targetId + '"]').forEach(btn => {
+            btn.classList.add('active');
+        });
+
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) {
+            targetPanel.classList.add('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
