@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="LEVHEC ADVISORY vous accompagne dans l'exploitation de SAGE BI Reporting pour libérer vos données, structurer vos reportings et accélérer vos décisions.">
+<meta name="robots" content="index,follow">
+
+<title>SAGE BI Reporting | LEVHEC ADVISORY</title>
+
+<link rel="stylesheet" href="assets/css/popup.css" />
+
+<style>
+:root{
+  --sage:#00B533;
+  --sage-dark:#008F29;
+  --sage-deep:#006B1F;
+  --sage-soft:#EAFBEF;
+
+  --text:#1d1d1d;
+  --muted:#5d5d5d;
+  --white:#ffffff;
+  --border:#dbe9de;
+  --shadow:0 18px 45px rgba(0,0,0,0.08);
+}
+
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:linear-gradient(180deg,#f3fff5 0%,#ffffff 100%);
+  color:var(--text);
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+.wrapper{
+  max-width:1120px;
+  margin:auto;
+  padding:26px 20px 110px;
+}
+
+/* HERO */
+
+.hero{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+  overflow:hidden;
+}
+
+/* PANTHERE */
+
+.panthere{
+  position:absolute;
+  top:50%;
+  left:47%;
+  transform:translate(-50%,-50%);
+  width:430px;
+  opacity:0.15;
+  pointer-events:none;
+}
+
+/* LEFT */
+
+.hero-content{
+  padding:38px 56px 44px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.logo-levhec{
+  width:280px;
+  margin:0 auto 18px;
+}
+
+.brand-badge{
+  background:var(--sage-soft);
+  padding:10px 16px;
+  border-radius:999px;
+  display:inline-block;
+  margin-bottom:20px;
+  font-weight:800;
+  color:var(--sage-deep);
+}
+
+.sage-logo{
+  width:180px;
+  margin:0 auto 24px;
+}
+
+h1{
+  text-align:center;
+  font-size:clamp(1.8rem,3vw,2.6rem);
+  line-height:1.15;
+  letter-spacing:-0.5px;
+  margin:8px 0 14px;
+}
+
+.intro{
+  text-align:center;
+  color:var(--muted);
+  margin:0 0 26px;
+  line-height:1.6;
+}
+
+.questions{
+  list-style:none;
+  padding:0;
+  display:grid;
+  gap:12px;
+  margin:0 0 30px;
+}
+
+.questions li{
+  background:#f7fff9;
+  border:1px solid #dff2e4;
+  padding:14px;
+  border-radius:12px;
+  font-weight:700;
+  line-height:1.45;
+}
+
+/* BOUTONS */
+
+.cta-row{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:800;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:.2s ease;
+  cursor:pointer;
+  border:none;
+  font-size:1rem;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+}
+
+.btn-primary{
+  background:var(--sage);
+  color:white;
+}
+
+.btn-secondary{
+  background:#fff;
+  border:1px solid var(--border);
+  color:var(--text);
+}
+
+/* RIGHT */
+
+.hero-side{
+  background:linear-gradient(160deg,var(--sage-dark),var(--sage-deep));
+  color:white;
+  padding:40px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:22px;
+  padding:34px 28px;
+  backdrop-filter:blur(6px);
+  text-align:center;
+  max-width:460px;
+  margin:auto;
+}
+
+.card h2{
+  margin:0 0 16px;
+  line-height:1.2;
+}
+
+.card-intro{
+  margin:0 0 20px;
+  line-height:1.6;
+}
+
+.benefits{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:12px;
+  text-align:left;
+}
+
+.benefits li{
+  display:grid;
+  grid-template-columns:22px 1fr;
+  gap:10px;
+  align-items:start;
+  line-height:1.45;
+}
+
+.benefits li::before{
+  content:"✓";
+  font-weight:900;
+}
+
+.closing{
+  margin:22px 0 0;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:700;
+  line-height:1.5;
+}
+
+.mini-proof{
+  margin:14px 0 0;
+  font-size:.95rem;
+  opacity:.95;
+  line-height:1.5;
+}
+
+/* LOGO BAS DROITE */
+
+.sage-corner{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  width:90px;
+}
+
+/* BAS PAGE */
+
+.final-actions{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:40px;
+}
+
+.site-footer{
+  text-align:center;
+  margin-top:30px;
+  line-height:1.5;
+}
+
+.site-footer div{
+  margin:5px 0;
+}
+
+/* BOUTONS FLOTTANTS */
+
+.floating-actions{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:1200;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.float-btn{
+  width:52px;
+  height:52px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#fff;
+  background:var(--sage);
+  box-shadow:0 10px 22px rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.22);
+  transition:.2s ease;
+  font-size:21px;
+}
+
+.float-btn:hover{
+  transform:translateY(-2px) scale(1.03);
+}
+
+.float-btn.offer{
+  background:linear-gradient(160deg,var(--sage),var(--sage-dark));
+}
+
+.float-btn.contact{
+  background:linear-gradient(160deg,#12b84b,#008f29);
+}
+
+.float-btn.phone{
+  background:linear-gradient(160deg,#009f2f,#006b1f);
+}
+
+.float-btn svg{
+  width:21px;
+  height:21px;
+  fill:currentColor;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-side{
+    padding:20px 14px 72px;
+  }
+
+  .sage-corner{
+    position:absolute;
+    left:50%;
+    bottom:18px;
+    transform:translateX(-50%);
+    width:82px;
+  }
+
+  .floating-actions{
+    right:10px;
+    bottom:10px;
+    gap:8px;
+  }
+
+  .float-btn{
+    width:46px;
+    height:46px;
+    font-size:18px;
+  }
+
+  .float-btn svg{
+    width:18px;
+    height:18px;
+  }
+}
+
+@media(max-width:520px){
+
+  .hero-side{
+    padding:12px 10px 66px;
+  }
+
+  .float-btn{
+    width:42px;
+    height:42px;
+  }
+
+  .float-btn svg{
+    width:16px;
+    height:16px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TON HTML RESTE STRICTEMENT IDENTIQUE -->
+
+</body>
+</html>
