@@ -25,9 +25,13 @@
   --shadow:0 18px 45px rgba(0,0,0,0.08);
 }
 
-*{box-sizing:border-box;}
+*{
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth;}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
@@ -324,21 +328,126 @@ h1{
 /* RESPONSIVE */
 
 @media(max-width:900px){
+  .wrapper{
+    padding:14px 14px 120px;
+  }
 
   .hero{
     grid-template-columns:1fr;
+    border-radius:22px;
+  }
+
+  .panthere{
+    width:280px;
+    left:50%;
+    top:24%;
+    opacity:0.10;
+  }
+
+  .hero-content{
+    padding:24px 18px 28px;
+  }
+
+  .logo-levhec{
+    width:220px;
+    margin:0 auto 14px;
+  }
+
+  .brand-badge{
+    margin-bottom:16px;
+    padding:9px 14px;
+    font-size:.92rem;
+  }
+
+  .sage-logo{
+    width:145px;
+    margin:0 auto 18px;
+  }
+
+  h1{
+    font-size:1.9rem;
+    line-height:1.15;
+    margin:6px 0 12px;
+  }
+
+  .intro{
+    font-size:.98rem;
+    margin-bottom:20px;
+  }
+
+  .questions{
+    gap:10px;
+    margin-bottom:22px;
+  }
+
+  .questions li{
+    padding:12px;
+    font-size:.97rem;
+  }
+
+  .cta-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .cta-row .btn{
+    width:100%;
   }
 
   .hero-side{
     padding:20px 14px 72px;
   }
 
+  .card{
+    max-width:none;
+    width:100%;
+    padding:24px 18px;
+    border-radius:18px;
+  }
+
+  .card h2{
+    font-size:1.35rem;
+    margin-bottom:14px;
+  }
+
+  .card-intro{
+    font-size:.98rem;
+    margin-bottom:16px;
+  }
+
+  .benefits{
+    gap:10px;
+  }
+
+  .benefits li{
+    grid-template-columns:18px 1fr;
+    gap:8px;
+    font-size:.97rem;
+  }
+
+  .closing,
+  .mini-proof{
+    font-size:.96rem;
+  }
+
   .sage-corner{
     position:absolute;
     left:50%;
+    right:auto;
     bottom:18px;
     transform:translateX(-50%);
+    margin:0;
     width:82px;
+  }
+
+  .final-actions{
+    margin-top:26px;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .final-actions .btn{
+    width:100%;
   }
 
   .floating-actions{
@@ -360,9 +469,47 @@ h1{
 }
 
 @media(max-width:520px){
+  .wrapper{
+    padding:10px 10px 118px;
+  }
+
+  .hero{
+    border-radius:18px;
+  }
+
+  .hero-content{
+    padding:20px 14px 22px;
+  }
+
+  h1{
+    font-size:1.65rem;
+  }
+
+  .intro{
+    font-size:.95rem;
+  }
+
+  .questions li{
+    font-size:.93rem;
+  }
 
   .hero-side{
     padding:12px 10px 66px;
+  }
+
+  .card{
+    padding:20px 14px;
+  }
+
+  .card h2{
+    font-size:1.2rem;
+  }
+
+  .card-intro,
+  .benefits li,
+  .closing,
+  .mini-proof{
+    font-size:.93rem;
   }
 
   .float-btn{
@@ -375,13 +522,122 @@ h1{
     height:16px;
   }
 }
-
 </style>
+
 </head>
 
 <body>
 
-<!-- TON HTML RESTE STRICTEMENT IDENTIQUE -->
+<main class="wrapper">
+
+<section class="hero">
+
+<img class="panthere" src="assets/img/Panthere_detouree.png" alt="">
+
+<div class="hero-content">
+
+<img class="logo-levhec" src="assets/img/Levhec - horiz transp.png" alt="Levhec Advisory">
+
+<div class="brand-badge">
+Expertise Sage BI Reporting
+</div>
+
+<img class="sage-logo" src="assets/img/sage-bi-reporting-100.png" alt="Sage BI Reporting">
+
+<h1>
+Transformez vos données SAGE<br>
+en décisions plus rapides.
+</h1>
+
+<p class="intro">
+SAGE BI Reporting est puissant. Mais sans structuration, sans logique de restitution et sans maîtrise métier, son potentiel reste sous-exploité. LEVHEC ADVISORY vous aide à passer d’un outil disponible à un reporting réellement utile.
+</p>
+
+<ul class="questions">
+<li>Vos données sont-elles vraiment exploitables pour piloter l’activité&nbsp;?</li>
+<li>Disposez-vous de reportings fiables, lisibles et rapidement mobilisables&nbsp;?</li>
+<li>Exploitez-vous réellement toute la puissance de SAGE BI Reporting&nbsp;?</li>
+</ul>
+
+<div class="cta-row">
+<a href="contact/index.html" class="btn btn-primary">Être contacté</a>
+<button class="btn btn-secondary" data-popup="popups/popup-offre-sagebi.html">Découvrir l’offre</button>
+</div>
+
+</div>
+
+<aside class="hero-side">
+
+<div class="card">
+
+<h2>Ce que vous obtenez concrètement</h2>
+
+<p class="card-intro">
+Nous vous aidons à transformer SAGE BI Reporting en véritable outil de pilotage opérationnel.
+</p>
+
+<ul class="benefits">
+<li>Interroger vos données en temps réel</li>
+<li>Créer des reportings multi-logiciels cohérents</li>
+<li>Structurer et enrichir vos sources de données</li>
+<li>Faciliter l’élaboration budgétaire et les prévisions</li>
+<li>Mettre en place vos indicateurs clés de pilotage</li>
+<li>Donner de l’autonomie à vos équipes</li>
+</ul>
+
+<p class="closing">
+Vous gagnez en lisibilité, en réactivité et en maîtrise décisionnelle.
+</p>
+
+<p class="mini-proof">
+Une intervention orientée résultats, usage concret et appropriation rapide.
+</p>
+
+</div>
+
+<img class="sage-corner" src="assets/img/Sage-logo.png" alt="Sage">
+
+</aside>
+
+</section>
+
+<div class="final-actions">
+<a href="/" class="btn btn-secondary">Voir toutes les offres</a>
+<a href="https://www.levhec-advisory.com" class="btn btn-secondary" target="_blank" rel="noopener">Vers le site LEVHEC ADVISORY</a>
+</div>
+  
+<footer class="site-footer">
+<div><em>Gouverner la donnée, c’est révéler sa valeur.</em></div>
+<div><strong>Levhec Advisory est revendeur agréé SAGE</strong></div>
+<div>Management de transition • Cabinet de conseil opérationnel</div>
+</footer>
+
+</main>
+
+<div class="floating-actions">
+  <button class="float-btn offer" data-popup="popups/popup-offre-sagebi.html" aria-label="Voir l’offre" title="Voir l’offre">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2.8l2.85 5.77 6.37.93-4.61 4.49 1.09 6.35L12 17.34 6.3 20.34l1.09-6.35L2.78 9.5l6.37-.93L12 2.8z"/>
+    </svg>
+  </button>
+
+  <a href="contact/index.html" class="float-btn contact" aria-label="Être contacté" title="Être contacté">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 2v.51l9 6.23 9-6.23V7H3zm18 2.99-8.43 5.84a1 1 0 0 1-1.14 0L3 9.99V17h18V9.99z"/>
+    </svg>
+  </a>
+
+  <a href="tel:+33184200660" class="float-btn phone" aria-label="Appeler le 01 84 20 06 60" title="Appeler le 01 84 20 06 60">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.3.56 3.58.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.3 21 3 13.7 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.28.19 2.47.56 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
+    </svg>
+  </a>
+</div>
+
+<div id="popup-overlay"></div>
+<div id="popup-box"></div>
+
+<script src="assets/js/popup-loader.js"></script>
 
 </body>
 </html>
