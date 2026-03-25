@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Structuration et sécurisation des activités artistiques avec LEVHEC ADVISORY." />
+  <meta name="robots" content="index,follow" />
+  <title>Offre | Activités artistiques | LEVHEC ADVISORY</title>
+
+  <style>
+    :root{
+      --bg:#f5f1ea;
+      --text:#1f1f1f;
+      --muted:#5f5a52;
+      --gold:#b08d57;
+      --gold-dark:#8f6f3f;
+      --white:#ffffff;
+      --border:#e5dccf;
+      --shadow:0 18px 45px rgba(0,0,0,.08);
+      --dark:#2b2b2b;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .popup-page{
+      min-height:100vh;
+      padding:28px 18px 40px;
+    }
+
+    .topbar{
+      max-width:960px;
+      margin:0 auto 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+
+    .back-link,
+    .close-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:var(--white);
+      border:1px solid var(--border);
+      color:var(--text);
+      font-weight:600;
+      box-shadow:var(--shadow);
+    }
+
+    .close-link{
+      width:42px;
+      min-width:42px;
+      padding:0;
+      font-size:20px;
+      line-height:1;
+    }
+
+    .wrap{
+      max-width:960px;
+      margin:0 auto;
+    }
+
+    .hero{
+      background:linear-gradient(135deg, #232323 0%, #343434 100%);
+      color:#f4efe6;
+      border-radius:28px;
+      padding:38px 26px 34px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:7px 12px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#d9c29a;
+      background:rgba(255,255,255,.04);
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(28px,4.8vw,46px);
+      line-height:1.12;
+      font-weight:700;
+      letter-spacing:-0.02em;
+    }
+
+    .subtitle{
+      max-width:720px;
+      margin:18px auto 0;
+      font-size:clamp(18px,2.5vw,24px);
+      line-height:1.4;
+      color:#f2e6d2;
+      font-weight:500;
+    }
+
+    .intro{
+      max-width:760px;
+      margin:20px auto 0;
+      font-size:17px;
+      color:#d8d0c3;
+    }
+
+    .content{
+      margin-top:24px;
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:28px 24px 30px;
+    }
+
+    .lead{
+      margin:0 0 22px;
+      font-size:18px;
+      color:#312c26;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .item{
+      background:#fcfaf7;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:22px 18px 18px;
+    }
+
+    .item-icon{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--gold);
+      color:#fff;
+      font-weight:700;
+      font-size:17px;
+      margin-bottom:12px;
+    }
+
+    .item h2{
+      margin:0 0 8px;
+      font-size:21px;
+      line-height:1.2;
+      color:var(--text);
+    }
+
+    .item p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .closing{
+      margin-top:22px;
+      background:linear-gradient(135deg, #f8f3eb 0%, #f3ece2 100%);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:22px 18px;
+    }
+
+    .closing strong{
+      color:var(--text);
+    }
+
+    .closing p{
+      margin:0;
+      color:#4f4941;
+      font-size:17px;
+    }
+
+    .legal-note{
+      margin-top:18px;
+      padding:16px 18px;
+      background:#faf7f2;
+      border:1px solid #eadfce;
+      border-radius:18px;
+      color:#5f5a52;
+      font-size:14px;
+    }
+
+    .actions{
+      margin-top:26px;
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:12px 22px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:15px;
+      text-align:center;
+      transition:.2s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      background:var(--gold-dark);
+      transform:translateY(-1px);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--text);
+      border-color:#d8c8af;
+    }
+
+    .btn-secondary:hover{
+      background:#faf6ef;
+      transform:translateY(-1px);
+    }
+
+    .signature{
+      margin-top:24px;
+      text-align:center;
+      color:#6a635a;
+      font-size:14px;
+    }
+
+    @media (max-width: 760px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero,
+      .content{
+        border-radius:22px;
+      }
+
+      .hero{
+        padding:30px 18px 28px;
+      }
+
+      .content{
+        padding:22px 16px 24px;
+      }
+
+      .topbar{
+        margin-bottom:14px;
+      }
+
+      .back-link{
+        padding:10px 14px;
+        font-size:14px;
+      }
+
+      .actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup-page">
+
+    <div class="topbar">
+      <a class="back-link" href="../gestion-artistes.html">← Retour</a>
+      <a class="close-link" href="../gestion-artistes.html" aria-label="Fermer">×</a>
+    </div>
+
+    <div class="wrap">
+
+      <section class="hero">
+        <div class="eyebrow">Offre LEVHEC ADVISORY</div>
+        <h1>Vous missionnez LEVHEC ADVISORY pour structurer une activité artistique.<br>Voici ce que vous obtenez.</h1>
+        <div class="subtitle">
+          Le talent crée de la valeur. L’organisation permet de la conserver.
+        </div>
+        <p class="intro">
+          Lorsqu’une activité artistique prend de l’ampleur, elle ne peut plus reposer uniquement sur le talent, l’énergie ou les habitudes. Elle a besoin d’un cadre clair, de repères solides et d’une organisation capable de suivre la valeur créée.
+        </p>
+      </section>
+
+      <section class="content">
+        <p class="lead">
+          Nous ne gérons pas l’image. Nous structurons l’activité.
+        </p>
+
+        <div class="grid">
+          <article class="item">
+            <div class="item-icon">✓</div>
+            <h2>Une activité clarifiée</h2>
+            <p>
+              Nous remettons à plat l’organisation de l’activité, les flux, les rôles, les circuits d’information et les points de dépendance.
+            </p>
+          </article>
+
+          <article class="item">
+            <div class="item-icon">✓</div>
+            <h2>Des revenus mieux suivis</h2>
+            <p>
+              Encaissements, échéances, engagements, dépenses, intervenants : l’activité devient plus lisible, plus suivie et moins dépendante de l’improvisation.
+            </p>
+          </article>
+
+          <article class="item">
+            <div class="item-icon">✓</div>
+            <h2>Une lecture économique des contrats</h2>
+            <p>
+              Sans nous substituer au conseil juridique, nous aidons à comprendre les enjeux économiques, les flux attendus et les points de vigilance.
+            </p>
+          </article>
+
+          <article class="item">
+            <div class="item-icon">✓</div>
+            <h2>Une organisation plus solide</h2>
+            <p>
+              Nous structurons les outils, les documents, les repères de gestion et les méthodes utiles à une activité qui doit durer.
+            </p>
+          </article>
+
+          <article class="item">
+            <div class="item-icon">✓</div>
+            <h2>Une meilleure coordination avec les conseils</h2>
+            <p>
+              Avocat, expert-comptable, management, entourage professionnel : les informations sont mieux préparées, mieux ordonnées et mieux transmises.
+            </p>
+          </article>
+
+          <article class="item">
+            <div class="item-icon">✓</div>
+            <h2>Une valeur mieux conservée</h2>
+            <p>
+              Moins de pertes invisibles, moins de flou, moins de désordre : la valeur créée par l’activité est mieux protégée et mieux exploitée.
+            </p>
+          </article>
+        </div>
+
+        <div class="closing">
+          <p>
+            <strong>LEVHEC ADVISORY intervient lorsque l’activité avance, mais que sa structuration ne suit plus.</strong><br>
+            Nous remettons de l’ordre, redonnons de la lisibilité et aidons à bâtir une organisation plus fiable, plus durable et plus exploitable.
+          </p>
+        </div>
+
+        <div class="legal-note">
+          LEVHEC ADVISORY intervient sur les dimensions organisationnelles, économiques et administratives de l’activité, en lien avec les conseils juridiques, fiscaux ou comptables habituels du client ou ceux qu’il choisit.
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="/contact/?offre=gestion-artistes">Être contacté</a>
+          <a class="btn btn-secondary" href="../gestion-artistes.html">Retour à l’offre</a>
+        </div>
+
+        <div class="signature">
+          <strong>LEVHEC ADVISORY</strong><br>
+          Cabinet de Management de Transition et de Conseil Opérationnel
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+</body>
+</html>
