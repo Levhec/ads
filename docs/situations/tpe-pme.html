@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TPE PME | LEVHEC ADVISORY</title>
+<meta name="description" content="LEVHEC ADVISORY accompagne les TPE et PME dans les phases de croissance, de structuration et de transition." />
+<meta name="robots" content="index,follow" />
+<link rel="stylesheet" href="assets/css/popup.css" />
+
+<style>
+:root{
+  --primary:#E07A2F;
+  --primary-dark:#C9651A;
+  --primary-deep:#8F4717;
+  --primary-soft:#FCE8D8;
+  --border:#E7B58F;
+
+  --text:#2A1A12;
+  --muted:#6E5749;
+  --bg:#FFF9F5;
+  --white:#ffffff;
+  --shadow:0 18px 45px rgba(143,71,23,0.12);
+
+  --gold:#D7B16B;
+  --dark:#241A15;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1180px, calc(100% - 40px));
+  margin:0 auto;
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at top right, rgba(224,122,47,0.18), transparent 30%),
+    linear-gradient(135deg, #fff7f1 0%, #fffdfb 55%, #fdf3eb 100%);
+  border-bottom:1px solid rgba(224,122,47,0.12);
+}
+
+.hero-inner{
+  padding:72px 0 54px;
+}
+
+.kicker{
+  display:inline-block;
+  margin-bottom:18px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(224,122,47,0.10);
+  border:1px solid rgba(224,122,47,0.18);
+  color:var(--primary-deep);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin:0;
+  font-size:clamp(40px, 8vw, 82px);
+  line-height:.95;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  color:var(--primary);
+}
+
+.hero h1 span{
+  display:block;
+  color:#f0b182;
+  font-size:.42em;
+  margin-top:8px;
+  letter-spacing:.28em;
+}
+
+.hero-subtitle{
+  margin:26px 0 0;
+  font-size:clamp(22px, 3vw, 34px);
+  font-weight:700;
+  line-height:1.2;
+  text-transform:uppercase;
+  color:var(--primary-deep);
+}
+
+.hero-subtitle strong{
+  display:block;
+  color:var(--dark);
+}
+
+.services-line{
+  margin-top:34px;
+  padding-top:24px;
+  border-top:1px solid rgba(224,122,47,0.18);
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--primary);
+}
+
+.services-line span{
+  color:#efb185;
+  padding:0 12px;
+}
+
+.reasons{
+  padding:28px 0 0;
+}
+
+.reasons-grid{
+  display:grid;
+  grid-template-columns:1.8fr .8fr;
+  gap:20px;
+  align-items:stretch;
+}
+
+.reasons-main{
+  background:#a7a19f;
+  color:#fff;
+  border-radius:20px;
+  padding:28px 26px;
+  box-shadow:var(--shadow);
+}
+
+.reasons-main p{
+  margin:0 0 18px;
+  font-size:clamp(18px, 2vw, 24px);
+  line-height:1.28;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.reasons-main p:last-child{
+  margin-bottom:0;
+}
+
+.offer-box{
+  background:linear-gradient(180deg, #6da9c5 0%, #5b9bbb 100%);
+  color:#fff;
+  border-radius:20px;
+  padding:28px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:left;
+  box-shadow:var(--shadow);
+}
+
+.offer-box a{
+  display:block;
+  font-size:clamp(22px, 2.2vw, 30px);
+  line-height:1.24;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.content{
+  padding:34px 0 68px;
+}
+
+.story{
+  position:relative;
+  background:linear-gradient(180deg, #eff7fa 0%, #eef6f8 100%);
+  border:1px solid #d5e8ef;
+  border-radius:28px;
+  padding:34px 28px;
+  box-shadow:0 18px 40px rgba(75, 122, 145, 0.10);
+}
+
+.story-grid{
+  display:grid;
+  grid-template-columns:1fr 280px 1fr;
+  gap:28px;
+  align-items:start;
+}
+
+.story p{
+  margin:0 0 20px;
+  color:#5b96b0;
+  font-size:clamp(18px, 1.55vw, 22px);
+  line-height:1.42;
+  text-align:justify;
+}
+
+.story p:last-child{
+  margin-bottom:0;
+}
+
+.story p.dropcap::first-letter{
+  float:left;
+  font-size:3.4em;
+  line-height:.8;
+  padding-right:6px;
+  color:#69a8c5;
+}
+
+.center-visual{
+  align-self:center;
+}
+
+.visual-card{
+  background:linear-gradient(180deg, #4a83a3 0%, #2d5f7d 100%);
+  border-radius:18px;
+  min-height:220px;
+  box-shadow:0 14px 28px rgba(0,0,0,0.18);
+  position:relative;
+  overflow:hidden;
+}
+
+.visual-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255,255,255,.22), transparent 18%),
+    radial-gradient(circle at 72% 18%, rgba(255,255,255,.16), transparent 16%),
+    linear-gradient(to top, rgba(255,255,255,.08), rgba(255,255,255,0));
+}
+
+.visual-silhouettes{
+  position:absolute;
+  inset:auto 18px 18px 18px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.visual-silhouettes span{
+  display:block;
+  width:26px;
+  border-radius:20px 20px 8px 8px;
+  background:rgba(18,47,63,.9);
+  position:relative;
+}
+
+.visual-silhouettes span::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:-18px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:rgba(18,47,63,.9);
+}
+
+.visual-silhouettes span:nth-child(1){height:108px;}
+.visual-silhouettes span:nth-child(2){height:76px;}
+.visual-silhouettes span:nth-child(3){height:86px;}
+.visual-silhouettes span:nth-child(4){height:94px;}
+.visual-silhouettes span:nth-child(5){height:72px;}
+.visual-silhouettes span:nth-child(6){height:82px;}
+.visual-silhouettes span:nth-child(7){height:78px;}
+
+.bottom-cta{
+  text-align:center;
+  padding:42px 0 70px;
+}
+
+.bottom-cta .line{
+  font-size:clamp(20px, 2.4vw, 34px);
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#6da9c5;
+}
+
+.bottom-cta .phone{
+  margin-top:14px;
+  font-size:clamp(34px, 5vw, 58px);
+  line-height:1;
+  font-weight:800;
+  color:#8e9098;
+}
+
+.bottom-cta .site{
+  margin-top:12px;
+  font-size:clamp(18px, 1.8vw, 26px);
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:#6da9c5;
+}
+
+.floating-cta{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:999;
+}
+
+.floating-cta a{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--primary);
+  color:#fff;
+  box-shadow:0 12px 24px rgba(143,71,23,.25);
+  transition:transform .2s ease, background .2s ease;
+  font-size:22px;
+}
+
+.floating-cta a:hover{
+  background:var(--primary-dark);
+  transform:translateY(-2px);
+}
+
+.back-site{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:28px;
+  padding:14px 20px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid rgba(224,122,47,0.15);
+  box-shadow:0 10px 24px rgba(143,71,23,.08);
+  color:var(--primary-deep);
+  font-weight:700;
+}
+
+@media (max-width:980px){
+  .reasons-grid{
+    grid-template-columns:1fr;
+  }
+
+  .story-grid{
+    grid-template-columns:1fr;
+  }
+
+  .center-visual{
+    order:2;
+    max-width:340px;
+    width:100%;
+    margin:0 auto;
+  }
+}
+
+@media (max-width:640px){
+  .container{
+    width:min(100% - 24px, 1180px);
+  }
+
+  .hero-inner{
+    padding:48px 0 34px;
+  }
+
+  .services-line{
+    font-size:13px;
+    line-height:1.8;
+  }
+
+  .reasons-main,
+  .offer-box,
+  .story{
+    border-radius:18px;
+  }
+
+  .story{
+    padding:24px 18px;
+  }
+
+  .bottom-cta .site{
+    letter-spacing:.14em;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="kicker">Jusqu’à 50 salariés</div>
+
+    <h1>
+      TPE PME
+      <span>Entreprise</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Pérenniser son activité
+      <strong>et propulser son entreprise</strong>
+    </p>
+
+    <div class="services-line">
+      MANAGEMENT DE TRANSITION <span>I</span>
+      GESTION DE PROJETS <span>I</span>
+      DIRECTION GÉNÉRALE <span>I</span>
+      DIRECTION ADMINISTRATIVE &amp; FINANCIÈRE <span>I</span>
+      CONTRÔLE DE GESTION <span>I</span>
+      RESSOURCES HUMAINES <span>I</span>
+      FACILITIES MANAGEMENT
+    </div>
+  </div>
+</header>
+
+<section class="reasons">
+  <div class="container">
+    <div class="reasons-grid">
+      <div class="reasons-main">
+        <p>PARCE QU’UNE PETITE OU MOYENNE ENTREPRISE PRÉSENTE LES MÊMES EXIGENCES QUE LES GRANDES SOCIÉTÉS</p>
+        <p>PARCE QUE MAÎTRISER SON QUOTIDIEN C’EST SE PERMETTRE D’ENVISAGER L’AVENIR</p>
+        <p>PARCE QUE CHOISIR UN CONSULTANT C’EST PRÉPARER L’ENTREPRISE À SA CROISSANCE</p>
+      </div>
+
+      <div class="offer-box">
+        <a href="/contact/?offre=tpe-pme">
+          ACCÈS À L’OFFRE<br>
+          CONCIERGERIE<br>
+          ADMINISTRATIVE
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="content">
+  <div class="container">
+    <section class="story">
+      <div class="story-grid">
+        <div>
+          <p class="dropcap">
+            Diriger une entreprise nécessite une multitude de talents mais l’entrepreneur ne peut espérer se développer en choisissant de tout concentrer sur sa personne, laquelle souvent vient brimer les talents qui l’entourent.
+          </p>
+
+          <p>
+            Ainsi, bien que dotés de collaborateurs de qualité, la croissance de l’entreprise se trouve grippée eu égard à l’incompréhension qui vient s’installer entre le dirigeant et ses salariés, situation qui entraîne généralement un certain immobilisme.
+          </p>
+
+          <p>
+            Au contraire de ce que l’on pense, les conseils habituels de l’entreprise n’ont souvent pas la capacité de faire bouger les lignes ; trop de proximité et parfois une divergence d’intérêts, tout comme les cadres qui forment la garde rapprochée.
+          </p>
+        </div>
+
+        <div class="center-visual">
+          <div class="visual-card" aria-hidden="true">
+            <div class="visual-silhouettes">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="dropcap">
+            Pour autant, il ne faut pas les écarter pour le suivi du courant. Aborder une période de croissance est assimilé à une situation de crise.
+          </p>
+
+          <p>
+            Nous faisons partie de ces professionnels adaptés à ce type de situation en intervenant au cœur de votre entreprise ou en support des cadres et employés concernés par l’avenir de la société.
+          </p>
+
+          <p>
+            Une fois la croissance engendrée, notre cabinet se transforme en véritable support et intervient, le cas échéant, sur des missions spécifiques souvent dédiées à la mise en conformité des dossiers administratifs et à la création de process internes.
+          </p>
+
+          <p>
+            Avec votre consultant privilégié, vous ne vous sentirez plus jamais seul.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-cta">
+      <div class="line">Pour votre entreprise, un seul numéro</div>
+      <div class="phone">0 806 110 270</div>
+      <div class="site">www.lcec.eu</div>
+
+      <a class="back-site" href="/index.html">
+        ← Retour aux offres
+      </a>
+    </div>
+  </div>
+</main>
+
+<div class="floating-cta">
+  <a href="/contact/?offre=tpe-pme" title="Être contacté">✉</a>
+  <a href="tel:0806110270" title="Appeler">☎</a>
+</div>
+
+</body>
+</html>
