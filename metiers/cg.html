@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrôle de gestion | LEVHEC ADVISORY</title>
+
+<link rel="stylesheet" href="../assets/css/popup.css">
+
+<style>
+:root{
+  --bg:#4a1f2d;
+  --bg-dark:#241015;
+  --bg-deep:#241015;
+
+  --gold:#d7b16b;
+  --gold-soft:#e6c98f;
+
+  --text:#f4f1ea;
+  --muted:#d8d3c7;
+
+  --line:rgba(255,255,255,0.14);
+  --card:rgba(255,255,255,0.08);
+
+  --shadow:0 18px 45px rgba(0,0,0,0.28);
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);
+
+  background:
+    radial-gradient(circle at top left, rgba(215,177,107,0.12), transparent 30%),
+    linear-gradient(160deg, #241015 0%, #4a1f2d 50%, #6b3244 100%);
+}
+
+/* container */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* header */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  height:50px;
+}
+
+.brand-text{
+  font-size:14px;
+}
+
+.brand-title{
+  color:var(--gold-soft);
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.nav{
+  display:flex;
+  gap:10px;
+}
+
+.nav a{
+  padding:10px 14px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  font-size:14px;
+}
+
+/* hero */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-bottom:30px;
+}
+
+.hero-text{
+  background:var(--card);
+  padding:30px;
+  border-radius:24px;
+  border:1px solid var(--line);
+}
+
+.hero h1{
+  margin:0 0 10px;
+  font-size:42px;
+}
+
+.hero h2{
+  margin:0 0 20px;
+  color:var(--gold-soft);
+  font-weight:400;
+}
+
+.hero p{
+  font-size:17px;
+  color:var(--muted);
+}
+
+.hero img{
+  width:100%;
+  border-radius:24px;
+}
+
+/* cards */
+.card{
+  background:var(--card);
+  padding:28px;
+  border-radius:24px;
+  border:1px solid var(--line);
+  margin-bottom:20px;
+}
+
+/* domain list */
+.domain{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:20px;
+}
+
+.domain div{
+  background:rgba(255,255,255,0.07);
+  padding:12px;
+  border-radius:12px;
+}
+
+/* highlight */
+.highlight{
+  font-weight:700;
+  text-transform:uppercase;
+  line-height:1.5;
+}
+
+/* footer */
+.footer{
+  text-align:center;
+  margin-top:40px;
+  color:var(--muted);
+}
+
+/* responsive */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .domain{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- header -->
+<div class="topbar">
+  <div class="brand">
+    <img src="../assets/img/Levhec - horiz transp.png">
+    <div class="brand-text">
+      <div class="brand-title">LEVHEC ADVISORY</div>
+      <div>Management de transition • Conseil opérationnel</div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="../index.html">Offres</a>
+    <a href="../contact/?offre=controle_gestion">Contact</a>
+  </div>
+</div>
+
+<!-- hero -->
+<div class="hero">
+
+  <div class="hero-text">
+    <h1>Le Contrôle de Gestion</h1>
+    <h2>Visionner les coulisses de vos résultats</h2>
+
+    <p>
+      Le contrôle de gestion intervient en amont d’un projet ou d’une période afin de projeter et prévoir,
+      au cours de l’exécution pour le contrôle de process et en aval afin de comprendre et analyser.
+    </p>
+
+    <div class="domain">
+      <div>Audit interne</div>
+      <div>Audit de conformité</div>
+      <div>Calcul de coûts</div>
+      <div>Reportings industriels, commerciaux, financiers</div>
+    </div>
+
+  </div>
+
+  <img src="../assets/img/photo-equipe.png">
+
+</div>
+
+<!-- content -->
+<div class="card">
+
+<p>
+On peut distinguer des spécialités de contrôle de gestion qui n’ont pas spécifiquement d’interdépendances.
+Ainsi, les missions d’un contrôleur de gestion pourront répondre à un besoin industriel pour les calculs de coûts,
+fournir les équipes commerciales d’analyses des ventes, produire des tableaux de gestion pour les cadres ainsi que
+des tableaux d’analyses financières pour les dirigeants, administrateurs et actionnaires.
+</p>
+
+<p>
+Le contrôleur de gestion doit tout autant être capable de diagnostiquer les procédures internes et être source de propositions.
+Actuellement, il devient le garant de la lecture des datas et de la business intelligence.
+</p>
+
+</div>
+
+<!-- highlight -->
+<div class="card highlight">
+NOTRE CABINET VIENT VOUS APPORTER DES TECHNIQUES NOUVELLES ET MÉTHODES ACTUALISÉES EN CRÉANT UNE DYNAMIQUE D’ANALYSE EN INTERNE.  
+NOUS VOUS APPORTONS DE NOUVELLES LECTURES DE VOS DONNÉES FINANCIÈRES ET VOUS ACCOMPAGNONS SUR LES CONTRÔLES DE VOS PROCÉDURES INTERNES
+</div>
+
+<!-- contact -->
+<div class="card">
+<p>Pour votre entreprise, un seul numéro</p>
+<p><strong>0 806 110 270</strong></p>
+<p><strong>WWW.LCEC.EU</strong></p>
+</div>
+
+<div class="footer">
+LEVHEC ADVISORY
+</div>
+
+</div>
+
+</body>
+</html>
