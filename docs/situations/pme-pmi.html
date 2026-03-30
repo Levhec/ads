@@ -4,220 +4,635 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PME PMI | LEVHEC ADVISORY</title>
-
+<meta name="description" content="LEVHEC ADVISORY accompagne les PME et PMI dans leurs phases de structuration, de croissance et de passage à une taille critique.">
 <style>
+:root{
+  --orange:#E07A2F;
+  --orange-dark:#C9651A;
+  --orange-deep:#8F4717;
+  --orange-soft:#FCE8D8;
+  --cream:#FFF8F2;
+  --text:#2A1A12;
+  --muted:#6B4B39;
+  --line:rgba(143,71,23,.16);
+  --shadow:0 22px 50px rgba(95,46,13,.16);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
 body{
-margin:0;
-font-family:Arial, sans-serif;
-background:linear-gradient(180deg,#E07A2F,#C9651A);
-color:#2A1A12;
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:linear-gradient(180deg,#E07A2F 0%, #D56F24 34%, #C9651A 100%);
+  color:var(--text);
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.page{
+  width:min(1240px, calc(100% - 24px));
+  margin:18px auto;
+  background:linear-gradient(180deg, #FFFDFB 0%, #FFF7F1 100%);
+  border-radius:32px;
+  overflow:hidden;
+  box-shadow:0 28px 70px rgba(77,34,7,.24);
 }
 
-.wrapper{
-background:#fff;
-border-radius:30px;
-overflow:hidden;
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:20px 30px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,247,240,.95));
 }
 
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 30px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  min-width:0;
 }
 
-.logo img{height:55px;}
+.brand img{
+  height:84px;
+  width:auto;
+  object-fit:contain;
+}
 
 .baseline{
-font-size:12px;
-text-transform:uppercase;
-letter-spacing:0.1em;
+  font-size:12px;
+  line-height:1.8;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+
+.cap{
+  padding:12px 16px;
+  border-radius:999px;
+  background:rgba(224,122,47,.10);
+  border:1px solid rgba(224,122,47,.18);
+  color:var(--orange-deep);
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  white-space:nowrap;
 }
 
 .hero{
-display:grid;
-grid-template-columns:1fr 1fr;
-padding:40px;
-gap:20px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:24px;
+  padding:38px 30px 28px;
 }
 
 .hero h1{
-font-size:60px;
-margin:0;
-color:#E07A2F;
-text-transform:uppercase;
+  margin:0;
+  font-size:clamp(48px, 7vw, 86px);
+  line-height:.92;
+  color:var(--orange);
+  text-transform:uppercase;
+  letter-spacing:.04em;
 }
 
 .subtitle{
-margin-top:20px;
-font-size:26px;
-font-weight:700;
-text-transform:uppercase;
+  margin-top:22px;
+  font-size:clamp(24px, 2.5vw, 38px);
+  line-height:1.16;
+  font-weight:800;
+  text-transform:uppercase;
+  color:var(--orange-deep);
 }
 
 .tag{
-background:#E07A2F;
-color:#fff;
-padding:30px;
-border-radius:20px;
-font-size:22px;
-font-weight:700;
-display:flex;
-align-items:center;
-text-transform:uppercase;
+  background:linear-gradient(180deg, #E07A2F 0%, #C9651A 100%);
+  color:#fff;
+  padding:28px 30px;
+  border-radius:24px;
+  font-size:clamp(28px, 3vw, 40px);
+  line-height:1.08;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  text-transform:uppercase;
+  box-shadow:var(--shadow);
 }
 
 .services{
-padding:20px 40px;
-border-top:1px solid #ddd;
-border-bottom:1px solid #ddd;
-font-size:13px;
-text-transform:uppercase;
-color:#E07A2F;
+  margin:0 30px;
+  padding:18px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+  line-height:1.9;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--orange);
+  font-weight:800;
 }
 
 .reasons{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:20px;
-padding:30px;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+  padding:26px 30px 8px;
 }
 
 .main{
-background:#9e9e9e;
-color:#fff;
-padding:25px;
-border-radius:20px;
-font-weight:700;
+  background:linear-gradient(180deg, #ABA19C 0%, #9B918C 100%);
+  color:#fff;
+  padding:24px 24px;
+  border-radius:24px;
+  font-weight:800;
+  box-shadow:var(--shadow);
 }
 
+.main p{
+  margin:0 0 18px;
+  font-size:clamp(18px, 1.6vw, 24px);
+  line-height:1.28;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+.main p:last-child{margin-bottom:0}
+
 .side{
-background:#E07A2F;
-color:#fff;
-padding:25px;
-border-radius:20px;
-font-weight:700;
-display:flex;
-align-items:center;
+  background:linear-gradient(180deg, #F1C6A7 0%, #F8E4D4 100%);
+  color:var(--orange-deep);
+  padding:24px;
+  border-radius:24px;
+  border:1px solid rgba(224,122,47,.18);
+  box-shadow:0 14px 34px rgba(95,46,13,.08);
+  display:flex;
+  align-items:center;
+}
+
+.side p{
+  margin:0;
+  font-size:clamp(18px, 1.55vw, 24px);
+  line-height:1.35;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.06em;
 }
 
 .content{
-display:grid;
-grid-template-columns:1fr 300px 1fr;
-gap:25px;
-padding:30px;
+  padding:20px 30px 10px;
 }
 
-.content p{
-font-size:17px;
-color:#5f4a3f;
+.content-card{
+  background:linear-gradient(180deg, #FFF4EA 0%, #FFFDFB 100%);
+  border:1px solid rgba(224,122,47,.18);
+  border-radius:28px;
+  padding:28px;
+  box-shadow:0 18px 44px rgba(95,46,13,.10);
+}
+
+.content-grid{
+  display:grid;
+  grid-template-columns:1fr 340px 1fr;
+  gap:28px;
+  align-items:start;
+}
+
+.copy p{
+  margin:0 0 20px;
+  font-size:clamp(20px, 1.42vw, 24px);
+  line-height:1.52;
+  color:var(--muted);
+  text-align:justify;
+}
+
+.copy p:last-child{margin-bottom:0}
+
+.copy p.dropcap::first-letter{
+  float:left;
+  font-size:3.2em;
+  line-height:.8;
+  padding-right:6px;
+  color:var(--orange);
+  font-weight:700;
 }
 
 .visual{
-background:linear-gradient(#C9651A,#8F4717);
-border-radius:20px;
-min-height:280px;
+  min-height:390px;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 18px 34px rgba(74,31,5,.20);
+  position:relative;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
+    linear-gradient(160deg, #BB6623 0%, #8F4717 100%);
+}
+
+.visual::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(255,255,255,.20), transparent 16%),
+    radial-gradient(circle at 82% 12%, rgba(255,255,255,.12), transparent 18%),
+    linear-gradient(to top, rgba(255,255,255,.07), transparent 42%);
+}
+
+.skyline{
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:88px;
+  height:150px;
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+}
+
+.skyline span{
+  flex:1;
+  background:rgba(49,24,8,.62);
+  border-radius:6px 6px 0 0;
+  position:relative;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.skyline span::before{
+  content:"";
+  position:absolute;
+  inset:10px 5px auto 5px;
+  height:2px;
+  background:rgba(255,236,220,.14);
+  box-shadow:
+    0 18px 0 rgba(255,236,220,.14),
+    0 36px 0 rgba(255,236,220,.14),
+    0 54px 0 rgba(255,236,220,.14),
+    0 72px 0 rgba(255,236,220,.14);
+}
+
+.skyline span:nth-child(1){height:78px}
+.skyline span:nth-child(2){height:112px}
+.skyline span:nth-child(3){height:96px}
+.skyline span:nth-child(4){height:132px}
+.skyline span:nth-child(5){height:118px}
+.skyline span:nth-child(6){height:86px}
+.skyline span:nth-child(7){height:104px}
+
+.deck{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:120px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)),
+    linear-gradient(0deg, rgba(48,23,8,.82), rgba(81,39,12,.70));
+}
+
+.deck::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(90deg, rgba(255,235,220,.08) 1px, transparent 1px);
+  background-size:18px 100%;
+  transform:perspective(600px) rotateX(65deg);
+  transform-origin:bottom;
+  opacity:.85;
+}
+
+.figure{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:86px;
+  width:30px;
+  height:98px;
+  background:rgba(34,16,6,.82);
+  border-radius:16px 16px 8px 8px;
+}
+
+.figure::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:-22px;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:rgba(34,16,6,.82);
+}
+
+.figure::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:34px;
+  transform:translateX(-50%);
+  width:72px;
+  height:2px;
+  background:rgba(34,16,6,.65);
+  box-shadow:-18px 18px 0 rgba(34,16,6,.35), 18px 18px 0 rgba(34,16,6,.35);
+}
+
+.visual-label{
+  position:absolute;
+  left:20px;
+  right:20px;
+  top:18px;
+  color:rgba(255,244,236,.92);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.statement{
+  padding:10px 30px 0;
+}
+
+.statement-card{
+  text-align:center;
+  padding:22px 24px;
+  border-radius:24px;
+  background:linear-gradient(180deg, #FFF0E3 0%, #FFF8F2 100%);
+  border:1px solid rgba(224,122,47,.18);
+  box-shadow:0 16px 36px rgba(95,46,13,.08);
+}
+
+.statement-card p{
+  margin:0;
+  font-size:clamp(20px, 1.6vw, 28px);
+  line-height:1.45;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--orange);
+  font-weight:800;
 }
 
 .footer{
-text-align:center;
-padding:30px;
-border-top:1px solid #ddd;
+  padding:22px 30px 34px;
 }
 
-.footer strong{
-display:block;
-margin-top:10px;
-text-transform:uppercase;
-font-size:13px;
+.footer-card{
+  text-align:center;
+  padding:28px 26px 24px;
+  border-radius:28px;
+  background:linear-gradient(180deg, #FFF4EA 0%, #FFF9F4 100%);
+  border:1px solid rgba(224,122,47,.18);
+  box-shadow:0 16px 40px rgba(95,46,13,.08);
+}
+
+.footer-top{
+  font-size:clamp(20px, 1.8vw, 30px);
+  line-height:1.26;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--orange);
+}
+
+.footer-site{
+  margin-top:12px;
+  font-size:clamp(17px, 1.4vw, 22px);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--orange-deep);
+  word-break:break-word;
+}
+
+.footer-brand{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  line-height:1.8;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+
+.back-wrap{
+  margin-top:18px;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 20px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid rgba(224,122,47,.18);
+  box-shadow:0 12px 26px rgba(95,46,13,.08);
+  color:var(--orange-deep);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:13px;
+}
+
+.floating{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:1000;
+}
+
+.floating a{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--orange);
+  color:#fff;
+  box-shadow:0 14px 28px rgba(88,38,7,.28);
+  transition:transform .2s ease, background .2s ease;
+  font-size:22px;
+}
+
+.floating a:hover{
+  transform:translateY(-2px);
+  background:var(--orange-dark);
+}
+
+@media (max-width:1080px){
+  .hero,
+  .reasons,
+  .content-grid{
+    grid-template-columns:1fr;
+  }
+  .visual{
+    max-width:420px;
+    width:100%;
+    margin:0 auto;
+  }
+}
+
+@media (max-width:760px){
+  .page{
+    width:min(100% - 12px, 1240px);
+    margin:6px auto;
+    border-radius:22px;
+  }
+
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:16px 18px;
+  }
+
+  .brand img{
+    height:64px;
+  }
+
+  .hero,
+  .reasons,
+  .content,
+  .statement,
+  .footer{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .services{
+    margin-left:18px;
+    margin-right:18px;
+    font-size:13px;
+  }
+
+  .content-card,
+  .main,
+  .side,
+  .tag,
+  .statement-card,
+  .footer-card{
+    border-radius:20px;
+  }
+
+  .content-card{
+    padding:18px;
+  }
+
+  .copy p{
+    font-size:19px;
+  }
 }
 </style>
 </head>
-
 <body>
 
-<div class="container">
-<div class="wrapper">
+<div class="page">
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/img/Levhec%20-%20horiz%20transp.png" alt="LEVHEC ADVISORY">
+      <div class="baseline">
+        Management de Transition<br>
+        Cabinet de Conseil Opérationnel
+      </div>
+    </div>
+    <div class="cap">Jusqu’à 250 salariés</div>
+  </header>
 
-<div class="header">
-<div class="logo">
-<img src="/assets/img/Levhec%20-%20horiz%20transp.png">
+  <section class="hero">
+    <div>
+      <h1>PME PMI</h1>
+      <div class="subtitle">
+        Fluidifiez vos process et<br>
+        rendez votre entreprise agile
+      </div>
+    </div>
+
+    <div class="tag">
+      Passage à une taille critique
+    </div>
+  </section>
+
+  <section class="services">
+    MANAGEMENT DE TRANSITION | GESTION DE PROJETS | DIRECTION GÉNÉRALE | SECRÉTARIAT GÉNÉRAL | DIRECTION ADMINISTRATIVE &amp; FINANCIÈRE | RESSOURCES HUMAINES | FACILITIES MANAGEMENT
+  </section>
+
+  <section class="reasons">
+    <div class="main">
+      <p>LE TEMPS EST VENU POUR VOTRE PME D’ENVISAGER DE DEVENIR UNE ETI</p>
+      <p>ATTEINDRE UNE TAILLE CRITIQUE EXIGE DE REVOIR SES PROCÉDURES INTERNES</p>
+      <p>CHOISIR UN CABINET DE CONSULTING POLYVALENT PERMET D’ABORDER TOUT TYPE DE SITUATION</p>
+    </div>
+
+    <div class="side">
+      <p>
+        Nous accompagnons les mandataires sociaux, les cadres dirigeants mais aussi les actionnaires afin de favoriser le developpement de leur entreprise et faciliter sa croissance
+      </p>
+    </div>
+  </section>
+
+  <main class="content">
+    <div class="content-card">
+      <div class="content-grid">
+        <div class="copy">
+          <p class="dropcap">Une Entreprise se doit de se développer. En France, les PME sont encouragées à croître pour devenir des ETI. Il s’agit à présent d’un projet national.</p>
+
+          <p>Investir dans la recherche, rayonner à l’international sont les premiers enjeux des PME françaises qui sont sinon exposées à un risque d’absorption par un concurrent ou un groupe étranger.</p>
+
+          <p>Comprendre ces enjeux implique d’avoir de la réactivité et accepter une remise en cause permanente.</p>
+        </div>
+
+        <div class="visual" aria-hidden="true">
+          <div class="visual-label">Croissance | Agilité | Taille critique</div>
+          <div class="skyline">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="deck"></div>
+          <div class="figure"></div>
+        </div>
+
+        <div class="copy">
+          <p class="dropcap">Nombreux sont les projets à gérer ou les situations intermédiaires à encadrer.</p>
+
+          <p>Dans ces moments, le recours à un cabinet de consulting devient indispensable, tantôt pour des missions de transitions, tantôt pour des missions spécifiques ou de gestion de projet.</p>
+
+          <p>Notre cabinet vient s’inscrire dans cette démarche en assurant des missions à la carte : transition, gestion de projet, missions spécifiques, diagnostics, expertises.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="statement">
+    <div class="statement-card">
+      <p>Nous accompagnons les mandataires sociaux, les cadres dirigeants mais aussi les actionnaires afin de favoriser le developpement de leur entreprise et faciliter sa croissance</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-card">
+      <div class="footer-top">Pour votre entreprise, un seul repère</div>
+      <div class="footer-site">www.levhec-advisory.com</div>
+
+      <div class="footer-brand">
+        LEVHEC ADVISORY<br>
+        Management de Transition<br>
+        Cabinet de Conseil Opérationnel
+      </div>
+
+      <div class="back-wrap">
+        <a class="back-btn" href="/index.html">← Retour aux offres</a>
+      </div>
+    </div>
+  </footer>
 </div>
-<div class="baseline">
-Management de Transition<br>
-Cabinet de Conseil Opérationnel
-</div>
-</div>
 
-<div class="hero">
-<div>
-<h1>PME PMI</h1>
-<div class="subtitle">
-Fluidifiez vos process et<br>
-rendez votre entreprise agile
-</div>
-</div>
-
-<div class="tag">
-PASSAGE À UNE TAILLE CRITIQUE
-</div>
-</div>
-
-<div class="services">
-JUSQU’À 250 SALARIÉS | MANAGEMENT DE TRANSITION | GESTION DE PROJETS | DIRECTION GÉNÉRALE | SECRÉTARIAT GÉNÉRAL | DIRECTION ADMINISTRATIVE & FINANCIÈRE | RESSOURCES HUMAINES | FACILITIES MANAGEMENT
-</div>
-
-<div class="reasons">
-<div class="main">
-<p>LE TEMPS EST VENU POUR VOTRE PME D’ENVISAGER DE DEVENIR UNE ETI</p>
-<p>ATTEINDRE UNE TAILLE CRITIQUE EXIGE DE REVOIR SES PROCÉDURES INTERNES</p>
-<p>CHOISIR UN CABINET DE CONSULTING POLYVALENT PERMET D’ABORDER TOUT TYPE DE SITUATION</p>
-</div>
-
-<div class="side">
-PASSAGE À UNE TAILLE CRITIQUE
-</div>
-</div>
-
-<div class="content">
-
-<div>
-<p>Une Entreprise se doit de se développer. En France, les PME sont encouragées à croître pour devenir des ETI. Il s’agit à présent d’un projet national.</p>
-
-<p>Investir dans la recherche, rayonner à l’international sont les premiers enjeux des PME françaises qui sont sinon exposées à un risque d’absorption par un concurrent ou un groupe étranger.</p>
-
-<p>Comprendre ces enjeux implique d’avoir de la réactivité et accepter une remise en cause permanente.</p>
-</div>
-
-<div class="visual"></div>
-
-<div>
-<p>Nombreux sont les projets à gérer ou les situations intermédiaires à encadrer.</p>
-
-<p>Dans ces moments, le recours à un cabinet de consulting devient indispensable, tantôt pour des missions de transitions, tantôt pour des missions spécifiques ou de gestion de projet.</p>
-
-<p>Notre cabinet vient s’inscrire dans cette démarche en assurant des missions à la carte : transition, gestion de projet, missions spécifiques, diagnostics, expertises.</p>
-</div>
-
-</div>
-
-<div class="footer">
-<div>www.levhec-advisory.com</div>
-<strong>
-LEVHEC ADVISORY<br>
-Management de Transition<br>
-Cabinet de Conseil Opérationnel
-</strong>
-</div>
-
-</div>
+<div class="floating">
+  <a href="/contact/?offre=pme-pmi" title="Être contacté">✉</a>
+  <a href="tel:+33667246129" title="Appeler">☎</a>
 </div>
 
 </body>
