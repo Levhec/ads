@@ -6,40 +6,35 @@
 <title>TPE PME | LEVHEC ADVISORY</title>
 <meta name="description" content="LEVHEC ADVISORY accompagne les TPE et PME dans les phases de croissance, de structuration et de transition." />
 <meta name="robots" content="index,follow" />
-<link rel="stylesheet" href="assets/css/popup.css" />
 
 <style>
 :root{
-  --primary:#E07A2F;
-  --primary-dark:#C9651A;
-  --primary-deep:#8F4717;
-  --primary-soft:#FCE8D8;
-  --border:#E7B58F;
-
-  --text:#2A1A12;
-  --muted:#6E5749;
-  --bg:#FFF9F5;
+  --orange:#E07A2F;
+  --orange-dark:#C9651A;
+  --orange-deep:#8F4717;
+  --orange-soft:#FCE8D8;
+  --orange-soft-2:#F7D3B8;
+  --sand:#FFF6EF;
+  --cream:#FFFDFB;
   --white:#ffffff;
-  --shadow:0 18px 45px rgba(143,71,23,0.12);
-
+  --text:#2A1A12;
+  --muted:#6C4B39;
+  --line:rgba(143,71,23,0.18);
+  --shadow:0 18px 42px rgba(95,46,13,0.16);
   --gold:#D7B16B;
-  --dark:#241A15;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:var(--bg);
   color:var(--text);
-  line-height:1.6;
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.25), transparent 22%),
+    linear-gradient(180deg, #E07A2F 0%, #D96F25 24%, #C9651A 100%);
 }
 
 a{
@@ -52,189 +47,314 @@ img{
   display:block;
 }
 
+.page-shell{
+  min-height:100vh;
+  padding:26px 18px 34px;
+}
+
 .container{
-  width:min(1180px, calc(100% - 40px));
+  width:min(1220px, 100%);
   margin:0 auto;
+}
+
+.site-frame{
+  background:linear-gradient(180deg, rgba(255,249,243,.98) 0%, rgba(255,253,251,.98) 100%);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:34px;
+  box-shadow:0 28px 70px rgba(82,39,10,.24);
+  overflow:hidden;
+}
+
+.topbar{
+  background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,247,239,.92));
+  border-bottom:1px solid var(--line);
+}
+
+.topbar-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 28px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  min-width:0;
+}
+
+.brand img{
+  height:56px;
+  width:auto;
+  object-fit:contain;
+}
+
+.brand-text{
+  min-width:0;
+}
+
+.brand-name{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--orange-deep);
+  line-height:1.05;
+}
+
+.brand-lines{
+  margin-top:5px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  line-height:1.5;
+}
+
+.top-pill{
+  flex:0 0 auto;
+  padding:12px 16px;
+  border-radius:999px;
+  background:rgba(224,122,47,.10);
+  border:1px solid rgba(224,122,47,.18);
+  color:var(--orange-deep);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
 }
 
 .hero{
   position:relative;
   overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
   background:
-    radial-gradient(circle at top right, rgba(224,122,47,0.18), transparent 30%),
-    linear-gradient(135deg, #fff7f1 0%, #fffdfb 55%, #fdf3eb 100%);
-  border-bottom:1px solid rgba(224,122,47,0.12);
+    radial-gradient(circle at 18% 15%, rgba(224,122,47,.12), transparent 18%),
+    radial-gradient(circle at 86% 8%, rgba(224,122,47,.10), transparent 22%);
+  pointer-events:none;
 }
 
 .hero-inner{
-  padding:72px 0 54px;
+  position:relative;
+  padding:54px 34px 32px;
 }
 
-.kicker{
-  display:inline-block;
-  margin-bottom:18px;
-  padding:8px 14px;
-  border-radius:999px;
-  background:rgba(224,122,47,0.10);
-  border:1px solid rgba(224,122,47,0.18);
-  color:var(--primary-deep);
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:24px;
+  align-items:start;
 }
 
-.hero h1{
+.hero-left h1{
   margin:0;
-  font-size:clamp(40px, 8vw, 82px);
-  line-height:.95;
-  letter-spacing:.02em;
+  font-size:clamp(42px, 7vw, 86px);
+  line-height:.9;
   text-transform:uppercase;
-  color:var(--primary);
+  letter-spacing:.04em;
+  color:var(--orange);
 }
 
-.hero h1 span{
+.hero-left h1 span{
   display:block;
-  color:#f0b182;
-  font-size:.42em;
-  margin-top:8px;
-  letter-spacing:.28em;
+  margin-top:10px;
+  font-size:.32em;
+  letter-spacing:.35em;
+  color:#EAB182;
+  font-weight:700;
 }
 
 .hero-subtitle{
-  margin:26px 0 0;
-  font-size:clamp(22px, 3vw, 34px);
-  font-weight:700;
-  line-height:1.2;
+  margin:22px 0 0;
+  font-size:clamp(24px, 2.6vw, 38px);
+  line-height:1.12;
   text-transform:uppercase;
-  color:var(--primary-deep);
+  font-weight:800;
+  color:var(--orange-deep);
 }
 
 .hero-subtitle strong{
   display:block;
-  color:var(--dark);
+  color:var(--text);
+}
+
+.hero-right{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.theme-card{
+  width:min(100%, 360px);
+  background:linear-gradient(180deg, #E07A2F 0%, #C9651A 100%);
+  color:#fff;
+  border-radius:28px;
+  padding:26px 24px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+
+.theme-card::before{
+  content:"";
+  position:absolute;
+  right:-36px;
+  top:-36px;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:rgba(255,255,255,.10);
+}
+
+.theme-label{
+  position:relative;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.9;
+}
+
+.theme-title{
+  position:relative;
+  margin-top:14px;
+  font-size:clamp(28px, 3vw, 40px);
+  line-height:1.06;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
+.theme-sep{
+  width:72px;
+  height:3px;
+  background:rgba(255,255,255,.72);
+  border-radius:999px;
+  margin:18px 0;
+}
+
+.theme-note{
+  position:relative;
+  font-size:15px;
+  line-height:1.55;
+  opacity:.95;
+}
+
+.services{
+  padding:0 34px 24px;
 }
 
 .services-line{
-  margin-top:34px;
-  padding-top:24px;
-  border-top:1px solid rgba(224,122,47,0.18);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:18px 0;
+  color:var(--orange);
   font-size:15px;
-  font-weight:700;
+  font-weight:800;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--primary);
 }
 
 .services-line span{
-  color:#efb185;
+  color:#E9A36D;
   padding:0 12px;
 }
 
 .reasons{
-  padding:28px 0 0;
+  padding:8px 34px 18px;
 }
 
 .reasons-grid{
   display:grid;
-  grid-template-columns:1.8fr .8fr;
-  gap:20px;
-  align-items:stretch;
+  grid-template-columns:1.7fr .9fr;
+  gap:22px;
 }
 
-.reasons-main{
-  background:#a7a19f;
-  color:#fff;
-  border-radius:20px;
-  padding:28px 26px;
+.reason-box{
+  border-radius:28px;
+  padding:26px 26px;
   box-shadow:var(--shadow);
 }
 
-.reasons-main p{
+.reason-box.main{
+  background:linear-gradient(180deg, #B1A8A4 0%, #9E948F 100%);
+  color:#fff;
+}
+
+.reason-box.side{
+  background:linear-gradient(180deg, #F2B07E 0%, #E07A2F 100%);
+  color:#fff;
+}
+
+.reason-box p{
   margin:0 0 18px;
-  font-size:clamp(18px, 2vw, 24px);
+  font-size:clamp(18px, 1.7vw, 24px);
   line-height:1.28;
   letter-spacing:.06em;
   text-transform:uppercase;
-  font-weight:700;
+  font-weight:800;
 }
 
-.reasons-main p:last-child{
-  margin-bottom:0;
+.reason-box p:last-child{margin-bottom:0}
+
+.section{
+  padding:14px 34px 28px;
 }
 
-.offer-box{
-  background:linear-gradient(180deg, #6da9c5 0%, #5b9bbb 100%);
-  color:#fff;
-  border-radius:20px;
-  padding:28px 24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:left;
-  box-shadow:var(--shadow);
+.content-card{
+  background:linear-gradient(180deg, #FFF4EA 0%, #FFFDFB 100%);
+  border:1px solid rgba(224,122,47,.18);
+  border-radius:30px;
+  padding:30px;
+  box-shadow:0 18px 46px rgba(95,46,13,.10);
 }
 
-.offer-box a{
-  display:block;
-  font-size:clamp(22px, 2.2vw, 30px);
-  line-height:1.24;
-  font-weight:700;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-}
-
-.content{
-  padding:34px 0 68px;
-}
-
-.story{
-  position:relative;
-  background:linear-gradient(180deg, #eff7fa 0%, #eef6f8 100%);
-  border:1px solid #d5e8ef;
-  border-radius:28px;
-  padding:34px 28px;
-  box-shadow:0 18px 40px rgba(75, 122, 145, 0.10);
-}
-
-.story-grid{
+.content-grid{
   display:grid;
-  grid-template-columns:1fr 280px 1fr;
+  grid-template-columns:1fr 340px 1fr;
   gap:28px;
   align-items:start;
 }
 
-.story p{
+.copy p{
   margin:0 0 20px;
-  color:#5b96b0;
-  font-size:clamp(18px, 1.55vw, 22px);
-  line-height:1.42;
+  color:var(--muted);
+  font-size:clamp(18px, 1.28vw, 22px);
+  line-height:1.48;
   text-align:justify;
 }
 
-.story p:last-child{
-  margin-bottom:0;
-}
+.copy p:last-child{margin-bottom:0}
 
-.story p.dropcap::first-letter{
+.copy p.dropcap::first-letter{
   float:left;
-  font-size:3.4em;
+  font-size:3.25em;
   line-height:.8;
   padding-right:6px;
-  color:#69a8c5;
+  color:var(--orange);
+  font-weight:700;
 }
 
-.center-visual{
+.visual-wrap{
   align-self:center;
 }
 
 .visual-card{
-  background:linear-gradient(180deg, #4a83a3 0%, #2d5f7d 100%);
-  border-radius:18px;
-  min-height:220px;
-  box-shadow:0 14px 28px rgba(0,0,0,0.18);
   position:relative;
+  border-radius:26px;
+  min-height:390px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
+    linear-gradient(160deg, #B75D1F 0%, #8F4717 100%);
   overflow:hidden;
+  box-shadow:0 18px 34px rgba(74,31,5,.22);
+  border:1px solid rgba(255,255,255,.18);
 }
 
 .visual-card::before{
@@ -242,283 +362,397 @@ img{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 20% 25%, rgba(255,255,255,.22), transparent 18%),
-    radial-gradient(circle at 72% 18%, rgba(255,255,255,.16), transparent 16%),
-    linear-gradient(to top, rgba(255,255,255,.08), rgba(255,255,255,0));
+    radial-gradient(circle at 20% 18%, rgba(255,255,255,.22), transparent 16%),
+    radial-gradient(circle at 80% 14%, rgba(255,255,255,.12), transparent 18%),
+    linear-gradient(to top, rgba(255,255,255,.06), transparent 38%);
 }
 
-.visual-silhouettes{
+.visual-grid{
   position:absolute;
-  inset:auto 18px 18px 18px;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:28px 28px;
+  mask-image:linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,1));
+}
+
+.visual-bars{
+  position:absolute;
+  left:24px;
+  right:24px;
+  top:30px;
   display:flex;
   align-items:flex-end;
-  justify-content:space-between;
   gap:8px;
+  height:90px;
 }
 
-.visual-silhouettes span{
-  display:block;
-  width:26px;
-  border-radius:20px 20px 8px 8px;
-  background:rgba(18,47,63,.9);
-  position:relative;
+.visual-bars span{
+  flex:1;
+  border-radius:10px 10px 4px 4px;
+  background:rgba(255,240,228,.24);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
 }
 
-.visual-silhouettes span::before{
+.visual-bars span:nth-child(1){height:28px}
+.visual-bars span:nth-child(2){height:44px}
+.visual-bars span:nth-child(3){height:38px}
+.visual-bars span:nth-child(4){height:61px}
+.visual-bars span:nth-child(5){height:54px}
+.visual-bars span:nth-child(6){height:76px}
+
+.visual-solo{
+  position:absolute;
+  left:34px;
+  bottom:30px;
+  width:86px;
+  height:180px;
+  border-radius:40px 40px 16px 16px;
+  background:rgba(41,19,6,.72);
+}
+
+.visual-solo::before{
   content:"";
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  top:-18px;
-  width:18px;
-  height:18px;
+  top:-34px;
+  width:58px;
+  height:58px;
   border-radius:50%;
-  background:rgba(18,47,63,.9);
+  background:rgba(41,19,6,.72);
 }
 
-.visual-silhouettes span:nth-child(1){height:108px;}
-.visual-silhouettes span:nth-child(2){height:76px;}
-.visual-silhouettes span:nth-child(3){height:86px;}
-.visual-silhouettes span:nth-child(4){height:94px;}
-.visual-silhouettes span:nth-child(5){height:72px;}
-.visual-silhouettes span:nth-child(6){height:82px;}
-.visual-silhouettes span:nth-child(7){height:78px;}
+.visual-group{
+  position:absolute;
+  right:28px;
+  bottom:34px;
+  display:flex;
+  align-items:flex-end;
+  gap:12px;
+}
 
-.bottom-cta{
+.visual-group span{
+  display:block;
+  width:34px;
+  border-radius:20px 20px 8px 8px;
+  background:rgba(53,24,7,.56);
+  position:relative;
+}
+
+.visual-group span::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:-20px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:rgba(53,24,7,.56);
+}
+
+.visual-group span:nth-child(1){height:94px}
+.visual-group span:nth-child(2){height:112px}
+.visual-group span:nth-child(3){height:104px}
+.visual-group span:nth-child(4){height:88px}
+.visual-group span:nth-child(5){height:98px}
+
+.visual-caption{
+  position:absolute;
+  left:24px;
+  right:24px;
+  bottom:18px;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.18);
+  color:rgba(255,248,240,.86);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:11px;
+  font-weight:800;
+}
+
+.bottom{
+  padding:6px 34px 34px;
+}
+
+.bottom-card{
+  background:linear-gradient(180deg, #FFF1E4 0%, #FFF9F4 100%);
+  border:1px solid rgba(224,122,47,.18);
+  border-radius:28px;
+  padding:26px 28px 24px;
   text-align:center;
-  padding:42px 0 70px;
+  box-shadow:0 16px 40px rgba(95,46,13,.08);
 }
 
-.bottom-cta .line{
-  font-size:clamp(20px, 2.4vw, 34px);
-  font-weight:700;
+.bottom-line{
+  font-size:clamp(20px, 2vw, 30px);
+  line-height:1.25;
+  font-weight:800;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:#6da9c5;
+  color:var(--orange);
 }
 
-.bottom-cta .phone{
-  margin-top:14px;
-  font-size:clamp(34px, 5vw, 58px);
-  line-height:1;
-  font-weight:800;
-  color:#8e9098;
-}
-
-.bottom-cta .site{
+.bottom-site{
   margin-top:12px;
-  font-size:clamp(18px, 1.8vw, 26px);
-  letter-spacing:.24em;
+  font-size:clamp(16px, 1.6vw, 23px);
+  letter-spacing:.22em;
   text-transform:uppercase;
-  color:#6da9c5;
+  color:var(--orange-deep);
+  word-break:break-word;
 }
 
-.floating-cta{
+.footer-brand{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  line-height:1.8;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.floating{
   position:fixed;
   right:18px;
   bottom:18px;
   display:flex;
   flex-direction:column;
   gap:10px;
-  z-index:999;
+  z-index:1000;
 }
 
-.floating-cta a{
-  width:52px;
-  height:52px;
+.floating a{
+  width:54px;
+  height:54px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:var(--primary);
+  background:var(--orange);
   color:#fff;
-  box-shadow:0 12px 24px rgba(143,71,23,.25);
+  box-shadow:0 14px 28px rgba(88,38,7,.28);
   transition:transform .2s ease, background .2s ease;
   font-size:22px;
 }
 
-.floating-cta a:hover{
-  background:var(--primary-dark);
+.floating a:hover{
   transform:translateY(-2px);
+  background:var(--orange-dark);
 }
 
-.back-site{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  margin-top:28px;
-  padding:14px 20px;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid rgba(224,122,47,0.15);
-  box-shadow:0 10px 24px rgba(143,71,23,.08);
-  color:var(--primary-deep);
-  font-weight:700;
-}
-
-@media (max-width:980px){
-  .reasons-grid{
+@media (max-width:1050px){
+  .hero-grid,
+  .reasons-grid,
+  .content-grid{
     grid-template-columns:1fr;
   }
 
-  .story-grid{
-    grid-template-columns:1fr;
+  .hero-right{
+    justify-content:flex-start;
   }
 
-  .center-visual{
-    order:2;
-    max-width:340px;
+  .theme-card{
+    max-width:none;
+  }
+
+  .visual-wrap{
+    max-width:420px;
     width:100%;
     margin:0 auto;
   }
 }
 
-@media (max-width:640px){
-  .container{
-    width:min(100% - 24px, 1180px);
+@media (max-width:720px){
+  .page-shell{
+    padding:12px 10px 20px;
   }
 
-  .hero-inner{
-    padding:48px 0 34px;
+  .site-frame{
+    border-radius:22px;
+  }
+
+  .topbar-inner,
+  .hero-inner,
+  .services,
+  .reasons,
+  .section,
+  .bottom{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .topbar-inner{
+    padding-top:16px;
+    padding-bottom:16px;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .brand{
+    align-items:flex-start;
+  }
+
+  .brand img{
+    height:44px;
+  }
+
+  .content-card,
+  .reason-box,
+  .theme-card,
+  .bottom-card{
+    border-radius:20px;
+  }
+
+  .content-card{
+    padding:20px 18px;
   }
 
   .services-line{
     font-size:13px;
-    line-height:1.8;
+    line-height:1.9;
   }
 
-  .reasons-main,
-  .offer-box,
-  .story{
-    border-radius:18px;
-  }
-
-  .story{
-    padding:24px 18px;
-  }
-
-  .bottom-cta .site{
-    letter-spacing:.14em;
+  .bottom-site{
+    letter-spacing:.12em;
   }
 }
 </style>
 </head>
 <body>
-
-<header class="hero">
-  <div class="container hero-inner">
-    <div class="kicker">Jusqu’à 50 salariés</div>
-
-    <h1>
-      TPE PME
-      <span>Entreprise</span>
-    </h1>
-
-    <p class="hero-subtitle">
-      Pérenniser son activité
-      <strong>et propulser son entreprise</strong>
-    </p>
-
-    <div class="services-line">
-      MANAGEMENT DE TRANSITION <span>I</span>
-      GESTION DE PROJETS <span>I</span>
-      DIRECTION GÉNÉRALE <span>I</span>
-      DIRECTION ADMINISTRATIVE &amp; FINANCIÈRE <span>I</span>
-      CONTRÔLE DE GESTION <span>I</span>
-      RESSOURCES HUMAINES <span>I</span>
-      FACILITIES MANAGEMENT
-    </div>
-  </div>
-</header>
-
-<section class="reasons">
+<div class="page-shell">
   <div class="container">
-    <div class="reasons-grid">
-      <div class="reasons-main">
-        <p>PARCE QU’UNE PETITE OU MOYENNE ENTREPRISE PRÉSENTE LES MÊMES EXIGENCES QUE LES GRANDES SOCIÉTÉS</p>
-        <p>PARCE QUE MAÎTRISER SON QUOTIDIEN C’EST SE PERMETTRE D’ENVISAGER L’AVENIR</p>
-        <p>PARCE QUE CHOISIR UN CONSULTANT C’EST PRÉPARER L’ENTREPRISE À SA CROISSANCE</p>
-      </div>
+    <div class="site-frame">
 
-      <div class="offer-box">
-        <a href="/contact/?offre=tpe-pme">
-          ACCÈS À L’OFFRE<br>
-          CONCIERGERIE<br>
-          ADMINISTRATIVE
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<main class="content">
-  <div class="container">
-    <section class="story">
-      <div class="story-grid">
-        <div>
-          <p class="dropcap">
-            Diriger une entreprise nécessite une multitude de talents mais l’entrepreneur ne peut espérer se développer en choisissant de tout concentrer sur sa personne, laquelle souvent vient brimer les talents qui l’entourent.
-          </p>
-
-          <p>
-            Ainsi, bien que dotés de collaborateurs de qualité, la croissance de l’entreprise se trouve grippée eu égard à l’incompréhension qui vient s’installer entre le dirigeant et ses salariés, situation qui entraîne généralement un certain immobilisme.
-          </p>
-
-          <p>
-            Au contraire de ce que l’on pense, les conseils habituels de l’entreprise n’ont souvent pas la capacité de faire bouger les lignes ; trop de proximité et parfois une divergence d’intérêts, tout comme les cadres qui forment la garde rapprochée.
-          </p>
+      <header class="topbar">
+        <div class="topbar-inner">
+          <div class="brand">
+            <img src="/assets/img/Levhec%20-%20horiz%20transp.png" alt="LEVHEC ADVISORY">
+            <div class="brand-text">
+              <div class="brand-name">LEVHEC ADVISORY</div>
+              <div class="brand-lines">
+                Management de Transition<br>
+                Cabinet de Conseil Opérationnel
+              </div>
+            </div>
+          </div>
+          <div class="top-pill">Jusqu’à 50 salariés</div>
         </div>
+      </header>
 
-        <div class="center-visual">
-          <div class="visual-card" aria-hidden="true">
-            <div class="visual-silhouettes">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-grid">
+            <div class="hero-left">
+              <h1>TPE PME<span>Entreprise</span></h1>
+              <p class="hero-subtitle">
+                Pérenniser son activité
+                <strong>et propulser son entreprise</strong>
+              </p>
+            </div>
+
+            <div class="hero-right">
+              <div class="theme-card">
+                <div class="theme-label">Contexte identifié</div>
+                <div class="theme-title">Croissance bloquée<br>Dirigeant isolé</div>
+                <div class="theme-sep"></div>
+                <div class="theme-note">
+                  Une page pensée comme un univers à part entière, avec une tension visible,
+                  mais tenue, structurée et assumée.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div>
-          <p class="dropcap">
-            Pour autant, il ne faut pas les écarter pour le suivi du courant. Aborder une période de croissance est assimilé à une situation de crise.
-          </p>
-
-          <p>
-            Nous faisons partie de ces professionnels adaptés à ce type de situation en intervenant au cœur de votre entreprise ou en support des cadres et employés concernés par l’avenir de la société.
-          </p>
-
-          <p>
-            Une fois la croissance engendrée, notre cabinet se transforme en véritable support et intervient, le cas échéant, sur des missions spécifiques souvent dédiées à la mise en conformité des dossiers administratifs et à la création de process internes.
-          </p>
-
-          <p>
-            Avec votre consultant privilégié, vous ne vous sentirez plus jamais seul.
-          </p>
+      <section class="services">
+        <div class="services-line">
+          MANAGEMENT DE TRANSITION <span>I</span>
+          GESTION DE PROJETS <span>I</span>
+          DIRECTION GÉNÉRALE <span>I</span>
+          DIRECTION ADMINISTRATIVE &amp; FINANCIÈRE <span>I</span>
+          CONTRÔLE DE GESTION <span>I</span>
+          RESSOURCES HUMAINES <span>I</span>
+          FACILITIES MANAGEMENT
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div class="bottom-cta">
-      <div class="line">Pour votre entreprise, un seul numéro</div>
-      <div class="phone">0 806 110 270</div>
-      <div class="site">www.lcec.eu</div>
+      <section class="reasons">
+        <div class="reasons-grid">
+          <div class="reason-box main">
+            <p>PARCE QU’UNE PETITE OU MOYENNE ENTREPRISE PRÉSENTE LES MÊMES EXIGENCES QUE LES GRANDES SOCIÉTÉS</p>
+            <p>PARCE QUE MAÎTRISER SON QUOTIDIEN C’EST SE PERMETTRE D’ENVISAGER L’AVENIR</p>
+            <p>PARCE QUE CHOISIR UN CONSULTANT C’EST PRÉPARER L’ENTREPRISE À SA CROISSANCE</p>
+          </div>
 
-      <a class="back-site" href="/index.html">
-        ← Retour aux offres
-      </a>
+          <div class="reason-box side">
+            <p style="margin:0">CROISSANCE BLOQUÉE<br>DIRIGEANT ISOLÉ</p>
+          </div>
+        </div>
+      </section>
+
+      <main class="section">
+        <div class="content-card">
+          <div class="content-grid">
+            <div class="copy">
+              <p class="dropcap">Diriger une entreprise nécessite une multitude de talents mais l’entrepreneur ne peut espérer se développer en choisissant de tout concentrer sur sa personne, laquelle souvent vient brimer les talents qui l’entourent.</p>
+
+              <p>Ainsi, bien que dotés de collaborateurs de qualité, la croissance de l’entreprise se trouve grippée eu égard à l’incompréhension qui vient s’installer entre le dirigeant et ses salariés, situation qui entraîne généralement un certain immobilisme.</p>
+
+              <p>Au contraire de ce que l’on pense, les conseils habituels de l’entreprise n’ont souvent pas la capacité de faire bouger les lignes ; trop de proximité et parfois une divergence d’intérêts, tout comme les cadres qui forment la garde rapprochée.</p>
+            </div>
+
+            <div class="visual-wrap">
+              <div class="visual-card" aria-hidden="true">
+                <div class="visual-grid"></div>
+                <div class="visual-bars">
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="visual-solo"></div>
+                <div class="visual-group">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="visual-caption">Direction | Croissance | Structure</div>
+              </div>
+            </div>
+
+            <div class="copy">
+              <p class="dropcap">Pour autant, il ne faut pas les écarter pour le suivi du courant. Aborder une période de croissance est assimilé à une situation de crise.</p>
+
+              <p>Nous faisons partie de ces professionnels adaptés à ce type de situation en intervenant au cœur de votre entreprise ou en support des cadres et employés concernés par l’avenir de la société.</p>
+
+              <p>Une fois la croissance engendrée, notre cabinet se transforme en véritable support et intervient, le cas échéant, sur des missions spécifiques souvent dédiées à la mise en conformité des dossiers administratifs et à la création de process internes.</p>
+
+              <p>Avec votre consultant privilégié, vous ne vous sentirez plus jamais seul.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <section class="bottom">
+        <div class="bottom-card">
+          <div class="bottom-line">Pour votre entreprise, un seul repère</div>
+          <div class="bottom-site">www.levhec-advisory.com</div>
+
+          <div class="footer-brand">
+            LEVHEC ADVISORY<br>
+            Management de Transition<br>
+            Cabinet de Conseil Opérationnel
+          </div>
+        </div>
+      </section>
+
     </div>
   </div>
-</main>
-
-<div class="floating-cta">
-  <a href="/contact/?offre=tpe-pme" title="Être contacté">✉</a>
-  <a href="tel:0806110270" title="Appeler">☎</a>
 </div>
 
+<div class="floating">
+  <a href="/contact/?offre=tpe-pme" title="Être contacté">✉</a>
+  <a href="tel:+33667246129" title="Appeler">☎</a>
+</div>
 </body>
 </html>
