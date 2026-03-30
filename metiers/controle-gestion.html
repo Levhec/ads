@@ -1,324 +1,280 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fiche métier Contrôle de Gestion - LEVHEC ADVISORY" />
-  <meta name="robots" content="index,follow" />
-  <title>Contrôle de Gestion | LEVHEC ADVISORY</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Fiche métier Contrôle de Gestion - LEVHEC ADVISORY" />
+<meta name="robots" content="index,follow" />
 
-  <style>
-    :root{
-      --bg:#f4f1ea;
-      --card:#ffffff;
-      --text:#1f1f1f;
-      --muted:#5f5a52;
-      --gold:#b08d57;
-      --gold-dark:#8f6f3f;
-      --border:#e6dccd;
-      --shadow:0 18px 45px rgba(0,0,0,.08);
-      --dark:#2b2b2b;
-    }
+<title>Contrôle de Gestion | LEVHEC ADVISORY</title>
 
-    *{
-      box-sizing:border-box;
-    }
+<style>
+:root{
+  --bg:#f4f1ea;
+  --text:#1f1f1f;
+  --muted:#5f5a52;
+  --gold:#b08d57;
+  --gold-dark:#8f6f3f;
+  --card:#ffffff;
+  --border:#e6dccd;
+  --dark:#2b2b2b;
+  --shadow:0 18px 45px rgba(0,0,0,.08);
+}
 
-    html{
-      scroll-behavior:smooth;
-    }
+*{box-sizing:border-box;}
 
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.65;
-    }
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+/* HEADER */
 
-    .topbar{
-      background:var(--dark);
-      padding:22px 18px;
-      text-align:center;
-    }
+.topbar{
+  background:var(--dark);
+  padding:24px;
+  text-align:center;
+}
 
-    .topbar img{
-      max-width:280px;
-      width:100%;
-      height:auto;
-      display:block;
-      margin:0 auto;
-    }
+.topbar img{
+  max-width:260px;
+}
 
-    .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:36px 20px 60px;
-    }
+/* WRAP */
 
-    .hero{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      padding:34px 26px 26px;
-      margin-bottom:26px;
-    }
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
 
-    .eyebrow{
-      display:inline-block;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--gold-dark);
-      border:1px solid var(--border);
-      border-radius:999px;
-      padding:6px 12px;
-      margin-bottom:14px;
-      background:#fbf8f3;
-    }
+/* HERO */
 
-    h1{
-      margin:0 0 10px;
-      font-size:clamp(30px,4vw,46px);
-      line-height:1.1;
-      font-weight:600;
-      letter-spacing:.01em;
-    }
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:30px;
+  align-items:center;
 
-    .intro{
-      margin:0;
-      color:var(--muted);
-      font-size:17px;
-      max-width:760px;
-    }
+  background:var(--dark);
+  color:#fff;
+  border-radius:24px;
+  padding:36px;
+  margin-bottom:30px;
+}
 
-    .nav-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:24px;
-    }
+.hero h1{
+  margin:0 0 16px;
+  font-size:42px;
+  font-weight:600;
+}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      padding:12px 18px;
-      border-radius:12px;
-      font-weight:600;
-      font-size:15px;
-      transition:.2s ease;
-      border:1px solid transparent;
-      text-align:center;
-    }
+.hero p{
+  margin:0;
+  color:#cfcfcf;
+  font-size:16px;
+}
 
-    .btn-primary{
-      background:var(--gold);
-      color:#fff;
-    }
+.hero-img{
+  text-align:center;
+}
 
-    .btn-primary:hover{
-      background:var(--gold-dark);
-    }
+.hero-img img{
+  width:100%;
+  max-width:280px;
+  border-radius:16px;
+  filter:contrast(1.05) brightness(0.95);
+}
 
-    .btn-secondary{
-      background:#fff;
-      color:var(--text);
-      border-color:var(--border);
-    }
+/* BUTTONS */
 
-    .btn-secondary:hover{
-      border-color:var(--gold);
-      color:var(--gold-dark);
-    }
+.nav-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
-      margin-bottom:22px;
-    }
+.btn{
+  padding:12px 16px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  border:1px solid transparent;
+  text-decoration:none;
+}
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:26px;
-    }
+.btn-light{
+  background:#fff;
+  color:#000;
+}
 
-    .card h2{
-      margin:0 0 16px;
-      font-size:22px;
-      line-height:1.2;
-    }
+.btn-light:hover{
+  background:#f1f1f1;
+}
 
-    .card p{
-      margin:0;
-      color:var(--text);
-      font-size:17px;
-    }
+.btn-outline{
+  border:1px solid #999;
+  color:#ddd;
+}
 
-    .list{
-      margin:0;
-      padding-left:20px;
-    }
+.btn-outline:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
 
-    .list li{
-      margin-bottom:10px;
-      color:var(--text);
-      font-size:17px;
-    }
+/* CONTENT */
 
-    .text-block{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:28px 26px;
-      margin-bottom:22px;
-    }
+.block{
+  background:var(--card);
+  border-radius:20px;
+  padding:28px;
+  margin-bottom:22px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
 
-    .text-block h2{
-      margin:0 0 16px;
-      font-size:22px;
-      line-height:1.2;
-    }
+.block h2{
+  margin:0 0 14px;
+  font-size:22px;
+  border-left:4px solid var(--gold);
+  padding-left:10px;
+}
 
-    .text-block p{
-      margin:0;
-      font-size:17px;
-      color:var(--text);
-    }
+.block p{
+  margin:0;
+}
 
-    .text-block p + p{
-      margin-top:14px;
-    }
+.block p + p{
+  margin-top:14px;
+}
 
-    .bottom-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      justify-content:center;
-      margin-top:30px;
-    }
+ul{
+  margin:0;
+  padding-left:20px;
+}
 
-    footer{
-      text-align:center;
-      color:var(--muted);
-      font-size:14px;
-      padding:8px 20px 0;
-    }
+li{
+  margin-bottom:10px;
+}
 
-    @media (max-width: 800px){
-      .grid{
-        grid-template-columns:1fr;
-      }
+/* FOOTER BUTTONS */
 
-      .hero,
-      .card,
-      .text-block{
-        padding:22px 18px;
-      }
+.bottom{
+  margin-top:30px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+}
 
-      .nav-actions,
-      .bottom-actions{
-        flex-direction:column;
-      }
+/* MOBILE */
 
-      .btn{
-        width:100%;
-      }
+@media(max-width:800px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
 
-      .topbar img{
-        max-width:230px;
-      }
-    }
-  </style>
+  .hero-img img{
+    max-width:220px;
+  }
+
+  .nav-actions,
+  .bottom{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <header class="topbar">
-    <a href="https://ads.levhec.com/index.html" aria-label="Retour aux offres LEVHEC ADVISORY">
-      <img src="/assets/img/Levhec - horiz transp.png" alt="LEVHEC ADVISORY" />
-    </a>
-  </header>
+<header class="topbar">
+  <a href="/index.html">
+    <img src="/assets/img/Levhec - horiz transp.png" alt="LEVHEC ADVISORY">
+  </a>
+</header>
 
-  <main class="wrap">
+<main class="wrap">
 
-    <section class="hero">
-      <div class="eyebrow">Fiche métier</div>
-      <h1>Contrôle de Gestion</h1>
-      <p class="intro">
-        Cette page reprend la fiche métier de contrôle de gestion sous format HTML, dans une présentation distincte des pages d’offres.
-      </p>
+<section class="hero">
 
-      <div class="nav-actions">
-        <a class="btn btn-secondary" href="/index.html">Retour aux offres</a>
-        <a class="btn btn-secondary" href="/metiers/index.html">Découvrir les autres métiers</a>
-        <a class="btn btn-secondary" href="/situations/index.html">Voir les situations</a>
-        <a class="btn btn-primary" href="https://www.levhec-advisory.com" target="_blank" rel="noopener">Vers le site levhec-advisory.com</a>
-      </div>
-    </section>
+  <div>
+    <h1>Contrôle de Gestion</h1>
 
-    <section class="grid">
-      <article class="card">
-        <h2>Le métier</h2>
-        <p>
-          Le contrôle de gestion intervient en amont d’un projet ou d’une période afin de projeter et prévoir, au cours de l’exécution pour le contrôle de process et en aval afin de comprendre et analyser.
-        </p>
-      </article>
+    <p>
+      Fiche métier
+    </p>
 
-      <article class="card">
-        <h2>Domaines mentionnés dans la fiche</h2>
-        <ul class="list">
-          <li>Audit interne</li>
-          <li>Audit de conformité</li>
-          <li>Calcul de coûts</li>
-          <li>Reportings industriels, commerciaux, financiers</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="text-block">
-      <h2>Texte de la fiche</h2>
-      <p>
-        Le contrôle de gestion intervient en amont d’un projet ou d’une période afin de projeter et prévoir, au cours de l’exécution pour le contrôle de process et en aval afin de comprendre et analyser.
-      </p>
-      <p>
-        On peut distinguer des spécialités de contrôle de gestion qui n’ont pas spécifiquement d’interdépendances. Ainsi, les missions d’un contrôleur de gestion pourront répondre à un besoin industriel pour les calculs de coûts, fournir les équipes commerciales d’analyses des ventes, produire des tableaux de gestion pour les cadres ainsi que des tableaux d’analyses financières pour les dirigeants, administrateurs et actionnaires.
-      </p>
-      <p>
-        Le contrôleur de gestion doit tout autant être capable de diagnostiquer les procédures internes et être source de propositions. Actuellement, il devient le garant de la lecture des datas et de la business intelligence.
-      </p>
-    </section>
-
-    <section class="text-block">
-      <h2>Complément repris de la fiche</h2>
-      <p>
-        Notre cabinet vient vous apporter des techniques nouvelles et méthodes actualisées en créant une dynamique d'analyse en interne. Nous vous apportons de nouvelles lectures de vos données financières et vous accompagnons sur les contrôles de vos procédures internes.
-      </p>
-    </section>
-
-    <div class="bottom-actions">
-      <a class="btn btn-secondary" href="/index.html">Retour aux offres</a>
-      <a class="btn btn-secondary" href="/metiers/index.html">Découvrir les autres métiers</a>
-      <a class="btn btn-secondary" href="/situations/index.html">Voir les situations</a>
-      <a class="btn btn-primary" href="https://www.levhec-advisory.com" target="_blank" rel="noopener">Vers le site levhec-advisory.com</a>
+    <div class="nav-actions">
+      <a class="btn btn-light" href="/index.html">Retour aux offres</a>
+      <a class="btn btn-outline" href="/metiers/index.html">Autres métiers</a>
+      <a class="btn btn-outline" href="/situations/index.html">Situations</a>
+      <a class="btn btn-outline" href="https://www.levhec-advisory.com" target="_blank">Site LEVHEC</a>
     </div>
+  </div>
 
-    <footer>
-      LEVHEC ADVISORY — Fiche métier
-    </footer>
+  <div class="hero-img">
+    <!-- PHOTO DAVID -->
+    <img src="/assets/img/david-controle-gestion.png" alt="Contrôle de gestion">
+  </div>
 
-  </main>
+</section>
+
+<section class="block">
+<h2>Le métier</h2>
+<p>
+Le contrôle de gestion intervient en amont d’un projet ou d’une période afin de projeter et prévoir, au cours de l’exécution pour le contrôle de process et en aval afin de comprendre et analyser.
+</p>
+</section>
+
+<section class="block">
+<h2>Domaines mentionnés dans la fiche</h2>
+<ul>
+<li>Audit interne</li>
+<li>Audit de conformité</li>
+<li>Calcul de coûts</li>
+<li>Reportings industriels, commerciaux, financiers</li>
+</ul>
+</section>
+
+<section class="block">
+<h2>Texte de la fiche</h2>
+<p>
+Le contrôle de gestion intervient en amont d’un projet ou d’une période afin de projeter et prévoir, au cours de l’exécution pour le contrôle de process et en aval afin de comprendre et analyser.
+</p>
+<p>
+On peut distinguer des spécialités de contrôle de gestion qui n’ont pas spécifiquement d’interdépendances. Ainsi, les missions d’un contrôleur de gestion pourront répondre à un besoin industriel pour les calculs de coûts, fournir les équipes commerciales d’analyses des ventes, produire des tableaux de gestion pour les cadres ainsi que des tableaux d’analyses financières pour les dirigeants, administrateurs et actionnaires.
+</p>
+<p>
+Le contrôleur de gestion doit tout autant être capable de diagnostiquer les procédures internes et être source de propositions. Actuellement, il devient le garant de la lecture des datas et de la business intelligence.
+</p>
+</section>
+
+<section class="block">
+<h2>Complément repris de la fiche</h2>
+<p>
+Notre cabinet vient vous apporter des techniques nouvelles et méthodes actualisées en créant une dynamique d'analyse en interne. Nous vous apportons de nouvelles lectures de vos données financières et vous accompagnons sur les contrôles de vos procédures internes.
+</p>
+</section>
+
+<div class="bottom">
+<a class="btn btn-light" href="/index.html">Retour aux offres</a>
+<a class="btn btn-outline" href="/metiers/index.html">Autres métiers</a>
+<a class="btn btn-outline" href="/situations/index.html">Situations</a>
+<a class="btn btn-outline" href="https://www.levhec-advisory.com" target="_blank">Site LEVHEC</a>
+</div>
+
+</main>
 
 </body>
 </html>
