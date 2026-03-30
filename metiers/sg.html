@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Secrétariat Général | LEVHEC ADVISORY</title>
+<meta name="description" content="Fiche métier Secrétariat Général - LEVHEC ADVISORY" />
+<meta name="robots" content="index,follow" />
+<link rel="stylesheet" href="../assets/css/popup.css" />
+
+<style>
+:root{
+  --bg:#244a3d;
+  --bg-dark:#10231c;
+  --bg-deep:#10231c;
+  --gold:#d7b16b;
+  --gold-soft:#e6c98f;
+  --text:#f4f1ea;
+  --muted:#d8d3c7;
+  --line:rgba(255,255,255,0.14);
+  --card:rgba(255,255,255,0.08);
+  --card-strong:rgba(255,255,255,0.11);
+  --shadow:0 18px 45px rgba(0,0,0,0.28);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(215,177,107,0.12), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.05), transparent 24%),
+    linear-gradient(160deg, #10231c 0%, #244a3d 48%, #3b7a65 100%);
+  line-height:1.65;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1140px, calc(100% - 32px));
+  margin:0 auto;
+}
+
+.page{
+  padding:28px 0 52px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:22px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.brand img{
+  height:54px;
+  width:auto;
+}
+
+.brand-text{
+  min-width:0;
+}
+
+.brand-title{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold-soft);
+}
+
+.brand-subtitle{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.nav-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:flex-end;
+}
+
+.nav-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+  color:var(--text);
+  font-size:14px;
+  font-weight:700;
+  transition:.22s ease;
+  box-shadow:var(--shadow);
+}
+
+.nav-btn:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,0.12);
+  border-color:rgba(255,255,255,0.22);
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:28px;
+  align-items:stretch;
+  margin-top:8px;
+}
+
+.hero-main,
+.hero-photo{
+  background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+  border:1px solid var(--line);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(8px);
+}
+
+.hero-main{
+  padding:34px;
+}
+
+.eyebrow{
+  display:inline-block;
+  margin-bottom:12px;
+  color:var(--gold-soft);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+h1{
+  margin:0 0 10px;
+  font-size:clamp(34px, 5vw, 58px);
+  line-height:1.03;
+  font-weight:800;
+}
+
+.hero-subtitle{
+  margin:0 0 18px;
+  font-size:clamp(22px, 3vw, 30px);
+  line-height:1.2;
+  color:var(--gold-soft);
+  font-weight:500;
+}
+
+.hero-lead{
+  margin:0 0 24px;
+  font-size:18px;
+  color:var(--muted);
+  max-width:760px;
+}
+
+.domain-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:14px;
+  margin-top:10px;
+}
+
+.domain-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px 18px;
+  font-size:17px;
+  line-height:1.4;
+  box-shadow:var(--shadow);
+}
+
+.hero-photo{
+  overflow:hidden;
+  position:relative;
+  min-height:100%;
+}
+
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero-photo::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:38%;
+  background:linear-gradient(to top, rgba(16,35,28,0.74), transparent);
+  pointer-events:none;
+}
+
+.section{
+  margin-top:24px;
+}
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:32px;
+  box-shadow:var(--shadow);
+}
+
+.section-title{
+  margin:0 0 18px;
+  font-size:31px;
+  line-height:1.12;
+}
+
+.text-block p{
+  margin:0 0 16px;
+  font-size:18px;
+  color:var(--text);
+}
+
+.highlight{
+  background:rgba(230,201,143,0.08);
+  border:1px solid rgba(230,201,143,0.2);
+  border-radius:22px;
+  padding:24px;
+}
+
+.highlight p{
+  margin:0;
+  font-size:20px;
+  line-height:1.6;
+  color:var(--text);
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+.bottom-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:22px;
+}
+
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:999px;
+  font-size:15px;
+  font-weight:800;
+  transition:.22s ease;
+}
+
+.cta-primary{
+  background:linear-gradient(135deg, var(--gold), var(--gold-soft));
+  color:#1d1d1d;
+  box-shadow:0 12px 30px rgba(215,177,107,0.28);
+}
+
+.cta-primary:hover{
+  transform:translateY(-2px);
+}
+
+.cta-secondary{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+  color:var(--text);
+}
+
+.cta-secondary:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,0.12);
+}
+
+.footer-note{
+  margin-top:26px;
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+}
+
+@media (max-width: 980px){
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .nav-buttons{
+    justify-content:flex-start;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-photo{
+    min-height:340px;
+  }
+}
+
+@media (max-width: 720px){
+  .page{
+    padding:20px 0 40px;
+  }
+
+  .hero-main,
+  .card{
+    padding:24px;
+  }
+
+  .domain-grid{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:38px;
+  }
+
+  .section-title{
+    font-size:27px;
+  }
+
+  .text-block p{
+    font-size:17px;
+  }
+
+  .highlight p{
+    font-size:18px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container page">
+
+  <div class="topbar">
+    <div class="brand">
+      <img src="../assets/img/Levhec - horiz transp.png" alt="LEVHEC ADVISORY" />
+      <div class="brand-text">
+        <div class="brand-title">LEVHEC ADVISORY</div>
+        <div class="brand-subtitle">Management de transition • Cabinet de conseil opérationnel</div>
+      </div>
+    </div>
+
+    <nav class="nav-buttons" aria-label="Navigation principale">
+      <a class="nav-btn" href="../index.html">Retour aux offres</a>
+      <a class="nav-btn" href="../index.html#metiers">Autres métiers</a>
+      <a class="nav-btn" href="../index.html#situations-complexes">Situations</a>
+      <a class="nav-btn" href="https://www.levhec-advisory.com" target="_blank" rel="noopener">Site LEVHEC</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-main">
+      <span class="eyebrow">Fiche métier</span>
+      <h1>Le Secrétariat Général</h1>
+      <p class="hero-subtitle">Des hommes de situation</p>
+      <p class="hero-lead">
+        Le secrétaire général est l’homme du Président. Il collabore également avec le Directeur Général qui est plus concentré sur le résultat et sur l’exécutif.
+      </p>
+
+      <div class="domain-grid">
+        <div class="domain-card">Supervision administrative globale</div>
+        <div class="domain-card">Gestion des contentieux</div>
+        <div class="domain-card">Croissance externe</div>
+        <div class="domain-card">Restructuration</div>
+        <div class="domain-card">Réorganisation interne</div>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="../assets/img/photo-equipe.png" alt="Binôme LEVHEC ADVISORY" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2 class="section-title">Le métier</h2>
+
+      <div class="text-block">
+        <p>
+          Le secrétaire général est l’homme du Président. Il collabore également avec le Directeur Général qui est plus concentré sur le résultat et sur l’exécutif.
+        </p>
+
+        <p>
+          La fonction de secrétaire général fait partie des fonctions les plus gradées dans certaines administrations ou grandes entreprises; sa fonction prend place petit à petit dans les entreprises afin de suppléer aux tâches qui étaient anormalement confiées au directeur financier.
+        </p>
+
+        <p>
+          Le secrétaire général est capable de prendre en charge les fonctions supports telles que les ressources humaines, services juridiques, relations tiers ou services généraux mais surtout assure la gestion des dossiers sensibles.
+        </p>
+
+        <p>
+          Notre préconisation viendrait à réorienter la fonction finance vers une préoccupation de business développement et idéalement tendre à le dissocier de certaines tâches globales en faisant émerger la fonction de secrétaire général en entreprise. Idéalement, il devrait superviser le contrôle de gestion en devenant le garant des process internes et être une interface privilégiée des administrateurs de l’entreprise. Le secrétaire général devrait devenir la fonction phare des entreprises ces prochaines années.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card highlight">
+      <p>
+        Notre cabinet intervient en secrétariat général sur des missions spécifiques de gestion de projets, de mise en conformité, régulation de conflits et suivis de procédures dans le cadre de réorganisations internes ou opérations de croissance en mission de transition
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2 class="section-title">Contact</h2>
+      <div class="text-block">
+        <p>Pour votre entreprise, un seul numéro</p>
+        <p><strong>0 806 110 270</strong></p>
+        <p><strong>WWW.LCEC.EU</strong></p>
+      </div>
+
+      <div class="bottom-actions">
+        <a class="cta cta-primary" href="../contact/?offre=sg">Être contacté</a>
+        <a class="cta cta-secondary" href="../index.html">Découvrir toutes les offres</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    LEVHEC ADVISORY — Management de transition • Cabinet de conseil opérationnel
+  </div>
+
+</div>
+
+</body>
+</html>
