@@ -6,55 +6,69 @@
 <title>Test Lilas</title>
 
 <style>
-:root{
-  --bg:#2c2242;
-  --bg-dark:#1f1830;
-  --bg-deep:#151022;
-
-  --text:#f4f1ea;
-  --gold:#d7b16b;
-}
-
 body{
   margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  display:flex;
   height:100vh;
+}
+
+/* BLOCS */
+.block{
+  flex:1;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-
-  background:
-    radial-gradient(circle at top left, rgba(215,177,107,0.12), transparent 30%),
-    linear-gradient(160deg, var(--bg-deep) 0%, var(--bg) 50%, #3a2c5c 100%);
-
-  color:var(--text);
-}
-
-.box{
-  padding:40px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);
+  color:#f4f1ea;
   text-align:center;
 }
 
-h1{
-  margin:0 0 10px;
-  color:var(--gold);
+/* OPTION 1 */
+.lilas1{
+  background:
+    linear-gradient(160deg, #140f20 0%, #2a1f3d 50%, #3a2c5c 100%);
 }
 
-p{
-  margin:0;
-  opacity:0.8;
+/* OPTION 2 */
+.lilas2{
+  background:
+    linear-gradient(160deg, #151022 0%, #2c2242 50%, #3f2f66 100%);
+}
+
+/* OPTION 3 */
+.lilas3{
+  background:
+    linear-gradient(160deg, #141226 0%, #2a2440 50%, #3a3570 100%);
+}
+
+h2{
+  margin:0 0 10px;
+  color:#d7b16b;
 }
 </style>
 
 </head>
 <body>
 
-<div class="box">
-  <h1>Test Lilas</h1>
-  <p>Couleur RH</p>
+<div class="block lilas1">
+  <div>
+    <h2>Option 1</h2>
+    <p>Lilas élégant</p>
+  </div>
+</div>
+
+<div class="block lilas2">
+  <div>
+    <h2>Option 2</h2>
+    <p>Lilas profond</p>
+  </div>
+</div>
+
+<div class="block lilas3">
+  <div>
+    <h2>Option 3</h2>
+    <p>Lilas bleuté</p>
+  </div>
 </div>
 
 </body>
