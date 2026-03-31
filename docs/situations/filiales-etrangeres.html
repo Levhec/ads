@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filiales françaises de groupes étrangers | LEVHEC ADVISORY</title>
+
+<style>
+:root{
+  --orange:#E07A2F;
+  --orange-dark:#C9651A;
+  --orange-deep:#8F4717;
+  --ink:#2A1A12;
+  --muted:#6B4B39;
+  --taupe:#A39A95;
+  --taupe-dark:#8F8781;
+  --line:rgba(143,71,23,.14);
+  --shadow:0 24px 60px rgba(75,34,8,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.14), transparent 18%),
+    linear-gradient(180deg,#E07A2F 0%, #D56F24 38%, #C9651A 100%);
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+.page{
+  width:min(1280px, calc(100% - 30px));
+  margin:18px auto;
+  border-radius:34px;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.92)),
+    linear-gradient(135deg, #fffaf5, #fffdfb);
+  box-shadow:0 32px 80px rgba(65,28,6,.24);
+  border:1px solid rgba(255,255,255,.24);
+}
+.topbar{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:22px 34px;
+  background:linear-gradient(180deg, rgba(255,252,248,.96), rgba(255,245,235,.96));
+  border-bottom:1px solid var(--line);
+}
+.topbar::after{
+  content:"";
+  position:absolute;
+  left:34px;
+  right:34px;
+  bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(224,122,47,.35), transparent);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+.brand img{
+  height:96px;
+  width:auto;
+}
+.baseline{
+  font-size:12px;
+  line-height:1.8;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:var(--muted);
+}
+.cap{
+  flex:0 0 auto;
+  padding:13px 18px;
+  border-radius:999px;
+  background:rgba(224,122,47,.08);
+  border:1px solid rgba(224,122,47,.16);
+  color:var(--orange-deep);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.hero{
+  position:relative;
+  padding:48px 34px 28px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 14% 14%, rgba(224,122,47,.10), transparent 16%),
+    radial-gradient(circle at 82% 10%, rgba(224,122,47,.08), transparent 18%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:26px;
+  align-items:start;
+}
+.hero h1{
+  margin:0;
+  font-size:clamp(40px, 5.5vw, 72px);
+  line-height:.96;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--orange);
+}
+.subtitle{
+  margin-top:20px;
+  font-size:clamp(22px, 2.2vw, 33px);
+  line-height:1.18;
+  font-weight:800;
+  text-transform:uppercase;
+  color:var(--orange-deep);
+}
+.tag{
+  min-height:220px;
+  border-radius:28px;
+  padding:30px 32px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:var(--shadow);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 24%),
+    linear-gradient(160deg, #E07A2F 0%, #C9651A 62%, #8F4717 100%);
+}
+.tag-label{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:800;
+  opacity:.9;
+}
+.tag-title{
+  font-size:clamp(28px, 3vw, 42px);
+  line-height:1.08;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.tag-line{
+  width:82px;
+  height:3px;
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+}
+
+.statement{
+  padding:0 34px 18px;
+  text-align:center;
+}
+.statement-top{
+  font-size:clamp(18px, 1.6vw, 26px);
+  line-height:1.4;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#7c7a7a;
+  font-weight:800;
+}
+.statement-bottom{
+  margin-top:6px;
+  font-size:clamp(18px, 1.6vw, 26px);
+  line-height:1.4;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#C9651A;
+  font-weight:800;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  padding:0 34px 12px;
+}
+.service-card{
+  background:linear-gradient(180deg, #EEF4F6 0%, #E8F0F3 100%);
+  border:1px solid rgba(110,166,191,.20);
+  border-radius:24px;
+  padding:24px 24px 18px;
+  box-shadow:0 16px 36px rgba(75,34,8,.08);
+}
+.service-card p{
+  margin:0 0 12px;
+  font-size:clamp(18px, 1.45vw, 24px);
+  line-height:1.32;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  font-weight:800;
+}
+.service-card p:last-child{margin-bottom:0}
+.service-card.en{
+  color:#7f7b7b;
+}
+.service-card.fr{
+  color:#C9651A;
+}
+
+.promises{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  padding:16px 34px 10px;
+}
+.promise-box{
+  border-radius:26px;
+  padding:26px 28px;
+  box-shadow:var(--shadow);
+}
+.promise-box.en{
+  background:linear-gradient(180deg, var(--taupe) 0%, var(--taupe-dark) 100%);
+  color:#fff;
+}
+.promise-box.fr{
+  background:linear-gradient(180deg, #E7D8CC 0%, #D8C4B5 100%);
+  color:#fff;
+}
+.promise-box p{
+  margin:0 0 18px;
+  font-size:clamp(18px, 1.45vw, 24px);
+  line-height:1.3;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  font-weight:800;
+}
+.promise-box p:last-child{margin-bottom:0}
+
+.content-wrap{
+  padding:20px 34px 10px;
+}
+.content-card{
+  background:linear-gradient(180deg, #FFF9F3 0%, #FFFDFB 100%);
+  border:1px solid rgba(224,122,47,.16);
+  border-radius:30px;
+  padding:30px;
+  box-shadow:0 18px 46px rgba(75,34,8,.10);
+}
+.content-grid{
+  display:grid;
+  grid-template-columns:1fr 360px 1fr;
+  gap:28px;
+  align-items:start;
+}
+.copy h3{
+  margin:0 0 14px;
+  font-size:clamp(18px, 1.5vw, 26px);
+  line-height:1.24;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:800;
+}
+.copy.en h3{color:#7f7b7b}
+.copy.fr h3{color:#7f7b7b}
+.copy p{
+  margin:0 0 20px;
+  font-size:clamp(20px, 1.34vw, 24px);
+  line-height:1.55;
+  text-align:justify;
+}
+.copy.en p{color:#6b6767}
+.copy.fr p{color:#C9651A}
+.copy p:last-child{margin-bottom:0}
+.copy p.dropcap::first-letter{
+  float:left;
+  font-size:3.2em;
+  line-height:.8;
+  padding-right:6px;
+  color:var(--orange);
+  font-weight:700;
+}
+
+.visual{
+  position:relative;
+  min-height:430px;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(60,25,5,.20);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
+    linear-gradient(160deg, #B85F20 0%, #8F4717 100%);
+}
+.visual::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 16%, rgba(255,255,255,.20), transparent 14%),
+    radial-gradient(circle at 78% 14%, rgba(255,255,255,.12), transparent 18%),
+    linear-gradient(to top, rgba(255,255,255,.06), transparent 46%);
+}
+.visual-label{
+  position:absolute;
+  top:18px;
+  left:20px;
+  right:20px;
+  color:rgba(255,245,239,.92);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.globe{
+  position:absolute;
+  left:50%;
+  top:155px;
+  transform:translateX(-50%);
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  border:2px solid rgba(255,244,236,.18);
+  box-shadow:0 0 0 22px rgba(255,244,236,.05);
+}
+.globe::before{
+  content:"";
+  position:absolute;
+  inset:20px;
+  border-radius:50%;
+  border:1px solid rgba(255,244,236,.18);
+}
+.globe::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:1px;
+  background:rgba(255,244,236,.20);
+  transform:translateX(-50%);
+}
+.globe .lat1,.globe .lat2,.globe .lat3,
+.globe .lon1,.globe .lon2{
+  position:absolute;
+  border-color:rgba(255,244,236,.18);
+  border-style:solid;
+}
+.globe .lat1{left:16px; right:16px; top:36px; height:108px; border-width:1px 0 0 0; border-radius:50%}
+.globe .lat2{left:10px; right:10px; top:74px; height:36px; border-width:1px 0 0 0; border-radius:50%}
+.globe .lat3{left:16px; right:16px; bottom:36px; height:108px; border-width:0 0 1px 0; border-radius:50%}
+.globe .lon1{top:8px; bottom:8px; left:44px; width:92px; border-width:1px 1px 1px 1px; border-radius:50%}
+.globe .lon2{top:8px; bottom:8px; right:44px; width:92px; border-width:1px 1px 1px 1px; border-radius:50%}
+.node{
+  position:absolute;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:rgba(255,248,241,.90);
+  box-shadow:0 0 0 8px rgba(255,248,241,.12);
+}
+.n1{left:76px; top:38px}
+.n2{left:22px; top:104px}
+.n3{right:22px; top:104px}
+.n4{left:72px; bottom:28px}
+.path{
+  position:absolute;
+  height:2px;
+  background:rgba(255,244,236,.30);
+  transform-origin:left center;
+}
+.p1{left:88px; top:48px; width:70px; transform:rotate(58deg)}
+.p2{left:32px; top:112px; width:62px; transform:rotate(-20deg)}
+.p3{left:94px; top:158px; width:68px; transform:rotate(-58deg)}
+.map-strip{
+  position:absolute;
+  left:26px;
+  right:26px;
+  bottom:118px;
+  height:42px;
+  border-top:1px solid rgba(255,244,236,.16);
+  border-bottom:1px solid rgba(255,244,236,.10);
+  background:
+    linear-gradient(90deg, rgba(255,244,236,.10) 0 8%, transparent 8% 14%, rgba(255,244,236,.10) 14% 26%, transparent 26% 34%, rgba(255,244,236,.10) 34% 45%, transparent 45% 54%, rgba(255,244,236,.10) 54% 68%, transparent 68% 76%, rgba(255,244,236,.10) 76% 88%, transparent 88% 100%);
+  border-radius:10px;
+  opacity:.55;
+}
+.deck{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:118px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0)),
+    linear-gradient(0deg, rgba(48,23,8,.84), rgba(80,38,11,.70));
+}
+.deck::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(90deg, rgba(255,235,220,.08) 1px, transparent 1px);
+  background-size:18px 100%;
+  transform:perspective(620px) rotateX(65deg);
+  transform-origin:bottom;
+  opacity:.85;
+}
+
+.bottom{
+  padding:8px 34px 34px;
+}
+.bottom-card{
+  text-align:center;
+  background:linear-gradient(180deg, #FFF4EA 0%, #FFF9F4 100%);
+  border:1px solid rgba(224,122,47,.18);
+  border-radius:30px;
+  padding:28px 26px 24px;
+  box-shadow:0 16px 40px rgba(75,34,8,.08);
+}
+.bottom-title{
+  font-size:clamp(21px, 1.8vw, 30px);
+  line-height:1.26;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--orange);
+}
+.site{
+  display:inline-block;
+  margin-top:12px;
+  font-size:clamp(17px, 1.4vw, 22px);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--orange-deep);
+  word-break:break-word;
+}
+.brand-footer{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  line-height:1.8;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+.back-wrap{margin-top:18px}
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 20px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid rgba(224,122,47,.18);
+  box-shadow:0 12px 26px rgba(75,34,8,.08);
+  color:var(--orange-deep);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:13px;
+}
+.floating{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:1000;
+}
+.floating a{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--orange);
+  color:#fff;
+  box-shadow:0 14px 28px rgba(88,38,7,.28);
+  transition:transform .2s ease, background .2s ease;
+  font-size:22px;
+}
+.floating a:hover{
+  transform:translateY(-2px);
+  background:var(--orange-dark);
+}
+
+@media (max-width:1080px){
+  .hero-grid,
+  .services-grid,
+  .promises,
+  .content-grid{
+    grid-template-columns:1fr;
+  }
+  .visual{
+    max-width:440px;
+    width:100%;
+    margin:0 auto;
+  }
+}
+@media (max-width:760px){
+  .page{
+    width:min(100% - 12px, 1280px);
+    margin:6px auto;
+    border-radius:22px;
+  }
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:16px 18px;
+  }
+  .brand img{height:68px}
+  .hero,
+  .statement,
+  .services-grid,
+  .promises,
+  .content-wrap,
+  .bottom{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  .hero{padding-top:28px}
+  .tag,
+  .service-card,
+  .promise-box,
+  .content-card,
+  .bottom-card{
+    border-radius:20px;
+  }
+  .content-card{padding:18px}
+  .copy p{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/img/Levhec%20-%20horiz%20transp.png" alt="LEVHEC ADVISORY">
+      <div class="baseline">
+        Management de Transition<br>
+        Cabinet de Conseil Opérationnel
+      </div>
+    </div>
+    <div class="cap">French subsidiaries of foreign groups</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>French subsidiaries of foreign groups</h1>
+        <div class="subtitle">
+          Filiales françaises de groupes étrangers
+        </div>
+      </div>
+
+      <div class="tag">
+        <div class="tag-label">Contexte identifié</div>
+        <div class="tag-title">Conformité, structure et intégration</div>
+        <div class="tag-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="statement-top">The French-style consulting<br>High technicality &amp; polyvalence</div>
+    <div class="statement-bottom">Le consulting à la française<br>Haute technicité &amp; polyvalence</div>
+  </section>
+
+  <section class="services-grid">
+    <div class="service-card en">
+      <p>ADVISORY ASSIGNMENTS &amp; TRANSITIONS</p>
+      <p>RESTRUCTURING PROJECTS</p>
+      <p>MANAGEMENT I FINANCE I AUDIT CONTROL I HUMAN RESOURCES</p>
+      <p>SPECIFICS MISSIONS</p>
+      <p>GOVERNANCE &amp; FORESIGHT</p>
+    </div>
+
+    <div class="service-card fr">
+      <p>MISSIONS DE CONSEILS &amp; TRANSITIONS</p>
+      <p>PROJETS DE RESTRUCTURATION I GESTION FINANCES I CONTRÔLE DE GESTION</p>
+      <p>RESSOURCES HUMAINES</p>
+      <p>MISSIONS SPÉCIFIQUES</p>
+      <p>GOUVERNANCE &amp; PROSPECTIVE</p>
+    </div>
+  </section>
+
+  <section class="promises">
+    <div class="promise-box en">
+      <p>A TEAM OF EXPERTS WHICH MASTER THE FRENCH LEGISLATION</p>
+      <p>AN ABILITY TO INTEGRATE INTO YOUR TEAM</p>
+    </div>
+
+    <div class="promise-box fr">
+      <p>UNE ÉQUIPE D'EXPERTS QUI MAÎTRISENT LA LÉGISLATION FRANÇAISE</p>
+      <p>UNE CAPACITÉ À S'INTÉGRER À VOS ÉQUIPES</p>
+    </div>
+  </section>
+
+  <section class="content-wrap">
+    <div class="content-card">
+      <div class="content-grid">
+        <div class="copy en">
+          <h3>The French-style consulting<br>High technicality &amp; polyvalence</h3>
+          <p class="dropcap">In each country, the respect of the compliance is an important part of business concerns.</p>
+
+          <p>France is a developed country with high level of infrastructure and expertise.</p>
+
+          <p>Its legislation is certainely complex but it insures protection and security of property and trade.</p>
+
+          <p>You are a Foreign Group and have a subsidiary in France, we monitor the compliance of your administrative, legal, social, fiscal and fonancial.</p>
+        </div>
+
+        <div class="visual" aria-hidden="true">
+          <div class="visual-label">France | Compliance | Foreign groups</div>
+          <div class="globe">
+            <div class="lat1"></div><div class="lat2"></div><div class="lat3"></div>
+            <div class="lon1"></div><div class="lon2"></div>
+            <div class="node n1"></div><div class="node n2"></div><div class="node n3"></div><div class="node n4"></div>
+            <div class="path p1"></div><div class="path p2"></div><div class="path p3"></div>
+          </div>
+          <div class="map-strip"></div>
+          <div class="deck"></div>
+        </div>
+
+        <div class="copy fr">
+          <h3>Le consulting à la française<br>Haute technicité &amp; polyvalence</h3>
+          <p class="dropcap">Dans chaque pays, la conformité occupe une place importante dans les préoccupations des entreprises.</p>
+
+          <p>La France est un pays développé fort d‘infrastructures et de compétences de haut niveau.</p>
+
+          <p>Sa législation est certes complexe mais elle assure une protection et une sécurisation des propriétés et des échanges commerciaux.</p>
+
+          <p>Vous êtes un Groupe étranger et possédez une filiale sur le territoire français, nous assurons le suivi de la mise en conformité de votre dossier administratif, juridique, social, fiscal et financier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <div class="bottom-card">
+      <div class="bottom-title">Pour votre entreprise, un seul repère</div>
+      <a class="site" href="https://www.levhec-advisory.com" target="_blank" rel="noopener noreferrer">www.levhec-advisory.com</a>
+
+      <div class="brand-footer">
+        LEVHEC ADVISORY<br>
+        Management de Transition<br>
+        Cabinet de Conseil Opérationnel
+      </div>
+
+      <div class="back-wrap">
+        <a class="back-btn" href="/index.html">← Retour aux offres</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="floating">
+  <a href="/contact/?offre=filiales-groupes-etrangers" title="Être contacté">✉</a>
+  <a href="tel:+33667246129" title="Appeler">☎</a>
+</div>
+
+</body>
+</html>
