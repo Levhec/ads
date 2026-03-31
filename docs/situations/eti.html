@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETI | LEVHEC ADVISORY | Version premium</title>
+
+<style>
+:root{
+  --orange:#E07A2F;
+  --orange-dark:#C9651A;
+  --orange-deep:#8F4717;
+  --ink:#2A1A12;
+  --muted:#6B4B39;
+  --paper:#FFFDF9;
+  --paper-2:#FFF6EE;
+  --champagne:#F7E8D7;
+  --taupe:#A39A95;
+  --taupe-dark:#8F8781;
+  --line:rgba(143,71,23,.14);
+  --shadow:0 24px 60px rgba(75,34,8,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.14), transparent 18%),
+    linear-gradient(180deg,#E07A2F 0%, #D56F24 38%, #C9651A 100%);
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.page{
+  width:min(1280px, calc(100% - 30px));
+  margin:18px auto;
+  border-radius:34px;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.92)),
+    linear-gradient(135deg, #fffaf5, #fffdfb);
+  box-shadow:0 32px 80px rgba(65,28,6,.24);
+  border:1px solid rgba(255,255,255,.24);
+}
+.topbar{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:22px 34px;
+  background:
+    linear-gradient(180deg, rgba(255,252,248,.96), rgba(255,245,235,.96));
+  border-bottom:1px solid var(--line);
+}
+.topbar::after{
+  content:"";
+  position:absolute;
+  left:34px;
+  right:34px;
+  bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(224,122,47,.35), transparent);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+.brand img{
+  height:96px;
+  width:auto;
+}
+.baseline{
+  font-size:12px;
+  line-height:1.8;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:var(--muted);
+}
+.cap{
+  flex:0 0 auto;
+  padding:13px 18px;
+  border-radius:999px;
+  background:rgba(224,122,47,.08);
+  border:1px solid rgba(224,122,47,.16);
+  color:var(--orange-deep);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.hero{
+  position:relative;
+  padding:48px 34px 28px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 14% 14%, rgba(224,122,47,.10), transparent 16%),
+    radial-gradient(circle at 82% 10%, rgba(224,122,47,.08), transparent 18%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:26px;
+  align-items:start;
+}
+.hero h1{
+  margin:0;
+  font-size:clamp(54px, 8vw, 96px);
+  line-height:.9;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--orange);
+}
+.subtitle{
+  margin-top:22px;
+  font-size:clamp(25px, 2.6vw, 40px);
+  line-height:1.16;
+  font-weight:800;
+  text-transform:uppercase;
+  color:var(--orange-deep);
+}
+.tag{
+  min-height:220px;
+  border-radius:28px;
+  padding:30px 32px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:var(--shadow);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 24%),
+    linear-gradient(160deg, #E07A2F 0%, #C9651A 62%, #8F4717 100%);
+}
+.tag-label{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:800;
+  opacity:.9;
+}
+.tag-title{
+  font-size:clamp(30px, 3.1vw, 44px);
+  line-height:1.08;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.tag-line{
+  width:82px;
+  height:3px;
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+}
+.services{
+  margin:0 34px;
+  padding:18px 0 20px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  color:var(--orange);
+  font-size:14px;
+  font-weight:800;
+  line-height:1.9;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.intro{
+  display:grid;
+  grid-template-columns:1.55fr .95fr;
+  gap:22px;
+  padding:28px 34px 12px;
+}
+.promises{
+  background:linear-gradient(180deg, var(--taupe) 0%, var(--taupe-dark) 100%);
+  color:#fff;
+  border-radius:28px;
+  padding:26px 28px;
+  box-shadow:var(--shadow);
+}
+.promises p{
+  margin:0 0 18px;
+  font-size:clamp(18px, 1.55vw, 24px);
+  line-height:1.28;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  font-weight:800;
+}
+.promises p:last-child{margin-bottom:0}
+.side-note{
+  background:linear-gradient(180deg, #FFF1E4 0%, #FBE4D0 100%);
+  border:1px solid rgba(224,122,47,.18);
+  color:var(--orange-deep);
+  border-radius:28px;
+  padding:26px 24px;
+  box-shadow:0 16px 38px rgba(75,34,8,.08);
+  display:flex;
+  align-items:center;
+}
+.side-note p{
+  margin:0;
+  font-size:clamp(20px, 1.7vw, 26px);
+  line-height:1.35;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  font-weight:800;
+}
+.content-wrap{
+  padding:20px 34px 10px;
+}
+.content-card{
+  background:linear-gradient(180deg, #FFF9F3 0%, #FFFDFB 100%);
+  border:1px solid rgba(224,122,47,.16);
+  border-radius:30px;
+  padding:30px;
+  box-shadow:0 18px 46px rgba(75,34,8,.10);
+}
+.content-grid{
+  display:grid;
+  grid-template-columns:1fr 360px 1fr;
+  gap:28px;
+  align-items:start;
+}
+.copy p{
+  margin:0 0 20px;
+  font-size:clamp(20px, 1.38vw, 24px);
+  line-height:1.55;
+  text-align:justify;
+  color:var(--muted);
+}
+.copy p:last-child{margin-bottom:0}
+.copy p.dropcap::first-letter{
+  float:left;
+  font-size:3.2em;
+  line-height:.8;
+  padding-right:6px;
+  color:var(--orange);
+  font-weight:700;
+}
+.visual{
+  position:relative;
+  min-height:420px;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(60,25,5,.20);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
+    linear-gradient(160deg, #B85F20 0%, #8F4717 100%);
+}
+.visual::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 24% 18%, rgba(255,255,255,.22), transparent 14%),
+    radial-gradient(circle at 78% 14%, rgba(255,255,255,.12), transparent 18%),
+    linear-gradient(to top, rgba(255,255,255,.06), transparent 46%);
+}
+.visual-grid{
+  position:absolute;
+  inset:24px;
+  border:1px solid rgba(255,240,228,.12);
+  border-radius:18px;
+}
+.visual-grid::before,
+.visual-grid::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,240,228,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,240,228,.08) 1px, transparent 1px);
+  background-size:26px 26px;
+  mask-image:linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,1));
+}
+.rings{
+  position:absolute;
+  left:50%;
+  top:130px;
+  transform:translateX(-50%);
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  border:2px solid rgba(255,244,236,.16);
+  box-shadow:0 0 0 26px rgba(255,244,236,.06), 0 0 0 58px rgba(255,244,236,.03);
+}
+.rings::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:rgba(255,247,239,.82);
+}
+.pillars{
+  position:absolute;
+  left:28px;
+  right:28px;
+  bottom:88px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+}
+.pillars span{
+  display:block;
+  flex:1;
+  border-radius:10px 10px 0 0;
+  background:rgba(48,23,8,.58);
+  position:relative;
+}
+.pillars span::before{
+  content:"";
+  position:absolute;
+  left:8px;
+  right:8px;
+  top:10px;
+  bottom:10px;
+  border:1px solid rgba(255,236,220,.06);
+}
+.pillars span:nth-child(1){height:80px}
+.pillars span:nth-child(2){height:136px}
+.pillars span:nth-child(3){height:102px}
+.pillars span:nth-child(4){height:160px}
+.pillars span:nth-child(5){height:118px}
+.pillars span:nth-child(6){height:90px}
+.deck{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:118px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0)),
+    linear-gradient(0deg, rgba(48,23,8,.84), rgba(80,38,11,.70));
+}
+.deck::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(90deg, rgba(255,235,220,.08) 1px, transparent 1px);
+  background-size:18px 100%;
+  transform:perspective(620px) rotateX(65deg);
+  transform-origin:bottom;
+  opacity:.85;
+}
+.visual-label{
+  position:absolute;
+  top:18px;
+  left:20px;
+  right:20px;
+  color:rgba(255,245,239,.92);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.bottom{
+  padding:8px 34px 34px;
+}
+.bottom-card{
+  text-align:center;
+  background:linear-gradient(180deg, #FFF4EA 0%, #FFF9F4 100%);
+  border:1px solid rgba(224,122,47,.18);
+  border-radius:30px;
+  padding:28px 26px 24px;
+  box-shadow:0 16px 40px rgba(75,34,8,.08);
+}
+.bottom-title{
+  font-size:clamp(21px, 1.8vw, 30px);
+  line-height:1.26;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--orange);
+}
+.site{
+  margin-top:12px;
+  font-size:clamp(17px, 1.4vw, 22px);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--orange-deep);
+  word-break:break-word;
+}
+.brand-footer{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  line-height:1.8;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+.back-wrap{margin-top:18px}
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 20px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid rgba(224,122,47,.18);
+  box-shadow:0 12px 26px rgba(75,34,8,.08);
+  color:var(--orange-deep);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:13px;
+}
+.floating{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:1000;
+}
+.floating a{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--orange);
+  color:#fff;
+  box-shadow:0 14px 28px rgba(88,38,7,.28);
+  transition:transform .2s ease, background .2s ease;
+  font-size:22px;
+}
+.floating a:hover{
+  transform:translateY(-2px);
+  background:var(--orange-dark);
+}
+@media (max-width:1080px){
+  .hero-grid,
+  .intro,
+  .content-grid{
+    grid-template-columns:1fr;
+  }
+  .visual{
+    max-width:440px;
+    width:100%;
+    margin:0 auto;
+  }
+}
+@media (max-width:760px){
+  .page{
+    width:min(100% - 12px, 1280px);
+    margin:6px auto;
+    border-radius:22px;
+  }
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:16px 18px;
+  }
+  .brand img{height:68px}
+  .hero,
+  .intro,
+  .content-wrap,
+  .bottom{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  .hero{padding-top:28px}
+  .services{
+    margin-left:18px;
+    margin-right:18px;
+    font-size:13px;
+  }
+  .tag,
+  .promises,
+  .side-note,
+  .content-card,
+  .bottom-card{
+    border-radius:20px;
+  }
+  .content-card{padding:18px}
+  .copy p{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/img/Levhec%20-%20horiz%20transp.png" alt="LEVHEC ADVISORY">
+      <div class="baseline">
+        Management de Transition<br>
+        Cabinet de Conseil Opérationnel
+      </div>
+    </div>
+    <div class="cap">Jusqu’à 5000 salariés</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>ETI</h1>
+        <div class="subtitle">
+          Affinez votre gouvernance<br>
+          maîtrisez vos risques et optimisez vos process
+        </div>
+      </div>
+
+      <div class="tag">
+        <div class="tag-label">Contexte identifié</div>
+        <div class="tag-title">Complexité, risques et gouvernance</div>
+        <div class="tag-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    MANAGEMENT DE TRANSITION | GOUVERNANCE | GESTION DE PROJETS | SUPPORTS RH &amp; FINANCE | INCENTIVES | FACILITIES MANAGEMENT | OPTIMISATION DE PROCESS | FORMATION
+  </section>
+
+  <section class="intro">
+    <div class="promises">
+      <p>PARCE QUE VOTRE ENTREPRISE MÉRITE UNE GOUVERNANCE ÉCLAIRÉE</p>
+      <p>PARCE QUE VOTRE COMPÉTITIVITÉ EST AU CŒUR DE VOS PRÉOCCUPATIONS</p>
+      <p>PARCE QUE LES RISQUES S’ANTICIPENT ET SE MAÎTRISENT</p>
+    </div>
+
+    <div class="side-note">
+      <p>Support aux administrateurs</p>
+    </div>
+  </section>
+
+  <section class="content-wrap">
+    <div class="content-card">
+      <div class="content-grid">
+        <div class="copy">
+          <p class="dropcap">La gouvernance est le point de départ de la stratégie de l’Entreprise. La déployer est la mission confiée aux dirigeants exécutifs.</p>
+
+          <p>Le style de gouvernance est la clef d’entrée pour comprendre comment restructurer une entreprise. Notre accompagnement vient vous apporter une lecture limpide des méthodes à employer que nous nous efforçons de mettre en œuvre avec un réel souci de transmission. Dans un même temps, la compétitivité est le maître mot de l’ETI.</p>
+
+          <p>L’optimisation des process internes nécessite une perpétuelle remise en question des méthodes et des usages, elle permet de maintenir une part de la compétitivité et d’envisager le développement de l’entreprise.</p>
+        </div>
+
+        <div class="visual" aria-hidden="true">
+          <div class="visual-label">Gouvernance | Risques | Process</div>
+          <div class="visual-grid"></div>
+          <div class="rings"></div>
+          <div class="pillars">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="deck"></div>
+        </div>
+
+        <div class="copy">
+          <p class="dropcap">Néanmoins, la solidité d’une ETI est en permanence chahutée face aux risques de toutes sortes auxquels elle est confrontée; savoir les anticiper et les quantifier est indispensable pour les atténuer voire les maîtriser.</p>
+
+          <p>Compte tenu de cet environnement complexe, nous venons ainsi vous assister afin d’appréhender avec hauteur le déploiement de votre stratégie de croissance ou de crise.</p>
+
+          <p>Nous vous permettons une lecture limpide, rapide et efficace en veillant à transmettre les connaissances nécessaires à votre autonomie. Notre approche se veut ainsi constructive avec une recherche permanente de création de valeur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <div class="bottom-card">
+      <div class="bottom-title">Pour votre entreprise, un seul repère</div>
+      <div class="site">www.levhec-advisory.com</div>
+
+      <div class="brand-footer">
+        LEVHEC ADVISORY<br>
+        Management de Transition<br>
+        Cabinet de Conseil Opérationnel
+      </div>
+
+      <div class="back-wrap">
+        <a class="back-btn" href="/index.html">← Retour aux offres</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="floating">
+  <a href="/contact/?offre=eti" title="Être contacté">✉</a>
+  <a href="tel:+33667246129" title="Appeler">☎</a>
+</div>
+
+</body>
+</html>
