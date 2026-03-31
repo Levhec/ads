@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filiales de groupes | LEVHEC ADVISORY | Version premium</title>
+
+<style>
+:root{
+  --orange:#E07A2F;
+  --orange-dark:#C9651A;
+  --orange-deep:#8F4717;
+  --ink:#2A1A12;
+  --muted:#6B4B39;
+  --taupe:#A39A95;
+  --taupe-dark:#8F8781;
+  --line:rgba(143,71,23,.14);
+  --shadow:0 24px 60px rgba(75,34,8,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.14), transparent 18%),
+    linear-gradient(180deg,#E07A2F 0%, #D56F24 38%, #C9651A 100%);
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+.page{
+  width:min(1280px, calc(100% - 30px));
+  margin:18px auto;
+  border-radius:34px;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.92)),
+    linear-gradient(135deg, #fffaf5, #fffdfb);
+  box-shadow:0 32px 80px rgba(65,28,6,.24);
+  border:1px solid rgba(255,255,255,.24);
+}
+.topbar{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:22px 34px;
+  background:
+    linear-gradient(180deg, rgba(255,252,248,.96), rgba(255,245,235,.96));
+  border-bottom:1px solid var(--line);
+}
+.topbar::after{
+  content:"";
+  position:absolute;
+  left:34px;
+  right:34px;
+  bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(224,122,47,.35), transparent);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+.brand img{
+  height:96px;
+  width:auto;
+}
+.baseline{
+  font-size:12px;
+  line-height:1.8;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:var(--muted);
+}
+.cap{
+  flex:0 0 auto;
+  padding:13px 18px;
+  border-radius:999px;
+  background:rgba(224,122,47,.08);
+  border:1px solid rgba(224,122,47,.16);
+  color:var(--orange-deep);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.hero{
+  position:relative;
+  padding:48px 34px 28px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 14% 14%, rgba(224,122,47,.10), transparent 16%),
+    radial-gradient(circle at 82% 10%, rgba(224,122,47,.08), transparent 18%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:26px;
+  align-items:start;
+}
+.hero h1{
+  margin:0;
+  font-size:clamp(48px, 7vw, 88px);
+  line-height:.92;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--orange);
+}
+.subtitle{
+  margin-top:22px;
+  font-size:clamp(23px, 2.4vw, 36px);
+  line-height:1.18;
+  font-weight:800;
+  text-transform:uppercase;
+  color:var(--orange-deep);
+}
+.tag{
+  min-height:220px;
+  border-radius:28px;
+  padding:30px 32px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:var(--shadow);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 24%),
+    linear-gradient(160deg, #E07A2F 0%, #C9651A 62%, #8F4717 100%);
+}
+.tag-label{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:800;
+  opacity:.9;
+}
+.tag-title{
+  font-size:clamp(28px, 3vw, 42px);
+  line-height:1.08;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.tag-line{
+  width:82px;
+  height:3px;
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+}
+
+.services{
+  margin:0 34px;
+  padding:18px 0 20px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  color:var(--orange);
+  font-size:14px;
+  font-weight:800;
+  line-height:1.9;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.intro{
+  display:grid;
+  grid-template-columns:1.55fr .95fr;
+  gap:22px;
+  padding:28px 34px 12px;
+}
+.promises{
+  background:linear-gradient(180deg, var(--taupe) 0%, var(--taupe-dark) 100%);
+  color:#fff;
+  border-radius:28px;
+  padding:26px 28px;
+  box-shadow:var(--shadow);
+}
+.promises p{
+  margin:0 0 18px;
+  font-size:clamp(18px, 1.5vw, 24px);
+  line-height:1.28;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  font-weight:800;
+}
+.promises p:last-child{margin-bottom:0}
+.side-note{
+  background:linear-gradient(180deg, #FFF1E4 0%, #FBE4D0 100%);
+  border:1px solid rgba(224,122,47,.18);
+  color:var(--orange-deep);
+  border-radius:28px;
+  padding:26px 24px;
+  box-shadow:0 16px 38px rgba(75,34,8,.08);
+  display:flex;
+  align-items:center;
+}
+.side-note p{
+  margin:0;
+  font-size:clamp(20px, 1.7vw, 26px);
+  line-height:1.35;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  font-weight:800;
+}
+
+.content-wrap{
+  padding:20px 34px 10px;
+}
+.content-card{
+  background:linear-gradient(180deg, #FFF9F3 0%, #FFFDFB 100%);
+  border:1px solid rgba(224,122,47,.16);
+  border-radius:30px;
+  padding:30px;
+  box-shadow:0 18px 46px rgba(75,34,8,.10);
+}
+.content-grid{
+  display:grid;
+  grid-template-columns:1fr 360px 1fr;
+  gap:28px;
+  align-items:start;
+}
+.copy p{
+  margin:0 0 20px;
+  font-size:clamp(20px, 1.34vw, 24px);
+  line-height:1.55;
+  text-align:justify;
+  color:var(--muted);
+}
+.copy p:last-child{margin-bottom:0}
+.copy p.dropcap::first-letter{
+  float:left;
+  font-size:3.2em;
+  line-height:.8;
+  padding-right:6px;
+  color:var(--orange);
+  font-weight:700;
+}
+
+.visual{
+  position:relative;
+  min-height:420px;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(60,25,5,.20);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
+    linear-gradient(160deg, #B85F20 0%, #8F4717 100%);
+}
+.visual::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255,255,255,.22), transparent 14%),
+    radial-gradient(circle at 78% 14%, rgba(255,255,255,.12), transparent 18%),
+    linear-gradient(to top, rgba(255,255,255,.06), transparent 46%);
+}
+.visual-grid{
+  position:absolute;
+  inset:24px;
+  border:1px solid rgba(255,240,228,.12);
+  border-radius:18px;
+}
+.visual-grid::before,
+.visual-grid::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,240,228,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,240,228,.08) 1px, transparent 1px);
+  background-size:26px 26px;
+  mask-image:linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,1));
+}
+.nodes{
+  position:absolute;
+  left:50%;
+  top:180px;
+  transform:translate(-50%,-50%);
+  width:220px;
+  height:220px;
+}
+.nodes .n{
+  position:absolute;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:rgba(255,247,239,.9);
+  box-shadow:0 0 0 8px rgba(255,247,239,.12);
+}
+.nodes .n1{left:100px;top:0}
+.nodes .n2{left:0;top:70px}
+.nodes .n3{right:0;top:70px}
+.nodes .n4{left:30px;bottom:20px}
+.nodes .n5{right:30px;bottom:20px}
+.nodes .n6{left:100px;bottom:0}
+.link{
+  position:absolute;
+  height:2px;
+  background:rgba(255,239,228,.36);
+  transform-origin:left center;
+}
+.l1{left:110px;top:10px;width:116px;transform:rotate(32deg)}
+.l2{left:10px;top:80px;width:116px;transform:rotate(-32deg)}
+.l3{left:110px;top:10px;width:116px;transform:rotate(148deg)}
+.l4{left:120px;top:154px;width:70px;transform:rotate(-36deg)}
+.l5{left:52px;top:154px;width:70px;transform:rotate(36deg)}
+.l6{left:20px;top:80px;width:180px;transform:rotate(0deg)}
+.deck{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:118px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0)),
+    linear-gradient(0deg, rgba(48,23,8,.84), rgba(80,38,11,.70));
+}
+.deck::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(90deg, rgba(255,235,220,.08) 1px, transparent 1px);
+  background-size:18px 100%;
+  transform:perspective(620px) rotateX(65deg);
+  transform-origin:bottom;
+  opacity:.85;
+}
+.visual-label{
+  position:absolute;
+  top:18px;
+  left:20px;
+  right:20px;
+  color:rgba(255,245,239,.92);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.statement{
+  padding:8px 34px 0;
+}
+.statement-card{
+  text-align:center;
+  padding:22px 24px;
+  border-radius:24px;
+  background:linear-gradient(180deg, #FFF0E3 0%, #FFF8F2 100%);
+  border:1px solid rgba(224,122,47,.18);
+  box-shadow:0 16px 36px rgba(75,34,8,.08);
+}
+.statement-card p{
+  margin:0;
+  font-size:clamp(20px, 1.55vw, 28px);
+  line-height:1.45;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--orange);
+  font-weight:800;
+}
+
+.bottom{
+  padding:8px 34px 34px;
+}
+.bottom-card{
+  text-align:center;
+  background:linear-gradient(180deg, #FFF4EA 0%, #FFF9F4 100%);
+  border:1px solid rgba(224,122,47,.18);
+  border-radius:30px;
+  padding:28px 26px 24px;
+  box-shadow:0 16px 40px rgba(75,34,8,.08);
+}
+.bottom-title{
+  font-size:clamp(21px, 1.8vw, 30px);
+  line-height:1.26;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--orange);
+}
+.site{
+  display:inline-block;
+  margin-top:12px;
+  font-size:clamp(17px, 1.4vw, 22px);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--orange-deep);
+  word-break:break-word;
+}
+.brand-footer{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  line-height:1.8;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+.back-wrap{margin-top:18px}
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 20px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid rgba(224,122,47,.18);
+  box-shadow:0 12px 26px rgba(75,34,8,.08);
+  color:var(--orange-deep);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:13px;
+}
+.floating{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:1000;
+}
+.floating a{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--orange);
+  color:#fff;
+  box-shadow:0 14px 28px rgba(88,38,7,.28);
+  transition:transform .2s ease, background .2s ease;
+  font-size:22px;
+}
+.floating a:hover{
+  transform:translateY(-2px);
+  background:var(--orange-dark);
+}
+
+@media (max-width:1080px){
+  .hero-grid,
+  .intro,
+  .content-grid{
+    grid-template-columns:1fr;
+  }
+  .visual{
+    max-width:440px;
+    width:100%;
+    margin:0 auto;
+  }
+}
+@media (max-width:760px){
+  .page{
+    width:min(100% - 12px, 1280px);
+    margin:6px auto;
+    border-radius:22px;
+  }
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:16px 18px;
+  }
+  .brand img{height:68px}
+  .hero,
+  .intro,
+  .content-wrap,
+  .statement,
+  .bottom{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  .hero{padding-top:28px}
+  .services{
+    margin-left:18px;
+    margin-right:18px;
+    font-size:13px;
+  }
+  .tag,
+  .promises,
+  .side-note,
+  .content-card,
+  .statement-card,
+  .bottom-card{
+    border-radius:20px;
+  }
+  .content-card{padding:18px}
+  .copy p{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/img/Levhec%20-%20horiz%20transp.png" alt="LEVHEC ADVISORY">
+      <div class="baseline">
+        Management de Transition<br>
+        Cabinet de Conseil Opérationnel
+      </div>
+    </div>
+    <div class="cap">Filiales de groupes</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Filiales de groupes</h1>
+        <div class="subtitle">
+          Votre consultant devient<br>
+          votre meilleur allié
+        </div>
+      </div>
+
+      <div class="tag">
+        <div class="tag-label">Contexte identifié</div>
+        <div class="tag-title">Renforcez vos équipes</div>
+        <div class="tag-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    MISSIONS CONSEIL ET TRANSITION | SUPPORT ADMINISTRATIF | PROJETS DE RESTRUCTURATION | MISSIONS SPÉCIFIQUES | CONTRÔLE DE GESTION | RESSOURCES HUMAINES | GOUVERNANCE &amp; PROSPECTIVE | GESTION | FINANCES
+  </section>
+
+  <section class="intro">
+    <div class="promises">
+      <p>LE CONSULTING : UN RAPPORT AU TRAVAIL DANS L’EFFICIENCE</p>
+      <p>PARCE QU’UN CONSULTANT DOIT S’INSCRIRE DANS LA DURÉE TOUT EN APPARAISSANT JUSTE LE TEMPS QU’IL FAUT</p>
+      <p>PARCE QUE LE CONSULTANT VIENT S’INVESTIR, RÉSOUDRE PUIS TRANSMETTRE</p>
+    </div>
+
+    <div class="side-note">
+      <p>Renforcez vos équipes</p>
+    </div>
+  </section>
+
+  <section class="content-wrap">
+    <div class="content-card">
+      <div class="content-grid">
+        <div class="copy">
+          <p class="dropcap">Dans un groupement de sociétés, les filiales ont souvent une identité personnelle mais se doivent de faire transparaître l’image de leur Groupe. On retrouve particulièrement cette situation lors de créations ou de rachats d’entreprises à activités distinctes.</p>
+
+          <p>Les besoins en matière de gestion, de ressources humaines ou de management sont spécifiques et appellent à une capacité de la part des salariés avec un positionnement à multiples facettes. Les besoins de restructuration tendent à se succéder et la gestion des filiales nécessitent des intervenants autonomes et en phase avec la holding.</p>
+        </div>
+
+        <div class="visual" aria-hidden="true">
+          <div class="visual-label">Filiales | Holding | Coordination</div>
+          <div class="visual-grid"></div>
+          <div class="nodes">
+            <div class="link l1"></div>
+            <div class="link l2"></div>
+            <div class="link l3"></div>
+            <div class="link l4"></div>
+            <div class="link l5"></div>
+            <div class="link l6"></div>
+            <div class="n n1"></div>
+            <div class="n n2"></div>
+            <div class="n n3"></div>
+            <div class="n n4"></div>
+            <div class="n n5"></div>
+            <div class="n n6"></div>
+          </div>
+          <div class="deck"></div>
+        </div>
+
+        <div class="copy">
+          <p class="dropcap">Nous intervenons dans les filiales de groupes avec ou sans mandat social et délégation de pouvoirs en déployant la politique choisie et en veillant à transmettre aux salariés les méthodes des mécanismes nécessaires à leur activité.</p>
+
+          <p>Nous intervenons en support ponctuel ou permanent et assurons des missions de restructuration ou retournement au cours de la vie de l’entreprise mais aussi lors de créations ou fermetures de sites.</p>
+
+          <p>Dans tous les cas, nous veillons à transmettre notre savoir, nos méthodes, nos techniques jusqu’à former les salariés en poste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="statement-card">
+      <p>Une équipe supplétive de consultants en renfort pour les dirigeants cadres et salariés de votre entreprise</p>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <div class="bottom-card">
+      <div class="bottom-title">Pour votre entreprise, un seul repère</div>
+      <a class="site" href="https://www.levhec-advisory.com" target="_blank" rel="noopener noreferrer">www.levhec-advisory.com</a>
+
+      <div class="brand-footer">
+        LEVHEC ADVISORY<br>
+        Management de Transition<br>
+        Cabinet de Conseil Opérationnel
+      </div>
+
+      <div class="back-wrap">
+        <a class="back-btn" href="/index.html">← Retour aux offres</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="floating">
+  <a href="/contact/?offre=filiales-groupes" title="Être contacté">✉</a>
+  <a href="tel:+33667246129" title="Appeler">☎</a>
+</div>
+
+</body>
+</html>
